@@ -20,7 +20,7 @@ html { -webkit-text-size-adjust:none; text-size-adjust:none
     background-position: 0 0;
   }
   100% {
-    background-position: -48px 40px;
+    background-position: 50px 0 ;
   }
 }
 
@@ -63,16 +63,16 @@ html {
 }
 
 body {
-	background-image: url("img/bg.png");
+	/*background-image: url("img/texture.png");*/
 	background-position: center;
 	background-attachment: fixed;
-	background-color: #000;
+	background-color: #111111;
 	color: #f0f0f0;
 	font-family: Roboto;
 	margin: 0;
 	font-size: 14px;
 	overflow-x: hidden;
-	animation: move 3s linear infinite;
+	/*animation: move 3s linear infinite;*/
 }
 
 body * {
@@ -109,9 +109,29 @@ a:hover {
     background: url(img/logo.png) no-repeat center;
     background-size: 50%;
     width: 100%;
-    height: 313px;
+    height: 100vh;
     /* margin: calc(((100% / 1.78) - 313px) / 2) auto; */
-    margin: calc((100vh - 313px) / 2) auto;
+    /*margin: calc((100vh - 313px) / 2) auto;*/
+    position: relative;
+	overflow: hidden;
+}
+
+#logo:before {
+	content: "";
+	position: absolute;
+	width: 200%;
+	height: 200%;
+	top: -50%;
+	left: -50%;
+	z-index: -1;
+	background: url(img/texture-2.png) 0 0 repeat;
+	background-size: 100px;
+	-webkit-transform: rotate(-40deg);
+	-moz-transform: rotate(-40deg);
+	-ms-transform: rotate(-40deg);
+	-o-transform: rotate(-40deg);
+	transform: rotate(-40deg);
+	animation: move 2s linear infinite;
 }
 
 h1 {
@@ -374,7 +394,28 @@ h1 {
 }
 
 .photo_page {
-	background-image: url("img/bg-insta.png");
+	background-image: url("img/bg-inst.png");
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.photo_page:after {
+	content: "";
+	position: absolute;
+	width: 200%;
+	height: 200%;
+	top: -50%;
+	left: -50%;
+	z-index: -1;
+	background: url(img/texture-2.png) 0 0 repeat;
+	background-size: 140px;
+	-webkit-transform: rotate(-40deg);
+	-moz-transform: rotate(-40deg);
+	-ms-transform: rotate(-40deg);
+	-o-transform: rotate(-40deg);
+	transform: rotate(-40deg);
+	/*animation: move 2s linear infinite;*/
 }
 
 .art_page {
@@ -474,7 +515,7 @@ h1 {
 }
 
 .art_page .art_big {
-    margin: 0.6vw auto;
+    margin: 0.8vw auto;
     /* height: calc(75vh - 61px); */
     /*max-width: 839px;*/
     overflow: hidden;
@@ -529,7 +570,7 @@ h1 {
     height: 15vw;
 	background: #000;
 	/*background: radial-gradient(#fff 0%, #000 50%);*/
-    margin: 0.6vw;
+    margin: 0.8vw;
 	border-radius: 5px;
 	overflow: hidden;
 	transition: transform 0.1s;
