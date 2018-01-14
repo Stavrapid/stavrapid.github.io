@@ -9,7 +9,8 @@ html { -webkit-text-size-adjust:none; text-size-adjust:none
 	}
 
 	#logo img {
-		bottom: 50% !important;
+		width: 75% !important;
+		bottom: 40% !important;
 	}
 }
 
