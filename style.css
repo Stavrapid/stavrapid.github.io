@@ -130,14 +130,18 @@ a:hover {
 	-ms-transform: rotate(-40deg);
 	-o-transform: rotate(-40deg);
 	transform: rotate(-40deg);
-	animation: move 2s linear infinite;
+	animation: move 3s linear infinite;
 }
 
 #logo img {
-	position: relative;
+	position: absolute;
     width: 50%;
-    margin: 0 auto;
+    margin: auto;
     z-index: 1;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
 }
 
 h1 {
