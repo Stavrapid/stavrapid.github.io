@@ -12,6 +12,9 @@ html { -webkit-text-size-adjust:none; text-size-adjust:none
 		width: 75% !important;
 		bottom: 40% !important;
 	}
+	#header_logo {
+		visibility: hidden;
+	}
 }
 
 @media screen and (orientation:landscape) {
@@ -26,6 +29,65 @@ html { -webkit-text-size-adjust:none; text-size-adjust:none
   }
   100% {
     background-position: 50px 0 ;
+  }
+}
+
+@keyframes flashing {
+  0% {
+  	clip-path: polygon(0 0, 24% 0, 24% 40%, 0 40%);
+    opacity: 0.25;
+  }
+  50% {
+  	clip-path: polygon(0 0, 24% 0, 24% 40%, 0 40%);
+    opacity: 1;
+  }
+  100% {
+  	clip-path: polygon(0 0, 24% 0, 24% 40%, 0 40%);
+  	opacity: 0.25;
+  }
+}
+
+@keyframes logo-appear {
+  0% {
+	clip-path: polygon(0 0, 24% 0, 24% 40%, 0 40%);
+  }
+  20% {
+	clip-path: polygon(0 0, 26% 0, 26% 40%, 0 40%);
+  }
+  40% {
+	clip-path: polygon(0 0, 24% 0, 24% 40%, 0 40%);
+  }
+  60% {
+	clip-path: polygon(0 0, 26% 0, 26% 40%, 0 40%);
+  }
+  80% {
+	clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  }
+  90% {
+	clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  }
+  95% {
+	clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);
+  }
+  100% {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes header_logo-appear {
+  0% {
+  	opacity: 0;
+    width: 48px;
+  }
+  25% {
+  	opacity: 1;
+  	width: 54px;
+  }
+  50% {
+  	width: 48px;
+  }
+  100% {
+    width: 50%;
   }
 }
 
@@ -118,12 +180,12 @@ a:hover {
     position: relative;
 	overflow: hidden;
 	text-align: center;
-	background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.75)));
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
-	background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
-	background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
-	background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.5) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,0.05)), color-stop(100%, rgba(0,0,0,0.5)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.5) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.5) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.5) 100%);
+background: radial-gradient(ellipse at center, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.5) 100%);
 }
 
 #logo:before {
@@ -153,6 +215,20 @@ a:hover {
     top: 0;
     bottom: 0;
     right: 0;
+    animation: flashing 2s infinite;
+}
+
+#header_logo {
+	background: url(img/header-logo.png) 0 0 no-repeat;
+	background-size: 281px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9002;
+	height: 50px;
+	width: 100%;
+	margin: 8px 8px 0;
+	animation: header_logo-appear 1s;
 }
 
 h1 {
@@ -418,29 +494,12 @@ h1 {
 	background-image: url("img/bg-inst.png");
 	position: relative;
 	overflow: hidden;
-	z-index: 1;
-}
-
-.photo_page:after {
-	content: "";
-	position: absolute;
-	width: 200%;
-	height: 200%;
-	top: -50%;
-	left: -50%;
-	z-index: 1;
-	background: url(img/texture-2.png) 0 0 repeat;
-	background-size: 140px;
-	-webkit-transform: rotate(-40deg);
-	-moz-transform: rotate(-40deg);
-	-ms-transform: rotate(-40deg);
-	-o-transform: rotate(-40deg);
-	transform: rotate(-40deg);
-	/*animation: move 2s linear infinite;*/
+	z-index: 3;
 }
 
 .art_page {
-	background-image: url("img/bg-green.png");
+	background-image: url("img/da-pattern.png");
+	background-size: auto;
 }
 
 .portfolio_page .page_wrap {
@@ -599,7 +658,11 @@ h1 {
 
 .thumbs_container .thumb:hover {
 	transform: scale(1.07);
-	box-shadow: none;
+	/*box-shadow: none;*/
+}
+
+.thumbs_container .thumb:hover .photo_image {
+	filter: blur(5px);
 }
 
 .thumbs_container .thumb a {

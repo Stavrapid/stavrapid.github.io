@@ -37,6 +37,9 @@ function nested_title_scroll() {
 		newTitle.style.background = geClass("page_title")[title_num].style.background;
 		document.body.appendChild(newTitle);
 		//console.log("created " + title_num);
+		var headerLogo = document.createElement("div");
+		headerLogo.id = "header_logo";
+		document.body.appendChild(headerLogo);
 	}
 
 	if (geId("page_title_fixed").style.top == "0px") {
@@ -85,7 +88,10 @@ function nested_title_scroll() {
 	if (tt > 0 && title_created && (title_num == 0 || title_num == -1)) {
 		title_created = false;
 		document.body.removeChild(geId("page_title_fixed"));
+		document.body.removeChild(geId("header_logo"));
 		title_num == 0;
+		console.log("=NEST BEEN REMOVED=");
+		console.log("=" + title_num + "=");
 	}
 
 	//console.log(title_num);
