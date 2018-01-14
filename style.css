@@ -24,21 +24,21 @@ html { -webkit-text-size-adjust:none; text-size-adjust:none
 
 @font-face {
 	font-family: Roboto;
-	src: url("./fonts/Roboto/Roboto-bold.ttf");
+	src: url("./fonts/Roboto/Roboto-Bold.ttf");
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: Roboto;
-	src: url("./fonts/Roboto/Roboto-black.ttf");
+	src: url("./fonts/Roboto/Roboto-Black.ttf");
 	font-weight: 900;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: Calibre Bold;
-	src: url("./fonts/calibre-bold.otf");
+	src: url("./fonts/calibre-Bold.otf");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -153,13 +153,14 @@ h1 {
 }
 
 .page {
+	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
 }
 
 .page_wrap {
     max-width: 716px;
-    padding: 40px 40px 60px;
+    padding: 60px 40px;
     /* background-color: rgba(0, 0, 0, 0.5); */
     margin: 0 auto;
 }
@@ -203,7 +204,7 @@ h1 {
     max-width: 800px;
     width: auto;
     margin: 0 auto;
-    padding: 40px 40px 60px;
+    padding: 60px 40px;
 }
 
 /*.bio_page .bio_container {
@@ -365,12 +366,10 @@ h1 {
 
 .photo_page {
 	background-image: url("img/bg-insta.png");
-	background-position: center;
 }
 
 .art_page {
 	background-image: url("img/bg-green.png");
-	background-position: center;
 }
 
 .portfolio_page .page_wrap {
@@ -393,7 +392,7 @@ h1 {
 }
 
 .leaf-magic {
-	background: url(./leafs/01.png) 0 40% fixed;
+	background: url(./leafs/01.png) no-repeat center 40% fixed;
 	background-size: cover;
 	width: 100%;
 }
@@ -452,7 +451,7 @@ h1 {
 
 .art_page .page_wrap {
 	max-width: 880px;
-	padding: 40px 20px 60px;
+	padding: 60px 20px;
 	text-align: center;
 }
 
@@ -466,9 +465,9 @@ h1 {
 }
 
 .art_page .art_big {
-    margin: 20px auto 0;
+    margin: 0.6vw auto;
     /* height: calc(75vh - 61px); */
-    max-width: 839px;
+    /*max-width: 839px;*/
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 0px 0px 30px 0px #000;
@@ -480,7 +479,6 @@ h1 {
 
 .blog_page {
 	background-image: url("img/bg-red.png");
-	background-position: center;
 }
 
 .blog_page *::-moz-selection {
@@ -495,8 +493,8 @@ h1 {
 
 .thumbs_container {
 	margin: 0;
-    margin-top: 1.3vw;
-    margin-bottom: -20px;
+    /*margin-top: 0.6vw;*/
+    /*margin-bottom: -20px;*/
     margin-right: -20px;
     margin-left: -20px;
     font-size: 0;
@@ -515,14 +513,14 @@ h1 {
 	display: inline-block;
 	box-shadow: 0px 0px 30px 0px #000;
 	max-width: 225px;
-	min-width: 150px;
+	min-width: 200px;
     width: 15vw;
     max-height: 225px;
-    min-height: 150px;
+    min-height: 200px;
     height: 15vw;
 	background: #000;
 	/*background: radial-gradient(#fff 0%, #000 50%);*/
-    margin: 0 1.3vw 1.3vw 0;
+    margin: 0.6vw;
 	border-radius: 5px;
 	overflow: hidden;
 	transition: transform 0.1s;
