@@ -12,8 +12,13 @@
 
 <script>
 
-    console.log(document.scrollingElement);
-    document.scrollingElement.scrollTo(0,0);
+    function scrollToElem(element) {
+      window.scroll({
+        behavior: 'smooth',
+        left: 0,
+        top: element.offsetTop
+      });
+    }
 
     function start_page() {
         document.getElementById("logo").getElementsByTagName("img")[0].style.animation = "logo-appear 2s";
@@ -40,7 +45,7 @@
 
 	<div id="page_layout" >
 
-		<div id="logo">
+		<div id="logo" onclick="console.log('PPP'); scrollToElem(document.getElementById('footer'));">
             <img src="img/logo.png"></img>
 		</div>
 

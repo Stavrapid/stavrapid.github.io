@@ -39,6 +39,9 @@ function nested_title_scroll() {
 		//console.log("created " + title_num);
 		var headerLogo = document.createElement("div");
 		headerLogo.id = "header_logo";
+		headerLogo.addEventListener('click', () => {
+		  scrollToElem(document.getElementById("logo"));
+		});
 		document.body.appendChild(headerLogo);
 	}
 
@@ -46,6 +49,15 @@ function nested_title_scroll() {
 		geId("page_title_fixed").style.boxShadow = ""/*"0px 0px 20px 10px rgba(0,0,0,0.75)"*/;
 	} else {
 		geId("page_title_fixed").style.boxShadow = "initial"/*"0px 0px 20px 10px rgba(0,0,0,0)"*/;
+	}
+
+	if (tt > 0 && title_created && (title_num == 0 || title_num == -1)) {
+		title_created = false;
+		document.body.removeChild(geId("page_title_fixed"));
+		document.body.removeChild(geId("header_logo"));
+		title_num == 0;
+		// console.log("=NEST BEEN REMOVED=");
+		// console.log("=" + title_num + "=");
 	}
 
 	if (tt < 0 && title_created && title_num != geClass("page_title").length - 1) {
@@ -85,14 +97,14 @@ function nested_title_scroll() {
 		//console.log("tt > 0");
 	}
 
-	if (tt > 0 && title_created && (title_num == 0 || title_num == -1)) {
-		title_created = false;
-		document.body.removeChild(geId("page_title_fixed"));
-		document.body.removeChild(geId("header_logo"));
-		title_num == 0;
-		console.log("=NEST BEEN REMOVED=");
-		console.log("=" + title_num + "=");
-	}
+	// if (tt > 0 && title_created && (title_num == 0 || title_num == -1)) {
+	// 	title_created = false;
+	// 	document.body.removeChild(geId("page_title_fixed"));
+	// 	document.body.removeChild(geId("header_logo"));
+	// 	title_num == 0;
+	// 	console.log("=NEST BEEN REMOVED=");
+	// 	console.log("=" + title_num + "=");
+	// }
 
 	//console.log(title_num);
 	//console.log(geClass("page_title")[0].getBoundingClientRect().top);

@@ -2,6 +2,15 @@
 html { -webkit-text-size-adjust:none; text-size-adjust:none
 }
 
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    /*background: transparent;   optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
 @media screen and (orientation:portrait) {
    .leaf-magic .text-block {
 	    width: 50% !important;
@@ -229,6 +238,7 @@ background: radial-gradient(ellipse at center, rgba(255,255,255,0.05) 0%, rgba(0
 	width: 100%;
 	margin: 8px 8px 0;
 	animation: header_logo-appear 1s;
+	cursor: pointer;
 }
 
 h1 {
