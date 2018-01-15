@@ -145,7 +145,7 @@ html { -webkit-text-size-adjust:none; text-size-adjust:none
 
 @font-face {
     font-family: Intro;
-    src: url("./fonts/Intro/Intreot");
+    src: url("./fonts/Intro/Intro.eot");
     src: local('☺'), 
          url('./fonts/Intro/Intro.woff') format('woff'),
          url('./fonts/Intro/Intro.ttf') format('truetype'),
