@@ -1,3 +1,8 @@
+/*
+=============================================================================================================================
+---------------------------------------------------- THE SCRIPTING THING ----------------------------------------------------
+=============================================================================================================================
+*/
 function geId(elem) {
 	return (document.getElementById(elem));
 }
@@ -84,7 +89,7 @@ function nested_title_scroll() {
 		//console.log("tt < 0");
 	}
 
-	if (tt > 0 && title_created && title_num !=0) {
+	if (tt > 0 && title_created && title_num != 0) {
 		title_created = true;
 		if ((geClass("page_title")[title_num - 1].getBoundingClientRect().top) > 0) {
 			//title_num--;
@@ -132,8 +137,8 @@ function animate(elem, style, unit, from, to, time, prop) {
             }
         }, 0.001);
     if (prop) {
-    	  elem[style] = from+unit;
+		elem[style] = from + unit;
     } else {
-    	  elem.style[style] = from+unit;
+		elem.style[style] = from + unit;
     }
 }
