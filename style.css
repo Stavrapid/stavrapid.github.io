@@ -841,6 +841,7 @@ h1 {
 #footer #credits {
 	padding: 30px 0 20px;
 	font-weight: 900;
+	cursor: pointer;
 }
 
 #footer #credits:not(:hover) {
