@@ -167,6 +167,9 @@ body {
 	font-size: 14px;
 	overflow-x: hidden;
 	/*animation: move 3s linear infinite;*/
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling: touch;
 }
 
 body * {
@@ -267,7 +270,7 @@ h1 {
 	background-color: #000;
 	color: #f0f0f0;
 	text-align: center;
-	font-family: Intro;
+	font-family: "Intro";
 	font-size: 36px;
 	line-height: 36px;
 	padding: 10px 0 15px;
@@ -294,7 +297,7 @@ h1 {
 	background-color: #000;
 	color: #f0f0f0;
 	text-align: center;
-	font-family: Intro;
+	font-family: "Intro";
 	font-size: 36px;
 	line-height: 36px;
 	padding: 10px 0 15px;
