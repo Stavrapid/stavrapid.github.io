@@ -31,8 +31,12 @@
 <body style="overflow: hidden;">
 
 	<script>
-        window.scroll(0,0);
 		window.onload = function() {
+            window.scroll({
+                behavior: 'smooth',
+                left: 0,
+                top: document.body.offsetTop
+            });
             start_page();
 			find_title();
 			window.onscroll = function() {
@@ -45,7 +49,7 @@
 
 	<div id="page_layout" >
 
-		<div id="logo" onclick="console.log('PPP'); scrollToElem(document.getElementById('footer'));">
+		<div id="logo">
             <img src="img/logo.png"></img>
 		</div>
 
