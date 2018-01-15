@@ -848,7 +848,7 @@ h1 {
 	font-weight: 100;
 }
 
-.social_block {
+.contact_block {
     text-align: center;
     text-transform: uppercase;
     font-size: 0;
@@ -857,7 +857,7 @@ h1 {
     padding: 10px;
 }
 
-.social_button {
+.contact_button {
 	display: inline-table;
 	width: 40px;
 	height: 40px;
@@ -869,7 +869,7 @@ h1 {
 	/* border-radius: 5px; */
 }
 
-.social_button > a {
+.contact_button > a {
 	display: table-cell;
 	vertical-align: middle;
 	font-weight: 900;
@@ -878,13 +878,13 @@ h1 {
 	font-size: 18px;
 }
 
-.social_button:not(:hover) {
+.contact_button:not(:hover) {
 	background: initial;
 	color: rgba(255, 255, 255, 0.70);
 	text-shadow: 0 0 10px #000;
 }
 
-.social_button:hover > a {
+.contact_button:hover > a {
 	opacity: 1;
 }
 
