@@ -55,6 +55,8 @@ function nested_title_scroll() {
 		title_created = false;
 		document.body.removeChild(geId("page_title_fixed"));
 		document.body.removeChild(geId("header_logo"));
+		document.body.style.overflowY = "hidden";
+		scrollToElem(document.getElementById("logo"));
 		title_num == 0;
 		// console.log("=NEST BEEN REMOVED=");
 		// console.log("=" + title_num + "=");
