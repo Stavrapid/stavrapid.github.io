@@ -24,6 +24,10 @@
         document.getElementById("logo").getElementsByTagName("img")[0].style.animation = "logo-appear 2s";
         setTimeout(function() {
             document.body.style.overflowY = "scroll";
+            document.getElementById("logo").style.cursor = "pointer";
+            document.getElementById("logo").addEventListener('click', () => {
+                scrollToElem(document.getElementsByClassName('page_title')[0]);
+            });
         }, 2000);
     }
 </script>
