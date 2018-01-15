@@ -145,8 +145,13 @@ html { -webkit-text-size-adjust:none; text-size-adjust:none
 
 @font-face {
     font-family: Intro;
-    src: url("./fonts/Intro.otf");
-   }
+    src: url("./fonts/Intro/Intreot");
+    src: local('☺'), 
+         url('./fonts/Intro/Intro.woff') format('woff'),
+         url('./fonts/Intro/Intro.ttf') format('truetype'),
+         url('./fonts/Intro/Intro.svg') format('svg'),
+         url('./fonts/Intro/Intro.otf') format('otf');
+}
 
 
 html {
