@@ -1,5 +1,2 @@
 User-agent: *
-Disallow: /art/
-Disallow: /leafs/
-Disallow: /photo/
 Allow: /
