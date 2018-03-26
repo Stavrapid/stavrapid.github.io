@@ -1,5 +1,5 @@
 User-agent: *
-Allow: /photo
-Allow: /art
-Allow: /leafs
-Disallow: /
+Disallow: /art/
+Disallow: /leafs/
+Disallow: /photo/
+Allow: /
