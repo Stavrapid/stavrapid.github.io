@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MMWEATHER>
+	<REPORT type="frc3">
+		<TOWN tname="Cloudsdale" cname="Equestria" latitude="55" longitude="37">
+			<FORECAST day="26" month="10" year="2015" hour="15" tod="2" predict="0" weekday="0">
+				<PHENOMENA cloudiness="1" precipitation="0" ppower="0"/>
+				<PRESSURE max="" min=""/>
+				<TEMPERATURE max="23" min="12"/>
+				<WIND min="" max="" direction=""/>
+				<RELWET max="" min=""/>
+				<HEAT min="" max=""/>
+			</FORECAST>
+			<FORECAST day="27" month="10" year="2015" hour="21" tod="3" predict="0" weekday="1">
+				<PHENOMENA cloudiness="0" precipitation="0" ppower="0"/>
+				<PRESSURE max="" min=""/>
+				<TEMPERATURE max="22" min="11"/>
+				<WIND min="" max="" direction=""/>
+				<RELWET max="" min=""/>
+				<HEAT min="" max=""/>
+			</FORECAST>
+			<FORECAST day="28" month="10" year="2015" hour="03" tod="0" predict="0" weekday="2">
+				<PHENOMENA cloudiness="2" precipitation="0" ppower="0"/>
+				<PRESSURE max="" min=""/>
+				<TEMPERATURE max="22" min="11"/>
+				<WIND min="" max="" direction=""/>
+				<RELWET max="" min=""/>
+				<HEAT min="" max=""/>
+			</FORECAST>
+			<FORECAST day="29" month="10" year="2015" hour="09" tod="1" predict="0" weekday="3">
+				<PHENOMENA cloudiness="2" precipitation="1" ppower="0"/>
+				<PRESSURE max="" min=""/>
+				<TEMPERATURE max="8" min="2"/>
+				<WIND min="" max="" direction=""/>
+				<RELWET max="" min=""/>
+				<HEAT min="" max=""/>
+			</FORECAST>
+			<FORECAST day="30" month="10" year="2015" hour="09" tod="1" predict="0" weekday="4">
+				<PHENOMENA cloudiness="1" precipitation="0" ppower="0"/>
+				<PRESSURE max="" min=""/>
+				<TEMPERATURE max="9" min="0"/>
+				<WIND min="" max="" direction=""/>
+				<RELWET max="" min=""/>
+				<HEAT min="" max=""/>
+			</FORECAST>
+			<FORECAST day="31" month="10" year="2015" hour="09" tod="1" predict="0" weekday="5">
+				<PHENOMENA cloudiness="1" precipitation="0" ppower="0"/>
+				<PRESSURE max="" min=""/>
+				<TEMPERATURE max="9" min="2"/>
+				<WIND min="" max="" direction=""/>
+				<RELWET max="" min=""/>
+				<HEAT min="" max=""/>
+			</FORECAST>
+			<FORECAST day="01" month="10" year="2015" hour="09" tod="1" predict="0" weekday="6">
+				<PHENOMENA cloudiness="2" precipitation="0" ppower="0"/>
+				<PRESSURE max="" min=""/>
+				<TEMPERATURE max="13" min="3"/>
+				<WIND min="" max="" direction=""/>
+				<RELWET max="" min=""/>
+				<HEAT min="" max=""/>
+			</FORECAST>
+		</TOWN>
+	</REPORT>
+</MMWEATHER>
