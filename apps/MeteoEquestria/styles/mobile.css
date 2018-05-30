@@ -139,6 +139,10 @@ and (orientation : landscape) {
 	src: url('../fonts/artill clean weather icons/artill_clean_icons.otf');
 }
 
+html {
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+}
+
 a {
 	color: #fff;
 }
