@@ -487,7 +487,7 @@
 					setting_showColors = false;
 					for (i = 0; i < document.getElementById("tabs").getElementsByTagName("li").length; i++) {
 						document.getElementById("tabs").getElementsByTagName("li")[i].style.backgroundColor = "rgb(" + (197 -(20 * i)) + ", " + (113 -(11 * i)) + ", " + (128 -(13 * i)) + ")";
-						document.getElementById("main-screen-content-landscape").getElementsByClassName("tab")[i].style.backgroundColor = "transparent";
+						document.getElementById("main-screen-content").getElementsByClassName("tab")[i].style.backgroundColor = "transparent";
 					}
 				}
 				if (document.getElementById("shortify-switch").querySelector("input[type='checkbox']").checked) {
