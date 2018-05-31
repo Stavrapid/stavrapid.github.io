@@ -25,7 +25,7 @@
 		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="./icons/120.png"><!-- iPhone 6s, iPhone 6, iPhone 5 -->
 		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="./icons/152.png"><!-- iPad, iPad mini -->
 		<link rel="apple-touch-icon-precomposed" sizes="167x167" href="./icons/167.png"><!-- iPad Pro -->
-		<link rel="apple-touch-icon-precomposed" sdocument.getElementById("bg-overlay").style.background = izes="180x180" href="./icons/180.png"><!-- iPhone 6s Plus, iPhone 6 Plus -->
+		<link rel="apple-touch-icon-precomposed" sizes="180x180" href="./icons/180.png"><!-- iPhone 6s Plus, iPhone 6 Plus -->
 		<link rel="apple-touch-icon-precomposed" sizes="1024x1024" href="./icons/1024.png">
 		
 		<!-- Path to library CSS -->
@@ -252,7 +252,7 @@
 					<h2>Meteo Equestria</h2>
 					<img src="logo.png" width="20%" align="center"/>
 					<br>
-					ver 0.4
+					ver 0.3
 				</div>
 				<ul class="ios-ul">
 					<li class="ios-li">
@@ -393,12 +393,12 @@
 			// SHOW/HIDE SCREEN BEGIN
 			function showScreen(screenName){
 				var screen = document.getElementById(screenName + "-screen");
-				screen.querySelector(".scrollfix-content").scrollTop = 1;
+				// screen.querySelector(".scrollfix-content").scrollTop = 1;
 				screen.setAttribute("style", "-webkit-transform: translate3d(0, -100%, 0); -moz-transform: translate3d(0, -100%, 0);");
 			}
 			
 			function hideScreen(screenName) {
-				document.getElementById("main-screen").querySelector(".scrollfix-content").scrollTop = 1;
+				// document.getElementById("main-screen").querySelector(".scrollfix-content").scrollTop = 1;
 				var screen = document.getElementById(screenName + "-screen");
 				screen.setAttribute("style", "-webkit-transform: translate3d(0, 0, 0);");
 			}
@@ -463,18 +463,26 @@
 			document.getElementById("main-screen-content").querySelector(".scrollfix-content").addEventListener("scroll", function(e){
 				var screen = document.getElementById("main-screen-content").querySelector(".scrollfix-content");
 				var scrollBottom = (screen.scrollHeight - (screen.offsetHeight + screen.scrollTop));
+				var mainScreenContent = document.getElementById("main-screen-content");
+				var lastTab = mainScreenContent.getElementsByClassName("tab")[ mainScreenContent.getElementsByClassName("tab").length - 1 ];
+
 				// document.getElementById("main-screen-content").querySelector(".today-temperature").innerHTML = scrollBottom;
 				if (screen.scrollTop > 1 && scrollBottom >= 1) {
-					document.getElementById("main-screen-content").style.backgroundPosition = "center " + "-" + Math.floor(screen.scrollTop * 0.5) + "px";
+					mainScreenContent.style.backgroundPosition = "center " + "-" + Math.floor(screen.scrollTop * 0.5) + "px";
+					document.getElementById('today-tab').style.opacity = ( 1 - screen.scrollTop * 0.01 );
+					document.getElementById('bg-overlay').style.opacity = ( 0.4 + screen.scrollTop * 0.004 );
+					// document.getElementById('today-tab').setAttribute('style', '-webkit-backdrop-filter: saturate(' + (100 + screen.scrollTop * 0.4) + '%) blur(' + (screen.scrollTop * 0.15) + 'px)');
 				}
-				if (screen.scrollTop > (screen.offsetHeight / 3)) {
-					document.getElementById("main-screen-content").style.backgroundPosition = "center " + "-" + Math.floor(screen.scrollTop * 0.5) + "px";
-					document.getElementById("main-screen-content").style.backgroundColor = document.getElementById("main-screen-content").getElementsByClassName("tab")[ document.getElementById("main-screen-content").getElementsByClassName("tab").length - 1 ].style.backgroundColor;
+				
+				if ( scrollBottom <= lastTab.offsetHeight / 2 ) {
+					mainScreenContent.style.backgroundColor = lastTab.style.backgroundColor;
 				} else {			
-					document.getElementById("main-screen-content").style.backgroundColor = '';
+					mainScreenContent.style.backgroundColor = '';
 				}
 				if (screen.scrollTop <= 1) {
-					document.getElementById("main-screen-content").style.backgroundPosition = "center 0px";
+					mainScreenContent.style.backgroundPosition = "center 0px";
+					document.getElementById('today-tab').style.opacity = '1';
+					document.getElementById('bg-overlay').style.opacity = '';	
 				}
 			});
 			
@@ -513,92 +521,6 @@
 			function initiate() {
 				checkSettings();
 				getXMLDocument("./weather/" + setting_country + "/" + setting_town + ".xml", setting_showColors, setting_shortify);
-				/*var NowDate = new Date(),
-					CurrentDay = NowDate.getDay();
-				
-				switch(CurrentDay) {
-					case 1:
-					case 2:
-					case 3:
-					case 4:
-					case 5:
-					case 6:
-						CurrentDay--
-						break
-					case 0:
-						CurrentDay = 6
-						break
-				}
-				
-				var week = new Array(7);
-					week[0] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay),
-					week[1] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 1),
-					week[2] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 2),
-					week[3] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 3),
-					week[4] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 4),
-					week[5] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 5),
-					week[6] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 6),
-					j=0,
-					screen = document.getElementById("main-screen"),
-					screenL = document.getElementById("main-screen-content-landscape"),
-					temperature = 0;
-					
-				checkSettings();
-					
-				for (i=0; i<7; i++) {
-					temperature = getRandomInt(-30, 30);
-					if (week[i].getDate() == NowDate.getDate()) {
-						
-						screen.querySelector(".today-day").innerHTML = dayName(NowDate.getDay());
-						screen.querySelector(".today-date").innerHTML = addSup(addZero(NowDate.getDate()));
-						
-						screenL.querySelector(".today-day").innerHTML = dayName(NowDate.getDay());
-						screenL.querySelector(".today-date").innerHTML = addSup(addZero(NowDate.getDate()));
-						
-						if (temperature > 0) {
-							screen.querySelector(".today-temperature").innerHTML = "+" + Math.abs(temperature) + "<sup>°C</sup>";
-							screenL.querySelector(".today-temperature").innerHTML = "+" + Math.abs(temperature) + "<sup>°C</sup>";
-						}
-						if (temperature == 0) {
-							screen.querySelector(".today-temperature").innerHTML = Math.abs(temperature) + "<sup>°C</sup>";
-							screenL.querySelector(".today-temperature").innerHTML = Math.abs(temperature) + "<sup>°C</sup>";
-						}
-						if (temperature < 0) {
-							screen.querySelector(".today-temperature").innerHTML = "-" + Math.abs(temperature) + "<sup>°C</sup>";
-							screenL.querySelector(".today-temperature").innerHTML = "-" + Math.abs(temperature) + "<sup>°C</sup>";
-						}
-						screen.querySelector(".today-icon").style.backgroundImage = "url('./img/{{id}}.png')".replace("{{id}}", getRandomInt(1, 27));
-						screenL.querySelector(".today-icon").style.backgroundImage = "url('./img/{{id}}.png')".replace("{{id}}", getRandomInt(1, 27));
-						
-						j++;
-					}
-					if (i != 6) {
-						screen.getElementsByTagName("li")[i].querySelector(".tab-icon").src = "./img/{{id}}.png".replace("{{id}}", getRandomInt(1, 27));
-						screen.getElementsByTagName("li")[i].querySelector(".tab-day").innerHTML = dayName(week[i+j].getDay()).slice(0, 3);
-						screen.getElementsByTagName("li")[i].querySelector(".tab-date").innerHTML = addSup(addZero(week[i+j].getDate()));
-						
-						screenL.getElementsByClassName("tab")[i].querySelector(".tab-icon").src = "./img/{{id}}.png".replace("{{id}}", getRandomInt(1, 27));
-						screenL.getElementsByClassName("tab")[i].querySelector(".tab-day").innerHTML = dayName(week[i+j].getDay())
-						screenL.getElementsByClassName("tab")[i].querySelector(".tab-date").innerHTML = addSup(addZero(week[i+j].getDate()));
-						
-						if (showColors) {
-							screen.getElementsByTagName("li")[i].style.backgroundColor = getColor(temperature);
-							screenL.getElementsByClassName("tab")[i].style.backgroundColor = getColor(temperature);
-						}
-						if (temperature > 0) {
-							screen.getElementsByTagName("li")[i].querySelector(".tab-temperature").innerHTML = "+" + Math.abs(temperature) + "<sup>°C</sup>";
-							screenL.getElementsByClassName("tab")[i].querySelector(".tab-temperature").innerHTML = "+" + Math.abs(temperature) + "<sup>°</sup>";
-						}
-						if (temperature == 0) {
-							screen.getElementsByTagName("li")[i].querySelector(".tab-temperature").innerHTML = Math.abs(temperature) + "<sup>°C</sup>";
-							screenL.getElementsByClassName("tab")[i].querySelector(".tab-temperature").innerHTML = Math.abs(temperature) + "<sup>°</sup>";
-						}
-						if (temperature < 0) {
-							screen.getElementsByTagName("li")[i].querySelector(".tab-temperature").innerHTML = "-" + Math.abs(temperature) + "<sup>°C</sup>";
-							screenL.getElementsByClassName("tab")[i].querySelector(".tab-temperature").innerHTML = "-" + Math.abs(temperature) + "<sup>°</sup>";
-						}
-					}
-				}*/
 			}
 			// INITIATE FUNCTION END
 			

@@ -412,7 +412,7 @@ function parseWeatherXML(xml, showColors, shortify) {
 								screenL.querySelector(".today-temperature").innerHTML = tmp['max'] + "<sup>°C</sup>";
 							}
 							if (showColors) {
-								document.getElementById("bg-overlay").style.background = "linear-gradient(to bottom, rgba(" + getColor(parseInt(tmp['max'])) + ", 0.4) 0%, rgba(0, 0, 0, 0) 50%)";
+								document.getElementById("bg-overlay").style.background = "linear-gradient(to bottom, rgba(" + getColor(parseInt(tmp['max'])) + ", 1) 0%, rgba(0, 0, 0, 0) 50%)";
 							}
 						} //else {
 							if (tmp['max'] > 0) {
