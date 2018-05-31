@@ -314,7 +314,7 @@ function getXMLDocument(url, showColors, shortify) {
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4) {
 			if(xmlhttp.status == 200) {
-				console.log("IF: " + xmlhttp.responseXML);
+				// console.log("IF: " + xmlhttp.responseXML);
 				xmlDoc = (new DOMParser()).parseFromString(xmlhttp.responseText, 'text/xml');
 				parseWeatherXML(xmlDoc, showColors, shortify);
 			}
@@ -354,31 +354,32 @@ function parseWeatherXML(xml, showColors, shortify) {
 		screen.style.backgroundImage = "url('./locations images/" + tw_attr['cname'] + "/" + tw_attr['tname'] + ".png')";
 		screenL.style.backgroundImage = "url('./locations images/landscape/" + tw_attr['cname'] + "/" + tw_attr['tname'] + ".png')";
 		// SECOND LEVEL PARSING
-		var forecasts=town.getElementsByTagName("FORECAST");
-		var forecast=null;
-		var t_forecasts="";
-		if(forecasts)
-		for(var i2=0; i2<forecasts.length; i2++) {
-			forecast=forecasts[i2];
+		var forecasts = town.getElementsByTagName("FORECAST");
+		var forecast = null;
+		var t_forecasts = "";
+		if (forecasts)
+		for(var i2 = 0; i2 < forecasts.length; i2 ++) {
+			forecast = forecasts[i2];
 			var fc_attr = getAttributes(forecast);
 			if (fc_attr['day'] == NowDate.getDate()) {
 				screen.querySelector(".today-day").innerHTML = 
 				screenL.querySelector(".today-day").innerHTML = convertWeekday(fc_attr['weekday']);
 				screen.querySelector(".today-date").innerHTML = 
 				screenL.querySelector(".today-date").innerHTML = addSup(fc_attr['day']);
-				fc_attr = getAttributes(forecasts[i2 + 1]);
-				x = 1;
-			} else {
+				// fc_attr = getAttributes(forecasts[i2 + 1]);
+				// x = 1;
+			} //else {
 				if (shortify) {
 					screen.getElementsByClassName("tab")[i2 - x].querySelector(".tab-day").innerHTML = 
 					screenL.getElementsByClassName("tab")[i2 - x].querySelector(".tab-day").innerHTML = (convertWeekday(fc_attr['weekday'])).slice(0, 3);
+					// console.log(i2);
 				} else {
 					screen.getElementsByClassName("tab")[i2 - x].querySelector(".tab-day").innerHTML = 
 					screenL.getElementsByClassName("tab")[i2 - x].querySelector(".tab-day").innerHTML = convertWeekday(fc_attr['weekday']);
 				}
 				screen.getElementsByClassName("tab")[i2 - x].querySelector(".tab-date").innerHTML = 
 				screenL.getElementsByClassName("tab")[i2 - x].querySelector(".tab-date").innerHTML = addSup(fc_attr['day']);
-			}
+			//}
 			// THIRD LEVEL PARSING
 			var params=forecast.childNodes;
 			var t_heat=t_phenomena=t_pressure=t_temperature=t_wind=t_relwet="";
@@ -389,13 +390,14 @@ function parseWeatherXML(xml, showColors, shortify) {
 				fc_attr = getAttributes(forecast);
 				switch(param.nodeName) {
 					case "PHENOMENA":
+						// console.log(fc_attr['day'] + ' ' + NowDate.getDate());
 						if (fc_attr['day'] == NowDate.getDate()) {
 							screen.querySelector(".today-icon").innerHTML = 
 							screenL.querySelector(".today-icon").innerHTML = setIcon(tmp['cloudiness'], tmp['precipitation'], tmp['ppower']);
-						} else {
+						} //else {
 							screen.getElementsByClassName("tab")[i2 - x].querySelector(".tab-icon").innerHTML = 
 							screenL.getElementsByClassName("tab")[i2 - x].querySelector(".tab-icon").innerHTML = setIcon(tmp['cloudiness'], tmp['precipitation'], tmp['ppower']);
-						}
+						//}
 						break;
 					case "PRESSURE":
 						// pressure parsing goes here
@@ -411,9 +413,8 @@ function parseWeatherXML(xml, showColors, shortify) {
 							}
 							if (showColors) {
 								document.getElementById("bg-overlay").style.background = "linear-gradient(to bottom, rgba(" + getColor(parseInt(tmp['max'])) + ", 0.4) 0%, rgba(0, 0, 0, 0) 50%)";
-								screenL.getElementsByClassName("tab")[i2 - x].style.backgroundColor = "rgb(" + getColor(parseInt(tmp['max'])) + ")";
 							}
-						} else {
+						} //else {
 							if (tmp['max'] > 0) {
 								screen.getElementsByClassName("tab")[i2 - x].querySelector(".tab-temperature").innerHTML = 
 								screenL.getElementsByClassName("tab")[i2 - x].querySelector(".tab-temperature").innerHTML = "+" + tmp['max'] + "<sup>°C</sup>";
@@ -425,7 +426,7 @@ function parseWeatherXML(xml, showColors, shortify) {
 								screen.getElementsByClassName("tab")[i2 - x].style.backgroundColor = 
 								screenL.getElementsByClassName("tab")[i2 - x].style.backgroundColor = "rgb(" + getColor(parseInt(tmp['max'])) + ")";
 							}
-						}
+						//}
 						break;
 					case "WIND":
 						// wind parsing goes here

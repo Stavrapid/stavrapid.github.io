@@ -45,7 +45,7 @@
 			<FORECAST day="31" month="10" year="2015" hour="09" tod="1" predict="0" weekday="5">
 				<PHENOMENA cloudiness="1" precipitation="0" ppower="0"/>
 				<PRESSURE max="" min=""/>
-				<TEMPERATURE max="9" min="2"/>
+				<TEMPERATURE max="10" min="2"/>
 				<WIND min="" max="" direction=""/>
 				<RELWET max="" min=""/>
 				<HEAT min="" max=""/>

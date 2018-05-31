@@ -1,7 +1,8 @@
 function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-	function Clock(){
+
+function Clock(){
 	var d = new Date();
 	document.querySelector('.today-tab').querySelector('.today-day').innerHTML = dayName(d.getDay());
 	document.querySelector('.today-tab').querySelector('.today-date').innerHTML = addSup(addZero(d.getDate()));
@@ -65,13 +66,13 @@ function GenerateWeek() {
 			break
 	}
 	var week = new Array(7);
-	week[0] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay);
-	week[1] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 1);
-	week[2] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 2);
-	week[3] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 3);
-	week[4] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 4);
-	week[5] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 5);
-	week[6] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 6);
+		week[0] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay);
+		week[1] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 1);
+		week[2] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 2);
+		week[3] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 3);
+		week[4] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 4);
+		week[5] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 5);
+		week[6] = new Date(NowDate.getFullYear(), NowDate.getMonth(), NowDate.getDate() - CurrentDay + 6);
 	var j=0;
 	for (i=0; i<7; i++) {
 		if (week[i].getDate() == NowDate.getDate()) {

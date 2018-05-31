@@ -58,12 +58,6 @@
 		<div class="screen-rounder-bottom-right"></div>
 		<div class="screen-rounder-bottom-left"></div>
 
-		<div class="nav-bar">
-			<div class="nav-button" onclick="showScreen('menu')"><img src="./img/location.svg"/></div>
-			<div class="nav-button" onclick=""><img src="./img/search.svg"/></div>
-			<div class="nav-button" onclick="showScreen('settings')"><img src="./img/gear.svg"/></div>
-		</div>
-
 		<!-- MAIN SCREENS BEGIN -->
 		<div id="main-screen">
 			<!-- PORTRAIT SCREEN BEGIN -->
@@ -71,7 +65,6 @@
 
 			<div id="main-screen-content" class="noBounce">
 				<div id="bg-overlay"></div>
-				<div class="menu-button" width="42" onclick="showScreen('menu')"></div>
 				<div class="scrollfix-content">
 					
 					<div id="today-tab">
@@ -137,11 +130,23 @@
 							<div class="tab-temperature">±XX<sup>°C</sup></div>
 						</li>
 						
+						<li class="tab" style="background-color: #512f35">
+							<div class="tab-heading">
+								<div class="tab-icon"></div>
+								<span class="tab-day">Sun</span>
+								<span class="tab-date">XX</span>
+							</div>
+							<div class="tab-temperature">±XX<sup>°C</sup></div>
+						</li>
+
 					</ul>
-					<div class="text-button" onclick="showScreen('settings')">
-						Open settings
-					</div>
 				</div>
+			</div>
+
+			<div class="nav-bar">
+				<div class="nav-button" onclick="showScreen('menu')"><img src="./img/location.svg"/></div>
+				<div class="nav-button" onclick=""><img src="./img/search.svg"/></div>
+				<div class="nav-button" onclick="showScreen('settings')"><img src="./img/gear.svg"/></div>
 			</div>
 			<!-- PORTRAIT SCREEN END -->
 			
@@ -208,6 +213,16 @@
 						</div>
 					</div>
 					
+					<div class="tab">
+						<div class="tab-content">
+							<div class="heading">
+								<div><span class="tab-day">Tuesday</span> <span class="tab-date">29<sup>th</sup></span></div>
+							</div>
+							<div class="tab-icon"></div>
+							<div class="tab-temperature">+24<sup>°</sup></div>
+						</div>
+					</div>
+
 					<div class="tab">
 						<div class="tab-content">
 							<div class="heading">
@@ -364,7 +379,7 @@
 			var setting_showColors = true,
 				setting_showIcons = true,
 				setting_shortify = true,
-				setting_town = "Ponyville",
+				setting_town = "Cloudsdale",
 				setting_country = "Equestria",
 				setting_units = "Celsius";
 			// APP SETTINGS END
@@ -434,27 +449,34 @@
 			}, false);
 			
 			// Background stretch BEGIN
-			/*document.querySelector("#main-screen").addEventListener("scroll", function(e){
+			document.querySelector("#main-screen").addEventListener("scroll", function(e){
 				var screen = document.querySelector("#main-screen");
 				if (screen.scrollTop < 1) {
 					document.querySelector("body").setAttribute("style", "background-size: " + (100 - (screen.scrollTop * 0.65)) + "% !important;");
 				}
 				if (screen.scrollTop > 1) {
 					document.querySelector("body").setAttribute("style", "background-size: 100% !important;");
+					console.log(screen.scrollTop);
 				}
-			});*/
+			});
 			
-			/*document.getElementById("main-screen-content").querySelector(".scrollfix-content").addEventListener("scroll", function(e){
+			document.getElementById("main-screen-content").querySelector(".scrollfix-content").addEventListener("scroll", function(e){
 				var screen = document.getElementById("main-screen-content").querySelector(".scrollfix-content");
 				var scrollBottom = (screen.scrollHeight - (screen.offsetHeight + screen.scrollTop));
-				document.getElementById("main-screen-content").querySelector(".today-temperature").innerHTML = scrollBottom;
+				// document.getElementById("main-screen-content").querySelector(".today-temperature").innerHTML = scrollBottom;
 				if (screen.scrollTop > 1 && scrollBottom >= 1) {
 					document.getElementById("main-screen-content").style.backgroundPosition = "center " + "-" + Math.floor(screen.scrollTop * 0.5) + "px";
+				}
+				if (screen.scrollTop > (screen.offsetHeight / 3)) {
+					document.getElementById("main-screen-content").style.backgroundPosition = "center " + "-" + Math.floor(screen.scrollTop * 0.5) + "px";
+					document.getElementById("main-screen-content").style.backgroundColor = document.getElementById("main-screen-content").getElementsByClassName("tab")[ document.getElementById("main-screen-content").getElementsByClassName("tab").length - 1 ].style.backgroundColor;
+				} else {			
+					document.getElementById("main-screen-content").style.backgroundColor = '';
 				}
 				if (screen.scrollTop <= 1) {
 					document.getElementById("main-screen-content").style.backgroundPosition = "center 0px";
 				}
-			});*/
+			});
 			
 			// Background stretch END
 			
@@ -463,7 +485,7 @@
 					setting_showColors = true;
 				} else {
 					setting_showColors = false;
-					for (i=0; i<6; i++) {
+					for (i = 0; i < document.getElementById("tabs").getElementsByTagName("li").length; i++) {
 						document.getElementById("tabs").getElementsByTagName("li")[i].style.backgroundColor = "rgb(" + (197 -(20 * i)) + ", " + (113 -(11 * i)) + ", " + (128 -(13 * i)) + ")";
 						document.getElementById("main-screen-content-landscape").getElementsByClassName("tab")[i].style.backgroundColor = "transparent";
 					}
