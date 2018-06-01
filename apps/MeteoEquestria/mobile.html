@@ -580,6 +580,7 @@
 					document.getElementById('today-tab').style.opacity = ( 1 - screen.scrollTop * 0.01 );
 					document.getElementById('bg-overlay').style.opacity = ( 0.4 + screen.scrollTop * 0.004 );
 					// document.getElementById('today-tab').setAttribute('style', '-webkit-backdrop-filter: saturate(' + (100 + screen.scrollTop * 0.4) + '%) blur(' + (screen.scrollTop * 0.15) + 'px)');
+					document.getElementById('tabs').style.boxShadow = 'rgba(0, 0, 0, ' + (0.3 - screen.scrollTop * 0.002) + ') 0px 0px 25px 5px';
 				}
 				
 				if ( scrollBottom <= lastTab.offsetHeight / 2 ) {
