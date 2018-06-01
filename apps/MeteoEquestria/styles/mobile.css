@@ -750,6 +750,10 @@ body.white #settings-screen-content a {
 	color: #000;
 }
 
+body.white #main-screen-content #today-tab {
+	color: #fff;
+}
+
 body.white .blank img {
 	filter: invert(1);
 }
