@@ -405,8 +405,8 @@ h2 {
 .blank .logo {
 	display: inline-block;
 	margin: 0.8em;
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 4.2rem;
+    height: 4.2rem;
     background: url('../logo-white.png') no-repeat;
     background-size: cover;
 }
