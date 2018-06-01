@@ -233,7 +233,7 @@ a:active {
 .nav-bar > .nav-button {
 	flex-grow: 1;
 	text-align: center;
-	padding: 13px 10px 16px 10px;
+	padding: 13px 10px;
 	background: none;
 	border: none;
 	font-size: 1em;
@@ -242,7 +242,7 @@ a:active {
 }
 
 .nav-bar > .nav-button img {
-	height: 25px;
+	height: 22px;
 	pointer-events: none;
 }
 
@@ -315,10 +315,10 @@ a:active {
 	border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
 }
 
-.head > .title,
 .head > .title {
 	opacity: 0.75;
 	font-size: 1.2em;
+	/*text-transform: uppercase;*/
 }
 
 .head .button-left {
@@ -350,8 +350,6 @@ a:active {
 	z-index: 1;
 	width: 100%;
 	height: 100%;
-	/*background-color: #EFEFF4;*/
-	/*color: #000;*/
 	color: #fff;
 	top: 0;
 }
@@ -588,15 +586,13 @@ ul {
 	border-radius: 10px 10px 0 0;
 }
 
-.text-button {
-	padding: 1em;
-	font-size: 1.2em;
-	text-align: center;
-}
-
-.text-button.touch {
-	opacity: 0.25;
-}
+.tab[num = "1"] { background-color: #c57180; }
+.tab[num = "2"] { background-color: #B16673; }
+.tab[num = "3"] { background-color: #9E5A66; }
+.tab[num = "4"] { background-color: #8A4F5A; }
+.tab[num = "5"] { background-color: #76444D; }
+.tab[num = "6"] { background-color: #623840; }
+.tab[num = "7"] { background-color: #512f35; }
 
 .tab-heading {
 	display: inline-block;
@@ -730,4 +726,103 @@ sup {
 #main-screen-content-landscape .tab-temperature {
 	float: none;
 	font-size: 1.5em;
+}
+
+
+/*	White theme style
+-------------------------------------------------------------------
+*/
+body.white #settings-screen,
+body.white #menu-screen,
+body.white #main-screen {
+	background-color: #f8f8f8;
+}
+
+body.white #settings-screen-content,
+body.white #menu-screen-content,
+body.white #main-screen-content,
+body.white #settings-screen-content a {
+	color: #000;
+}
+
+body.white .blank img {
+	filter: invert(1);
+}
+
+body.white .ios-ul {
+	background-color: #fff;
+}
+
+body.white #settings-screen .head,
+body.white #menu-screen .head {
+	background-color: #0095f5;
+}
+
+body.white #settings-screen .head .button-right,
+body.white #menu-screen .head .button-right,
+body.white #settings-screen .head .button-left,
+body.white #menu-screen .head .button-left {
+	color: #fff;
+}
+
+body.white .status-bar {
+	background-color: #0095f5;
+}
+
+body.white .nav-bar {
+	background-color: #0095f5;
+}
+/*
+body.white .nav-bar img {
+	filter: invert(1);
+}*/
+
+body.white #main-screen-content {
+	background-color: #fff;
+}
+
+body.white .tab[num = "1"] { background-color: #ffffff; }
+body.white .tab[num = "2"] { background-color: #f2f2f2; }
+body.white .tab[num = "3"] { background-color: #e6e6e6; }
+body.white .tab[num = "4"] { background-color: #d9d9d9; }
+body.white .tab[num = "5"] { background-color: #cccccc; }
+body.white .tab[num = "6"] { background-color: #bfbfbf; }
+body.white .tab[num = "7"] { background-color: #b3b3b3; }
+
+body.white #bg-overlay {
+	background: linear-gradient( #0095f5 0%, rgba(0, 0, 0, 0) 50%);
+}
+
+@-webkit-keyframes switch-check-white {
+	from {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #0095f5;}
+	to {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+}
+
+@-webkit-keyframes switch-uncheck-white {
+	from {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+	to {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #0095f5}
+}
+
+@-moz-keyframes switch-check-white {
+	from {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #0095f5;}
+	to {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+}
+
+@-moz-keyframes switch-uncheck-white {
+	from {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+	to {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #0095f5}
+}
+
+body.white .ios7-switch input + span {
+	background-color: #f8f8f8;
+}
+
+body.white .ios7-switch input:checked + span {
+	-webkit-animation: switch-check-white 0.25s 1 forwards ease-out;
+	-moz-animation: switch-check-white 0.25s 1 forwards ease-out;
+}
+
+body.white .ios7-switch input:not(:checked) + span {
+	-webkit-animation: switch-uncheck-white 0.25s 1 forwards ease-out;
+	-moz-animation: switch-uncheck-white 0.25s 1 forwards ease-out;
 }

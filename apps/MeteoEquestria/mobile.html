@@ -76,7 +76,7 @@
 					
 					<ul id="tabs">
 						
-						<li class="tab" style="background-color: #c57180">
+						<li class="tab" num="1">
 							<div class="tab-heading">
 								<div class="tab-icon"></div>
 								<span class="tab-day">Tue</span>
@@ -85,7 +85,7 @@
 							<div class="tab-temperature">±XX<sup>°C</sup></div>
 						</li>
 						
-						<li class="tab" style="background-color: #B16673">
+						<li class="tab" num="2">
 							<div class="tab-heading">
 								<div class="tab-icon"></div>
 								<span class="tab-day">Wed</span>
@@ -94,7 +94,7 @@
 							<div class="tab-temperature">±XX<sup>°C</sup></div>
 						</li>
 						
-						<li class="tab" style="background-color: #9E5A66">
+						<li class="tab" num="3">
 							<div class="tab-heading">
 								<div class="tab-icon"></div>
 								<span class="tab-day">Thu</span>
@@ -103,7 +103,7 @@
 							<div class="tab-temperature">±XX<sup>°C</sup></div>
 						</li>
 						
-						<li class="tab" style="background-color: #8A4F5A">
+						<li class="tab" num="4">
 							<div class="tab-heading">
 								<div class="tab-icon"></div>
 								<span class="tab-day">Fri</span> 
@@ -112,7 +112,7 @@
 							<div class="tab-temperature">±XX<sup>°C</sup></div>
 						</li>
 						
-						<li class="tab" style="background-color: #76444D">
+						<li class="tab" num="5">
 							<div class="tab-heading">
 								<div class="tab-icon"></div>
 								<span class="tab-day">Sat</span>
@@ -121,7 +121,7 @@
 							<div class="tab-temperature">±XX<sup>°C</sup></div>
 						</li>
 						
-						<li class="tab" style="background-color: #623840">
+						<li class="tab" num="6">
 							<div class="tab-heading">
 								<div class="tab-icon"></div>
 								<span class="tab-day">Sun</span>
@@ -130,7 +130,7 @@
 							<div class="tab-temperature">±XX<sup>°C</sup></div>
 						</li>
 						
-						<li class="tab" style="background-color: #512f35">
+						<li class="tab" num="7">
 							<div class="tab-heading">
 								<div class="tab-icon"></div>
 								<span class="tab-day">Sun</span>
@@ -280,6 +280,15 @@
 						</div>
 					</li>
 					<li class="ios-li">
+						<div class="">
+							Use white theme
+							<label id="whiteTheme-switch" class="ios7-switch" onclick="this.querySelector('input').click(); checkSettings();">
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</div>
+					</li>
+					<li class="ios-li">
 						<div>
 							Tabs color highlighting
 							<label id="showColors-switch" class="ios7-switch" onclick="this.querySelector('input').click()">
@@ -288,15 +297,6 @@
 							</label>
 						</div>
 					</li>
-					<!--<li class="ios-li">
-						<div class="disabled">
-							Disabled switcher
-							<label class="ios7-switch" onclick="this.querySelector('input').click()">
-								<input type="checkbox">
-								<span></span>
-							</label>
-						</div>
-					</li>-->
 				</ul>
 				<div class="hint">This setting turning on/off the weather tabs color highlighting depending to the temperature</div>
 				<div class="ios-ul-title">contact information</div>
@@ -323,7 +323,7 @@
 		<div id="menu-screen">
 			<div class="head noBounce" align="center">
 				<span class="button-left" onclick="hideScreen('menu');">Close</span>
-				<span class="title">Choose location</span>
+				<span class="title">Location</span>
 			</div>
 			<div id="menu-screen-content">
 			<div class="scrollfix-content">
@@ -475,7 +475,7 @@
 				}
 				
 				if ( scrollBottom <= lastTab.offsetHeight / 2 ) {
-					mainScreenContent.style.backgroundColor = lastTab.style.backgroundColor;
+					mainScreenContent.style.backgroundColor = window.getComputedStyle( lastTab ,null).getPropertyValue('background-color');
 				} else {			
 					mainScreenContent.style.backgroundColor = '';
 				}
@@ -488,23 +488,28 @@
 			
 			// Background stretch END
 			
+			function tumbler( tumblerId ) {
+				return document.getElementById( tumblerId ).querySelector("input[type='checkbox']");
+			}
+
 			function checkSettings() {
-				if (document.getElementById("showColors-switch").querySelector("input[type='checkbox']").checked) {
+				if (tumbler("showColors-switch").checked) {
 					setting_showColors = true;
 				} else {
 					setting_showColors = false;
 					for (i = 0; i < document.getElementById("tabs").getElementsByTagName("li").length; i++) {
-						document.getElementById("tabs").getElementsByTagName("li")[i].style.backgroundColor = "rgb(" + (197 -(20 * i)) + ", " + (113 -(11 * i)) + ", " + (128 -(13 * i)) + ")";
+						// document.getElementById("tabs").getElementsByTagName("li")[i].style.backgroundColor = "rgb(" + (197 -(20 * i)) + ", " + (113 -(11 * i)) + ", " + (128 -(13 * i)) + ")";
+						document.getElementById("tabs").getElementsByTagName("li")[i].style.backgroundColor = "";
 						document.getElementById("main-screen-content-landscape").getElementsByClassName("tab")[i].style.backgroundColor = "transparent";
-						document.getElementById("bg-overlay").style.background = '';
 					}
+					document.getElementById("bg-overlay").style.background = '';
 				}
-				if (document.getElementById("shortify-switch").querySelector("input[type='checkbox']").checked) {
+				if (tumbler("shortify-switch").checked) {
 					setting_shortify = true;
 				} else {
 					setting_shortify = false;
 				}
-				if (document.getElementById("showIcons-switch").querySelector("input[type='checkbox']").checked) {
+				if (tumbler("showIcons-switch").checked) {
 					setting_showIcons = true;
 					for (i=0; i<document.getElementById("main-screen-content").getElementsByClassName("tab-icon").length; i++) {
 						document.getElementById("main-screen-content").getElementsByClassName("tab-icon")[i].style.display = "inline-block";
@@ -514,6 +519,11 @@
 					for (i=0; i<document.getElementById("main-screen-content").getElementsByClassName("tab-icon").length; i++) {
 						document.getElementById("main-screen-content").getElementsByClassName("tab-icon")[i].style.display = "none";
 					}
+				}
+				if (tumbler("whiteTheme-switch").checked) {
+					document.body.classList.add('white');
+				} else {
+					document.body.classList.remove('white');
 				}
 			}
 			
