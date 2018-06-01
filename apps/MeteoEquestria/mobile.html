@@ -520,8 +520,8 @@
 			var setting_showColors = true,
 				setting_showIcons = true,
 				setting_shortify = true,
-				setting_town = "Cloudsdale",
-				setting_country = "Equestria",
+				setting_town = "Crystal Empire City",
+				setting_country = "Crystal Empire",
 				setting_units = "Celsius";
 			// APP SETTINGS END
 			
@@ -536,12 +536,14 @@
 				var screen = document.getElementById(screenName + "-screen");
 				// screen.querySelector(".scrollfix-content").scrollTop = 1;
 				screen.setAttribute("style", "-webkit-transform: translate3d(0, -100%, 0); -moz-transform: translate3d(0, -100%, 0);");
+				document.getElementById('main-screen').style.webkitTransform = 'scale3d(0.95,0.95,0.95)';
 			}
 			
 			function hideScreen(screenName) {
 				// document.getElementById("main-screen").querySelector(".scrollfix-content").scrollTop = 1;
 				var screen = document.getElementById(screenName + "-screen");
 				screen.setAttribute("style", "-webkit-transform: translate3d(0, 0, 0);");
+				document.getElementById('main-screen').style.webkitTransform = 'scale3d(1,1,1)';
 			}
 			// SHOW/HIDE SCREEN END
 			
