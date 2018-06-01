@@ -260,38 +260,50 @@
 					</li>
 				</ul>
 				<div class="ios-ul-title">customisation</div>
+				<script>
+					function toggle( tumbler ) {
+						if (tumbler.checked == false) {
+					        tumbler.checked = true; 
+					    }
+					    else {
+					        if (tumbler.checked == true) {
+					        	tumbler.checked = false; 
+					        }   
+					    }
+					}
+				</script>
 				<ul class="ios-ul">
 					<li class="ios-li">
-						<div>
+						<div onclick="toggle(this.querySelector('input'))">
 							Show weather icons
-							<label id="showIcons-switch" class="ios7-switch" onclick="this.querySelector('input').click()">
+							<label id="showIcons-switch" class="ios7-switch">
 								<input type="checkbox" checked>
 								<span></span>
 							</label>
 						</div>
 					</li>
 					<li class="ios-li">
-						<div>
+						<div onclick="toggle(this.querySelector('input'))">
 							Weeakday name shortify
-							<label id="shortify-switch" class="ios7-switch" onclick="this.querySelector('input').click()">
+							<label id="shortify-switch" class="ios7-switch">
 								<input type="checkbox" checked>
 								<span></span>
 							</label>
 						</div>
 					</li>
 					<li class="ios-li">
-						<div class="">
+						<div onclick="toggle(this.querySelector('input')); checkSettings()">
 							Use white theme
-							<label id="whiteTheme-switch" class="ios7-switch" onclick="this.querySelector('input').click(); checkSettings();">
-								<input type="checkbox">
+							<label id="whiteTheme-switch" class="ios7-switch">
+								<input type="checkbox" checked>
 								<span></span>
 							</label>
 						</div>
 					</li>
 					<li class="ios-li">
-						<div>
+						<div onclick="toggle(this.querySelector('input'))">
 							Tabs color highlighting
-							<label id="showColors-switch" class="ios7-switch" onclick="this.querySelector('input').click()">
+							<label id="showColors-switch" class="ios7-switch">
 								<input type="checkbox">
 								<span></span>
 							</label>
@@ -332,6 +344,9 @@
 					<li class="ios-li">
 						<div onclick="setLocation('Crystal Empire City', 'Crystal Empire');">Crystal Empire City</div>
 					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Crystal Mountains</div>
+					</li>
 				</ul>
 				<div class="ios-ul-title">Equestria</div>
 				<ul class="ios-ul">
@@ -358,6 +373,111 @@
 					</li>
 					<li class="ios-li">
 						<div  class="disabled" onclick="setLocation('','');">Vanhoover</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Saddle Lake</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">White Tail Woods</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Froggy Bottom Bogg</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Rockville</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Ghastly Gorge</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Dodge Junction</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Dragon Lands</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Frozen North</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Winsome Falls</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Tenochtitlan Basin</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Rainbow Falls</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Fillydelphia</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Applewood</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Baltimare</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Hollow Shades</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Ponhenge</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Smokey Mountains</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Badlands</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Breezie Village</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Tartarus</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Neighagra Falls</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Our Town</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Sire's Hollow</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Seaward Shoals</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Stratusburg</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Somnambula</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Hayseed Swamp</div>
+					</li>
+				</ul>
+				<div class="ios-ul-title">Beyond Equestria</div>
+				<ul class="ios-ul">
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Maretropolis</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Griffonstone</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Yakyakistan</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Chaosville</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Changeling Kingdom</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Klugetown</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Seaquestria</div>
 					</li>
 				</ul>
 			</div>
@@ -472,6 +592,7 @@
 					document.getElementById('today-tab').style.opacity = ( 1 - screen.scrollTop * 0.01 );
 					document.getElementById('bg-overlay').style.opacity = ( 0.4 + screen.scrollTop * 0.004 );
 					// document.getElementById('today-tab').setAttribute('style', '-webkit-backdrop-filter: saturate(' + (100 + screen.scrollTop * 0.4) + '%) blur(' + (screen.scrollTop * 0.15) + 'px)');
+					document.getElementById('tabs').style.boxShadow = 'rgba(0, 0, 0, ' + (0.3 - screen.scrollTop * 0.002) + ') 0px 0px 25px 5px';
 				}
 				
 				if ( scrollBottom <= lastTab.offsetHeight / 2 ) {
