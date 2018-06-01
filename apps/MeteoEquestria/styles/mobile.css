@@ -582,7 +582,7 @@ body {
 	background-position: center 0;
 	border-radius: 10px 10px 0 0;
 	margin-bottom: -10px;
-	box-shadow: inset 0 0 250px 0 rgba(0,0,0,0.35);
+	box-shadow: inset 0 0 250px 0 rgba(0,0,0,0.5);
 	transition: -webkit-transform 0.01s;
 }
 
