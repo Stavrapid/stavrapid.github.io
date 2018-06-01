@@ -260,38 +260,50 @@
 					</li>
 				</ul>
 				<div class="ios-ul-title">customisation</div>
+				<script>
+					function toggle( tumbler ) {
+						if (tumbler.checked == false) {
+					        tumbler.checked = true; 
+					    }
+					    else {
+					        if (tumbler.checked == true) {
+					        	tumbler.checked = false; 
+					        }   
+					    }
+					}
+				</script>
 				<ul class="ios-ul">
 					<li class="ios-li">
-						<div>
+						<div onclick="toggle(this.querySelector('input'))">
 							Show weather icons
-							<label id="showIcons-switch" class="ios7-switch" onclick="this.querySelector('input').click()">
+							<label id="showIcons-switch" class="ios7-switch">
 								<input type="checkbox" checked>
 								<span></span>
 							</label>
 						</div>
 					</li>
 					<li class="ios-li">
-						<div>
+						<div onclick="toggle(this.querySelector('input'))">
 							Weeakday name shortify
-							<label id="shortify-switch" class="ios7-switch" onclick="this.querySelector('input').click()">
+							<label id="shortify-switch" class="ios7-switch">
 								<input type="checkbox" checked>
 								<span></span>
 							</label>
 						</div>
 					</li>
 					<li class="ios-li">
-						<div class="">
+						<div onclick="toggle(this.querySelector('input')); checkSettings()">
 							Use white theme
-							<label id="whiteTheme-switch" class="ios7-switch" onclick="this.querySelector('input').click(); checkSettings();">
+							<label id="whiteTheme-switch" class="ios7-switch">
 								<input type="checkbox" checked>
 								<span></span>
 							</label>
 						</div>
 					</li>
 					<li class="ios-li">
-						<div>
+						<div onclick="toggle(this.querySelector('input'))">
 							Tabs color highlighting
-							<label id="showColors-switch" class="ios7-switch" onclick="this.querySelector('input').click()">
+							<label id="showColors-switch" class="ios7-switch">
 								<input type="checkbox">
 								<span></span>
 							</label>

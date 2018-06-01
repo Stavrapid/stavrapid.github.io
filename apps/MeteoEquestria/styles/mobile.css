@@ -463,7 +463,7 @@ h2 {
     display: inline-block;
     width: 1.65em;
     height: 1em;
-	background: none;
+	background: #a15f6d;
     border-radius: 0.5em;
     vertical-align: -0.15em;
 	font-size: 32px;
@@ -740,14 +740,17 @@ sup {
 body.white #settings-screen,
 body.white #menu-screen,
 body.white #main-screen {
-	background-color: #f8f8f8;
+	background-color: #fff;
 }
 
 body.white #settings-screen-content,
 body.white #menu-screen-content,
-body.white #main-screen-content,
-body.white #settings-screen-content a {
+body.white #main-screen-content {
 	color: #000;
+}
+
+body.white #settings-screen-content a {
+	color: #0095f5;
 }
 
 body.white #main-screen-content #today-tab {
@@ -760,18 +763,46 @@ body.white .blank img {
 
 body.white .ios-ul {
 	background-color: #fff;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0px 5px 50px 0px rgba(177,177,177,0.25);
+}
+
+body.white .ios-li + .ios-li {
+    border-top: 0.5px solid #eaeaea;
+}
+
+body.white .ios-li:first-child > div {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+body.white .ios-li:last-child > div {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 body.white #settings-screen .head,
 body.white #menu-screen .head {
-	background-color: #0095f5;
+	/*background-color: #0095f5;*/
+	background-color: #fff;
+	border: none;
+	box-shadow: 0px 5px 50px 0px rgba(177,177,177,0.25);
+}
+
+body.white #settings-screen .head .title,
+body.white #menu-screen .head .title {
+	color: #000;
+	text-transform: uppercase;
 }
 
 body.white #settings-screen .head .button-right,
 body.white #menu-screen .head .button-right,
 body.white #settings-screen .head .button-left,
 body.white #menu-screen .head .button-left {
-	color: #fff;
+	color: #0095f5;
 }
 
 body.white .status-bar {
@@ -779,24 +810,47 @@ body.white .status-bar {
 }
 
 body.white .nav-bar {
-	background-color: #0095f5;
+	background-color: #fff;
+	border: none;
+	box-shadow: 0px -5px 50px 0px rgba(177,177,177,0.25);
 }
-/*
+
 body.white .nav-bar img {
 	filter: invert(1);
-}*/
+}
 
 body.white #main-screen-content {
 	background-color: #fff;
 }
 
+body.white #tabs {
+	border-radius: 10px;
+}
+
+body.white .tab {
+	box-shadow: 0px -5px 50px 0px rgba(177,177,177,0.25);
+}
+
+body.white .tab + .tab {
+	border-radius: 10px 10px 0 0;
+}
+
+body.white #tabs li:not(:last-child) {
+	padding-bottom: 2rem;
+	margin-bottom: -1rem;
+}
+
+body.white #tabs li:last-child {
+	border-radius: 10px;
+}
+
 body.white .tab[num = "1"] { background-color: #ffffff; }
-body.white .tab[num = "2"] { background-color: #f2f2f2; }
-body.white .tab[num = "3"] { background-color: #e6e6e6; }
-body.white .tab[num = "4"] { background-color: #d9d9d9; }
-body.white .tab[num = "5"] { background-color: #cccccc; }
-body.white .tab[num = "6"] { background-color: #bfbfbf; }
-body.white .tab[num = "7"] { background-color: #b3b3b3; }
+body.white .tab[num = "2"] { background-color: #ffffff; }
+body.white .tab[num = "3"] { background-color: #ffffff; }
+body.white .tab[num = "4"] { background-color: #ffffff; }
+body.white .tab[num = "5"] { background-color: #ffffff; }
+body.white .tab[num = "6"] { background-color: #ffffff; }
+body.white .tab[num = "7"] { background-color: #ffffff; }
 
 body.white #bg-overlay {
 	background: linear-gradient( #0095f5 0%, rgba(0, 0, 0, 0) 50%);
