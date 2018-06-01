@@ -402,8 +402,13 @@ h2 {
 	margin: 2em 0;
 }
 
-.blank img {
+.blank .logo {
+	display: inline-block;
 	margin: 0.8em;
+    width: 3.2rem;
+    height: 3.2rem;
+    background: url('../logo-white.png') no-repeat;
+    background-size: cover;
 }
 
 .hint {
@@ -791,6 +796,11 @@ body.white .tab[num = "7"] { background-color: #b3b3b3; }
 
 body.white #bg-overlay {
 	background: linear-gradient( #0095f5 0%, rgba(0, 0, 0, 0) 50%);
+}
+
+body.white .blank .logo {
+	background: url('../logo-colored.png') no-repeat;
+    background-size: cover;
 }
 
 @-webkit-keyframes switch-check-white {
