@@ -61,7 +61,7 @@
 		<!-- MAIN SCREENS BEGIN -->
 		<div id="main-screen">
 			<!-- PORTRAIT SCREEN BEGIN -->
-			<div class="status-bar"></div>
+			<!-- <div class="status-bar"></div> -->
 
 			<div id="main-screen-content" class="noBounce">
 				<div id="bg-overlay"></div>
@@ -590,16 +590,16 @@
 			}, false);
 			
 			// Background stretch BEGIN
-			document.querySelector("#main-screen").addEventListener("scroll", function(e){
-				var screen = document.querySelector("#main-screen");
-				if (screen.scrollTop < 1) {
-					document.querySelector("body").setAttribute("style", "background-size: " + (100 - (screen.scrollTop * 0.65)) + "% !important;");
-				}
-				if (screen.scrollTop > 1) {
-					document.querySelector("body").setAttribute("style", "background-size: 100% !important;");
-					console.log(screen.scrollTop);
-				}
-			});
+			// document.querySelector("#main-screen").addEventListener("scroll", function(e){
+			// 	var screen = document.querySelector("#main-screen");
+			// 	if (screen.scrollTop < 1) {
+			// 		document.querySelector("body").setAttribute("style", "background-size: " + (100 - (screen.scrollTop * 0.65)) + "% !important;");
+			// 	}
+			// 	if (screen.scrollTop > 1) {
+			// 		document.querySelector("body").setAttribute("style", "background-size: 100% !important;");
+			// 		console.log(screen.scrollTop);
+			// 	}
+			// });
 			
 			document.getElementById("main-screen-content").querySelector(".scrollfix-content").addEventListener("scroll", function(e){
 				var screen = document.getElementById("main-screen-content").querySelector(".scrollfix-content");
@@ -609,21 +609,22 @@
 
 				// document.getElementById("main-screen-content").querySelector(".today-temperature").innerHTML = scrollBottom;
 				if (screen.scrollTop > 1 && scrollBottom >= 1) {
-					mainScreenContent.style.backgroundPosition = "center " + "-" + Math.floor(screen.scrollTop * 0.5) + "px";
-					document.getElementById('today-tab').style.opacity = ( 1 - screen.scrollTop * 0.01 );
-					document.getElementById('bg-overlay').style.opacity = ( 0.4 + screen.scrollTop * 0.004 );
+					// document.getElementById('today-tab').style.marginBottom = "-" + (10 + screen.scrollTop * 0.5) + "px";
+					document.getElementById('today-tab').style.webkitTransform = 'translate3d(0,' + (screen.scrollTop * 0.4) + 'px, 0)';
+					// document.getElementById('today-tab').style.opacity = ( 1 - screen.scrollTop * 0.01 );
+					document.getElementById('bg-overlay').style.opacity = ( screen.scrollTop * 0.01 );
 					// document.getElementById('today-tab').setAttribute('style', '-webkit-backdrop-filter: saturate(' + (100 + screen.scrollTop * 0.4) + '%) blur(' + (screen.scrollTop * 0.15) + 'px)');
-					document.getElementById('tabs').style.boxShadow = 'rgba(0, 0, 0, ' + (0.3 - screen.scrollTop * 0.002) + ') 0px 0px 25px 5px';
+					// document.getElementById('tabs').style.boxShadow = 'rgba(0, 0, 0, ' + (0.3 - screen.scrollTop * 0.002) + ') 0px 0px 25px 5px';
 				}
 				
 				if ( scrollBottom <= lastTab.offsetHeight / 2 ) {
-					mainScreenContent.style.backgroundColor = window.getComputedStyle( lastTab ,null).getPropertyValue('background-color');
+					// mainScreenContent.style.backgroundColor = window.getComputedStyle( lastTab ,null).getPropertyValue('background-color');
 				} else {			
-					mainScreenContent.style.backgroundColor = '';
+					// mainScreenContent.style.backgroundColor = '';
 				}
 				if (screen.scrollTop <= 1) {
-					mainScreenContent.style.backgroundPosition = "center 0px";
-					document.getElementById('today-tab').style.opacity = '1';
+					// document.getElementById('today-tab').style.webkitTransform = "";
+					// document.getElementById('today-tab').style.opacity = '1';
 					document.getElementById('bg-overlay').style.opacity = '';	
 				}
 			});

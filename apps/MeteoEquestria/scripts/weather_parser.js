@@ -351,7 +351,7 @@ function parseWeatherXML(xml, showColors, shortify) {
 		screenL.querySelector(".city").innerHTML = tw_attr['tname'];
 		screen.querySelector(".country").innerHTML = 
 		screenL.querySelector(".country").innerHTML = tw_attr['cname'];
-		screen.style.backgroundImage = "url('./locations images/" + tw_attr['cname'] + "/" + tw_attr['tname'] + ".png')";
+		document.getElementById('today-tab').style.backgroundImage = "url('./locations images/" + tw_attr['cname'] + "/" + tw_attr['tname'] + ".png')";
 		screenL.style.backgroundImage = "url('./locations images/landscape/" + tw_attr['cname'] + "/" + tw_attr['tname'] + ".png')";
 		// SECOND LEVEL PARSING
 		var forecasts = town.getElementsByTagName("FORECAST");
