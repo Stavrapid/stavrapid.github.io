@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+	<!-- HEAD BEGIN -->
+	<head>
+		<meta charset="utf-8"/>
+		
+		<!-- Viewport -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-title" content="Meteo Equestria">
+		
+		<!-- Status bar styles -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		
+		<!-- Telephone format detection -->
+		<meta name="format-detection" content="telephone=no">
+		
+		<!-- iPhone 5 startup image -->
+		<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="./startupimages/640x1096.png">
+		
+		<!-- iOS app icons -->
+		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="./icons/76.png"><!-- iPad 2, iPad mini -->
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="./icons/120.png"><!-- iPhone 6s, iPhone 6, iPhone 5 -->
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="./icons/152.png"><!-- iPad, iPad mini -->
+		<link rel="apple-touch-icon-precomposed" sizes="167x167" href="./icons/167.png"><!-- iPad Pro -->
+		<link rel="apple-touch-icon-precomposed" sizes="180x180" href="./icons/180.png"><!-- iPhone 6s Plus, iPhone 6 Plus -->
+		<link rel="apple-touch-icon-precomposed" sizes="1024x1024" href="./icons/1024.png">
+		
+		<!-- Path to library CSS -->
+		<link href="./styles/mobile.css" rel="stylesheet">
+		
+		<!-- Path to scripts library -->
+		<script src="./scripts/ismobile.js" type="text/javascript"></script>
+		<script src="./scripts/MeteoEquestria.js" type="text/javascript"></script>
+		<script src="./scripts/scrollfix.js" type="text/javascript"></script>
+		<script src="./scripts/fastclick2.js" type="application/javascript"></script>
+		<script src="./scripts/weather_parser.js" charset="utf-8" type="text/javascript"></script>
+		
+		<script type="text/javascript">
+			/*if(isMobile() === false) {
+				window.location  = "index.html";
+			}*/	
+			
+			function str_replace(search, replace, subject) {
+				return subject.split(search).join(replace);
+			}
+			
+		</script>
+	</head>
+	<!-- HEAD END -->
+	
+	<body>
+<!-- 		<div id="loading-screen"></div> -->
+		<div class="screen-rounder-top-left"></div>
+		<div class="screen-rounder-top-right"></div>
+		<div class="screen-rounder-bottom-right"></div>
+		<div class="screen-rounder-bottom-left"></div>
+
+		<!-- MAIN SCREENS BEGIN -->
+		<div id="main-screen">
+			<!-- PORTRAIT SCREEN BEGIN -->
+			<div class="status-bar"></div>
+
+			<div id="main-screen-content" class="noBounce">
+				<div id="bg-overlay"></div>
+				<div class="scrollfix-content">
+					
+					<div id="today-tab">
+						<div class="today-location"><span class="city">Ponyville</span>, <span class="country">Equestria</span></div>
+						<div><span class="today-day">Monday</span> <span class="today-date">XX</span></div>
+						<div><span class="today-temperature">±XX</span></div>
+						<div class="today-icon"></div>
+					</div>
+					
+					<ul id="tabs">
+						
+						<li class="tab" num="1">
+							<div class="tab-heading">
+								<div class="tab-icon"></div>
+								<span class="tab-day">Tue</span>
+								<span class="tab-date">XX</span>
+							</div>
+							<div class="tab-temperature">±XX<sup>°C</sup></div>
+						</li>
+						
+						<li class="tab" num="2">
+							<div class="tab-heading">
+								<div class="tab-icon"></div>
+								<span class="tab-day">Wed</span>
+								<span class="tab-date">XX</span>
+							</div>
+							<div class="tab-temperature">±XX<sup>°C</sup></div>
+						</li>
+						
+						<li class="tab" num="3">
+							<div class="tab-heading">
+								<div class="tab-icon"></div>
+								<span class="tab-day">Thu</span>
+								<span class="tab-date">XX</span>
+							</div>
+							<div class="tab-temperature">±XX<sup>°C</sup></div>
+						</li>
+						
+						<li class="tab" num="4">
+							<div class="tab-heading">
+								<div class="tab-icon"></div>
+								<span class="tab-day">Fri</span> 
+								<span class="tab-date">XX</span>
+							</div>
+							<div class="tab-temperature">±XX<sup>°C</sup></div>
+						</li>
+						
+						<li class="tab" num="5">
+							<div class="tab-heading">
+								<div class="tab-icon"></div>
+								<span class="tab-day">Sat</span>
+								<span class="tab-date">XX</span>
+							</div>
+							<div class="tab-temperature">±XX<sup>°C</sup></div>
+						</li>
+						
+						<li class="tab" num="6">
+							<div class="tab-heading">
+								<div class="tab-icon"></div>
+								<span class="tab-day">Sun</span>
+								<span class="tab-date">XX</span>
+							</div>
+							<div class="tab-temperature">±XX<sup>°C</sup></div>
+						</li>
+						
+						<li class="tab" num="7">
+							<div class="tab-heading">
+								<div class="tab-icon"></div>
+								<span class="tab-day">Sun</span>
+								<span class="tab-date">XX</span>
+							</div>
+							<div class="tab-temperature">±XX<sup>°C</sup></div>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+
+			<div class="nav-bar">
+				<div class="nav-button" onclick="showScreen('menu')"><img src="./img/location.svg"/></div>
+				<div class="nav-button" onclick=""><img src="./img/search.svg"/></div>
+				<div class="nav-button" onclick="showScreen('settings')"><img src="./img/gear.svg"/></div>
+			</div>
+			<!-- PORTRAIT SCREEN END -->
+			
+			<!-- LANDSCAPE SCREEN BEGIN -->
+			<div id="main-screen-content-landscape" class="noBounce">
+				<div class="landscape">
+					<div class="menu-button noBounce" width="42" onclick="showScreen('menu')"></div>
+					<div class="today-tab">
+					<div class="place"><span class="city">Ponyville</span>, <span class="country">Equestria</span></div>
+					<div class="today"><span class="today-day">Tuesday</span> <span class="today-date">24<sup>th</sup></span> <span class="today-time">10:30</span></div>
+					<div class="today-temperature">+21°</div>
+					<div class="today-icon"></div>
+				</div>
+				</div>
+				<div id="info-block">
+						
+					<div class="tab">
+						<div class="tab-content">
+							<div class="heading">
+								<div><span class="tab-day">Tuesday</span> <span class="tab-date">29<sup>th</sup></span></div>
+							</div>
+							<div class="tab-icon"></div>
+							<div class="tab-temperature">+24<sup>°</sup></div>
+						</div>
+					</div>
+					
+					<div class="tab">
+						<div class="tab-content">
+							<div class="heading">
+								<div><span class="tab-day">Tuesday</span> <span class="tab-date">29<sup>th</sup></span></div>
+							</div>
+							<div class="tab-icon"></div>
+							<div class="tab-temperature">+24<sup>°</sup></div>
+						</div>
+					</div>
+						
+					<div class="tab">
+						<div class="tab-content">
+							<div class="heading">
+								<div><span class="tab-day">Tuesday</span> <span class="tab-date">29<sup>th</sup></span></div>
+							</div>
+							<div class="tab-icon"></div>
+							<div class="tab-temperature">+24<sup>°</sup></div>
+						</div>
+					</div>
+					
+					<div class="tab">
+						<div class="tab-content">
+							<div class="heading">
+								<div><span class="tab-day">Tuesday</span> <span class="tab-date">29<sup>th</sup></span></div>
+							</div>
+							<div class="tab-icon"></div>
+							<div class="tab-temperature">+24<sup>°</sup></div>
+						</div>
+					</div>
+					
+					<div class="tab">
+						<div class="tab-content">
+							<div class="heading">
+								<div><span class="tab-day">Tuesday</span> <span class="tab-date">29<sup>th</sup></span></div>
+							</div>
+							<div class="tab-icon"></div>
+							<div class="tab-temperature">+24<sup>°</sup></div>
+						</div>
+					</div>
+					
+					<div class="tab">
+						<div class="tab-content">
+							<div class="heading">
+								<div><span class="tab-day">Tuesday</span> <span class="tab-date">29<sup>th</sup></span></div>
+							</div>
+							<div class="tab-icon"></div>
+							<div class="tab-temperature">+24<sup>°</sup></div>
+						</div>
+					</div>
+
+					<div class="tab">
+						<div class="tab-content">
+							<div class="heading">
+								<div><span class="tab-day">Tuesday</span> <span class="tab-date">29<sup>th</sup></span></div>
+							</div>
+							<div class="tab-icon"></div>
+							<div class="tab-temperature">+24<sup>°</sup></div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<!-- LANDSCAPE SCREEN END -->
+			
+		</div>
+		<!-- MAIN SCREENS END -->
+		
+		<!-- SETTINGS SCREEN BEGIN -->
+		<div id="settings-screen">
+			<div class="head noBounce" align="center">
+				<span class="title">Settings</span>
+				<span class="button-right" onclick="hideScreen('settings'); initiate();">Apply</span>
+			</div>
+			<div id="settings-screen-content">
+			<div class="scrollfix-content">
+				<div class="blank">
+					<h2>Meteo Equestria</h2>
+					<div class="logo" align="center"></div>
+					<br>
+					ver 0.4
+				</div>
+				<ul class="ios-ul">
+					<li class="ios-li">
+						<div onclick="initiate(); hideScreen('settings');">Refresh weather data</div>
+					</li>
+				</ul>
+				<div class="ios-ul-title">customisation</div>
+				<ul class="ios-ul">
+					<li class="ios-li">
+						<div>
+							Show weather icons
+							<label id="showIcons-switch" class="ios7-switch" onclick="this.querySelector('input').click()">
+								<input type="checkbox" checked>
+								<span></span>
+							</label>
+						</div>
+					</li>
+					<li class="ios-li">
+						<div>
+							Weeakday name shortify
+							<label id="shortify-switch" class="ios7-switch" onclick="this.querySelector('input').click()">
+								<input type="checkbox" checked>
+								<span></span>
+							</label>
+						</div>
+					</li>
+					<li class="ios-li">
+						<div class="">
+							Use white theme
+							<label id="whiteTheme-switch" class="ios7-switch" onclick="this.querySelector('input').click(); checkSettings();">
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</div>
+					</li>
+					<li class="ios-li">
+						<div>
+							Tabs color highlighting
+							<label id="showColors-switch" class="ios7-switch" onclick="this.querySelector('input').click()">
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</div>
+					</li>
+				</ul>
+				<div class="hint">This setting turning on/off the weather tabs color highlighting depending to the temperature</div>
+				<div class="ios-ul-title">contact information</div>
+				<ul class="ios-ul">
+					<li class="ios-li">
+						<div onclick="window.location = 'mailto:stavrapid@mail.ru'">Contact the developer</div>
+					</li>
+					<li class="ios-li">
+						<div class="disabled">Rate the App</div>
+					</li>
+					<li class="ios-li">
+						<div onclick="window.location = 'vk://vk.com/stavrapid.lair'">Visit our site</div>
+					</li>
+				</ul>
+				<div class="blank">
+					All meteo data provided by <a href="#">Cloudsdale Weather Patrol</a>
+				</div>
+			</div>
+			</div>
+		</div>
+		<!-- SETTINGS SCREEN END -->
+		
+		<!-- MENU SCREEN BEGIN -->
+		<div id="menu-screen">
+			<div class="head noBounce" align="center">
+				<span class="button-left" onclick="hideScreen('menu');">Close</span>
+				<span class="title">Location</span>
+			</div>
+			<div id="menu-screen-content">
+			<div class="scrollfix-content">
+				<div class="ios-ul-title">Crystal Empire</div>
+				<ul class="ios-ul">
+					<li class="ios-li">
+						<div onclick="setLocation('Crystal Empire City', 'Crystal Empire');">Crystal Empire City</div>
+					</li>
+				</ul>
+				<div class="ios-ul-title">Equestria</div>
+				<ul class="ios-ul">
+					<li class="ios-li">
+						<div onclick="setLocation('Appleloosa','Equestria');">Appleloosa</div>
+					</li>
+					<li class="ios-li">
+						<div onclick="setLocation('Canterlot','Equestria');">Canterlot</div>
+					</li>
+					<li class="ios-li">
+						<div onclick="setLocation('Cloudsdale','Equestria');">Cloudsdale</div>
+					</li>
+					<li class="ios-li">
+						<div onclick="setLocation('Everfree Forest','Equestria');">Everfree Forest</div>
+					</li>
+					<li class="ios-li">
+						<div onclick="setLocation('Los Pegasus','Equestria');">Los Pegasus</div>
+					</li>
+					<li class="ios-li">
+						<div onclick="setLocation('Manehatten','Equestria');">Manehatten</div>
+					</li>
+					<li class="ios-li">
+						<div onclick="setLocation('Ponyville','Equestria');">Ponyville</div>
+					</li>
+					<li class="ios-li">
+						<div  class="disabled" onclick="setLocation('','');">Vanhoover</div>
+					</li>
+				</ul>
+			</div>
+			</div>
+		</div>
+		<!-- MENU SCREEN END -->
+		
+		<!-- MAIN SCRIPTS BEGIN-->
+		<script type="text/javascript">
+			
+			cache = window.applicationCache;
+			if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+				window.applicationCache.update();
+				window.applicationCache.swapCache();
+			}
+
+
+			// APP SETTINGS BEGIN
+			var setting_showColors = true,
+				setting_showIcons = true,
+				setting_shortify = true,
+				setting_town = "Cloudsdale",
+				setting_country = "Equestria",
+				setting_units = "Celsius";
+			// APP SETTINGS END
+			
+			// Add Fastclick
+			window.addEventListener("load", function() {
+				FastClick.attach(document.body);
+			}, false);
+			
+			
+			// SHOW/HIDE SCREEN BEGIN
+			function showScreen(screenName){
+				var screen = document.getElementById(screenName + "-screen");
+				// screen.querySelector(".scrollfix-content").scrollTop = 1;
+				screen.setAttribute("style", "-webkit-transform: translate3d(0, -100%, 0); -moz-transform: translate3d(0, -100%, 0);");
+			}
+			
+			function hideScreen(screenName) {
+				// document.getElementById("main-screen").querySelector(".scrollfix-content").scrollTop = 1;
+				var screen = document.getElementById(screenName + "-screen");
+				screen.setAttribute("style", "-webkit-transform: translate3d(0, 0, 0);");
+			}
+			// SHOW/HIDE SCREEN END
+			
+			function setLocation(town, country) {
+				
+				/*document.getElementById("main-screen-content-landscape").querySelector(".today-tab").querySelector(".city").innerHTML = city;
+				document.getElementById("main-screen-content-landscape").querySelector(".today-tab").querySelector(".country").innerHTML = country;
+				document.getElementById("main-screen-content-landscape").style.backgroundImage = "url('./locations images/landscape/" + country + "/" + city + ".png')";*/
+				
+				setting_town = town;
+				setting_country = country;
+				
+				initiate();
+				
+				window.setTimeout(function(){
+					hideScreen("menu");
+				}, 100);
+			}
+			
+			// Scrollfix stuff BEGIN
+			document.addEventListener("touchmove", function(event) {
+				//document.querySelector(".today-temperature").innerHTML = document.getElementById("content").scrollTop;
+				
+				if(event.target.parentNode.className.indexOf("noBounce") != -1 || event.target.className.indexOf("noBounce") != -1 ) {
+					event.preventDefault();
+				}
+			}, false);
+			
+			// Add ScrollFix
+			var scrollingContent = document.getElementsByClassName("scrollfix-content");
+			for (j=0; j<scrollingContent.length; j++) {
+				scrollingContent[j].scrollTop = 1;
+				new ScrollFix(scrollingContent[j]);
+			}
+			// Scrollfix stuff END
+			
+			initiate();
+			Clock();
+			
+			window.addEventListener("orientationchange", function() {
+				if (window.orientation != 0) {
+					//landscape
+				} else {
+					//portrait
+				}
+			}, false);
+			
+			// Background stretch BEGIN
+			document.querySelector("#main-screen").addEventListener("scroll", function(e){
+				var screen = document.querySelector("#main-screen");
+				if (screen.scrollTop < 1) {
+					document.querySelector("body").setAttribute("style", "background-size: " + (100 - (screen.scrollTop * 0.65)) + "% !important;");
+				}
+				if (screen.scrollTop > 1) {
+					document.querySelector("body").setAttribute("style", "background-size: 100% !important;");
+					console.log(screen.scrollTop);
+				}
+			});
+			
+			document.getElementById("main-screen-content").querySelector(".scrollfix-content").addEventListener("scroll", function(e){
+				var screen = document.getElementById("main-screen-content").querySelector(".scrollfix-content");
+				var scrollBottom = (screen.scrollHeight - (screen.offsetHeight + screen.scrollTop));
+				var mainScreenContent = document.getElementById("main-screen-content");
+				var lastTab = mainScreenContent.getElementsByClassName("tab")[ mainScreenContent.getElementsByClassName("tab").length - 1 ];
+
+				// document.getElementById("main-screen-content").querySelector(".today-temperature").innerHTML = scrollBottom;
+				if (screen.scrollTop > 1 && scrollBottom >= 1) {
+					mainScreenContent.style.backgroundPosition = "center " + "-" + Math.floor(screen.scrollTop * 0.5) + "px";
+					document.getElementById('today-tab').style.opacity = ( 1 - screen.scrollTop * 0.01 );
+					document.getElementById('bg-overlay').style.opacity = ( 0.4 + screen.scrollTop * 0.004 );
+					// document.getElementById('today-tab').setAttribute('style', '-webkit-backdrop-filter: saturate(' + (100 + screen.scrollTop * 0.4) + '%) blur(' + (screen.scrollTop * 0.15) + 'px)');
+				}
+				
+				if ( scrollBottom <= lastTab.offsetHeight / 2 ) {
+					mainScreenContent.style.backgroundColor = window.getComputedStyle( lastTab ,null).getPropertyValue('background-color');
+				} else {			
+					mainScreenContent.style.backgroundColor = '';
+				}
+				if (screen.scrollTop <= 1) {
+					mainScreenContent.style.backgroundPosition = "center 0px";
+					document.getElementById('today-tab').style.opacity = '1';
+					document.getElementById('bg-overlay').style.opacity = '';	
+				}
+			});
+			
+			// Background stretch END
+			
+			function tumbler( tumblerId ) {
+				return document.getElementById( tumblerId ).querySelector("input[type='checkbox']");
+			}
+
+			function checkSettings() {
+				if (tumbler("showColors-switch").checked) {
+					setting_showColors = true;
+				} else {
+					setting_showColors = false;
+					for (i = 0; i < document.getElementById("tabs").getElementsByTagName("li").length; i++) {
+						// document.getElementById("tabs").getElementsByTagName("li")[i].style.backgroundColor = "rgb(" + (197 -(20 * i)) + ", " + (113 -(11 * i)) + ", " + (128 -(13 * i)) + ")";
+						document.getElementById("tabs").getElementsByTagName("li")[i].style.backgroundColor = "";
+						document.getElementById("main-screen-content-landscape").getElementsByClassName("tab")[i].style.backgroundColor = "transparent";
+					}
+					document.getElementById("bg-overlay").style.background = '';
+				}
+				if (tumbler("shortify-switch").checked) {
+					setting_shortify = true;
+				} else {
+					setting_shortify = false;
+				}
+				if (tumbler("showIcons-switch").checked) {
+					setting_showIcons = true;
+					for (i=0; i<document.getElementById("main-screen-content").getElementsByClassName("tab-icon").length; i++) {
+						document.getElementById("main-screen-content").getElementsByClassName("tab-icon")[i].style.display = "inline-block";
+					}
+				} else {
+					setting_showIcons = false;
+					for (i=0; i<document.getElementById("main-screen-content").getElementsByClassName("tab-icon").length; i++) {
+						document.getElementById("main-screen-content").getElementsByClassName("tab-icon")[i].style.display = "none";
+					}
+				}
+				if (tumbler("whiteTheme-switch").checked) {
+					document.body.classList.add('white');
+				} else {
+					document.body.classList.remove('white');
+				}
+			}
+			
+			// INITIATE FUNCTION BEGIN
+			function initiate() {
+				checkSettings();
+				getXMLDocument("./weather/" + setting_country + "/" + setting_town + ".xml", setting_showColors, setting_shortify);
+			}
+			// INITIATE FUNCTION END
+			
+		</script>
+		<!-- MAIN SCRIPTS END-->
+		
+	</body>
+</html>
