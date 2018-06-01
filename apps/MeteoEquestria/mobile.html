@@ -536,14 +536,16 @@
 				var screen = document.getElementById(screenName + "-screen");
 				// screen.querySelector(".scrollfix-content").scrollTop = 1;
 				screen.setAttribute("style", "-webkit-transform: translate3d(0, -100%, 0); -moz-transform: translate3d(0, -100%, 0);");
-				document.getElementById('main-screen').style.webkitTransform = 'scale3d(0.95,0.95,0.95)';
+				// document.getElementById('main-screen').style.webkitTransform = 'scale3d(0.95,0.95,0.95)';
+				document.getElementById('main-screen').setAttribute("style", "-webkit-transform: scale3d(0.95,0.95,0.95);");
 			}
 			
 			function hideScreen(screenName) {
 				// document.getElementById("main-screen").querySelector(".scrollfix-content").scrollTop = 1;
 				var screen = document.getElementById(screenName + "-screen");
 				screen.setAttribute("style", "-webkit-transform: translate3d(0, 0, 0);");
-				document.getElementById('main-screen').style.webkitTransform = 'scale3d(1,1,1)';
+				// document.getElementById('main-screen').style.webkitTransform = 'scale3d(1,1,1)';
+				document.getElementById('main-screen').setAttribute("style", "-webkit-transform: scale3d(1,1,1);");
 			}
 			// SHOW/HIDE SCREEN END
 			
