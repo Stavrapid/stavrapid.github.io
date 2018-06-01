@@ -408,7 +408,7 @@ h2 {
 
 .ios-li.glyphIcon.gmail > div { background-image: url(../img/gmail.svg); }
 .ios-li.glyphIcon.star > div { background-image: url(../img/star.svg); }
-.ios-li.glyphIcon.safari > div { background-image: url(../img/safari.svg); }
+.ios-li.glyphIcon.site > div { background-image: url(../img/stavrapid-logo.svg); }
 .ios-li.glyphIcon.vk > div { background-image: url(../img/vk.svg); }
 .ios-li.glyphIcon.twitter > div { background-image: url(../img/twitter.svg); }
 .ios-li.glyphIcon.facebook > div { background-image: url(../img/facebook.svg); }
@@ -866,6 +866,17 @@ body.white #tabs li:not(:last-child) {
 body.white #tabs li:last-child {
 	border-radius: 10px;
 }
+
+body.white .ios-li.glyphIcon.gmail > div { background-image: url(../img/gmail-black.svg); }
+body.white .ios-li.glyphIcon.star > div { background-image: url(../img/star-black.svg); }
+body.white .ios-li.glyphIcon.site > div { background-image: url(../img/stavrapid-logo-black.svg); }
+body.white .ios-li.glyphIcon.vk > div { background-image: url(../img/vk-black.svg); }
+body.white .ios-li.glyphIcon.twitter > div { background-image: url(../img/twitter-black.svg); }
+body.white .ios-li.glyphIcon.facebook > div { background-image: url(../img/facebook-black.svg); }
+body.white .ios-li.glyphIcon.instagram > div { background-image: url(../img/instagram-black.svg); }
+body.white .ios-li.glyphIcon.youtube > div { background-image: url(../img/youtube-black.svg); }
+body.white .ios-li.glyphIcon.soundcloud > div { background-image: url(../img/soundcloud-black.svg); }
+body.white .ios-li.glyphIcon.telegram > div { background-image: url(../img/telegram-black.svg); }
 
 body.white .tab[num = "1"] { background-color: #ffffff; }
 body.white .tab[num = "2"] { background-color: #ffffff; }
