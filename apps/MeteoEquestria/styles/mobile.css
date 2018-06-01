@@ -408,7 +408,7 @@ h2 {
     width: 4.2rem;
     height: 4.2rem;
     background: url('../logo-white.png') no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 .hint {
@@ -800,7 +800,7 @@ body.white #bg-overlay {
 
 body.white .blank .logo {
 	background: url('../logo-colored.png') no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 @-webkit-keyframes switch-check-white {
