@@ -394,6 +394,29 @@ h2 {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
+.ios-li.glyphIcon {
+	margin-left: 3em;
+}
+
+.ios-li.glyphIcon > div {
+	margin-left: -3em;
+	padding: 0.8em 0.8em 0.8em 3em;
+    background-size: 1.7rem;
+    background-position: 0.8rem center;
+    background-repeat: no-repeat;
+}
+
+.ios-li.glyphIcon.gmail > div { background-image: url(../img/gmail.svg); }
+.ios-li.glyphIcon.star > div { background-image: url(../img/star.svg); }
+.ios-li.glyphIcon.safari > div { background-image: url(../img/safari.svg); }
+.ios-li.glyphIcon.vk > div { background-image: url(../img/vk.svg); }
+.ios-li.glyphIcon.twitter > div { background-image: url(../img/twitter.svg); }
+.ios-li.glyphIcon.facebook > div { background-image: url(../img/facebook.svg); }
+.ios-li.glyphIcon.instagram > div { background-image: url(../img/instagram.svg); }
+.ios-li.glyphIcon.youtube > div { background-image: url(../img/youtube.svg); }
+.ios-li.glyphIcon.soundcloud > div { background-image: url(../img/soundcloud.svg); }
+.ios-li.glyphIcon.telegram > div { background-image: url(../img/telegram.svg); }
+
 .blank {
 	background: none;
 	border: none;
