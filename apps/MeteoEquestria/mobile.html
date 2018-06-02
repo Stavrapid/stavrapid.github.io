@@ -320,25 +320,25 @@
 						<div>Rate this App</div>
 					</li>
 					<li class="ios-li glyphIcon site">
-						<div onclick="window.open('http://stavrapid.ru')">Visit my Site</div>
+						<div onclick="clickLink(this.querySelector('a'))">Visit my Site<a href="http://stavrapid.ru" target="_blank"></a></div>
 					</li>
 					<!-- <li class="ios-li glyphIcon vk">
-						<div onclick="window.open('https://vk.com/stavrapid.lair')">Follow me on VK</div>
+						<div onclick="clickLink(this.querySelector('a'))">Follow me on VK<a href="https://vk.com/stavrapid.lair" target="_blank"></a></div>
 					</li> -->
 					<li class="ios-li glyphIcon twitter">
-						<div onclick="window.open('https://twitter.com/stavrapid')">Follow me on Twitter</div>
+						<div onclick="clickLink(this.querySelector('a'))">Follow me on Twitter<a href="https://twitter.com/stavrapid" target="_blank"></a></div>
 					</li>
 					<li class="ios-li glyphIcon facebook">
-						<div onclick="window.open('https://facebook.com/stavrapid')">Follow me on Facebook</div>
+						<div onclick="clickLink(this.querySelector('a'))">Follow me on Facebook<a href="https://facebook.com/stavrapid" target="_blank"></a></div>
 					</li>
 					<!-- <li class="ios-li glyphIcon instagram">
-						<div onclick="window.open('https://instagram.com/stavrapid')">Follow me on Instagram</div>
+						<div onclick="clickLink(this.querySelector('a'))">Follow me on Instagram<a href="https://instagram.com/stavrapid" target="_blank"></a></div>
 					</li> -->
 					<!-- <li class="ios-li glyphIcon youtube">
-						<div onclick="window.open('https://www.youtube.com/channel/UCvCDCx_FuzKNHSp7qDZWipg')">Follow me on YouTube</div>
+						<div onclick="clickLink(this.querySelector('a'))">Follow me on YouTube<a href="https://www.youtube.com/channel/UCvCDCx_FuzKNHSp7qDZWipg" target="_blank"></a></div>
 					</li> -->
 					<!-- <li class="ios-li glyphIcon soundcloud">
-						<div onclick="window.open('https://soundcloud.com/stavrapid')">Follow me on SoundCloud</div>
+						<div onclick="clickLink(this.querySelector('a'))">Follow me on SoundCloud<a href="https://soundcloud.com/stavrapid" target="_blank"></a></div>
 					</li> -->
 					<li class="ios-li glyphIcon telegram">
 						<div onclick="window.open('#')">Follow me on Telegram</div>
@@ -530,7 +530,13 @@
 				FastClick.attach(document.body);
 			}, false);
 			
-			
+			// Fake click on links
+			function clickLink( link ) {
+				console.log(link);
+				link.click();
+				link.click();
+			}
+
 			// SHOW/HIDE SCREEN BEGIN
 			function showScreen(screenName){
 				var screen = document.getElementById(screenName + "-screen");
