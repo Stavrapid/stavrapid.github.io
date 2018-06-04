@@ -303,6 +303,8 @@ h2 {
     background-repeat: no-repeat;
 }
 
+.ios-li.glyphIcon.reload > div { background-image: url(../img/reload.svg); }
+
 .ios-li.glyphIcon.gmail > div { background-image: url(../img/gmail.svg); }
 .ios-li.glyphIcon.star > div { background-image: url(../img/star.svg); }
 .ios-li.glyphIcon.site > div { background-image: url(../img/stavrapid-logo.svg); }
