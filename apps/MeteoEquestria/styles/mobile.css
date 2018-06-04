@@ -778,8 +778,8 @@ sup {
 	position: absolute;
     background: url(../img/ios-cross.svg) no-repeat;
     background-size: 100%;
-    width: 1rem;
-    height: 1rem;
+    width: 0.9rem;
+    height: 0.9rem;
     margin: 0.7rem 0.5rem;
     top: 0;
     right: 0;
@@ -790,8 +790,8 @@ sup {
     content: '';
     background: url(../img/ios-search.svg) no-repeat;
     background-size: 100%;
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 1.2rem;
+    height: 1.2rem;
     margin: 0.6rem 0.5rem;
     top: 0;
     left: 0;
