@@ -884,25 +884,25 @@ body.dark .search-field {
 ------------------------------------------------------------------------
 */
 #settings-screen-content {
-	transition: color 0.5s;
+	-webkit-transition: color 0.5s;
 }
 
 #settings-screen .head {
-	transition: background 0.5s;
+	-webkit-transition: background 0.5s;
 }
 
 #settings-screen .head .title {
-	transition: color 0.5s;
+	-webkit-transition: color 0.5s;
 }
 
 #settings-screen .ios-ul {
-	transition: background 0.5s;
+	-webkit-transition: background 0.5s;
 }
 
 #settings-screen .ios-li {
-	transition: border-top-color 0.5s;
+	-webkit-transition: border-top-color 0.5s;
 }
 
 #settings-screen .ios7-switch input + span {
-    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s;
 }
