@@ -94,7 +94,7 @@ a:active {
 	top: 100%;
 	background-color: #734456;
 	-webkit-transform: translate3d(0, 0, 0);
-	-webkit-transition: -webkit-transform 0.5s cubic-bezier(.1, 1, .5, 1) 0s;
+	-webkit-transition: -webkit-transform 0.5s cubic-bezier(.1, 1, .5, 1) 0s, background-color 0.5s; /* animation transition */
 	border-radius: 10px 10px 0 0;
 }
 
@@ -386,7 +386,6 @@ h2 {
     display: inline-block;
     width: 1.65em;
     height: 1em;
-	background: #a15f6d;
     border-radius: 0.5em;
     vertical-align: -0.15em;
 	font-size: 32px;
@@ -645,7 +644,7 @@ body.white .ios-ul {
 }
 
 body.white .ios-li + .ios-li {
-    border-top: 0.5px solid #eaeaea;
+    border-top-color: rgba(0,0,0,0.08);
 }
 
 body.white #settings-screen .head,
@@ -744,4 +743,166 @@ body.white .ios7-switch input:checked + span {
 body.white .ios7-switch input:not(:checked) + span {
 	-webkit-animation: switch-uncheck-white 0.25s 1 forwards ease-out;
 	-moz-animation: switch-uncheck-white 0.25s 1 forwards ease-out;
+}
+
+/*	Dark theme style
+-------------------------------------------------------------------
+*/
+body.dark #settings-screen,
+body.dark #search-screen,
+body.dark #favorite-screen {
+	background-color: #313233;
+}
+
+body.dark #settings-screen-content,
+body.dark #main-screen-content,
+body.dark #search-screen-content,
+body.dark #favorite-screen-content {
+	color: #fff;
+}
+
+body.dark #settings-screen-content a {
+	color: #0095f5;
+}
+
+body.dark #main-screen-content #today-tab {
+	color: #fff;
+}
+
+body.dark .blank img {
+	filter: invert(1);
+}
+
+body.dark .ios-ul {
+	background-color: #3b3c3d;
+	box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.25);
+}
+
+body.dark .ios-li + .ios-li {
+    border-top-color: rgba(0,0,0,0.2);
+}
+
+body.dark #settings-screen .head,
+body.dark #search-screen .head,
+body.dark #favorite-screen .head {
+	background-color: #313233;
+	box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.25);
+}
+
+body.dark .head .title {
+	color: #fff;
+}
+
+body.dark .head .button-right,
+body.dark .head .button-left {
+	color: #0095f5;
+}
+
+body.dark .nav-bar {
+	background-color: #313233;
+	box-shadow: 0px -5px 50px 0px rgba(0,0,0,0.25);
+}
+
+body.dark .tab {
+	box-shadow: 0px -5px 50px 0px rgba(0,0,0,0.25);
+}
+
+body.dark .ios-li.glyphIcon.reload > div { background-image: url(../img/reload.svg); }
+
+body.dark .ios-li.glyphIcon.gmail > div { background-image: url(../img/gmail.svg); }
+body.dark .ios-li.glyphIcon.star > div { background-image: url(../img/star.svg); }
+body.dark .ios-li.glyphIcon.site > div { background-image: url(../img/stavrapid-logo.svg); }
+body.dark .ios-li.glyphIcon.vk > div { background-image: url(../img/vk.svg); }
+body.dark .ios-li.glyphIcon.twitter > div { background-image: url(../img/twitter.svg); }
+body.dark .ios-li.glyphIcon.facebook > div { background-image: url(../img/facebook.svg); }
+body.dark .ios-li.glyphIcon.instagram > div { background-image: url(../img/instagram.svg); }
+body.dark .ios-li.glyphIcon.youtube > div { background-image: url(../img/youtube.svg); }
+body.dark .ios-li.glyphIcon.soundcloud > div { background-image: url(../img/soundcloud.svg); }
+body.dark .ios-li.glyphIcon.telegram > div { background-image: url(../img/telegram.svg); }
+
+body.dark .tab[num = "1"] { background-color: #313233; }
+body.dark .tab[num = "2"] { background-color: #313233; }
+body.dark .tab[num = "3"] { background-color: #313233; }
+body.dark .tab[num = "4"] { background-color: #313233; }
+body.dark .tab[num = "5"] { background-color: #313233; }
+body.dark .tab[num = "6"] { background-color: #313233; }
+body.dark .tab[num = "7"] { background-color: #313233; }
+
+body.dark #bg-overlay {
+	background: #313233;
+	opacity: 0;
+}
+
+body.dark .blank .logo {
+	background-image: url('../logo-colored.png');
+}
+
+@-webkit-keyframes switch-check-dark {
+	from {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #0095f5;}
+	to {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+}
+
+@-webkit-keyframes switch-uncheck-dark {
+	from {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+	to {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #0095f5}
+}
+
+@-moz-keyframes switch-check-dark {
+	from {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #0095f5;}
+	to {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+}
+
+@-moz-keyframes switch-uncheck-dark {
+	from {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+	to {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #0095f5}
+}
+
+body.dark .ios7-switch input + span {
+	background-color: #3b3c3d;
+}
+
+body.dark .ios7-switch input:checked + span {
+	-webkit-animation: switch-check-dark 0.25s 1 forwards ease-out;
+	-moz-animation: switch-check-dark 0.25s 1 forwards ease-out;
+}
+
+body.dark .ios7-switch input:not(:checked) + span {
+	-webkit-animation: switch-uncheck-dark 0.25s 1 forwards ease-out;
+	-moz-animation: switch-uncheck-dark 0.25s 1 forwards ease-out;
+}
+
+body.dark .ios7-switch input + span:after {
+    background: #313233;
+}
+
+body.dark .search-field {
+	background: #3b3c3d;
+	color: #fff;
+}
+
+/* Settings screen color change animation
+------------------------------------------------------------------------
+*/
+#settings-screen-content {
+	transition: color 0.5s;
+}
+
+#settings-screen .head {
+	transition: background 0.5s;
+}
+
+#settings-screen .head .title {
+	transition: color 0.5s;
+}
+
+#settings-screen .ios-ul {
+	transition: background 0.5s;
+}
+
+#settings-screen .ios-li {
+	transition: border-top-color 0.5s;
+}
+
+#settings-screen .ios7-switch input + span {
+    transition: background-color 0.5s;
 }
