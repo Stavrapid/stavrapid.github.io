@@ -776,13 +776,16 @@ sup {
 .head .search-field-container .reset-button {
 	display: none;
 	position: absolute;
-    background: url(../img/ios-cross.svg) no-repeat;
-    background-size: 100%;
-    width: 0.9rem;
-    height: 0.9rem;
-    margin: 0.75rem 0.5rem;
+    padding: 0.75rem 0.5rem;
     top: 0;
     right: 0;
+    box-sizing: border-box;
+}
+
+.head .search-field-container .reset-button img {
+	width: 0.9rem;
+    height: 0.9rem;
+    pointer-events: none;
 }
 
 .head .search-field-container:before {
