@@ -142,6 +142,7 @@ and (orientation : landscape) {
 html {
   -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
   background: #000;
+  font-size: 16px;
 }
 
 a {
@@ -439,6 +440,19 @@ h2 {
     height: 4.2rem;
     background: url('../logo-white.png') no-repeat;
     background-size: 100% 100%;
+    position: relative;
+}
+
+.blank .logo:after {
+	position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12.5rem;
+    height: 12.5rem;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0) 75%);
+    z-index: -1;
 }
 
 .hint {
@@ -797,6 +811,10 @@ body.white #main-screen-content #today-tab {
 
 body.white .blank img {
 	filter: invert(1);
+}
+
+body.white .blank .logo:after {
+    background: radial-gradient(ellipse at center, rgba(0,149,255,0.2) 0%,rgba(0,0,0,0) 75%);
 }
 
 body.white .ios-ul {
