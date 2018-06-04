@@ -1,124 +1,3 @@
-@media screen and (orientation:portrait) {
-	
-	#main-screen-content-landscape {
-		display: none;
-	}
-	
-}
-
-@media screen and (orientation:landscape) {
-	
-	.status-bar {
-		display: none;
-	}
-	
-	#main-screen-content {
-		display: none;
-	}
-	
-}
-
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-
-	#main-screen-content-landscape {
-		display: block !important;
-	}
-	
-	#main-screen-content {
-		display: none !important;
-	}
-	
-}
-
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)
-and (orientation : portrait) {
-	
-	#main-screen-content-landscape {
-		
-		font-size: 200%;
-		background-size: 100% !important;
-	}
-
-	#main-screen-content-landscape .landscape {
-		height: 35% !important;
-	}
-
-	#main-screen-content-landscape #info-block {
-		height: 65% !important;
-	}
-	
-	#main-screen-content-landscape #info-block {
-		flex-direction: column;
-		-webkit-flex-direction: column;
-	}
-	
-	#main-screen-content-landscape .tab > .tab-content {
-		margin: auto 1em !important;
-	}
-	
-	#main-screen-content-landscape .heading {
-		width: 100%;
-		height: 100%;
-		vertical-align: middle;
-		position: absolute;
-		display: flex;
-	}
-	
-	#main-screen-content-landscape .heading > div {
-		margin: auto;
-	}
-
-	#main-screen-content-landscape .tab-icon {
-		float: left;
-	}
-
-	#main-screen-content-landscape .tab-temperature {
-		float: right !important;
-	}
-	
-}
-
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)
-and (orientation : landscape) {
-	
-	#main-screen-content-landscape {
-		
-		font-size: 200%;
-	}
-
-	#main-screen-content-landscape .landscape {
-		height: 80% !important;
-	}
-
-	#main-screen-content-landscape #info-block {
-		height: 20% !important;
-	}
-	
-}
-
-/* landscape */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) 
-and (orientation : landscape) {
-	
-	#settings-screen .head, 
-	#search-screen .head {
-		padding-top: 10px !important;
-	}
-	
-	#main-screen-content {
-		display: none;
-	}
-	
-}
-
 @font-face {
 	font-family: Bliss Pro;
 	src: url('../fonts/BlissPro-Regular.otf');
@@ -232,7 +111,6 @@ a:active {
 	z-index: 9000;
 	display: flex;
 	flex-direction: row;
-	border-top: 0.5px solid rgba(0, 0, 0, 0.25);
 }
 
 .nav-bar > .nav-button {
@@ -318,14 +196,13 @@ a:active {
 	/*color: #000;*/
 	color: #fff;
 	top: 0;
-	border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
 	border-radius: 10px 10px 0 0;
 }
 
 .head > .title {
 	opacity: 0.75;
 	font-size: 1.2em;
-	/*text-transform: uppercase;*/
+	text-transform: uppercase;
 }
 
 .head .button-left {
@@ -354,8 +231,7 @@ a:active {
 #settings-screen-content,
 #search-screen-content,
 #favorite-screen-content,
-#main-screen-content,
-#main-screen-content-landscape {
+#main-screen-content {
 	position: relative;
 	z-index: 1;
 	width: 100%;
@@ -372,9 +248,10 @@ h2 {
 
 .ios-ul {
 	background: #a15f6d;
-	/*background: #fff;*/
-	border-top: 0.5px solid rgba(0, 0, 0, 0.25);
-	border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	border: none;
+	border-radius: 10px;
 	margin-bottom: 2em;
 }
 
@@ -393,6 +270,16 @@ h2 {
 
 .ios-li + .ios-li {
 	border-top: 0.5px solid rgba(0, 0, 0, 0.25);
+}
+
+.ios-li:first-child > div {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.ios-li:last-child > div {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 .ios-li > div {
@@ -440,21 +327,9 @@ h2 {
 	margin: 0.8em;
     width: 4.2rem;
     height: 4.2rem;
-    background: url('../logo-white.png') no-repeat;
+    background-image: url('../logo-white.png');
+    background-repeat: no-repeat;
     background-size: 100% 100%;
-    position: relative;
-}
-
-.blank .logo:after {
-	position: absolute;
-    content: '';
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -46%);
-    width: 12.5rem;
-    height: 12.5rem;
-    background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0) 70%);
-    z-index: -1;
 }
 
 .hint {
@@ -622,6 +497,7 @@ ul {
 	border-radius: 10px 10px 0 0;
 	position: relative;
 	margin-bottom: 1rem;
+	border-radius: 10px;
 }
 
 #tabs li {
@@ -630,6 +506,15 @@ ul {
 
 #tabs li:first-of-type {
 	border-radius: 10px 10px 0 0;
+}
+
+#tabs li:not(:last-child) {
+	padding-bottom: 2rem;
+	margin-bottom: -1rem;
+}
+
+#tabs li:last-child {
+	border-radius: 10px;
 }
 
 .tab[num = "1"] { background-color: #c57180; }
@@ -644,6 +529,10 @@ ul {
 	display: inline-block;
 	font-size: 0.55em;
 	vertical-align: middle;
+}
+
+.tab + .tab {
+	border-radius: 10px 10px 0 0;
 }
 
 sup {
@@ -673,99 +562,6 @@ sup {
 
 #main-screen-content {
 	background-position: center 0;
-}
-
-#main-screen-content-landscape {
-	background-image: url('');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: top center;
-}
-
-#main-screen-content-landscape .landscape {
-	height: 75%;
-	position: relative;
-	background: linear-gradient(to bottom, rgba(77, 45, 57, 0.4) 0%, rgba(0, 0, 0, 0) 50%, rgba(77, 45, 57, 0.4) 100%);
-}
-
-#main-screen-content-landscape #info-block {
-	display: flex;
-	display: -webkit-flex;
-	width: 100%;
-	height: 25%;
-	background: #70345E;
-	pointer-events: none;
-}
-
-#main-screen-content-landscape .today-tab {
-	position: absolute;
-	left: 0;
-	top: 0;
-	padding: 20px;
-	padding-top: 10px;
-	color: white;
-	background-color: rgba(0,0,0,0.2);
-	text-align: left;
-	pointer-events: none;
-}
-
-#main-screen-content-landscape .place {
-	position: relative;
-}
-
-#main-screen-content-landscape .today {
-	position: relative;
-}
-
-#main-screen-content-landscape .today-time {
-	margin-left: 10px;
-	color: #e7e7e7;
-}
-
-#main-screen-content-landscape .today-temperature {
-	display: inline-block;
-	float: left;
-}
-
-#main-screen-content-landscape .today-icon {
-	float: right;
-	margin-top: -0.3em;
-    margin-bottom: -1em;
-
-}
-
-#main-screen-content-landscape .tab {
-	flex: 1;
-	-webkit-flex: 1;
-	color: white;
-	font-size: 1em;
-	padding: 0.1em;
-	text-align: center;
-	display: flex;
-}
-
-#main-screen-content-landscape .tab > .tab-content {
-	margin: auto;
-	width: 100%;
-	position: relative;
-}
-
-#main-screen-content-landscape .heading {
-	font-size: 0.7em;
-}
-
-#main-screen-content-landscape .tab-icon {
-	/*font-family: meteoconsRegular;*/
-	font-family: Clean icons;
-	font-size: 2em;
-	display: block;
-	margin: auto;
-	margin-top: -0.3em;
-}
-
-#main-screen-content-landscape .tab-temperature {
-	float: none;
-	font-size: 1.5em;
 }
 
 .head .search-field-container {
@@ -841,16 +637,8 @@ body.white .blank img {
 	filter: invert(1);
 }
 
-body.white .blank .logo:after {
-    background: radial-gradient(ellipse at center, rgba(0,149,255,0.1) 0%,rgba(0,0,0,0) 70%);
-}
-
 body.white .ios-ul {
 	background-color: #fff;
-	margin-left: 0.5rem;
-	margin-right: 0.5rem;
-	border: none;
-	border-radius: 10px;
 	box-shadow: 0px 5px 50px 0px rgba(177,177,177,0.25);
 }
 
@@ -858,28 +646,16 @@ body.white .ios-li + .ios-li {
     border-top: 0.5px solid #eaeaea;
 }
 
-body.white .ios-li:first-child > div {
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-}
-
-body.white .ios-li:last-child > div {
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-
 body.white #settings-screen .head,
 body.white #search-screen .head,
 body.white #favorite-screen .head {
 	/*background-color: #0095f5;*/
 	background-color: #fff;
-	border: none;
 	box-shadow: 0px 5px 50px 0px rgba(177,177,177,0.25);
 }
 
 body.white .head .title {
 	color: #000;
-	text-transform: uppercase;
 }
 
 body.white .head .button-right,
@@ -893,7 +669,6 @@ body.white .status-bar {
 
 body.white .nav-bar {
 	background-color: #fff;
-	border: none;
 	box-shadow: 0px -5px 50px 0px rgba(177,177,177,0.25);
 }
 
@@ -901,25 +676,8 @@ body.white .nav-bar img {
 	filter: invert(1);
 }
 
-body.white #tabs {
-	border-radius: 10px;
-}
-
 body.white .tab {
 	box-shadow: 0px -5px 50px 0px rgba(177,177,177,0.25);
-}
-
-body.white .tab + .tab {
-	border-radius: 10px 10px 0 0;
-}
-
-body.white #tabs li:not(:last-child) {
-	padding-bottom: 2rem;
-	margin-bottom: -1rem;
-}
-
-body.white #tabs li:last-child {
-	border-radius: 10px;
 }
 
 body.white .ios-li.glyphIcon.reload > div { background-image: url(../img/reload-black.svg); }
@@ -949,8 +707,7 @@ body.white #bg-overlay {
 }
 
 body.white .blank .logo {
-	background: url('../logo-colored.png') no-repeat;
-    background-size: 100% 100%;
+	background-image: url('../logo-colored.png');
 }
 
 @-webkit-keyframes switch-check-white {
