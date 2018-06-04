@@ -4,9 +4,9 @@ function getRandomInt(min, max) {
 
 function Clock(){
 	var d = new Date();
-	document.querySelector('.today-tab').querySelector('.today-day').innerHTML = dayName(d.getDay());
-	document.querySelector('.today-tab').querySelector('.today-date').innerHTML = addSup(addZero(d.getDate()));
-	document.querySelector('.today-time').innerHTML = addZero(d.getHours()) + ":" + addZero(d.getMinutes());
+	document.querySelector('#today-tab').querySelector('.today-day').innerHTML = dayName(d.getDay());
+	document.querySelector('#today-tab').querySelector('.today-date').innerHTML = addSup(addZero(d.getDate()));
+	document.querySelector('#today-time').innerHTML = addZero(d.getHours()) + ":" + addZero(d.getMinutes());
 	setTimeout(Clock, 1000);
 }
 
