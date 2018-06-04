@@ -208,19 +208,19 @@
 				</script>
 				<ul class="ios-ul">
 					<li class="ios-li">
-						<div onclick="toggle(this.querySelector('input'))">
+						<div onclick="toggle(this.querySelector('input')); checkSettings()">
 							Show weather icons
 							<label id="showIcons-switch" class="ios7-switch">
-								<input type="checkbox" checked>
+								<input type="checkbox">
 								<span></span>
 							</label>
 						</div>
 					</li>
 					<li class="ios-li">
-						<div onclick="toggle(this.querySelector('input'))">
+						<div onclick="toggle(this.querySelector('input')); checkSettings()">
 							Weeakday name shortify
 							<label id="shortify-switch" class="ios7-switch">
-								<input type="checkbox" checked>
+								<input type="checkbox">
 								<span></span>
 							</label>
 						</div>
@@ -229,13 +229,13 @@
 						<div onclick="toggle(this.querySelector('input')); checkSettings()" class="">
 							Use white theme
 							<label id="whiteTheme-switch" class="ios7-switch">
-								<input type="checkbox" checked>
+								<input type="checkbox">
 								<span></span>
 							</label>
 						</div>
 					</li>
 					<li class="ios-li">
-						<div onclick="toggle(this.querySelector('input'))">
+						<div onclick="toggle(this.querySelector('input')); checkSettings()">
 							Tabs color highlighting
 							<label id="showColors-switch" class="ios7-switch">
 								<input type="checkbox">
@@ -471,14 +471,28 @@
 				window.applicationCache.swapCache();
 			}
 
+			// LOCAL STORAGE SETTINGS BEGIN
+			console.log('LOADED SETTINGS DATA.');
+			console.log(localStorage);
+			if (localStorage.setting_showColors == undefined) {
+				console.log('Local Storage is empty. Setting up default settings.');
+				localStorage.setting_showIcons = "true",
+				localStorage.setting_shortify = "true",
+				localStorage.setting_whiteTheme = "true",
+				localStorage.setting_showColors = "false",
+				localStorage.setting_town = "Changeling Kingdom",
+				localStorage.setting_country = "Beyond Equestria",
+				localStorage.setting_units = "Celsius";
+			}
+			// LOCAL STORAGE SETTINGS END
 
 			// APP SETTINGS BEGIN
-			var setting_showColors = true,
-				setting_showIcons = true,
-				setting_shortify = true,
-				setting_town = "Changeling Kingdom",
-				setting_country = "Beyond Equestria",
-				setting_units = "Celsius";
+			// var setting_showColors = true,
+			// 	setting_showIcons = true,
+			// 	setting_shortify = true,
+			// 	setting_town = "Changeling Kingdom",
+			// 	setting_country = "Beyond Equestria",
+			// 	setting_units = "Celsius";
 			// APP SETTINGS END
 			
 			// Add Fastclick
@@ -569,8 +583,8 @@
 			
 			function setLocation(town, country) {
 				
-				setting_town = town;
-				setting_country = country;
+				localStorage.setting_town = town;
+				localStorage.setting_country = country;
 				
 				initiate();
 				window.setTimeout(function(){
@@ -594,7 +608,8 @@
 				new ScrollFix(scrollingContent[j]);
 			}
 			// Scrollfix stuff END
-			
+
+			loadInterface();
 			initiate();
 			// Clock();
 			
@@ -653,46 +668,97 @@
 				return document.getElementById( tumblerId ).querySelector("input[type='checkbox']");
 			}
 
-			function checkSettings() {
-				if (tumbler("showColors-switch").checked) {
-					setting_showColors = true;
+			function parseBoolean(string) {
+				var bool;
+				bool = (function() {
+					switch (false) {
+						case string.toLowerCase() !== 'true':
+							return true;
+			    		case string.toLowerCase() !== 'false':
+			    			return false;
+			    	}
+			  	})();
+			  	if (typeof bool === "boolean") {
+			    	return bool;
+		  		}
+				return void 0;
+			};
+
+			function loadInterface() {
+				// Tumblers
+				console.log('Loading Interface');
+				tumbler("showIcons-switch").checked = parseBoolean(localStorage.setting_showIcons);
+				tumbler("shortify-switch").checked = parseBoolean(localStorage.setting_shortify);
+				tumbler("whiteTheme-switch").checked = parseBoolean(localStorage.setting_whiteTheme);
+				tumbler("showColors-switch").checked = parseBoolean(localStorage.setting_showColors);
+				console.log(tumbler("showIcons-switch").checked);
+				console.log(tumbler("shortify-switch").checked);
+				console.log(tumbler("whiteTheme-switch").checked);
+				console.log(tumbler("showColors-switch").checked);
+			}
+
+			function saveSettings() {
+				// Tumblers
+				if ( tumbler("showIcons-switch").checked == true ) {
+					localStorage.setting_showIcons = "true";
 				} else {
-					setting_showColors = false;
+					localStorage.setting_showIcons = "false";
+				}
+				if ( tumbler("shortify-switch").checked == true ) {
+					localStorage.setting_shortify = "true";
+				} else {
+					localStorage.setting_shortify = "false";
+				}
+				if ( tumbler("whiteTheme-switch").checked == true ) {
+					localStorage.setting_whiteTheme = "true";
+				} else {
+					localStorage.setting_whiteTheme = "false";
+				}
+				if ( tumbler("showColors-switch").checked == true ) {
+					localStorage.setting_showColors = "true";
+				} else {
+					localStorage.setting_showColors = "false";
+				}
+
+				console.log('SETTINGS SAVED BEGIN');
+				console.log(localStorage);
+				console.log('SETTINGS SAVED END');
+			}
+
+			function checkSettings() {
+				saveSettings();
+				if ( localStorage.setting_showColors == "false" ) {
 					for (i = 0; i < document.getElementById("tabs").getElementsByTagName("li").length; i++) {
 						// document.getElementById("tabs").getElementsByTagName("li")[i].style.backgroundColor = "rgb(" + (197 -(20 * i)) + ", " + (113 -(11 * i)) + ", " + (128 -(13 * i)) + ")";
 						document.getElementById("tabs").getElementsByTagName("li")[i].style.backgroundColor = "";
 					}
 					document.getElementById("bg-overlay").style.background = '';
 				}
-				if (tumbler("shortify-switch").checked) {
-					setting_shortify = true;
-				} else {
-					setting_shortify = false;
-				}
-				if (tumbler("showIcons-switch").checked) {
-					setting_showIcons = true;
+				if ( localStorage.setting_showIcons == "true" ) {
 					for (i=0; i<document.getElementById("main-screen-content").getElementsByClassName("tab-icon").length; i++) {
-						document.getElementById("main-screen-content").getElementsByClassName("tab-icon")[i].style.display = "inline-block";
+						document.getElementById("main-screen-content").getElementsByClassName("tab-icon")[i].style.display = "";
 					}
 				} else {
-					setting_showIcons = false;
 					for (i=0; i<document.getElementById("main-screen-content").getElementsByClassName("tab-icon").length; i++) {
 						document.getElementById("main-screen-content").getElementsByClassName("tab-icon")[i].style.display = "none";
 					}
 				}
-				if (tumbler("whiteTheme-switch").checked) {
+				if ( localStorage.setting_whiteTheme == "true" ) {
 					document.body.classList.remove('dark');
 					document.body.classList.add('white');
+					console.log('Changint to White Theme');
 				} else {
 					document.body.classList.remove('white');
 					document.body.classList.add('dark');
+					console.log('Changint to Dark Theme')
 				}
 			}
 			
 			// INITIATE FUNCTION BEGIN
 			function initiate() {
+				console.log('INITIATING APP...');
 				checkSettings();
-				getXMLDocument("./weather/" + setting_country + "/" + setting_town + ".xml", setting_showColors, setting_shortify);
+				getXMLDocument("./weather/" + localStorage.setting_country + "/" + localStorage.setting_town + ".xml", parseBoolean(localStorage.setting_showColors), parseBoolean(localStorage.setting_shortify));
 			}
 			// INITIATE FUNCTION END
 			

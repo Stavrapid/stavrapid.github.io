@@ -337,6 +337,7 @@ function getXMLDocument(url, showColors, shortify) {
 	}*/
 function parseWeatherXML(xml, showColors, shortify) {
 	// FIRST LEVEL PARSING
+	console.log('showColors ' + showColors + ' shortify ' + shortify);
 	var NowDate = new Date(),
 		x = 0,
 		screen = document.getElementById("main-screen-content"),
