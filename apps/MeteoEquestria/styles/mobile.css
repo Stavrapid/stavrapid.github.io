@@ -108,7 +108,8 @@ and (min-device-width : 320px)
 and (max-device-width : 568px) 
 and (orientation : landscape) {
 	
-	#settings-screen .head, #menu-screen .head {
+	#settings-screen .head, 
+	#search-screen .head {
 		padding-top: 10px !important;
 	}
 	
@@ -201,7 +202,8 @@ a:active {
 }
 
 #settings-screen,
-#menu-screen {
+#search-screen,
+#favorite-screen {
 	position: fixed;
 	display: -webkit-flex;
 	display: flex;
@@ -214,6 +216,7 @@ a:active {
 	background-color: #734456;
 	-webkit-transform: translate3d(0, 0, 0);
 	-webkit-transition: -webkit-transform 0.5s cubic-bezier(.1, 1, .5, 1) 0s;
+	border-radius: 10px 10px 0 0;
 }
 
 .status-bar {
@@ -302,7 +305,8 @@ a:active {
 }
 
 #settings-screen .head,
-#menu-screen .head {
+#search-screen .head,
+#favorite-screen .head {
 	font-weight: bold;
 	position: relative;
 	z-index: 100;
@@ -328,16 +332,18 @@ a:active {
 	font-size: 1.1em;
 	position: absolute;
 	left: 0;
-	bottom: 0;
-	padding: 14px 0.8em;
+	top: 0;
+	padding: 24px 14px 0.8em;
+	line-height: 1.5rem;
 }
 
 .head .button-right {
 	font-size: 1.1em;
 	position: absolute;
 	right: 0;
-	bottom: 0;
-	padding: 14px 0.8em;
+	top: 0;
+	padding: 24px 14px 0.8em;
+	line-height: 1.6rem;
 }
 
 .button-left.touch,
@@ -345,13 +351,9 @@ a:active {
 	opacity: 0.25;
 }
 
-#settings-screen,
-#menu-screen {
-	border-radius: 10px 10px 0 0;
-}
-
 #settings-screen-content,
-#menu-screen-content,
+#search-screen-content,
+#favorite-screen-content,
 #main-screen-content,
 #main-screen-content-landscape {
 	position: relative;
@@ -570,21 +572,6 @@ body {
 	opacity: 0.4;
 }
 
-.menu-button {
-	position: absolute;
-	z-index: 101;
-	left: 0;
-	top: 0;
-	width: 21px;
-	height: 21px;
-	background: url('../img/menu.png') no-repeat center / 21px 21px;
-	padding: 5%;
-}
-
-.menu-button.touch {
-	opacity: 0.25;
-}
-
 #today-tab {
 	font-size: 1em;
 	text-align: right;
@@ -701,11 +688,6 @@ sup {
 	background: linear-gradient(to bottom, rgba(77, 45, 57, 0.4) 0%, rgba(0, 0, 0, 0) 50%, rgba(77, 45, 57, 0.4) 100%);
 }
 
-#main-screen-content-landscape .menu-button {
-	left: initial;
-	right: 0;
-}
-
 #main-screen-content-landscape #info-block {
 	display: flex;
 	display: -webkit-flex;
@@ -786,18 +768,60 @@ sup {
 	font-size: 1.5em;
 }
 
+.head .search-field-container {
+	position: relative;
+	margin: 0.8rem 0.8rem 0;
+}
+
+.head .search-field-container .reset-button {
+	display: none;
+	position: absolute;
+    background: url(../img/ios-cross.svg) no-repeat;
+    background-size: 100%;
+    width: 1rem;
+    height: 1rem;
+    margin: 0.65rem 0.5rem;
+    top: 0;
+    right: 0;
+}
+
+.head .search-field-container:before {
+	position: absolute;
+    content: '';
+    background: url(../img/ios-search.svg) no-repeat;
+    background-size: 100%;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0.5rem;
+    top: 0;
+    left: 0;
+}
+
+.head input.search-field {
+    display: block;
+    border: none;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    padding: 0.5rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    /*font-family: 'Bliss Pro';*/
+}
 
 /*	White theme style
 -------------------------------------------------------------------
 */
 body.white #settings-screen,
-body.white #menu-screen {
+body.white #search-screen,
+body.white #favorite-screen {
 	background-color: #fff;
 }
 
 body.white #settings-screen-content,
-body.white #menu-screen-content,
-body.white #main-screen-content {
+body.white #main-screen-content,
+body.white #search-screen-content,
+body.white #favorite-screen-content {
 	color: #000;
 }
 
@@ -841,23 +865,21 @@ body.white .ios-li:last-child > div {
 }
 
 body.white #settings-screen .head,
-body.white #menu-screen .head {
+body.white #search-screen .head,
+body.white #favorite-screen .head {
 	/*background-color: #0095f5;*/
 	background-color: #fff;
 	border: none;
 	box-shadow: 0px 5px 50px 0px rgba(177,177,177,0.25);
 }
 
-body.white #settings-screen .head .title,
-body.white #menu-screen .head .title {
+body.white .head .title {
 	color: #000;
 	text-transform: uppercase;
 }
 
-body.white #settings-screen .head .button-right,
-body.white #menu-screen .head .button-right,
-body.white #settings-screen .head .button-left,
-body.white #menu-screen .head .button-left {
+body.white .head .button-right,
+body.white .head .button-left {
 	color: #0095f5;
 }
 

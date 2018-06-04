@@ -144,8 +144,9 @@
 			</div>
 
 			<div class="nav-bar">
-				<div class="nav-button" onclick=""><img src="./img/search.svg"/></div>
-				<div class="nav-button" onclick="showScreen('menu', false)"><img src="./img/location.svg"/></div>
+				<div class="nav-button" onclick="showScreen('search', true)"><img src="./img/search.svg"/></div>
+				<div class="nav-button" onclick="showScreen('favorite', false)"><img src="./img/location.svg"/></div>
+				<div class="nav-button" onclick=""><img src="./img/favorites.svg"/></div>
 				<div class="nav-button" onclick="showScreen('settings', true)"><img src="./img/gear.svg"/></div>
 			</div>
 			<!-- PORTRAIT SCREEN END -->
@@ -244,7 +245,7 @@
 		<div id="settings-screen">
 			<div class="head noBounce" align="center">
 				<span class="title">Settings</span>
-				<span class="button-right" onclick="hideScreen('settings', false); initiate();">Apply</span>
+				<span class="button-right" onclick="hideScreen('settings', false); initiate();">Done</span>
 			</div>
 			<div id="settings-screen-content">
 			<div class="scrollfix-content">
@@ -352,13 +353,17 @@
 		</div>
 		<!-- SETTINGS SCREEN END -->
 		
-		<!-- MENU SCREEN BEGIN -->
-		<div id="menu-screen">
+		<!-- SEARCH SCREEN BEGIN -->
+		<div id="search-screen">
 			<div class="head noBounce" align="center">
-				<span class="button-left" onclick="hideScreen('menu', false);">Close</span>
+				<span class="button-right" onclick="hideScreen('search', false);">Cancel</span>
 				<span class="title">Location</span>
+				<div class="search-field-container">
+					<div class="reset-button" onclick="searchInputReset(this, 'search-screen')"></div>
+					<input type="text" name="" class="search-field" placeholder="Search" oninput="searchInputChanged(this, 'search-screen')">
+				</div>
 			</div>
-			<div id="menu-screen-content">
+			<div id="search-screen-content">
 			<div class="scrollfix-content">
 				<div class="ios-ul-title">Crystal Empire</div>
 				<ul class="ios-ul">
@@ -504,8 +509,26 @@
 			</div>
 			</div>
 		</div>
-		<!-- MENU SCREEN END -->
+		<!-- SEARCH SCREEN END -->
 		
+		<!-- FAVORIT SCREEN BEGIN -->
+		<div id="favorite-screen">
+			<div class="head noBounce" align="center">
+				<span class="title">Favorite</span>
+				<span class="button-right" onclick="hideScreen('favorite', false);">Cancel</span>
+				<div class="search-field-container">
+					<div class="reset-button" onclick="searchInputReset(this, 'favorite-screen')"></div>
+					<input type="text" name="" class="search-field" placeholder="Search" oninput="searchInputChanged(this, 'favorite-screen')">
+				</div>
+			</div>
+			<div id="favorite-screen-content">
+			<div class="scrollfix-content">
+				
+			</div>
+			</div>
+		</div>
+		<!-- FAVORIT SCREEN END -->
+
 		<!-- MAIN SCRIPTS BEGIN-->
 		<script type="text/javascript">
 			
@@ -535,6 +558,58 @@
 				console.log(link);
 				link.click();
 				link.click();
+			}
+
+			// Search Field Input Changed
+			function searchInputChanged( field, screen ) {
+				if ( field.value == '' ) {
+					field.parentNode.getElementsByClassName('reset-button')[0].style.display = 'none';
+				} else {
+					field.parentNode.getElementsByClassName('reset-button')[0].style.display = 'block';
+				}
+				search( field.value, screen );
+			}
+
+			// Search Input Reset
+			function searchInputReset( button, screen ) {
+				button.parentNode.getElementsByTagName('input')[0].value = '';
+				searchInputChanged( button.parentNode.getElementsByTagName('input')[0], screen );
+			}
+
+			// Searching Algoritm
+			function search( filter, screen ) {
+				var list = document.getElementById( screen + '-content' );
+				var lUl = list.getElementsByTagName( 'ul' );
+				var gotit = false;
+				for ( i = 0; i < lUl.length; i++ ) {
+					gotit = false;
+					var lLi = lUl[ i ].getElementsByTagName( 'li' );
+					for ( var j = 0; j < lLi.length; j++ ) {
+						if ( lLi[ j ] ) {
+							if ( lLi[ j ].textContent.replace(/\u00A0+/g,'').toUpperCase().indexOf( filter.toUpperCase() ) > -1 ) {
+								gotit = true;
+								lLi[ j ].style.display = '';
+								lLi[ j ].classList.remove( 'filter-li-hidden' );
+								// break;
+							} else {
+								// gotit = false;
+								lLi[ j ].style.display = 'none';
+								lLi[ j ].classList.add( 'filter-li-hidden' );
+							}
+						}
+					}
+					if ( gotit ) {
+						list.getElementsByClassName('ios-ul-title')[ i ].style.display = '';
+					} else {
+						list.getElementsByClassName('ios-ul-title')[ i ].style.display = 'none';
+					}
+					gotit = false;
+				}
+				// if ( list.querySelectorAll( 'li:not(.filter-li-hidden)' ).length == 0 ) {
+				// 	document.getElementById( 'table_messager' ).innerHTML = 'По запросу <span>' + filter.toUpperCase() + '</span> ничего не найдено';
+				// } else {
+				// 	document.getElementById( 'table_messager' ).innerHTML = '';
+				// }
 			}
 
 			// SHOW/HIDE SCREEN BEGIN
@@ -570,7 +645,7 @@
 				
 				initiate();
 				window.setTimeout(function(){
-					hideScreen("menu", true);
+					hideScreen("search", true);
 				}, 100);
 			}
 			
@@ -614,7 +689,7 @@
 			// 	}
 			// });
 			
-			document.getElementById("main-screen-content").querySelector(".scrollfix-content").addEventListener("scroll", function(e){
+			document.getElementById("main-screen").querySelector(".scrollfix-content").addEventListener("scroll", function(e){
 				var screen = document.getElementById("main-screen-content").querySelector(".scrollfix-content");
 				var scrollBottom = (screen.scrollHeight - (screen.offsetHeight + screen.scrollTop));
 				var mainScreenContent = document.getElementById("main-screen-content");
