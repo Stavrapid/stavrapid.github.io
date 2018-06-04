@@ -451,7 +451,7 @@ h2 {
     transform: translate(-50%, -50%);
     width: 12.5rem;
     height: 12.5rem;
-    background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0) 70%);
     z-index: -1;
 }
 
@@ -814,7 +814,7 @@ body.white .blank img {
 }
 
 body.white .blank .logo:after {
-    background: radial-gradient(ellipse at center, rgba(0,149,255,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: radial-gradient(ellipse at center, rgba(0,149,255,0.1) 0%,rgba(0,0,0,0) 70%);
 }
 
 body.white .ios-ul {
