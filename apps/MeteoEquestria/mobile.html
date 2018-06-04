@@ -144,16 +144,16 @@
 			</div>
 
 			<div class="nav-bar">
-				<div class="nav-button" onclick="showScreen('menu')"><img src="./img/location.svg"/></div>
+				<div class="nav-button" onclick="showScreen('menu', false)"><img src="./img/location.svg"/></div>
 				<div class="nav-button" onclick=""><img src="./img/search.svg"/></div>
-				<div class="nav-button" onclick="showScreen('settings')"><img src="./img/gear.svg"/></div>
+				<div class="nav-button" onclick="showScreen('settings', true)"><img src="./img/gear.svg"/></div>
 			</div>
 			<!-- PORTRAIT SCREEN END -->
 			
 			<!-- LANDSCAPE SCREEN BEGIN -->
 			<div id="main-screen-content-landscape" class="noBounce">
 				<div class="landscape">
-					<div class="menu-button noBounce" width="42" onclick="showScreen('menu')"></div>
+					<div class="menu-button noBounce" width="42" onclick="showScreen('menu', false)"></div>
 					<div class="today-tab">
 					<div class="place"><span class="city">Ponyville</span>, <span class="country">Equestria</span></div>
 					<div class="today"><span class="today-day">Tuesday</span> <span class="today-date">24<sup>th</sup></span> <span class="today-time">10:30</span></div>
@@ -244,7 +244,7 @@
 		<div id="settings-screen">
 			<div class="head noBounce" align="center">
 				<span class="title">Settings</span>
-				<span class="button-right" onclick="hideScreen('settings'); initiate();">Apply</span>
+				<span class="button-right" onclick="hideScreen('settings', false); initiate();">Apply</span>
 			</div>
 			<div id="settings-screen-content">
 			<div class="scrollfix-content">
@@ -256,7 +256,7 @@
 				</div>
 				<ul class="ios-ul">
 					<li class="ios-li">
-						<div onclick="initiate(); hideScreen('settings');">Refresh weather data</div>
+						<div onclick="initiate(); hideScreen('settings', true);">Refresh weather data</div>
 					</li>
 				</ul>
 				<div class="ios-ul-title">customisation</div>
@@ -355,7 +355,7 @@
 		<!-- MENU SCREEN BEGIN -->
 		<div id="menu-screen">
 			<div class="head noBounce" align="center">
-				<span class="button-left" onclick="hideScreen('menu');">Close</span>
+				<span class="button-left" onclick="hideScreen('menu', false);">Close</span>
 				<span class="title">Location</span>
 			</div>
 			<div id="menu-screen-content">
@@ -366,7 +366,7 @@
 						<div onclick="setLocation('Crystal Empire City', 'Crystal Empire');">Crystal Empire City</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Crystal Mountains</div>
+						<div  class="" onclick="setLocation('Crystal Mountains','Crystal Empire');">Crystal Mountains</div>
 					</li>
 				</ul>
 				<div class="ios-ul-title">Equestria</div>
@@ -384,7 +384,7 @@
 						<div onclick="setLocation('Everfree Forest','Equestria');">Everfree Forest</div>
 					</li>
 					<li class="ios-li">
-						<div onclick="setLocation('Los Pegasus','Equestria');">Los Pegasus</div>
+						<div onclick="setLocation('Las Pegasus','Equestria');">Las Pegasus</div>
 					</li>
 					<li class="ios-li">
 						<div onclick="setLocation('Manehatten','Equestria');">Manehatten</div>
@@ -402,13 +402,13 @@
 						<div  class="disabled" onclick="setLocation('','');">White Tail Woods</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Froggy Bottom Bogg</div>
+						<div  class="" onclick="setLocation('Froggy Bottom Bogg','Equestria');">Froggy Bottom Bogg</div>
 					</li>
 					<li class="ios-li">
 						<div  class="disabled" onclick="setLocation('','');">Rockville</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Ghastly Gorge</div>
+						<div  class="" onclick="setLocation('Ghastly Gorge','Equestria');">Ghastly Gorge</div>
 					</li>
 					<li class="ios-li">
 						<div  class="disabled" onclick="setLocation('','');">Dodge Junction</div>
@@ -420,13 +420,13 @@
 						<div  class="disabled" onclick="setLocation('','');">Frozen North</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Winsome Falls</div>
+						<div  class="" onclick="setLocation('Winsome Falls','Equestria');">Winsome Falls</div>
 					</li>
 					<li class="ios-li">
 						<div  class="disabled" onclick="setLocation('','');">Tenochtitlan Basin</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Rainbow Falls</div>
+						<div  class="" onclick="setLocation('Rainbow Falls','Equestria');">Rainbow Falls</div>
 					</li>
 					<li class="ios-li">
 						<div  class="disabled" onclick="setLocation('','');">Fillydelphia</div>
@@ -438,28 +438,28 @@
 						<div  class="disabled" onclick="setLocation('','');">Baltimare</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Hollow Shades</div>
+						<div  class="" onclick="setLocation('Hollow Shades','Equestria');">Hollow Shades</div>
 					</li>
 					<li class="ios-li">
 						<div  class="disabled" onclick="setLocation('','');">Ponhenge</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Smokey Mountains</div>
+						<div  class="" onclick="setLocation('Smokey Mountains','Equestria');">Smokey Mountains</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Badlands</div>
+						<div  class="" onclick="setLocation('Badlands','Equestria');">Badlands</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Breezie Village</div>
+						<div  class="" onclick="setLocation('Breezie Village','Equestria');">Breezie Village</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Tartarus</div>
+						<div  class="" onclick="setLocation('Tartarus','Equestria');">Tartarus</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Neighagra Falls</div>
+						<div  class="" onclick="setLocation('Neighagra Falls','Equestria');">Neighagra Falls</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Our Town</div>
+						<div  class="" onclick="setLocation('Our Town','Equestria');">Our Town</div>
 					</li>
 					<li class="ios-li">
 						<div  class="disabled" onclick="setLocation('','');">Sire's Hollow</div>
@@ -471,34 +471,34 @@
 						<div  class="disabled" onclick="setLocation('','');">Stratusburg</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Somnambula</div>
+						<div  class="" onclick="setLocation('Somnambula','Equestria');">Somnambula</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Hayseed Swamp</div>
+						<div  class="" onclick="setLocation('Hayseed Swamp','Equestria');">Hayseed Swamp</div>
 					</li>
 				</ul>
 				<div class="ios-ul-title">Beyond Equestria</div>
 				<ul class="ios-ul">
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Maretropolis</div>
+						<div  class="" onclick="setLocation('Maretropolis','Beyond Equestria');">Maretropolis</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Griffonstone</div>
+						<div  class="" onclick="setLocation('Griffonstone','Beyond Equestria');">Griffonstone</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Yakyakistan</div>
+						<div  class="" onclick="setLocation('Yakyakistan','Beyond Equestria');">Yakyakistan</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Chaosville</div>
+						<div  class="" onclick="setLocation('Chaosville','Beyond Equestria');">Chaosville</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Changeling Kingdom</div>
+						<div  class="" onclick="setLocation('Changeling Kingdom','Beyond Equestria');">Changeling Kingdom</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Klugetown</div>
+						<div  class="" onclick="setLocation('Klugetown','Beyond Equestria');">Klugetown</div>
 					</li>
 					<li class="ios-li">
-						<div  class="disabled" onclick="setLocation('','');">Seaquestria</div>
+						<div  class="" onclick="setLocation('Seaquestria','Beyond Equestria');">Seaquestria</div>
 					</li>
 				</ul>
 			</div>
@@ -538,16 +538,20 @@
 			}
 
 			// SHOW/HIDE SCREEN BEGIN
-			function showScreen(screenName){
+			function showScreen(screenName, scrollTop){
 				var screen = document.getElementById(screenName + "-screen");
-				// screen.querySelector(".scrollfix-content").scrollTop = 1;
+				if ( scrollTop ) {
+					screen.querySelector(".scrollfix-content").scrollTop = 1;
+				}
 				screen.setAttribute("style", "-webkit-transform: translate3d(0, -100%, 0); -moz-transform: translate3d(0, -100%, 0);");
 				// document.getElementById('main-screen').style.webkitTransform = 'scale3d(0.95,0.95,0.95)';
 				document.getElementById('main-screen').setAttribute("style", "-webkit-transform: scale3d(0.95,0.95,0.95);");
 			}
 			
-			function hideScreen(screenName) {
-				// document.getElementById("main-screen").querySelector(".scrollfix-content").scrollTop = 1;
+			function hideScreen(screenName, scrollTop) {
+				if ( scrollTop ) {
+					document.getElementById("main-screen").querySelector(".scrollfix-content").scrollTop = 1;
+				}
 				var screen = document.getElementById(screenName + "-screen");
 				screen.setAttribute("style", "-webkit-transform: translate3d(0, 0, 0);");
 				// document.getElementById('main-screen').style.webkitTransform = 'scale3d(1,1,1)';
@@ -565,9 +569,8 @@
 				setting_country = country;
 				
 				initiate();
-				
 				window.setTimeout(function(){
-					hideScreen("menu");
+					hideScreen("menu", true);
 				}, 100);
 			}
 			
