@@ -89,8 +89,8 @@ a:active {
 }
 
 #loading-screen { z-index: 9000; }
-.button-scroll-to-top { z-index: 5000; }
-/*.nav-bar { z-index: 5000; }*/
+/*.button-scroll-to-top { z-index: 5000; }*/
+.nav-bar { z-index: 5000; }
 #settings-screen { z-index: 3000; }
 #search-screen { z-index: 2000 }
 #favorite-screen { z-index: 1000; }
@@ -112,6 +112,8 @@ a:active {
 	-webkit-transition: -webkit-transform 0.5s cubic-bezier(.1, 1, .5, 1) 0s; /* animation transition */
 	border-radius: 10px 10px 0 0;
 	overflow: hidden;
+	-webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
 }
 
 .nav-bar {
@@ -486,7 +488,7 @@ body {
 	border-radius: 10px 10px 0 0;
 	margin-bottom: -10px;
 	box-shadow: inset 0 0 250px 0 rgba(0,0,0,0.5);
-	transition: -webkit-transform 0.01s;
+	/*transition: -webkit-transform 0.01s;*/
 	text-shadow: 0 0 50px rgba(0,0,0,1);
 }
 
@@ -516,6 +518,12 @@ ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+}
+
+#tabs_wrapper {
+	border-radius: 10px;
+	-webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
 }
 
 #tabs {
@@ -856,68 +864,51 @@ body.dark .search-field {
 /* Settings screen color change animation
 ------------------------------------------------------------------------
 */
-body.white #settings-screen {
-	/*-webkit-transition: background-color 0.1s;*/
+/* Dark to White */
+body.white.sharp[transition = 'dark-sharp>white-sharp'] #settings-screen {
 	-webkit-animation: "settings_screen-from_dark_to_white" 0.1s 1 forwards linear;
 }
-body.white #settings-screen-content {
-	/*-webkit-transition: color 0.1s;*/
+body.white.sharp[transition = 'dark-sharp>white-sharp'] #settings-screen-content {
 	-webkit-animation: "text-from_dark_to_white" 0.1s 1 forwards linear;
 }
-body.white #settings-screen .head {
-	/*-webkit-transition: background-color 0.1s;*/
+body.white.sharp[transition = 'dark-sharp>white-sharp'] #settings-screen .head {
 	-webkit-animation: "head-from_dark_to_white" 0.1s 1 forwards linear;
 }
-body.white #settings-screen .head .title {
-	/*-webkit-transition: color 0.1s;*/
+body.white.sharp[transition = 'dark-sharp>white-sharp'] #settings-screen .head .title {
 	-webkit-animation: "text-from_dark_to_white" 0.1s 1 forwards linear;
 }
-body.white #settings-screen .ios-ul {
-	/*-webkit-transition: background-color 0.1s;*/
+body.white.sharp[transition = 'dark-sharp>white-sharp'] #settings-screen .ios-ul {
 	-webkit-animation: "ios_ul-from_dark_to_white" 0.1s 1 forwards linear;
 }
-body.white #settings-screen .ios-li {
-	/*-webkit-transition: border-top-color 0.1s;*/
+body.white.sharp[transition = 'dark-sharp>white-sharp'] #settings-screen .ios-li {
 	-webkit-animation: "ios_li-from_dark_to_white" 0.1s 1 forwards linear;
 }
-body.white #settings-screen .ios7-switch input + span {
+body.white.sharp[transition = 'dark-sharp>white-sharp'] #settings-screen .ios7-switch input + span {
     -webkit-transition: background-color linear 0.1s;
-    /*-webkit-animation: "ios_switch-from_dark_to_white" 0.1s 1 forwards ease-out;*/
 }
-
-
-
-body.dark #settings-screen {
-	/*-webkit-transition: background-color 0.1s;*/
+/* White to Dark */
+body.dark.sharp[transition = 'white-sharp>dark-sharp'] #settings-screen {
 	-webkit-animation: "settings_screen-from_white_to_dark" 0.1s 1 forwards linear;
 }
-body.dark #settings-screen-content {
-	/*-webkit-transition: color 0.1s;*/
+body.dark.sharp[transition = 'white-sharp>dark-sharp'] #settings-screen-content {
 	-webkit-animation: "text-from_white_to_dark" 0.1s 1 forwards linear;
 }
-body.dark #settings-screen .head {
-	/*-webkit-transition: background-color 0.1s;*/
+body.dark.sharp[transition = 'white-sharp>dark-sharp'] #settings-screen .head {
 	-webkit-animation: "head-from_white_to_dark" 0.1s 1 forwards linear;
 }
-body.dark #settings-screen .head .title {
-	/*-webkit-transition: color 0.1s;*/
+body.dark.sharp[transition = 'white-sharp>dark-sharp'] #settings-screen .head .title {
 	-webkit-animation: "text-from_white_to_dark" 0.1s 1 forwards linear;
 }
-body.dark #settings-screen .ios-ul {
-	/*-webkit-transition: background-color 0.1s;*/
+body.dark.sharp[transition = 'white-sharp>dark-sharp'] #settings-screen .ios-ul {
 	-webkit-animation: "ios_ul-from_white_to_dark" 0.1s 1 forwards linear;
 }
-body.dark #settings-screen .ios-li {
-	/*-webkit-transition: border-top-color 0.1s;*/
+body.dark.sharp[transition = 'white-sharp>dark-sharp'] #settings-screen .ios-li {
 	-webkit-animation: "ios_li-from_white_to_dark" 0.1s 1 forwards linear;
 }
-body.dark #settings-screen .ios7-switch input + span {
+body.dark.sharp[transition = 'white-sharp>dark-sharp'] #settings-screen .ios7-switch input + span {
     -webkit-transition: background-color linear 0.1s;
-    /*-webkit-animation: "ios_switch-from_white_to_dark" 0.1s 1 forwards ease-out;*/
 }
-
-
-
+/* WHITE TO DARK */
 @-webkit-keyframes settings_screen-from_white_to_dark {
 	from { background-color: #fff; }
 	to { background-color: #313233; }
@@ -938,10 +929,7 @@ body.dark #settings-screen .ios7-switch input + span {
 	from { border-top-color: rgba(0,0,0,0.08); }
 	to { border-top-color: rgba(0,0,0,0.2); }
 }
-/*@-webkit-keyframes ios_switch-from_white_to_dark {
-	from { background-color: #fff; }
-	to { background-color: #3b3c3d; }
-}*/
+/* DARK TO WHITE */
 @-webkit-keyframes settings_screen-from_dark_to_white {
 	from { background-color: #313233; }
 	to { background-color: #fff; }
@@ -962,7 +950,294 @@ body.dark #settings-screen .ios7-switch input + span {
 	from { border-top-color: rgba(0,0,0,0.2); }
 	to { border-top-color: rgba(0,0,0,0.08); }
 }
-/*@-webkit-keyframes ios_switch-from_dark_to_white {
+
+
+
+/* Apple Brand Blur Feature
+-----------------------------------------------------------------------------
+*/
+/* WHITE BLUR */
+body.white.blur .nav-bar {
+	background-color: rgba(255,255,255,0.8);
+	-webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+body.white.blur #tabs {
+	opacity: 0.8;
+	/*-webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);*/
+}
+body.white.blur #search-screen,
+body.white.blur #favorite-screen,
+body.white.blur #settings-screen {
+	background-color: rgba(255,255,255,0.8);
+	/*-webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);*/
+}
+body.white.blur #search-screen .head,
+body.white.blur #favorite-screen .head,
+body.white.blur #settings-screen .head {
+	background-color: transparent;
+}
+body.white.blur #search-screen .search-field,
+body.white.blur #favorite-screen .search-field,
+body.white.blur #settings-screen .search-field {
+	background-color: rgba(0,0,0,0.1);
+}
+body.white.blur #search-screen .ios-ul,
+body.white.blur #favorite-screen .ios-ul,
+body.white.blur #settings-screen .ios-ul {
+	background-color: rgba(0,0,0,0.1);
+}
+body.white.blur #search-screen .ios-ul .ios7-switch input + span,
+body.white.blur #favorite-screen .ios-ul .ios7-switch input + span,
+body.white.blur #settings-screen .ios-ul .ios7-switch input + span {
+	background-color: rgba(255,255,255,0.1);
+}
+
+/* DARK BLUR */
+body.dark.blur .nav-bar {
+	background-color: rgba(49,50,51,0.8);
+	-webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+body.dark.blur #tabs {
+	opacity: 0.8;
+}
+body.dark.blur #search-screen,
+body.dark.blur #favorite-screen,
+body.dark.blur #settings-screen {
+	background-color: rgba(49,50,51,0.8);
+	/*-webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);*/
+}
+body.dark.blur #search-screen .head,
+body.dark.blur #favorite-screen .head,
+body.dark.blur #settings-screen .head {
+	background-color: transparent;
+}
+body.dark.blur #search-screen .search-field,
+body.dark.blur #favorite-screen .search-field,
+body.dark.blur #settings-screen .search-field {
+	background-color: rgba(255,255,255,0.1);
+}
+body.dark.blur #search-screen .ios-ul,
+body.dark.blur #favorite-screen .ios-ul,
+body.dark.blur #settings-screen .ios-ul {
+	background-color: rgba(59,60,61,0.1);
+}
+body.dark.blur #search-screen .ios-ul .ios7-switch input + span,
+body.dark.blur #favorite-screen .ios-ul .ios7-switch input + span,
+body.dark.blur #settings-screen .ios-ul .ios7-switch input + span {
+	background-color: rgba(59,60,61,0.1);
+}
+
+
+/* White Blur to Dark Blur */
+body.dark.blur[transition = 'white-blur>dark-blur'] #settings-screen {
+	-webkit-animation: "settings_screen-from_bwhite_to_bdark" 0.1s 1 forwards linear;
+}
+body.dark.blur[transition = 'white-blur>dark-blur'] #settings-screen-content {
+	-webkit-animation: "text-from_bwhite_to_bdark" 0.1s 1 forwards linear;
+}
+body.dark.blur[transition = 'white-blur>dark-blur'] #settings-screen .head .title {
+	-webkit-animation: "text-from_bwhite_to_bdark" 0.1s 1 forwards linear;
+}
+body.dark.blur[transition = 'white-blur>dark-blur'] #settings-screen .ios-ul {
+	-webkit-animation: "ios_ul-from_bwhite_to_bdark" 0.1s 1 forwards linear;
+}
+body.dark.blur[transition = 'white-blur>dark-blur'] #settings-screen .ios7-switch input + span {
+    -webkit-transition: background-color linear 0.1s;
+}
+/* Dark Blur to White Blur */
+body.white.blur[transition = 'dark-blur>white-blur'] #settings-screen {
+	-webkit-animation: "settings_screen-from_bdark_to_bwhite" 0.1s 1 forwards linear;
+}
+body.white.blur[transition = 'dark-blur>white-blur'] #settings-screen-content {
+	-webkit-animation: "text-from_bdark_to_bwhite" 0.1s 1 forwards linear;
+}
+body.white.blur[transition = 'dark-blur>white-blur'] #settings-screen .head .title {
+	-webkit-animation: "text-from_bdark_to_bwhite" 0.1s 1 forwards linear;
+}
+body.white.blur[transition = 'dark-blur>white-blur'] #settings-screen .ios-ul {
+	-webkit-animation: "ios_ul-from_bdark_to_bwhite" 0.1s 1 forwards linear;
+}
+body.white.blur[transition = 'dark-blur>white-blur'] #settings-screen .ios7-switch input + span {
+    -webkit-transition: background-color linear 0.1s;
+}
+
+
+/* WHITE BLUR TO DARK BLUR */
+@-webkit-keyframes settings_screen-from_bwhite_to_bdark {
+	from { background-color: rgba(255,255,255,0.8); }
+	to { background-color: rgba(49,50,51,0.8); }
+}
+@-webkit-keyframes ios_ul-from_bwhite_to_bdark {
+	from { background-color: rgba(255,255,255,0.1); }
+	to { background-color: rgba(49,50,51,0.1); }
+}
+@-webkit-keyframes text-from_bwhite_to_bdark {
+	from { color: #000; }
+	to { color: #fff; }
+}
+/* DARK BLUR TO WHITE BLUR */
+@-webkit-keyframes settings_screen-from_bdark_to_bwhite {
+	from { background-color: rgba(49,50,51,0.8); }
+	to { background-color: rgba(255,255,255,0.8); }
+}
+@-webkit-keyframes ios_ul-from_bdark_to_bwhite {
+	from { background-color: rgba(49,50,51,0.1); }
+	to { background-color: rgba(255,255,255,0.1); }
+}
+@-webkit-keyframes text-from_bdark_to_bwhite {
+	from { color: #fff; }
+	to { color: #000; }
+}
+
+
+/* White Sharp to White Blur */
+body.white.blur[transition = 'white-sharp>white-blur'] #settings-screen {
+	-webkit-animation: "settings_screen-from_whitesharp_to_whiteblur" 0.1s 1 forwards linear;
+}
+body.white.blur[transition = 'white-sharp>white-blur'] #settings-screen-content {
+	-webkit-animation: "text-from_whitesharp_to_whiteblur" 0.1s 1 forwards linear;
+}
+body.white.blur[transition = 'white-sharp>white-blur'] #settings-screen .head {
+	-webkit-animation: "head-from_whitesharp_to_whiteblur" 0.1s 1 forwards linear;
+}
+body.white.blur[transition = 'white-sharp>white-blur'] #settings-screen .head .title {
+	-webkit-animation: "text-from_whitesharp_to_whiteblur" 0.1s 1 forwards linear;
+}
+body.white.blur[transition = 'white-sharp>white-blur'] #settings-screen .ios-ul {
+	-webkit-animation: "ios_ul-from_whitesharp_to_whiteblur" 0.1s 1 forwards linear;
+}
+body.white.blur[transition = 'white-sharp>white-blur'] #settings-screen .ios7-switch input + span {
+    -webkit-transition: background-color linear 0.1s;
+}
+/* White Blur to White Sharp */
+body.white.sharp[transition = 'white-blur>white-sharp'] #settings-screen {
+	-webkit-animation: "settings_screen-from_whiteblur_to_whitesharp" 0.1s 1 forwards linear;
+}
+body.white.sharp[transition = 'white-blur>white-sharp'] #settings-screen-content {
+	-webkit-animation: "text-from_whiteblur_to_whitesharp" 0.1s 1 forwards linear;
+}
+body.white.sharp[transition = 'white-blur>white-sharp'] #settings-screen .head {
+	-webkit-animation: "head-from_whiteblur_to_whitesharp" 0.1s 1 forwards linear;
+}
+body.white.sharp[transition = 'white-blur>white-sharp'] #settings-screen .head .title {
+	-webkit-animation: "text-from_whiteblur_to_whitesharp" 0.1s 1 forwards linear;
+}
+body.white.sharp[transition = 'white-blur>white-sharp'] #settings-screen .ios-ul {
+	-webkit-animation: "ios_ul-from_whiteblur_to_whitesharp" 0.1s 1 forwards linear;
+}
+body.white.sharp[transition = 'white-blur>white-sharp'] #settings-screen .ios7-switch input + span {
+    -webkit-transition: background-color linear 0.1s;
+}
+/* WHITE SHARP TO WHITE BLUR */
+@-webkit-keyframes settings_screen-from_whitesharp_to_whiteblur {
 	from { background-color: #fff; }
+	to { background-color: rgba(255,255,255,0.8); }
+}
+@-webkit-keyframes head-from_whitesharp_to_whiteblur {
+	from { background-color: transparent; }
+	to { background-color: transparent; }
+}
+@-webkit-keyframes text-from_whitesharp_to_whiteblur {
+	from { color: #000; }
+	to { color: #000; }
+}
+@-webkit-keyframes ios_ul-from_whitesharp_to_whiteblur {
+	from { background-color: #fff; }
+	to { background-color: rgba(0,0,0,0.1); }
+}
+/* WHITE BLUR TO WHITE SHARP */
+@-webkit-keyframes settings_screen-from_whiteblur_to_whitesharp {
+	from { background-color: rgba(255,255,255,0.8); }
+	to { background-color: #fff; }
+}
+@-webkit-keyframes head-from_whiteblur_to_whitesharp {
+	from { background-color: transparent; }
+	to { background-color: transparent; }
+}
+@-webkit-keyframes text-from_whiteblur_to_whitesharp {
+	from { color: #000; }
+	to { color: #000; }
+}
+@-webkit-keyframes ios_ul-from_whiteblur_to_whitesharp {
+	from { background-color: rgba(0,0,0,0.1); }
+	to { background-color: #fff; }
+}
+
+
+/* Dark Sharp to Dark Blur */
+body.dark.blur[transition = 'dark-sharp>dark-blur'] #settings-screen {
+	-webkit-animation: "settings_screen-from_darksharp_to_darkblur" 0.1s 1 forwards linear;
+}
+body.white.blur[transition = 'dark-sharp>dark-blur'] #settings-screen-content {
+	-webkit-animation: "text-from_darksharp_to_darkblur" 0.1s 1 forwards linear;
+}
+body.dark.blur[transition = 'dark-sharp>dark-blur'] #settings-screen .head {
+	-webkit-animation: "head-from_darksharp_to_darkblur" 0.1s 1 forwards linear;
+}
+body.dark.blur[transition = 'dark-sharp>dark-blur'] #settings-screen .head .title {
+	-webkit-animation: "text-from_darksharp_to_darkblur" 0.1s 1 forwards linear;
+}
+body.dark.blur[transition = 'dark-sharp>dark-blur'] #settings-screen .ios-ul {
+	-webkit-animation: "ios_ul-from_darksharp_to_darkblur" 0.1s 1 forwards linear;
+}
+body.dark.blur[transition = 'dark-sharp>dark-blur'] #settings-screen .ios7-switch input + span {
+    -webkit-transition: background-color linear 0.1s;
+}
+/* Dark Blur to Dark Sharp */
+body.dark.sharp[transition = 'dark-blur>dark-sharp'] #settings-screen {
+	-webkit-animation: "settings_screen-from_darkblur_to_darksharp" 0.1s 1 forwards linear;
+}
+body.white.sharp[transition = 'dark-blur>dark-sharp'] #settings-screen-content {
+	-webkit-animation: "text-from_darkblur_to_darksharp" 0.1s 1 forwards linear;
+}
+body.dark.sharp[transition = 'dark-blur>dark-sharp'] #settings-screen .head {
+	-webkit-animation: "head-from_darkblur_to_darksharp" 0.1s 1 forwards linear;
+}
+body.dark.sharp[transition = 'dark-blur>dark-sharp'] #settings-screen .head .title {
+	-webkit-animation: "text-from_darkblur_to_darksharp" 0.1s 1 forwards linear;
+}
+body.dark.sharp[transition = 'dark-blur>dark-sharp'] #settings-screen .ios-ul {
+	-webkit-animation: "ios_ul-from_darkblur_to_darksharp" 0.1s 1 forwards linear;
+}
+body.dark.sharp[transition = 'dark-blur>dark-sharp'] #settings-screen .ios7-switch input + span {
+    -webkit-transition: background-color linear 0.1s;
+}
+/* DARK SHARP TO DARK BLUR */
+@-webkit-keyframes settings_screen-from_darksharp_to_darkblur {
+	from { background-color: #313233; }
+	to { background-color: rgba(49,50,51,0.8); }
+}
+@-webkit-keyframes head-from_darksharp_to_darkblur {
+	from { background-color: transparent; }
+	to { background-color: transparent; }
+}
+@-webkit-keyframes text-from_darksharp_to_darkblur {
+	from { color: #fff; }
+	to { color: #fff; }
+}
+@-webkit-keyframes ios_ul-from_darksharp_to_darkblur {
+	from { background-color: #3b3c3d; }
+	to { background-color: rgba(59,60,61,0.1); }
+}
+/* DARK BLUR TO DARK SHARP */
+@-webkit-keyframes settings_screen-from_darkblur_to_darksharp {
+	from { background-color: rgba(49,50,51,0.8); }
+	to { background-color: #313233; }
+}
+@-webkit-keyframes head-from_darkblur_to_darksharp {
+	from { background-color: transparent; }
+	to { background-color: transparent; }
+}
+@-webkit-keyframes text-from_darkblur_to_darksharp {
+	from { color: #fff; }
+	to { color: #fff; }
+}
+@-webkit-keyframes ios_ul-from_darkblur_to_darksharp {
+	from { background-color: rgba(59,60,61,0.1); }
 	to { background-color: #3b3c3d; }
-}*/
+}

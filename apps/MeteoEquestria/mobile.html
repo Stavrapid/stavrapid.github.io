@@ -82,10 +82,9 @@
 		<div id="main-screen">
 			<!-- PORTRAIT SCREEN BEGIN -->
 			<!-- <div class="status-bar"></div> -->
-
 			<div id="main-screen-content" class="noBounce">
 				<!-- <div class="button-scroll-to-top" onclick="scrollToTop('main-screen')"></div> -->
-				<div id="bg-overlay"></div>
+				
 				<div class="scrollfix-content">
 					<div id="today-tab">
 						<div class="today-location"><span class="city">Ponyville</span>, <span class="country">Equestria</span></div>
@@ -93,7 +92,7 @@
 						<div><span class="today-temperature">±XX</span></div>
 						<div class="today-icon"></div>
 					</div>
-					
+					<div id="tabs_wrapper">
 					<ul id="tabs">
 						
 						<li class="tab" num="1">
@@ -160,6 +159,7 @@
 						</li>
 
 					</ul>
+					</div>
 				</div>
 			</div>
 
@@ -169,6 +169,7 @@
 				<div class="nav-button" onclick=""><img src="./img/location.svg"/></div>
 				<div class="nav-button" onclick="showScreen('settings', true)"><img src="./img/gear.svg"/></div>
 			</div>
+			<div id="bg-overlay"></div>
 			<!-- PORTRAIT SCREEN END -->
 						
 		</div>
@@ -197,7 +198,7 @@
 						<div onclick="resetSettings()">Reset all settings to default</div>
 					</li>
 				</ul>
-				<div class="ios-ul-title">customisation</div>
+				<div class="ios-ul-title">Weather dispaly</div>
 				<script>
 					function toggle( tumbler ) {
 						if (tumbler.checked == false) {
@@ -229,15 +230,7 @@
 							</label>
 						</div>
 					</li>
-					<li class="ios-li">
-						<div onclick="toggle(this.querySelector('input')); checkSettings()" class="">
-							Use white theme
-							<label id="whiteTheme-switch" class="ios7-switch">
-								<input type="checkbox">
-								<span></span>
-							</label>
-						</div>
-					</li>
+					
 					<li class="ios-li">
 						<div onclick="toggle(this.querySelector('input')); checkSettings()">
 							Tabs color highlighting
@@ -249,6 +242,27 @@
 					</li>
 				</ul>
 				<div class="hint">This setting turning on/off the weather tabs color highlighting depending to the temperature</div>
+				<div class="ios-ul-title">Appearance</div>
+				<ul class="ios-ul">
+					<li class="ios-li">
+						<div onclick="toggle(this.querySelector('input')); checkSettings()">
+							Use white theme
+							<label id="whiteTheme-switch" class="ios7-switch">
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</div>
+					</li>
+					<li class="ios-li">
+						<div onclick="toggle(this.querySelector('input')); checkSettings()">
+							Use iOS7 blur
+							<label id="blur-switch" class="ios7-switch">
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</div>
+					</li>
+				</ul>
 				<div class="ios-ul-title">contact information</div>
 				<ul class="ios-ul">
 					<li class="ios-li glyphIcon gmail">
@@ -480,12 +494,13 @@
 
 			// LOCAL STORAGE SETTINGS BEGIN
 			function resetSettings() {	
-				localStorage.setting_showIcons = "true",
-				localStorage.setting_shortify = "true",
-				localStorage.setting_whiteTheme = "true",
-				localStorage.setting_showColors = "false",
-				localStorage.setting_town = "Changeling Kingdom",
-				localStorage.setting_country = "Beyond Equestria",
+				localStorage.setting_showIcons = "true";
+				localStorage.setting_shortify = "true";
+				localStorage.setting_whiteTheme = "true";
+				localStorage.setting_blur = "false";
+				localStorage.setting_showColors = "false";
+				localStorage.setting_town = "Changeling Kingdom";
+				localStorage.setting_country = "Beyond Equestria";
 				localStorage.setting_units = "Celsius";
 				localStorage.favorite = '[["Changeling Kingdom", "Beyond Equestria"],["Crystal Empire City", "Crystal Empire"],["Cloudsdale", "Equestria"],["Ponyville", "Equestria"],["Manehatten", "Equestria"]]';
 				loadInterface();
@@ -664,10 +679,6 @@
 				new ScrollFix(scrollingContent[j]);
 			}
 			// Scrollfix stuff END
-
-			loadInterface();
-			initiate();
-			// Clock();
 			
 			window.addEventListener("orientationchange", function() {
 				if (window.orientation != 0) {
@@ -759,6 +770,7 @@
 				tumbler("showIcons-switch").checked = parseBoolean(localStorage.setting_showIcons);
 				tumbler("shortify-switch").checked = parseBoolean(localStorage.setting_shortify);
 				tumbler("whiteTheme-switch").checked = parseBoolean(localStorage.setting_whiteTheme);
+				tumbler("blur-switch").checked = parseBoolean(localStorage.setting_blur);
 				tumbler("showColors-switch").checked = parseBoolean(localStorage.setting_showColors);
 				console.log(tumbler("showIcons-switch").checked);
 				console.log(tumbler("shortify-switch").checked);
@@ -783,6 +795,11 @@
 				} else {
 					localStorage.setting_whiteTheme = "false";
 				}
+				if ( tumbler("blur-switch").checked == true ) {
+					localStorage.setting_blur = "true";
+				} else {
+					localStorage.setting_blur = "false";
+				}
 				if ( tumbler("showColors-switch").checked == true ) {
 					localStorage.setting_showColors = "true";
 				} else {
@@ -793,6 +810,13 @@
 				console.log(localStorage);
 				console.log('SETTINGS SAVED END');
 			}
+
+			var fromColor = '',
+				toColor = '',
+				fromBlureness = '',
+				toBlureness = '',
+				fromState = '',
+				toState = '';
 
 			function checkSettings() {
 				saveSettings();
@@ -814,25 +838,45 @@
 						document.getElementById("main-screen-content").getElementsByClassName("tab-icon")[i].style.display = "none";
 					}
 				}
+
+
 				if ( localStorage.setting_whiteTheme == "true" ) {
 					document.body.classList.remove('dark');
 					document.body.classList.add('white');
-					console.log('Changint to White Theme');
+					currentColor = 'white';
 				} else {
 					document.body.classList.remove('white');
 					document.body.classList.add('dark');
-					console.log('Changint to Dark Theme')
+					currentColor = 'dark';
 				}
+				if ( localStorage.setting_blur == "true" ) {
+					document.body.classList.remove('sharp');
+					document.body.classList.add('blur');
+					currentBlur = 'blur';
+				} else {
+					document.body.classList.remove('blur');
+					document.body.classList.add('sharp');
+					currentBlur = 'sharp';
+				}
+				toState = currentColor + '-' + currentBlur;
+				document.body.setAttribute( 'transition', fromState + '>' + toState );
+				console.log('fromState ' + fromState);
+				fromState = currentColor + '-' + currentBlur;
+				initiate();
 			}
 			
 			// INITIATE FUNCTION BEGIN
 			function initiate() {
 				console.log('INITIATING APP...');
-				checkSettings();
 				getXMLDocument("./weather/" + localStorage.setting_country + "/" + localStorage.setting_town + ".xml", parseBoolean(localStorage.setting_showColors), parseBoolean(localStorage.setting_shortify));
 			}
 			// INITIATE FUNCTION END
 			
+			loadInterface();
+			checkSettings();
+			initiate();
+			// Clock();
+
 		</script>
 		<!-- MAIN SCRIPTS END-->
 		
