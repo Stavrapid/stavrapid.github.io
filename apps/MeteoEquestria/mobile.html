@@ -165,7 +165,7 @@
 
 			<div class="nav-bar">
 				<div class="nav-button" onclick="showScreen('search', true)"><img src="./img/search.svg"/></div>
-				<div class="nav-button" onclick="showScreen('favorite', false)"><img src="./img/favorites.svg"/></div>
+				<div class="nav-button" onclick="showScreen('favorite', false), loadFavorite()"><img src="./img/favorites.svg"/></div>
 				<div class="nav-button" onclick=""><img src="./img/location.svg"/></div>
 				<div class="nav-button" onclick="showScreen('settings', true)"><img src="./img/gear.svg"/></div>
 			</div>
@@ -191,6 +191,9 @@
 				<ul class="ios-ul">
 					<li class="ios-li glyphIcon reload">
 						<div onclick="initiate(); hideScreen('settings', true);">Refresh weather data</div>
+					</li>
+					<li class="ios-li glyphIcon reset">
+						<div onclick="resetSettings()">Reset all settings to default</div>
 					</li>
 				</ul>
 				<div class="ios-ul-title">customisation</div>
@@ -293,7 +296,7 @@
 				<span class="title">Location</span>
 				<div class="search-field-container">
 					<div class="reset-button" onclick="searchInputReset(this, 'search-screen')"><img src="./img/ios-cross.svg"/></div>
-					<input type="text" name="" class="search-field" placeholder="Search" oninput="searchInputChanged(this, 'search-screen')">
+					<input type="text" name="" class="search-field" placeholder="Search" oninput="searchInputChanged(this, 'search-screen')" disabled>
 				</div>
 			</div>
 			<div id="search-screen-content">
@@ -444,15 +447,16 @@
 		</div>
 		<!-- SEARCH SCREEN END -->
 		
-		<!-- FAVORIT SCREEN BEGIN -->
+		<!-- FAVORITE SCREEN BEGIN -->
 		<div id="favorite-screen">
 			<div class="head noBounce" align="center">
 				<span class="title">Favorite</span>
+				<span class="button-left" onclick="showScreen('favorite', true);"><img src="./img/plus.svg"></span>
 				<span class="button-right" onclick="hideScreen('favorite', false);">Cancel</span>
-				<div class="search-field-container">
+				<!-- <div class="search-field-container">
 					<div class="reset-button" onclick="searchInputReset(this, 'favorite-screen')"></div>
-					<input type="text" name="" class="search-field" placeholder="Search" oninput="searchInputChanged(this, 'favorite-screen')">
-				</div>
+					<input type="text" name="" class="search-field" placeholder="Search" oninput="searchInputChanged(this, 'favorite-screen')" disabled>
+				</div> -->
 			</div>
 			<div id="favorite-screen-content">
 			<div class="scrollfix-content">
@@ -460,7 +464,7 @@
 			</div>
 			</div>
 		</div>
-		<!-- FAVORIT SCREEN END -->
+		<!-- FAVORITE SCREEN END -->
 
 		<!-- MAIN SCRIPTS BEGIN-->
 		<script type="text/javascript">
@@ -472,10 +476,7 @@
 			}
 
 			// LOCAL STORAGE SETTINGS BEGIN
-			console.log('LOADED SETTINGS DATA.');
-			console.log(localStorage);
-			if (localStorage.setting_showColors == undefined) {
-				console.log('Local Storage is empty. Setting up default settings.');
+			function resetSettings() {	
 				localStorage.setting_showIcons = "true",
 				localStorage.setting_shortify = "true",
 				localStorage.setting_whiteTheme = "true",
@@ -483,6 +484,13 @@
 				localStorage.setting_town = "Changeling Kingdom",
 				localStorage.setting_country = "Beyond Equestria",
 				localStorage.setting_units = "Celsius";
+				localStorage.favorite = "";
+				loadInterface();
+				checkSettings();
+			}
+			if (localStorage.setting_showColors == undefined) {
+				console.log('Local Storage is empty. Setting up default settings.');
+				resetSettings();
 			}
 			// LOCAL STORAGE SETTINGS END
 
@@ -558,6 +566,44 @@
 				// 	document.getElementById( 'table_messager' ).innerHTML = '';
 				// }
 			}
+			// FAVORITES CODE BEGIN
+			// [["location","country"],["location","country"],["location","country"]]
+			function loadFavorite() {
+				if ( localStorage.favorite != undefined ) {
+					var favScreen = document.getElementById('favorite-screen'),
+						favs = JSON.parse(localStorage.favorite),
+						container = favScreen.getElementsByClassName('scrollfix-content')[0],
+						favTitle = document.createElement( 'div' ),
+						ulBlank = document.createElement( 'ul' );
+
+					container.innerHTML = ''; //clean favorite screen
+
+					favTitle.className = 'ios-ul-title';
+					favTitle.innerHTML = 'Favorite locations';
+					ulBlank.className = 'ios-ul';
+					container.appendChild( favTitle );
+					container.appendChild( ulBlank );
+					for (var i = 0; i < favs.length; i++) {
+						var liBlank = document.createElement( 'li' );
+						liBlank.className = 'ios-li';
+						liBlank.innerHTML = '<div onclick="setLocation(\'' + favs[i][0] + '\',\'' + favs[i][1] + '\');">' + favs[i][0] + '</div>';
+						ulBlank.appendChild( liBlank );
+					}
+				} else {
+					console.log('Favorites is undefined');
+				}
+			}
+
+			function saveFavorite( location, country ) {
+				var favArray = JSON.parse(localStorage.favorite),
+					favPlace = ['',''];
+
+				favPlace[0] = location;
+				favPlace[1] = country;
+				favArray.push( favPlace );
+				localStorage.favorite = JSON.stringify(favArray);
+			}
+			// FAVORITES CODE END
 
 			// SHOW/HIDE SCREEN BEGIN
 			function showScreen(screenName, scrollTop){
@@ -568,6 +614,9 @@
 				screen.setAttribute("style", "-webkit-transform: translate3d(0, -100%, 0); -moz-transform: translate3d(0, -100%, 0);");
 				// document.getElementById('main-screen').style.webkitTransform = 'scale3d(0.95,0.95,0.95)';
 				document.getElementById('main-screen').setAttribute("style", "-webkit-transform: scale3d(0.95,0.95,0.95);");
+				if ( screen.querySelector('.search-field') != null ) {
+					screen.querySelector('.search-field').disabled = "";
+				}
 			}
 			
 			function hideScreen(screenName, scrollTop) {
@@ -578,6 +627,9 @@
 				screen.setAttribute("style", "-webkit-transform: translate3d(0, 0, 0);");
 				// document.getElementById('main-screen').style.webkitTransform = 'scale3d(1,1,1)';
 				document.getElementById('main-screen').setAttribute("style", "-webkit-transform: scale3d(1,1,1);");
+				if ( screen.querySelector('.search-field') != null ) {
+					screen.querySelector('.search-field').disabled = "disabled";
+				}
 			}
 			// SHOW/HIDE SCREEN END
 			
@@ -589,6 +641,7 @@
 				initiate();
 				window.setTimeout(function(){
 					hideScreen("search", true);
+					hideScreen("favorite", true);
 				}, 100);
 			}
 			
@@ -686,6 +739,7 @@
 
 			function loadInterface() {
 				// Tumblers
+				loadFavorite();
 				console.log('Loading Interface');
 				tumbler("showIcons-switch").checked = parseBoolean(localStorage.setting_showIcons);
 				tumbler("shortify-switch").checked = parseBoolean(localStorage.setting_shortify);
@@ -728,11 +782,13 @@
 			function checkSettings() {
 				saveSettings();
 				if ( localStorage.setting_showColors == "false" ) {
+					document.getElementById("tabs").classList.remove('colored');
 					for (i = 0; i < document.getElementById("tabs").getElementsByTagName("li").length; i++) {
 						// document.getElementById("tabs").getElementsByTagName("li")[i].style.backgroundColor = "rgb(" + (197 -(20 * i)) + ", " + (113 -(11 * i)) + ", " + (128 -(13 * i)) + ")";
-						document.getElementById("tabs").getElementsByTagName("li")[i].style.backgroundColor = "";
+						document.getElementById("tabs").getElementsByTagName("li")[i].style.background = "";
 					}
-					document.getElementById("bg-overlay").style.background = '';
+				} else {
+					document.getElementById("tabs").classList.add('colored');
 				}
 				if ( localStorage.setting_showIcons == "true" ) {
 					for (i=0; i<document.getElementById("main-screen-content").getElementsByClassName("tab-icon").length; i++) {

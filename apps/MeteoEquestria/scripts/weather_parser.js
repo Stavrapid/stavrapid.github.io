@@ -272,9 +272,9 @@ function setIcon(cloud, prec, power) {
 }
 
 // GET COLOR FOR TAB HIGHLIIE
-function getColor(seed) {
-	if (!isNaN(seed)) {
-		return Math.floor(255 * ((30 + seed) / 45)) + ", 127, " + Math.floor(255 * ((30 - seed) / 45));
+function getColor( seed ) {
+	if ( !isNaN(seed) ) {
+		return Math.floor( 255 * ( (30 + seed ) / 35 ) ) + ", 120, " + Math.floor( 255 * ( ( 30 - seed ) / 35 ) );
 	} else {
 		return "127, 127, 127";
 	}
@@ -337,7 +337,6 @@ function getXMLDocument(url, showColors, shortify) {
 	}*/
 function parseWeatherXML(xml, showColors, shortify) {
 	// FIRST LEVEL PARSING
-	console.log('showColors ' + showColors + ' shortify ' + shortify);
 	var NowDate = new Date(),
 		x = 0,
 		screen = document.getElementById("main-screen-content"),
@@ -399,9 +398,6 @@ function parseWeatherXML(xml, showColors, shortify) {
 							} else {
 								screen.querySelector(".today-temperature").innerHTML = tmp['max'] + "<sup>°C</sup>";
 							}
-							if (showColors) {
-								document.getElementById("bg-overlay").style.background = "linear-gradient(to bottom, rgba(" + getColor(parseInt(tmp['max'])) + ", 1) 0%, rgba(0, 0, 0, 0) 50%)";
-							}
 						} //else {
 							if (tmp['max'] > 0) {
 								screen.getElementsByClassName("tab")[i2 - x].querySelector(".tab-temperature").innerHTML = "+" + tmp['max'] + "<sup>°C</sup>";
@@ -409,7 +405,8 @@ function parseWeatherXML(xml, showColors, shortify) {
 								screen.getElementsByClassName("tab")[i2 - x].querySelector(".tab-temperature").innerHTML = tmp['max'] + "<sup>°C</sup>";
 							}
 							if (showColors) {
-								screen.getElementsByClassName("tab")[i2 - x].style.backgroundColor = "rgb(" + getColor(parseInt(tmp['max'])) + ")";
+								// screen.getElementsByClassName("tab")[i2 - x].style.backgroundColor = "rgb(" + getColor(parseInt(tmp['max'])) + ")";
+								screen.getElementsByClassName("tab")[i2 - x].style.background = 'linear-gradient(to right, rgba(' + getColor( parseInt( tmp['max'] / 5 ) ) + ',1) 0%,rgba(' + getColor( parseInt( tmp['max'] ) ) + ',1) 100%)';
 							}
 						//}
 						break;
