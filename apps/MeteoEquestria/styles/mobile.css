@@ -55,6 +55,16 @@ a:active {
 	-webkit-overflow-scrolling: touch;
 }
 
+.scrollfix-content:after {
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: 0;
+	right: 0;
+	bottom: -2px;
+	pointer-events: none;
+}
+
 #main-screen {
 	position: fixed;
 	display: -webkit-flex;
@@ -79,6 +89,7 @@ a:active {
 }
 
 #loading-screen { z-index: 9000; }
+.button-scroll-to-top { z-index: 5000; }
 /*.nav-bar { z-index: 5000; }*/
 #settings-screen { z-index: 3000; }
 #search-screen { z-index: 2000 }
@@ -138,6 +149,7 @@ a:active {
 	width: 20px;
 	height: 20px;
 	overflow: hidden;
+	pointer-events: none;
 }
 
 .screen-rounder-top-left {
@@ -199,6 +211,15 @@ a:active {
 	opacity: 0.75;
 	font-size: 1.2em;
 	text-transform: uppercase;
+}
+
+.button-scroll-to-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: #f00;
 }
 
 .head .button-left {

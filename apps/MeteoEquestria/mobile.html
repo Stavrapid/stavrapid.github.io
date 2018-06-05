@@ -84,9 +84,9 @@
 			<!-- <div class="status-bar"></div> -->
 
 			<div id="main-screen-content" class="noBounce">
+				<!-- <div class="button-scroll-to-top" onclick="scrollToTop('main-screen')"></div> -->
 				<div id="bg-overlay"></div>
 				<div class="scrollfix-content">
-					
 					<div id="today-tab">
 						<div class="today-location"><span class="city">Ponyville</span>, <span class="country">Equestria</span></div>
 						<div><span class="today-day">Monday</span> <span class="today-date">XX</span></div>
@@ -177,6 +177,7 @@
 		<!-- SETTINGS SCREEN BEGIN -->
 		<div id="settings-screen">
 			<div class="head noBounce" align="center">
+				<!-- <div class="button-scroll-to-top" onclick="scrollToTop('settings-screen')"></div> -->
 				<span class="title">Settings</span>
 				<span class="button-right" onclick="hideScreen('settings', false); initiate();">Done</span>
 			</div>
@@ -292,8 +293,9 @@
 		<!-- SEARCH SCREEN BEGIN -->
 		<div id="search-screen">
 			<div class="head noBounce" align="center">
-				<span class="button-right" onclick="hideScreen('search', false);">Cancel</span>
+				<!-- <div class="button-scroll-to-top" onclick="scrollToTop('search-screen')"></div> -->
 				<span class="title">Location</span>
+				<span class="button-right" onclick="hideScreen('search', false);">Cancel</span>
 				<div class="search-field-container">
 					<div class="reset-button" onclick="searchInputReset(this, 'search-screen')"><img src="./img/ios-cross.svg"/></div>
 					<input type="text" name="" class="search-field" placeholder="Search" oninput="searchInputChanged(this, 'search-screen')" disabled>
@@ -449,7 +451,8 @@
 		
 		<!-- FAVORITE SCREEN BEGIN -->
 		<div id="favorite-screen">
-			<div class="head noBounce" align="center">
+			<div class="head noBounce" align="center">			
+				<!-- <div class="button-scroll-to-top" onclick="scrollToTop('favorite-screen')"></div> -->
 				<span class="title">Favorite</span>
 				<span class="button-left" onclick="showScreen('favorite', true);"><img src="./img/plus.svg"></span>
 				<span class="button-right" onclick="hideScreen('favorite', false);">Cancel</span>
@@ -674,6 +677,18 @@
 				}
 			}, false);
 			
+			// Smooth scroll to top function
+			var timeOut;
+			function scrollToTop( screen ) {
+				if ( document.getElementById(screen).querySelector('.scrollfix-content').scrollTop != 0 ){
+					document.getElementById(screen).querySelector('.scrollfix-content').scrollBy( 0, -50 );
+					timeOut = setTimeout( 'scrollToTop(\'' + screen + '\')', 10 );
+				} else {
+					clearTimeout( timeOut );
+					console.log('Timer cleared');
+				}
+			}
+
 			// Background stretch BEGIN
 			// document.querySelector("#main-screen").addEventListener("scroll", function(e){
 			// 	var screen = document.querySelector("#main-screen");
