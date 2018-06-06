@@ -811,13 +811,6 @@
 				console.log('SETTINGS SAVED END');
 			}
 
-			var fromColor = '',
-				toColor = '',
-				fromBlureness = '',
-				toBlureness = '',
-				fromState = '',
-				toState = '';
-
 			function checkSettings() {
 				saveSettings();
 				if ( localStorage.setting_showColors == "false" ) {
@@ -843,37 +836,28 @@
 				if ( localStorage.setting_whiteTheme == "true" ) {
 					document.body.classList.remove('dark');
 					document.body.classList.add('white');
-					currentColor = 'white';
 				} else {
 					document.body.classList.remove('white');
 					document.body.classList.add('dark');
-					currentColor = 'dark';
 				}
 				if ( localStorage.setting_blur == "true" ) {
 					document.body.classList.remove('sharp');
 					document.body.classList.add('blur');
-					currentBlur = 'blur';
 				} else {
 					document.body.classList.remove('blur');
 					document.body.classList.add('sharp');
-					currentBlur = 'sharp';
 				}
-				toState = currentColor + '-' + currentBlur;
-				document.body.setAttribute( 'transition', fromState + '>' + toState );
-				console.log('fromState ' + fromState);
-				fromState = currentColor + '-' + currentBlur;
-				initiate();
 			}
 			
 			// INITIATE FUNCTION BEGIN
 			function initiate() {
+				checkSettings();
 				console.log('INITIATING APP...');
 				getXMLDocument("./weather/" + localStorage.setting_country + "/" + localStorage.setting_town + ".xml", parseBoolean(localStorage.setting_showColors), parseBoolean(localStorage.setting_shortify));
 			}
 			// INITIATE FUNCTION END
 			
 			loadInterface();
-			checkSettings();
 			initiate();
 			// Clock();
 
