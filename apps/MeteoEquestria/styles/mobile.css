@@ -298,6 +298,7 @@ h2 {
 	font-size: 1.1em;
 	margin-left: 0.8em;
 	padding: 0;
+	position: relative;
 }
 
 .ios-li + .ios-li {
@@ -348,6 +349,35 @@ h2 {
 .ios-li.glyphIcon.youtube > div { background-image: url(../img/youtube.svg); }
 .ios-li.glyphIcon.soundcloud > div { background-image: url(../img/soundcloud.svg); }
 .ios-li.glyphIcon.telegram > div { background-image: url(../img/telegram.svg); }
+
+.ios-li .button-favorise {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.8rem;
+}
+
+.ios-li .button-favorise input {
+    opacity: 0;
+}
+
+.ios-li .button-favorise input + span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: url('../img/unfavorise.svg');
+    background-repeat: no-repeat;
+    background-size: 1.3rem;
+    background-position: center center
+}
+
+.ios-li .button-favorise input:checked + span {
+    background-image: url('../img/favorise.svg');
+}
 
 .blank {
 	background: none;
@@ -403,6 +433,11 @@ h2 {
     position: relative;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+.ios-li[inactive = "true"] > * {
+	opacity: 0.5;
+	pointer-events: none;
 }
 
 .disabled {
@@ -677,6 +712,9 @@ body.white .ios-li + .ios-li {
     border-top-color: rgba(0,0,0,0.08);
 }
 
+body.white .ios-li .button-favorise input + span { background-image: url('../img/unfavorise-black.svg'); }
+body.white .ios-li .button-favorise input:checked + span { background-image: url('../img/favorise-black.svg'); }
+
 body.white #settings-screen .head,
 body.white #search-screen .head,
 body.white #favorite-screen .head {
@@ -787,6 +825,9 @@ body.dark .ios-ul {
 body.dark .ios-li + .ios-li {
     border-top-color: rgba(0,0,0,0.2);
 }
+
+body.dark .ios-li .button-favorise input + span { background-image: url('../img/unfavorise.svg'); }
+body.dark .ios-li .button-favorise input:checked + span { background-image: url('../img/favorise.svg'); }
 
 body.dark #settings-screen .head,
 body.dark #search-screen .head,
