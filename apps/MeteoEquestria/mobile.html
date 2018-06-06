@@ -246,7 +246,7 @@
 				<ul class="ios-ul">
 					<li class="ios-li">
 						<div onclick="toggle(this.querySelector('input')); checkSettings()">
-							Use white theme
+							White theme
 							<label id="whiteTheme-switch" class="ios7-switch">
 								<input type="checkbox">
 								<span></span>
@@ -255,8 +255,17 @@
 					</li>
 					<li class="ios-li">
 						<div onclick="toggle(this.querySelector('input')); checkSettings()">
-							Use iOS7 blur
+							iOS7 blur
 							<label id="blur-switch" class="ios7-switch">
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</div>
+					</li>
+					<li class="ios-li">
+						<div onclick="toggle(this.querySelector('input')); checkSettings()">
+							"Bliss Pro" font
+							<label id="font-switch" class="ios7-switch">
 								<input type="checkbox">
 								<span></span>
 							</label>
@@ -498,6 +507,7 @@
 				localStorage.setting_shortify = "true";
 				localStorage.setting_whiteTheme = "true";
 				localStorage.setting_blur = "false";
+				localStorage.setting_font = "true";
 				localStorage.setting_showColors = "false";
 				localStorage.setting_town = "Changeling Kingdom";
 				localStorage.setting_country = "Beyond Equestria";
@@ -771,6 +781,7 @@
 				tumbler("shortify-switch").checked = parseBoolean(localStorage.setting_shortify);
 				tumbler("whiteTheme-switch").checked = parseBoolean(localStorage.setting_whiteTheme);
 				tumbler("blur-switch").checked = parseBoolean(localStorage.setting_blur);
+				tumbler("font-switch").checked = parseBoolean(localStorage.setting_font);
 				tumbler("showColors-switch").checked = parseBoolean(localStorage.setting_showColors);
 				console.log(tumbler("showIcons-switch").checked);
 				console.log(tumbler("shortify-switch").checked);
@@ -799,6 +810,11 @@
 					localStorage.setting_blur = "true";
 				} else {
 					localStorage.setting_blur = "false";
+				}
+				if ( tumbler("font-switch").checked == true ) {
+					localStorage.setting_font = "true";
+				} else {
+					localStorage.setting_font = "false";
 				}
 				if ( tumbler("showColors-switch").checked == true ) {
 					localStorage.setting_showColors = "true";
@@ -846,6 +862,13 @@
 				} else {
 					document.body.classList.remove('blur');
 					document.body.classList.add('sharp');
+				}
+				if ( localStorage.setting_font == "true" ) {
+					document.body.classList.remove('SF');
+					document.body.classList.add('Bliss');
+				} else {
+					document.body.classList.remove('Bliss');
+					document.body.classList.add('SF');
 				}
 				initiate();
 			}

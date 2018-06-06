@@ -20,9 +20,17 @@
 }
 
 html {
-  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
-  background: #000;
-  font-size: 16px;
+	-webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+	background: #000;
+	font-size: 16px;
+}
+
+body.SF {
+	font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+
+body.Bliss {
+	font-family: Bliss Pro;
 }
 
 a {
@@ -127,7 +135,6 @@ a:active {
 	background: none;
 	border: none;
 	font-size: 1em;
-	font-family: 'Bliss Pro';
 	color: #fff;
 }
 
@@ -456,7 +463,6 @@ p {
 }
 
 body {
-	font-family: Bliss Pro;
 	/*font-family: Helvetica;*/
 	color: #fff;
 	margin: 0;
@@ -632,8 +638,6 @@ sup {
     padding: 0.5rem 2rem;
     width: 100%;
     box-sizing: border-box;
-    /*font-family: 'Bliss Pro';*/
-    /*line-height: 1.3rem;*/
 }
 
 /*	White theme style
