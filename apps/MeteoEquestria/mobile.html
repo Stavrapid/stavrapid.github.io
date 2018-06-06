@@ -847,17 +847,18 @@
 					document.body.classList.remove('blur');
 					document.body.classList.add('sharp');
 				}
+				initiate();
 			}
 			
 			// INITIATE FUNCTION BEGIN
 			function initiate() {
-				checkSettings();
 				console.log('INITIATING APP...');
 				getXMLDocument("./weather/" + localStorage.setting_country + "/" + localStorage.setting_town + ".xml", parseBoolean(localStorage.setting_showColors), parseBoolean(localStorage.setting_shortify));
 			}
 			// INITIATE FUNCTION END
 			
 			loadInterface();
+			checkSettings();
 			initiate();
 			// Clock();
 
