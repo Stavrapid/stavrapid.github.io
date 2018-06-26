@@ -125,6 +125,23 @@ html {
   }
 }
 
+@keyframes header_logo_small-appear {
+  0% {
+  	opacity: 0;
+    width: 48px;
+  }
+  25% {
+  	opacity: 1;
+  	width: 54px;
+  }
+  50% {
+  	width: 48px;
+  }
+  100% {
+    width: 10%;
+  }
+}
+
 /* FONTS
 ---------------------------------------------------------------------------------------------------------------------------*/
 @font-face {
@@ -168,6 +185,7 @@ html {
 ---------------------------------------------------------------------------------------------------------------------------*/
 html {
 	-webkit-text-size-adjust: 100%;
+	font-size: 14px;
 }
 
 body {
@@ -178,7 +196,6 @@ body {
 	color: #f0f0f0;
 	font-family: Roboto;
 	margin: 0;
-	font-size: 14px;
 	overflow-x: hidden;
 	/*animation: move 3s linear infinite;*/
 	text-rendering: optimizeLegibility;
@@ -201,7 +218,7 @@ body *::selection {
 }
 
 h1 {
-	font-size: 50px;
+	font-size: 3.5rem;
 }
 
 a {
@@ -270,14 +287,14 @@ a:hover {
 
 #header_logo {
 	background: url(img/header-logo.png) 0 0 no-repeat;
-	background-size: 281px;
+	background-size: auto 100%;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 9002;
-	height: 50px;
+	height: 3rem;
 	width: 100%;
-	margin: 8px 8px 0;
+	margin: 1rem 1rem 0;
 	animation: header_logo-appear 1s;
 	cursor: pointer;
 }
@@ -289,9 +306,8 @@ a:hover {
 	color: #f0f0f0;
 	text-align: center;
 	font-family: "Intro";
-	font-size: 36px;
-	line-height: 36px;
-	padding: 10px 0 15px;
+	font-size: 2.5rem;
+	padding: 1rem 0 0.7rem;
 	text-transform: uppercase;
 	-webkit-user-select: none;  /* Chrome all / Safari all */
 	-moz-user-select: none;     /* Firefox all */
@@ -316,9 +332,8 @@ a:hover {
 	color: #f0f0f0;
 	text-align: center;
 	font-family: "Intro";
-	font-size: 36px;
-	line-height: 36px;
-	padding: 10px 0 15px;
+	font-size: 2.5rem;
+	padding: 1rem 0 0.7rem;
 	text-transform: uppercase;
 	-webkit-user-select: none;  /* Chrome all / Safari all */
 	-moz-user-select: none;     /* Firefox all */
@@ -337,17 +352,17 @@ a:hover {
 
 .page_wrap {
     max-width: 60%;
-    padding: 60px 40px;
+    padding: 4.3rem 2.8rem;
     /* background-color: rgba(0, 0, 0, 0.5); */
     margin: 0 auto;
 }
 
 .page_more_link {
 	text-align: center;
-	font-size: 26px;
+	font-size: 1.8rem;
 	color: rgba(255, 255, 255, 0.80);
 	text-shadow: 0 0 10px #000;
-	margin-top: 40px;
+	margin-top: 2.8rem;
 	margin-bottom: -16px;
 	-webkit-user-select: none;  /* Chrome all / Safari all */
 	-moz-user-select: none;     /* Firefox all */
@@ -383,7 +398,7 @@ a:hover {
     max-width: 60%;
     width: auto;
     margin: 0 auto;
-    padding: 60px 40px;
+    padding: 4.3rem 2.8rem;
 }
 
 /*.bio_page .bio_container {
@@ -398,8 +413,9 @@ a:hover {
 	vertical-align: top;
 	width: 50%;
 	box-sizing: border-box;
-	font-size: 18px;
+	font-size: 1.2rem;
 	font-weight: 600;
+	vertical-align: middle;
 }
 
 .bio_page .info-row {
@@ -433,6 +449,7 @@ a:hover {
 	box-shadow: 0px 0px 30px 0px #000;
 	border: 3px solid #f0f0f0;
 	box-sizing: border-box;
+	vertical-align: middle;
 }
 
 .avatar img {
@@ -444,8 +461,8 @@ a:hover {
 }
 
 .skillbox {
-	margin-top: 40px;
-	padding: 20px;
+	margin-top: 2.8rem;
+	padding: 1.4rem;
 }
 
 .skillbar {
@@ -494,12 +511,12 @@ a:hover {
 }
 
 .skillbar-labels .label {
-	font-size: 14px;
-	line-height: 14px;
+	font-size: 1rem;
+	line-height: 1rem;
 	position: relative;
 	margin-right: 2%;
-	margin-top: 10px;
-	padding-left: 20px;
+	margin-top: 0.7rem;
+	padding-left: 1.4rem;
 	display: inline-block;
 	text-transform: uppercase;
 }
@@ -511,8 +528,8 @@ a:hover {
 .skillbar-labels .label::before {
 	position: absolute;
 	content: '';
-	width: 14px;
-	height: 14px;
+	width: 1rem;
+	height: 1rem;
 	background: #fff;
 	top: 0;
 	left: 0;
@@ -636,22 +653,26 @@ a:hover {
     text-align: center;
 }
 
+.thumbs_container {
+	display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.8rem;
+}
+
 .thumbs_container .thumb {
 	position: relative;
-	display: inline-block;
 	box-shadow: 0px 0px 30px 0px #000;
-	max-width: 225px;
-	min-width: 200px;
-    width: 15vw;
-    max-height: 225px;
-    min-height: 200px;
-    height: 15vw;
 	background: #000;
 	/*background: radial-gradient(#fff 0%, #000 50%);*/
-    margin: 0.8vw;
 	border-radius: 5px;
 	overflow: hidden;
 	transition: transform 0.1s;
+}
+
+.thumbs_container .thumb::after {
+	content: '';
+	display: block;
+	padding-top: 100%;
 }
 
 .thumbs_container .thumb:hover {
@@ -717,24 +738,24 @@ a:hover {
 
 .thumbs_container .thumb_caption h1 {
 	margin: 0;
-	font-size: 24px;
+	font-size: 1.7rem;
 	display: inline-block;
-	margin-bottom: 5px;
+	margin-bottom: 0.3rem;
 	border-bottom: 1px solid #fff;
-	padding-bottom: 5px;
+	padding-bottom: 0.3rem;
 }
 
 .thumbs_container .thumb_caption p {
 	margin: 0;
-	font-size: 18px;
+	font-size: 1.3rem;
 }
 
 .thumbs_container .thumb_caption h2 {
 	margin: 0;
-	font-size: 16px;
+	font-size: 1.1rem;
 	display: inline-block;
-	margin-top: 7px;
-	padding-top: 5px;
+	margin-top: 0.5rem;
+	padding-top: 0.3rem;
 	border-top: 1px solid #fff;
 
 }
@@ -748,17 +769,12 @@ a:hover {
 
 .art_page .page_wrap {
 	max-width: 60%;
-	padding: 60px 20px;
+	padding: 4.3rem 1.4rem;
 	text-align: center;
 }
 
-.art_page .thumbs_container .thumb {
-	max-width: 205px;
-	max-height: 205px;
-}
-
 .art_page .art_big {
-    margin: 1.6vw auto;
+    margin: 1.8rem auto;
     font-size: 0;
     /* height: calc(75vh - 61px); */
     /*max-width: 839px;*/
@@ -787,14 +803,9 @@ a:hover {
 	background: #99000a;
 }
 
-.thumbs_container {
-	margin: -0.8vw -0.8vw;
-    font-size: 0;
-}
-
 .post_container {
 	margin: 0;
-	padding-top: 22px;
+	padding-top: 1.6rem;
 	font-size: 0;
 }
 
@@ -805,21 +816,21 @@ a:hover {
 .post_container .post {
 	box-shadow: 0px 0px 30px 0px #000;
 	background: none;
-	margin: 0 0 22px 0;
+	margin: 0 0 1.6rem 0;
 	border-radius: 5px;
 	overflow: hidden;
 }
 
 .post_header {
-	padding: 10px 20px;
+	padding: 0.7rem 1.4rem;
 	/* border-bottom: 1px solid #ccc; */
 	background: #040404;
 }
 
 .author_avatar {
 	display: block;
-	width: 50px;
-	height: 50px;
+	width: 3.6rem;
+	height: 3.6rem;
 	background: #333;
 	border-radius: 50%;
 	overflow: hidden;
@@ -832,23 +843,23 @@ a:hover {
 
 .post_info {
 	display: inline-block;
-	padding: 2px 0 4px 10px;
+	padding: 0.1rem 0 0.3rem 0.7rem;
 }
 
 .author_name {
-	font-size: 22px;
+	font-size: 1.6rem;
 	display: block;
 }
 
 .post_date {
-	font-size: 13px;
+	font-size: 0.9rem;
 	display: block;
 }
 
 .post_content {
-	padding: 18px 20px 22px;
+	padding: 1.3rem 1.4rem 1.6rem;
 	background: #0a0a0a;
-	font-size: 15px;
+	font-size: 1.1rem;
 }
 
 /* FOOTER
@@ -862,12 +873,12 @@ a:hover {
 #footer_wrap {
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 18px;
+	font-size: 1.3rem;
 	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.75) 100%);
 }
 
 #footer #credits {
-	padding: 30px 0 20px;
+	padding: 2.1rem 0 1.4rem;
 	font-weight: 900;
 	cursor: pointer;
 }
@@ -890,8 +901,8 @@ a:hover {
 
 .contact_button {
 	display: inline-table;
-	width: 40px;
-	height: 40px;
+	width: 2.8rem;
+	height: 2.8rem;
 	transition: background 0.3s;
 	-webkit-user-select: none;  /* Chrome all / Safari all */
 	-moz-user-select: none;     /* Firefox all */
@@ -904,9 +915,9 @@ a:hover {
 	display: table-cell;
 	vertical-align: middle;
 	font-weight: 900;
-	padding: 10px;
+	padding: 0.7rem;
 	cursor: pointer;
-	font-size: 18px;
+	font-size: 1.3rem;
 }
 
 .contact_button:not(:hover) {
@@ -953,8 +964,8 @@ a:hover {
 }
 
 .youtube {
-	background: #bb0000;
-	border-color: #bb0000;
+	background: #e62117;
+	border-color: #e62117;
 	color: #fff;
 }
 
@@ -998,7 +1009,7 @@ a:hover {
 #page_404 .inner {
     margin: auto;
     text-align: center;
-    padding: 20px;
+    padding: 1.4rem;
     background: #0f0f0f;
     color: #1f1f1f;
     border-radius: 2px;
@@ -1049,4 +1060,28 @@ a:hover {
 
 #page_404 .get_back a:hover {
     color: #999;
+}
+
+
+
+
+
+
+/*
+==================================================================
+	ADAPTIVE DESIGN
+==================================================================
+*/
+
+@media (max-width: 700px) and (orientation: portrait) {
+    html { font-size: 12px; }
+    .page_wrap { max-width: 100% !important; padding-left: 1.8rem !important; padding-right: 1.8rem !important; }
+    .thumbs_container { grid-template-columns: repeat(1, 1fr); grid-gap: 1.8rem; }
+}
+
+@media (max-width: 800px) and (orientation: landscape) {
+    html { font-size: 12px; }
+    .page_wrap { max-width: 100% !important; }
+    #header_logo { width: 4rem; animation: header_logo_small-appear 1s; }
+    .thumbs_container { grid-template-columns: repeat(2, 1fr); grid-gap: 1.8rem; }
 }

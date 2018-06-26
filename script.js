@@ -64,9 +64,9 @@ function nested_title_scroll() {
 
 	if (tt < 0 && title_created && title_num != geClass("page_title").length - 1) {
 		title_created = true;
-			if ((geClass("page_title")[title_num + 1].getBoundingClientRect().top <= 61) && (geClass("page_title")[title_num + 1].getBoundingClientRect().top >=0 )) {
+			if ((geClass("page_title")[title_num + 1].getBoundingClientRect().top <= geId("page_title_fixed").getBoundingClientRect().height) && (geClass("page_title")[title_num + 1].getBoundingClientRect().top >=0 )) {
 			if (geClass("page_title")[title_num + 1].getBoundingClientRect().top >= 0) {
-				geId("page_title_fixed").style.top = 0 - (61 - geClass("page_title")[title_num + 1].getBoundingClientRect().top) + "px";
+				geId("page_title_fixed").style.top = 0 - (geId("page_title_fixed").getBoundingClientRect().height - geClass("page_title")[title_num + 1].getBoundingClientRect().top) + "px";
 			} else {
 					geId("page_title_fixed").style.top = "0px";
 			}
@@ -91,7 +91,7 @@ function nested_title_scroll() {
 		}
 		if ((geClass("page_title")[title_num - 1].getBoundingClientRect().top) < 0) {
 			title_num--;
-			geId("page_title_fixed").style.top = "-61px";
+			geId("page_title_fixed").style.top = "-" + geId("page_title_fixed").getBoundingClientRect().height + "px";
 		}
 		geId("page_title_fixed").innerHTML = geClass("page_title")[title_num].innerHTML;
 		geId("page_title_fixed").style.color = geClass("page_title")[title_num].style.color;
