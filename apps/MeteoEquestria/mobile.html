@@ -858,7 +858,7 @@
 				if ( scrollTop ) {
 					screen.querySelector(".scrollfix-content").scrollTop = 1;
 				}
-				screen.setAttribute("style", "-webkit-transform: translate3d(0, -100%, 0); -moz-transform: translate3d(0, -100%, 0);");
+				screen.setAttribute("style", "-webkit-transform: translate3d(0, -100%, 0) translateZ(0); -moz-transform: translate3d(0, -100%, 0);");
 				// document.getElementById('main-screen').style.webkitTransform = 'scale3d(0.95,0.95,0.95)';
 				document.getElementById('main-screen').setAttribute("style", "-webkit-transform: scale3d(0.95,0.95,0.95);");
 				if ( screen.querySelector('.search-field') != null ) {
