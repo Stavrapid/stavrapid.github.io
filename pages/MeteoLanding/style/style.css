@@ -14,12 +14,12 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: 0px;
+    width: 0px !important;
     /*background: transparent;   optional: just make scrollbar invisible */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #FF0000;
+    background: #FF0000 !important;
 }
 
 /* MEDIA QUERIES
@@ -29,6 +29,23 @@ body {
 	font-family: Bliss Pro;
 	margin: 0;
 	overflow-x: hidden;
+}
+
+.logo-fixed {
+	position: fixed;
+	background-image: url("../img/logo.svg");
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	top: 0;
+	left: 0;
+	padding: 1.2rem;
+	vertical-align: top;
+	margin: 1.2rem;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    cursor: pointer;
 }
 
 .button-fixed {
@@ -342,6 +359,10 @@ body.dark .call-to-action {
 
 body.dark .page-main-card {
 	opacity: 1;
+}
+
+body.dark .logo-fixed {
+	background-image: url("../img/logo-dark.svg");
 }
 
 body.dark .button-fixed {
