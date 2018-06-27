@@ -1,0 +1,353 @@
+/*
+=============================================================================================================================
+------------------------------------------------------ MAIN STYLESHEET ------------------------------------------------------
+=============================================================================================================================
+*/
+@font-face {
+	font-family: Bliss Pro;
+	src: url('../fonts/BlissPro-Regular.otf');
+}
+
+html {
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    /*background: transparent;   optional: just make scrollbar invisible */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+/* MEDIA QUERIES
+---------------------------------------------------------------------------------------------------------------------------*/
+body {
+	background-color: #fff;
+	font-family: Bliss Pro;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+.button-fixed {
+	position: fixed;
+	background-image: url("../img/sun.svg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	top: 0;
+	right: 0;
+	padding: 1.2rem;
+	vertical-align: top;
+	margin: 1.2rem;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.button-fixed:hover {
+	opacity: 0.5;
+}
+
+.page-main-card {
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 40rem;
+	/*background-color: #0095f5;*/
+	background-image: url("../img/background-clip.svg"),  linear-gradient(60deg, rgba(0,124,216,1)  20%, rgba(51,163,255,1) 50%, rgba(174,120,255,1) 100%);
+	background-repeat: no-repeat;
+	background-size: 110%;
+	background-position: bottom;
+	/*border-radius: 30px;
+	margin: 1rem 1rem 1rem 20rem;
+	box-shadow: rgba(177, 177, 177, 0.25) 0px 5px 50px 0px;*/
+}
+
+.page-main-card .clip-wrap {
+	position: relative;
+}
+
+.page-main-card img {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+.page-main-card::before {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: "";
+	background: url("../img/jupiter.svg"), url("../img/texture.svg");
+	opacity: 0.05;
+}
+
+.grid {
+	width: 63rem;
+	margin: 3rem auto 0 auto;
+}
+
+.logo {
+	float: right;
+	vertical-align: top;
+	position: relative;
+	text-align: center;
+	font-size: 4rem;
+	color: #fff;
+}
+
+.logo img {
+	width: 15rem;
+	margin: 1rem;
+}
+
+/*.logo::after {
+	position: absolute;
+	z-index: -1;
+	content: "";
+	background: radial-gradient(ellipse at center, rgba(189,120,247,0.35) 0%, rgba(0,0,0,0) 70%);
+	height: 45rem;
+	width: 45rem;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}*/
+
+.call-to-action {
+	display: inline-block;
+	vertical-align: top;
+	color: #fff;
+	width: 50%;
+	margin: 6.5rem 0 0 4rem;
+}
+
+.app-icon {
+	height: 10rem;
+    border-radius: 40px;
+    float: left;
+    margin: 1.5rem 2.4rem 0 0;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 50px 0px;
+}
+
+.call-to-action h1 {
+	font-size: 4.1rem;
+    margin: 1.8rem 0 2.5rem;
+    text-shadow: rgba(0, 0, 0, 0.05) 0px 5px 25px;
+    line-height: 4.6rem;
+}
+
+.call-to-action p {
+	font-size: 1.2rem;
+	margin: 2rem 0;
+}
+
+.emoji {
+    background-image: url(../img/emoji.png);
+    background-repeat: no-repeat;
+    background-size: 1.3rem;
+    padding: 0 0.8rem 0.3rem;
+    display: inline-block;
+    height: 1rem;
+    margin-left: 6px;
+    margin-bottom: -0.25rem;
+}
+
+.call-to-action .app-price {
+	font-size: 1.7rem;
+}
+
+.call-to-action .header-buttons a {
+	display: inline-block;
+    color: #fff;
+    font-size: 1.2rem;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 0.6rem 1.8rem;
+    text-decoration: none;
+    margin-right: 0.7rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 50px 0px;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.call-to-action .header-buttons a span {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 100%;
+    display: inline-block;
+    margin-right: 6px;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.call-to-action .header-buttons a .google-icon {
+	background: url("../img/google-icon.svg") no-repeat center;
+	margin-bottom: -0.3rem;
+}
+
+.call-to-action .header-buttons a .apple-icon {
+	background: url("../img/apple-icon.svg") no-repeat center;
+	margin-bottom: -0.2rem;
+}
+
+.call-to-action .header-buttons a:hover {
+    background-color: #fff;
+    color: #41a2ef;
+}
+
+.call-to-action .header-buttons a:hover .google-icon {
+    background: url("../img/google-icon-hover.svg") no-repeat center;
+}
+
+.call-to-action .header-buttons a:hover .apple-icon {
+	background: url("../img/apple-icon-hover.svg") no-repeat center;
+}
+
+.device {
+	display: inline-block;
+	position: relative;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}
+
+.device .iphone {
+	height: 40rem;
+    width: 20.65rem;
+    background-image: url(../img/iphone-white.svg);
+    background-repeat: no-repeat;
+    background-size: 20.65rem;
+}
+
+.device .screens {
+    position: absolute;
+    top: 5.3rem;
+    right: 2.1rem;
+    bottom: 5.5rem;
+    left: 2.1rem;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.device .screenshot {
+	position: absolute;
+    width: 16.6rem;
+    display: inline;
+    transform: translate3d(-100%, 0, 0);
+    transition: -webkit-transform 0.5s cubic-bezier(0.1, 1, 0.5, 1) 0s;
+}
+
+.device::after {
+	position: absolute;
+	z-index: -1;
+	content: "";
+	border-radius: 50px;
+	background: #a3a6af;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 75px 0px;
+	top: 1rem;
+	bottom: 1rem;
+	left: 1rem;
+	right: 1rem;
+}
+
+.card {
+	background-color: #fff;
+	border-radius: 30px;
+	padding: 2rem;
+	margin: 0 0 2rem 0;
+	font-size: 2rem;
+	box-shadow: rgba(177, 177, 177, 0.25) 0px 5px 50px 0px;
+	min-height: 20rem;
+}
+
+footer {
+    padding: 1.3rem;
+}
+
+footer p {
+	font-size: 1.1rem;
+    color: #2C2C2C;
+    opacity: 0.5;	
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+body.dark .device .iphone {
+	background-image: url("../img/iphone-black.svg");
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+body.dark .device::after {
+	background-color: #222;
+}
+
+body.dark {
+	background-color: #222;
+}
+
+body.dark .page-main-card {
+	background-image: url("../img/background-clip-dark.svg"),  linear-gradient(60deg, rgba(0,124,216,1)  20%, rgba(51,163,255,1) 50%, rgba(174,120,255,1) 100%);
+}
+
+body.dark footer p {
+	color: #ccc;
+}
+
+body.dark .call-to-action .header-buttons a {
+	color: #222;
+	border-color: #222;
+}
+
+body.dark .call-to-action .header-buttons a:hover {
+	background-color: #222;
+	color: #41a2ef;
+}
+
+body.dark  .call-to-action .header-buttons a .google-icon {
+	background: url("../img/google-icon-dark.svg") no-repeat center;
+}
+
+body.dark  .call-to-action .header-buttons a .apple-icon {
+	background: url("../img/apple-icon-dark.svg") no-repeat center;
+}
+
+body.dark  .call-to-action .header-buttons a:hover .google-icon {
+	background: url("../img/google-icon-hover.svg") no-repeat center;
+}
+
+body.dark  .call-to-action .header-buttons a:hover .apple-icon {
+	background: url("../img/apple-icon-hover.svg") no-repeat center;
+}
+
+body.dark .call-to-action {
+	color: #222;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+body.dark .page-main-card {
+	opacity: 1;
+}
+
+body.dark .button-fixed {
+	background-image: url("../img/moon.svg");
+}
+
+body.dark .page-main-card::before {
+	background: url("../img/jupiter-dark.svg"), url("../img/texture-dark.svg");
+}
