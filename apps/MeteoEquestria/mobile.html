@@ -190,6 +190,11 @@
 					<br>
 					version 0.5
 				</div>
+				<ul class="ios-ul">
+					<li class="ios-li glyphIcon reload">
+						<div onclick="initiate(); hideScreen('settings', true);">Refresh weather data</div>
+					</li>
+				</ul>
 				<div class="ios-ul-title">Weather display</div>
 				<script>
 					function toggle( tumbler ) {
@@ -265,9 +270,6 @@
 					</li>
 				</ul>
 				<ul class="ios-ul">
-					<li class="ios-li glyphIcon reload">
-						<div onclick="initiate(); hideScreen('settings', true);">Refresh weather data</div>
-					</li>
 					<li class="ios-li glyphIcon reset">
 						<div onclick="resetSettings()">Reset all settings to default</div>
 					</li>
