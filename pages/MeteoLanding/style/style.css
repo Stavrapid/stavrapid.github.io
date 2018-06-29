@@ -15,11 +15,7 @@ html {
 
 ::-webkit-scrollbar {
     width: 0px !important;
-    /*background: transparent;   optional: just make scrollbar invisible */
-}
-
-::-webkit-scrollbar-thumb {
-    background: #FF0000 !important;
+    height: 0px !important;
 }
 
 /* MEDIA QUERIES
@@ -28,7 +24,7 @@ body {
 	background-color: #fff;
 	font-family: Bliss Pro;
 	margin: 0;
-	overflow-x: hidden;
+	/*overflow-x: hidden;*/
 }
 
 .logo-fixed {
@@ -257,7 +253,7 @@ body {
 
 .device .screenshot {
 	position: absolute;
-    width: 16.6rem;
+    width: 100%;
     display: inline;
     transform: translate3d(-100%, 0, 0);
     transition: -webkit-transform 0.5s cubic-bezier(0.1, 1, 0.5, 1) 0s;
