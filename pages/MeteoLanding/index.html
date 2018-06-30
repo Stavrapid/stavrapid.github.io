@@ -62,15 +62,67 @@
 		<!-- <div class="card">
 			Kek
 		</div> -->
+		<div class="app-intro">
+			<img class="icon" src="./img/icon-white.png">
+			<div class="intro-title">Meet The Meteo Equestria</div>
+			<p>The one-of-a-kind application for keeping track of the current weather in the whole expanse of Equestria and beyound. A huge number of available locations are truly impressive</p>
+			<img src="./img/forest.svg">
+			<img src="./img/spruce.svg">
+			<img src="./img/mountains.svg">
+			<img src="./img/waterfall.svg">
+			<img src="./img/river.svg">
+			<img src="./img/fields.svg">
+			<!-- <img src="./img/hills.svg"> -->
+			<img src="./img/trees.svg">
+		</div>
+		<div class="divider"></div>
+		<div class="app-advantages">
+			<div class="advantage">
+				<div class="icon weather"></div>
+				<h2>Actual weather</h2>
+				<p>Always actual weather forecasts straight from the Cloudsdale weather Patrol</p>
+			</div>
+			<div class="advantage">
+				<div class="icon customization"></div>
+				<h2>Rich visual customization</h2>
+				<p>Choose between two color themes, bluriness and weather display style</p>
+			</div>
+			<div class="advantage">
+				<div class="icon design"></div>
+				<h2>Unique design</h2>
+				<p>Modern, unique and gorgeous app design developed by our designers</p>
+			</div>
+			<div class="advantage">
+				<div class="icon support"></div>
+				<h2>Continuous Updates</h2>
+				<p>Pay once and receive all app updates at no extra cost, using our cloud platform</p>
+			</div>
+		</div>
+		<div class="divider"></div>
+		<div class="social-block">
+			<a href="#" target="_blank"><div class="social-icon vk"></div></a>
+			<a href="#" target="_blank"><div class="social-icon facebook"></div></a>
+			<a href="#" target="_blank"><div class="social-icon twitter"></div></a>
+			<a href="#" target="_blank"><div class="social-icon instagram"></div></a>
+			<a href="#" target="_blank"><div class="social-icon deviantart"></div></a>
+			<a href="#" target="_blank"><div class="social-icon soundcloud"></div></a>
+			<a href="#" target="_blank"><div class="social-icon dribbble"></div></a>
+			<a href="#" target="_blank"><div class="social-icon behance"></div></a>
+		</div>
 	</div>
 	<footer>
 		<p>Copyright © 2018 Stavrapid - Meteo Equestria</p>
 	</footer>
 	<script>
 	window.addEventListener("scroll", function(e){
-		document.querySelector(".page-main-card").style.height = (40 - window.pageYOffset * 0.04) + "rem";
+		document.querySelector(".page-main-card").style.height = (40 - window.pageYOffset * 0.03) + "rem";
 		// document.querySelector(".page-main-card").style.backgroundSize = (100 + window.pageYOffset * 0.1) + "%";
 		// document.querySelector(".call-to-action").style.opacity = (1 - window.pageYOffset * 0.004);
+		if ( window.pageYOffset > 740 ) {
+			document.querySelector(".button-fixed").style.filter = "invert(1)";
+		} else {
+			document.querySelector(".button-fixed").style.filter = "none";
+		}
 	});
 
 	var screenIndex;

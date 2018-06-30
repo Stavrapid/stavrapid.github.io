@@ -24,7 +24,7 @@ body {
 	background-color: #fff;
 	font-family: Bliss Pro;
 	margin: 0;
-	/*overflow-x: hidden;*/
+	overflow-x: hidden;
 }
 
 .logo-fixed {
@@ -46,6 +46,7 @@ body {
 
 .button-fixed {
 	position: fixed;
+	z-index: 9000;
 	background-image: url("../img/sun.svg");
 	background-repeat: no-repeat;
 	background-size: 100%;
@@ -102,8 +103,8 @@ body {
 }
 
 .grid {
-	width: 63rem;
-	margin: 3rem auto 0 auto;
+	max-width: 63rem;
+	margin: 2rem auto 0 auto;
 }
 
 .logo {
@@ -231,6 +232,7 @@ body {
 	position: relative;
 	margin-top: 5rem;
 	margin-bottom: 5rem;
+	z-index: 100;
 }
 
 .device .iphone {
@@ -284,6 +286,7 @@ body {
 
 footer {
     padding: 1.3rem;
+    background: #fff;
 }
 
 footer p {
@@ -294,6 +297,145 @@ footer p {
     width: 90%;
     margin: 0 auto;
 }
+
+.app-intro {
+	margin: 4rem auto 0;
+	text-align: center;
+	background: #fff;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+.app-intro::before {
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	content: "";
+	top: 0;
+	left: 0;
+	background-image: url("../img/page-clip.svg");
+	background-repeat: no-repeat;
+	background-size: 110%;
+	background-position: bottom;
+	transform: translate( 0, -100% );
+}
+
+.app-intro .icon {
+	height: 8rem;
+	margin: 2rem;
+}
+
+.intro-title {
+    font-size: 3rem;
+    color: #0095f5;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: linear-gradient(40deg, rgba(0,124,216,1) 20%, rgba(51,163,255,1) 50%, rgba(174,120,255,1) 100%);
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    max-width: 50rem;
+	margin: 0 auto 1.5rem;
+}
+
+.app-intro p {
+	opacity: 0.75;
+	font-size: 1.5rem;
+	max-width: 50rem;
+	margin: 0 auto 1.5rem;
+}
+
+.app-intro img {
+	height: 6rem;
+	margin: 2rem 1rem;
+	display: inline-block;
+}
+
+.divider {
+	position: relative;
+	padding: 1rem;
+	background: #fff;
+}
+
+.divider::after {
+	position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    background: url(../img/wave.svg) no-repeat center;
+    width: 10rem;
+    height: 1rem;
+    background-size: 100%;
+    opacity: 0.75;
+}
+.app-advantages {
+	text-align: center;
+	/*width: 60rem;*/
+	padding: 7rem 0;
+	background: #fff;
+}
+
+.advantage {
+	display: inline-block;
+	width: 16rem;
+	vertical-align: top;
+	margin: 1rem;
+}
+
+.advantage .icon {
+	display: inline-block;
+	padding: 2.2rem;
+}
+
+.advantage .icon.design {background: url("../img/design.svg") no-repeat;}
+.advantage .icon.customization {background: url("../img/cmyk.svg") no-repeat;}
+.advantage .icon.support {background: url("../img/server.svg") no-repeat;}
+.advantage .icon.weather {background: url("../img/umbrella.svg") no-repeat;}
+
+.advantage h2 {
+	opacity: 0.75;
+}
+
+.advantage p {
+	opacity: 0.5;
+	font-size: 1.2rem;
+}
+
+.social-block {
+	text-align: center;
+	padding: 5rem 1rem;
+	background: #fff;
+	font-size: 0;
+}
+
+.social-block a {
+	display: inline-block;
+	margin: 0.4rem;
+}
+
+.social-block a .social-icon {
+	display: inline-block;
+	padding: 1.5rem;
+	opacity: 0.6;
+	transition: 0.2s;
+}
+
+.social-block a:hover .social-icon {
+	opacity: 1;
+}
+
+.social-icon.vk {background: url("../img/vk.svg") no-repeat;}
+.social-icon.facebook {background: url("../img/facebook.svg") no-repeat;}
+.social-icon.twitter {background: url("../img/twitter.svg") no-repeat;}
+.social-icon.instagram {background: url("../img/instagram.svg") no-repeat;}
+.social-icon.deviantart {background: url("../img/deviantart.svg") no-repeat;}
+.social-icon.soundcloud {background: url("../img/soundcloud.svg") no-repeat;}
+.social-icon.dribbble {background: url("../img/dribbble.svg") no-repeat;}
+.social-icon.behance {background: url("../img/behance.svg") no-repeat;}
 
 body.dark .device .iphone {
 	background-image: url("../img/iphone-black.svg");
@@ -367,4 +509,30 @@ body.dark .button-fixed {
 
 body.dark .page-main-card::before {
 	background: url("../img/jupiter-dark.svg"), url("../img/texture-dark.svg");
+}
+
+body.dark .app-intro {
+	color: #fff;
+	background: #222;
+}
+
+body.dark .app-intro::before {
+	background-image: url("../img/page-clip-dark.svg");
+}
+
+body.dark .app-advantages {
+	color: #fff;
+	background: #222;
+}
+
+body.dark .divider {
+	background: #222;
+}
+
+body.dark .social-block {
+	background: #222;
+}
+
+body.dark footer {
+    background: #222;
 }
