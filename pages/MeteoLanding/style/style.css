@@ -339,6 +339,28 @@ footer p {
     text-fill-color: transparent;
     max-width: 50rem;
 	margin: 0 auto 1.5rem;
+	position: relative;
+	display: inline-block;
+}
+
+.intro-title::before {
+	position: absolute;
+	content: "";
+	background: url("../img/calm-left.svg") no-repeat;
+	background-size: 100%;
+	top: 0;
+	left: -7.5rem;
+	padding: 3rem;
+}
+
+.intro-title::after {
+	position: absolute;
+	content: "";
+	background: url("../img/calm-right.svg") no-repeat;
+	background-size: 100%;
+	top: 0;
+	right: -7.5rem;
+	padding: 3rem;
 }
 
 .app-intro p {
