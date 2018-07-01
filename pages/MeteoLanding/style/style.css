@@ -44,6 +44,32 @@ body {
     cursor: pointer;
 }
 
+.stavrapid-fixed {
+	position: fixed;
+	z-index: 9000;
+	top: 0;
+	left: 0;
+	margin: 1.3rem;
+}
+
+.stavrapid-fixed div {
+	background-image: url("../img/stavrapid.svg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	padding: 1.1rem;
+	vertical-align: top;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.stavrapid-fixed:hover div {
+	opacity: 0.5;
+}
+
 .button-fixed {
 	position: fixed;
 	z-index: 9000;
@@ -101,6 +127,15 @@ body {
 	background: url("../img/jupiter.svg"), url("../img/texture.svg");
 	opacity: 0.05;
 }
+
+/*.page-main-card::after {
+	position: absolute;
+	content: "";
+	height: 100%;
+	width: 100%;
+	background: url("../img/pattern.svg") 0.8rem 16.4rem/13.05rem;
+	opacity: 0.25;
+}*/
 
 .grid {
 	max-width: 63rem;
@@ -286,8 +321,7 @@ body {
 }
 
 footer {
-    padding: 1.3rem;
-    background: #fff;
+    padding: 1.5rem;
 }
 
 footer p {
@@ -350,7 +384,7 @@ footer p {
 	background: url("../img/calm-left.svg") no-repeat;
 	background-size: 100%;
 	top: 0;
-	left: -7.5rem;
+	left: -8rem;
 	padding: 3rem;
 }
 
@@ -360,7 +394,7 @@ footer p {
 	background: url("../img/calm-right.svg") no-repeat;
 	background-size: 100%;
 	top: 0;
-	right: -7.5rem;
+	right: -8rem;
 	padding: 3rem;
 }
 
@@ -369,6 +403,38 @@ footer p {
 	font-size: 1.5rem;
 	max-width: 50rem;
 	margin: 0 auto 1.5rem;
+}
+
+.app-intro p::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 32rem;
+    height: 32rem;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 10px rgba(255,255,255,0.5);
+    background-image: url(../img/pattern-dark.svg);
+    background-position: 0.8rem 16.4rem;
+    background-size: 13.05rem;
+    transform: translate(-18rem, -50%);
+    opacity: 0.25;
+}
+
+.app-intro p::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 0;
+    width: 32rem;
+    height: 32rem;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 10px rgba(255,255,255,0.5);
+    background-image: url(../img/pattern-dark.svg);
+    background-position: 0.8rem 16.4rem;
+    background-size: 13.05rem;
+    transform: translate(18rem, -50%);
+    opacity: 0.25;
 }
 
 .app-intro img {
@@ -526,6 +592,10 @@ body.dark .logo-fixed {
 	background-image: url("../img/logo-dark.svg");
 }
 
+body.dark .stavrapid-fixed div {
+	background-image: url("../img/stavrapid-dark.svg");
+}
+
 body.dark .button-fixed {
 	background-image: url("../img/moon.svg");
 }
@@ -533,6 +603,10 @@ body.dark .button-fixed {
 body.dark .page-main-card::before {
 	background: url("../img/jupiter-dark.svg"), url("../img/texture-dark.svg");
 }
+
+/*body.dark .page-main-card::after {
+	background: url("../img/pattern-dark.svg") 0.8rem 16.4rem/13.05rem;
+}*/
 
 body.dark .app-intro {
 	color: #fff;
@@ -558,4 +632,14 @@ body.dark .social-block {
 
 body.dark footer {
     background: #222;
+}
+
+body.dark .app-intro p::before {
+	box-shadow: inset 0px 0px 0px 10px rgba(34,34,34,0.5);
+    background-image: url(../img/pattern.svg);
+}
+
+body.dark  .app-intro p::after {
+	box-shadow: inset 0px 0px 0px 10px rgba(34,34,34,0.5);
+    background-image: url(../img/pattern.svg);
 }

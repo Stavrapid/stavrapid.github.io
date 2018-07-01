@@ -32,6 +32,7 @@
 		</div>
 	</div>
 	<!-- <div class="logo-fixed"></div> -->
+	<a class="stavrapid-fixed" href="http://stavrapid.ru" target="_blank"><div></div></a>
 	<div class="button-fixed" onclick="switchTheme();"></div>
 	<div class="page-layout">
 		<div class="grid">
@@ -54,8 +55,8 @@
 				<h1>Meteo Equestria</h1>
 				<p><span class="app-price">$0.99</span> – download and enjoy beautiful and a one-of-a-kind application for keeping track of the current weather in the whole expanse of Equestria and beyound. Predict the unpredictable. Celestia approves!<span class="emoji"></span></p>
 				<div class="header-buttons">
-					<a href="#"><span class="apple-icon"></span>Apple Store</a>
-					<a href="#"><span class="google-icon"></span>Google Store</a>
+					<a href="http://stavrapid.ru/apps/MeteoEquestria"><span class="apple-icon"></span>Apple Store</a>
+					<a href="http://stavrapid.ru/apps/MeteoEquestria"><span class="google-icon"></span>Google Store</a>
 				</div>
 			</div>
 		</div>
@@ -100,7 +101,7 @@
 		</div>
 		<div class="divider"></div>
 		<div class="social-block">
-			<a href="#" target="_blank"><div class="social-icon vk"></div></a>
+			<a href="https://vk.com/meteoequestria" target="_blank"><div class="social-icon vk"></div></a>
 			<a href="#" target="_blank"><div class="social-icon facebook"></div></a>
 			<a href="#" target="_blank"><div class="social-icon twitter"></div></a>
 			<a href="#" target="_blank"><div class="social-icon instagram"></div></a>
@@ -118,10 +119,15 @@
 		document.querySelector(".page-main-card").style.height = (40 - window.pageYOffset * 0.03) + "rem";
 		// document.querySelector(".page-main-card").style.backgroundSize = (100 + window.pageYOffset * 0.1) + "%";
 		// document.querySelector(".call-to-action").style.opacity = (1 - window.pageYOffset * 0.004);
-		if ( window.pageYOffset > 740 ) {
+		if ( window.pageYOffset > 800 ) {
 			document.querySelector(".button-fixed").style.filter = "invert(1)";
 		} else {
 			document.querySelector(".button-fixed").style.filter = "none";
+		}
+		if ( window.pageYOffset > 730 ) {
+			document.querySelector(".stavrapid-fixed div").style.filter = "invert(1)";
+		} else {
+			document.querySelector(".stavrapid-fixed div").style.filter = "none";
 		}
 	});
 
