@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MMWEATHER>
 	<REPORT type="frc3">
-		<TOWN tname="Neighagra Falls" cname="Equestria" latitude="55" longitude="37">
+		<TOWN tname="White Tail Woods" cname="Equestria" latitude="55" longitude="37">
 			<FORECAST day="02" month="07" year="2018" hour="15" tod="2" predict="0" weekday="0">
 				<PHENOMENA cloudiness="1" precipitation="0" ppower="0"/>
 				<PRESSURE max="" min=""/>

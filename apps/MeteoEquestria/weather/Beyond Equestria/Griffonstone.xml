@@ -2,7 +2,7 @@
 <MMWEATHER>
 	<REPORT type="frc3">
 		<TOWN tname="Griffonstone" cname="Beyond Equestria" latitude="55" longitude="37">
-			<FORECAST day="04" month="06" year="2018" hour="15" tod="2" predict="0" weekday="0">
+			<FORECAST day="02" month="07" year="2018" hour="15" tod="2" predict="0" weekday="0">
 				<PHENOMENA cloudiness="1" precipitation="0" ppower="0"/>
 				<PRESSURE max="" min=""/>
 				<TEMPERATURE max="23" min="12"/>
@@ -10,7 +10,7 @@
 				<RELWET max="" min=""/>
 				<HEAT min="" max=""/>
 			</FORECAST>
-			<FORECAST day="05" month="06" year="2018" hour="21" tod="3" predict="0" weekday="1">
+			<FORECAST day="03" month="07" year="2018" hour="21" tod="3" predict="0" weekday="1">
 				<PHENOMENA cloudiness="0" precipitation="0" ppower="0"/>
 				<PRESSURE max="" min=""/>
 				<TEMPERATURE max="22" min="11"/>
@@ -18,7 +18,7 @@
 				<RELWET max="" min=""/>
 				<HEAT min="" max=""/>
 			</FORECAST>
-			<FORECAST day="06" month="06" year="2018" hour="03" tod="0" predict="0" weekday="2">
+			<FORECAST day="04" month="07" year="2018" hour="03" tod="0" predict="0" weekday="2">
 				<PHENOMENA cloudiness="2" precipitation="0" ppower="0"/>
 				<PRESSURE max="" min=""/>
 				<TEMPERATURE max="22" min="11"/>
@@ -26,7 +26,7 @@
 				<RELWET max="" min=""/>
 				<HEAT min="" max=""/>
 			</FORECAST>
-			<FORECAST day="07" month="06" year="2018" hour="09" tod="1" predict="0" weekday="3">
+			<FORECAST day="05" month="07" year="2018" hour="09" tod="1" predict="0" weekday="3">
 				<PHENOMENA cloudiness="2" precipitation="1" ppower="0"/>
 				<PRESSURE max="" min=""/>
 				<TEMPERATURE max="8" min="2"/>
@@ -34,7 +34,7 @@
 				<RELWET max="" min=""/>
 				<HEAT min="" max=""/>
 			</FORECAST>
-			<FORECAST day="08" month="06" year="2018" hour="09" tod="1" predict="0" weekday="4">
+			<FORECAST day="06" month="07" year="2018" hour="09" tod="1" predict="0" weekday="4">
 				<PHENOMENA cloudiness="1" precipitation="0" ppower="0"/>
 				<PRESSURE max="" min=""/>
 				<TEMPERATURE max="9" min="0"/>
@@ -42,7 +42,7 @@
 				<RELWET max="" min=""/>
 				<HEAT min="" max=""/>
 			</FORECAST>
-			<FORECAST day="09" month="06" year="2018" hour="09" tod="1" predict="0" weekday="5">
+			<FORECAST day="07" month="07" year="2018" hour="09" tod="1" predict="0" weekday="5">
 				<PHENOMENA cloudiness="1" precipitation="0" ppower="0"/>
 				<PRESSURE max="" min=""/>
 				<TEMPERATURE max="10" min="2"/>
@@ -50,7 +50,7 @@
 				<RELWET max="" min=""/>
 				<HEAT min="" max=""/>
 			</FORECAST>
-			<FORECAST day="10" month="06" year="2018" hour="09" tod="1" predict="0" weekday="6">
+			<FORECAST day="08" month="06" year="2018" hour="09" tod="1" predict="0" weekday="6">
 				<PHENOMENA cloudiness="2" precipitation="0" ppower="0"/>
 				<PRESSURE max="" min=""/>
 				<TEMPERATURE max="13" min="3"/>
