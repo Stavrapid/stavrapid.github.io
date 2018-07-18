@@ -740,6 +740,7 @@ footer p {
 	display: inline-block;
 	padding: 1.5rem;
 	transition: 0.2s;
+	background-size: cover !important;
 }
 
 .social-icon.vk div {background: url("../img/vk.svg") no-repeat;}
@@ -758,6 +759,8 @@ footer p {
 .social-icon.dribbble::after {background: #f26798;}
 .social-icon.behance div {background: url("../img/behance.svg") no-repeat;}
 .social-icon.behance::after {background: #4176fa;}
+.social-icon.email div {background: url("../img/email.svg") no-repeat;}
+.social-icon.email::after {background: #006df0;}
 
 body.dark .device .iphone {
 	background-image: url("../img/iphone-black.svg");
