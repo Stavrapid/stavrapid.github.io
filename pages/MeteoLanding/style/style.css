@@ -689,30 +689,75 @@ footer p {
 	font-size: 0;
 }
 
-.social-block a {
+.social-icon {
 	display: inline-block;
 	margin: 0.4rem;
+	position: relative;
+	z-index: 1;
+	-o-transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
 }
 
-.social-block a .social-icon {
-	display: inline-block;
+.social-icon::after {
+	position: absolute;
+	z-index: -1;
+	content: "";
 	padding: 1.5rem;
-	opacity: 0.6;
-	transition: 0.2s;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 5rem;
+	-o-transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
 }
 
-.social-block a:hover .social-icon {
+.social-icon {
+	opacity: 0.6;
+}
+
+.social-icon:hover {
 	opacity: 1;
 }
 
-.social-icon.vk {background: url("../img/vk.svg") no-repeat;}
-.social-icon.facebook {background: url("../img/facebook.svg") no-repeat;}
-.social-icon.twitter {background: url("../img/twitter.svg") no-repeat;}
-.social-icon.instagram {background: url("../img/instagram.svg") no-repeat;}
-.social-icon.deviantart {background: url("../img/deviantart.svg") no-repeat;}
-.social-icon.soundcloud {background: url("../img/soundcloud.svg") no-repeat;}
-.social-icon.dribbble {background: url("../img/dribbble.svg") no-repeat;}
-.social-icon.behance {background: url("../img/behance.svg") no-repeat;}
+.social-icon:hover::after {
+	opacity: 1;
+	padding: 1.7rem;
+}
+
+.social-icon:hover div {
+	transform: scale(0.95);
+}
+
+.social-icon:active div {
+	transform: scale(0.85);
+}
+
+.social-icon div {
+	display: inline-block;
+	padding: 1.5rem;
+	transition: 0.2s;
+}
+
+.social-icon.vk div {background: url("../img/vk.svg") no-repeat;}
+.social-icon.vk::after {background: #4d76a1;}
+.social-icon.facebook div {background: url("../img/facebook.svg") no-repeat;}
+.social-icon.facebook::after {background: #3b5998;}
+.social-icon.twitter div {background: url("../img/twitter.svg") no-repeat;}
+.social-icon.twitter::after {background: #55acee;}
+.social-icon.instagram div {background: url("../img/instagram.svg") no-repeat;}
+.social-icon.instagram::after {background: #6a453b;}
+.social-icon.deviantart div {background: url("../img/deviantart.svg") no-repeat;}
+.social-icon.deviantart::after {background: #04cc47;}
+.social-icon.soundcloud div {background: url("../img/soundcloud.svg") no-repeat;}
+.social-icon.soundcloud::after {background: #ff6a22;}
+.social-icon.dribbble div {background: url("../img/dribbble.svg") no-repeat;}
+.social-icon.dribbble::after {background: #f26798;}
+.social-icon.behance div {background: url("../img/behance.svg") no-repeat;}
+.social-icon.behance::after {background: #4176fa;}
 
 body.dark .device .iphone {
 	background-image: url("../img/iphone-black.svg");
