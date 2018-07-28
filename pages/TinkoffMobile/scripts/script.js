@@ -108,19 +108,24 @@ for (var i = 0; i < document.getElementsByClassName("addon").length; i++) {
 
 function showHint( target ) {
     if ( document.getElementsByClassName("hint-wrap")[0] != null ) {
-        document.getElementsByClassName("hint-wrap")[0].style.animation = "hint-hide 0.2s both ease-out";
+        document.getElementsByClassName("hint")[0].style.animation = "hint-hide 0.2s both ease-out";
         setTimeout( function() {
             document.getElementsByClassName("hint-wrap")[0].parentNode.removeChild( document.getElementsByClassName("hint-wrap")[0] );
+            if ( document.getElementsByClassName("hint-button")[0] != null ) {
+                document.getElementsByClassName("hint-button")[0].style.opacity = "0";
+            }
         }, 200 );
     } else {
         var content = document.querySelector("#control-panel .content");
         var hintWrap = document.createElement("div");
         var hint = document.createElement("div");
+        var hintButton = document.createElement("div");
+        hintButton.className = "hint-button";
         hintWrap.className = "hint-wrap";
         hint.className = "hint";
-        hint.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat nisl nunc, vitae placerat ligula fringilla eu. Aenean consectetur nibh quis bibendum suscipit. Integer placerat metus in tellus imperdiet malesuada. Quisque porttitor consequat commodo. Vivamus sit amet nulla vitae urna lacinia semper ac ut augue. Cras efficitur aliquam turpis, sed sagittis diam sodales at. Ut a aliquam risus. Phasellus neque sapien, maximus sit amet felis non, lobortis rutrum nunc. Nulla viverra orci aliquam dapibus mattis. Curabitur non rhoncus est, et tristique nisl. Cras vel eros et turpis vehicula cursus. Pellentesque vitae metus tortor. Integer eu blandit tellus, ut egestas est. Praesent volutpat venenatis tortor, non tincidunt mauris dapibus non. Duis in turpis convallis, egestas odio sed, tempor nulla. Phasellus feugiat posuere consectetur.";
+        hint.innerHTML = "<h1>Звонки и SMS</h1>Входящие — 0 ₽ В минуту.<br><br>Пакет действует 30 дней, продлевается автоматически.<br>Расходуется на любые номера по России, условия не меняются в поездках по России.<br><br>Звонки в Тинькофф Мобайл безлимитный и не расходуют пакет.<h2>Если не хватило денег на пакет</h2>Исходящие звонки по России — 2,9 ₽ в минуту.<br><br>Исходящие SMS по России — 2,9 ₽ за штуку.<h2>Если закончилилсь минуты в пакете</h2>Выбирите вариант:<br>— докупите 100 минут за 99 ₽ (до обновления основного пакета;<br>— перейдите на другой пакет, доплатив разницу;<br>— пользуйтесь поминутно.<h2>Международные звонки и SMS</h2>Исходящие звонки:<br>— в США, Китай, Великобританию, Канаду, Сингапур, Финляндию и Южную Корею — 2,9 ₽ в минуту;<br>— в другие страны — 29 ₽ в минуту.<br><br>Исходящие SMS — 5,9 ₽ за штуку.<h2>В поездках в Крым и г. Севастополь</h2>Входящие звонки — 0 ₽ в минуту.<br><br>Исходящие звонки:<br>— по России — 2,9 ₽ за минуту;<br>— в любую другую страну — 49 ₽ в минуту.<br><br>SMS — 2,9 ₽ за штуку.";
         hintWrap.onmouseout = function() { showHint(target); };
-        hintWrap.style.animation = "hint-show 0.2s both ease";
+        hint.style.animation = "hint-show 0.2s both ease";
 
         var parentPos = document.querySelector("#control-panel .content").getBoundingClientRect(),
         childrenPos = target.getBoundingClientRect(),
@@ -130,16 +135,21 @@ function showHint( target ) {
         relativePos.bottom = childrenPos.bottom - parentPos.bottom,
         relativePos.left = childrenPos.left - parentPos.left;
 
-        if ( Math.abs(relativePos.left) < 320 ) {
+        if ( Math.abs(relativePos.left) < 304 ) {
             hintWrap.style.top = relativePos.top - target.offsetHeight * 1.5 + "px";
-            hintWrap.style.left = relativePos.left + "px";
+            hintWrap.style.left = relativePos.left - target.offsetWidth * 1.5 + "px";
+            hintButton.style.top = "2rem";
+            hintButton.style.left = "2rem";
         } else {
             hintWrap.style.top = relativePos.top - target.offsetHeight * 1.5 + "px";
-            hintWrap.style.right = relativePos.right + "px";
+            hintWrap.style.right = relativePos.right - target.offsetWidth * 1.5 + "px";
+            hintButton.style.top = "2rem";
+            hintButton.style.right = "2rem";
         }
 
         content.appendChild(hintWrap);
         hintWrap.appendChild(hint);
+        hintWrap.appendChild(hintButton);
 
     }
 }

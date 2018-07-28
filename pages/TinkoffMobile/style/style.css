@@ -39,13 +39,13 @@
 }
 
 @keyframes hint-show {
-	from { opacity: 0; transform: translate( 0, 2rem ); }
+	from { opacity: 0; transform: translate( 0, -2rem ); }
 	to { opacity: 1; transform: translate( 0, 0 ); }
 }
 
 @keyframes hint-hide {
 	from { opacity: 1; transform: translate( 0, 0 ); }
-	to { opacity: 0; transform: translate( 0, 2rem ); }
+	to { opacity: 0; transform: translate( 0, -2rem ); }
 }
 
 ::-webkit-scrollbar {
@@ -300,6 +300,7 @@ a:hover {
 	width: 33%;
 	vertical-align: middle;
 	text-align: right;
+	white-space: nowrap;
 }
 .button-exit {
 	width: 100px;
@@ -353,11 +354,12 @@ a:hover {
 	display: inline-block;
 	transition: opacity .3s;
 	cursor: pointer;
-	opacity: 0.2;
-	float: right;
+	position: absolute;
+	z-index: 99;
+	right: 2rem;
 }
 .info-button:hover {
-	opacity: 0.1;
+	opacity: 0.75;
 }
 .block-description {
 	margin: 0.3rem 0 0;
@@ -696,18 +698,41 @@ a:hover {
 	color: #fff;
 }
 .hint-wrap {
-	padding: 2rem;
+	padding: 1.75rem;
 	position: absolute;
+}
+.hint-wrap .hint-button {
+	position: absolute;
+	z-index: 100;
+	padding: 0.75rem;
+	margin: 4px;
+	background: url("../img/info-in-circular-button.svg") no-repeat;
+	background-position: center;
+	background-size: 1.5rem;
+	font-size: 0;
+	line-height: 0;
+	display: inline-block;
+	cursor: pointer;
+	pointer-events: none;
 }
 .hint {
 	background: #fff;
-	color: #999;
-	padding: 1rem;
-	max-width: 320px;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 50px 0px;
+	color: #666;
+	padding: 1rem 1.5rem 1.5rem;
+	width: 355px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 50px 0px;
 	border-radius: 15px;
 	pointer-events: none;
 	text-align: left;
+}
+
+.hint h1 {
+	color: #222;
+	text-align: center;
+}
+.hint h2 {
+	font-size: 1.3rem;
+	color: #222;
 }
 
 /*IOS 7 SWITCH END*/
@@ -717,4 +742,26 @@ footer {
 	padding: 1rem;
 	font-size: 1.3rem;
 	opacity: 0.25;
+}
+
+@media (max-width: 576px) {
+
+}
+@media (max-width: 768px) {
+	.header-title { display: none; }
+	.header-logo { width: auto; text-align: left; }
+	html { font-size: 14px; }
+	.content, .column { display: block; }
+	.block { margin-left: 0; margin-right: 0; display: block; min-width: initial !important; }
+	.block:last-child { border-radius: 25px 25px 0 0; margin-bottom: -1rem; padding-bottom: 4rem; }
+	.column { margin-bottom: -2rem; }
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 1400px) {
+
 }
