@@ -57,6 +57,11 @@ body {
 	font-family: "Tinkoff";
 	margin: 0;
 	color: #333;
+	transform: translateZ(0);
+}
+button {
+	border: none;
+	outline: none;
 }
 a {
 	color: #fff;
@@ -252,6 +257,7 @@ a:hover {
 	min-height: 100vh;
 	box-sizing: border-box;
 	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 }
 .wrapper-main::after {
 	content: "";
@@ -555,6 +561,31 @@ a:hover {
     top: 50%;
     transform: translate(0, -50%);
 }
+.load-more-button-wrap {
+	text-align: center;
+	margin-top: 1.5rem;
+}
+.load-more-button {
+	padding: 1rem 2rem;
+	font-size: 1.1rem;
+	color: #333;
+	background: #f8f8f8;
+	margin: 0 auto;
+	display: inline-block;
+	border-radius: 2rem;
+	-o-transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    transition: all .2s ease;
+	cursor: pointer;
+}
+.load-more-button:hover {
+	background: #333;
+	color: #f8f8f8;
+}
+.load-more-button:active {
+	transform: scale(0.97);
+}
 /*IOS 7 SWITCH BEGIN*/
 
 @-webkit-keyframes switch-check {
@@ -654,7 +685,7 @@ a:hover {
 
 .user-buttons-wrap {
 	text-align: center;
-	margin-top: 1rem;
+	margin-top: 1.5rem;
 }
 
 .user-buttons-wrap .user-button {
@@ -667,36 +698,82 @@ a:hover {
 	transition: all .3s;
 	cursor: pointer;
 }
+.user-buttons-wrap .user-button:active {
+	box-shadow: none !important;
+}
 
 .user-buttons-wrap .user-button:first-child {
-	float: left;
+	margin-left: 0;
 }
 .user-buttons-wrap .user-button:last-child {
-	float: right;
+	margin-right: 0;
 }
 
 .user-buttons-wrap .user-button:hover {
-	background: #3db2e7;
+	background-color: #3db2e7;
 	color: #fff;
 }
 
-.user-buttons-wrap .user-button.exit {
-	color: #e73c3c;
+.user-buttons-wrap .icon-button {
+	padding: 1.75rem;
+	background-color: #f2f2f2;
+	background-position: center;
+	background-size: 2rem;
+	background-repeat: no-repeat;
+	border-radius: 2rem;
+	display: inline-block;
+	transition: all .3s;
+	cursor: pointer;
+	margin: 0 0.5rem;
 }
 
-.user-buttons-wrap .user-button.exit:hover {
-	background: #e73c3c;
-	color: #fff;
+.user-buttons-wrap .icon-button.refill {
+	background-image: url("../img/refill.svg");
 }
-
-.user-buttons-wrap .user-button.refill {
-	color: #3ce73c;
-}
-
 .user-buttons-wrap .user-button.refill:hover {
-	background: #3ce73c;
+	background-color: #3ce73c;
 	color: #fff;
+	box-shadow: 0px 0px 0px 0.3rem #3ce73c, #3ce73c 0px 5px 50px 0px;
+	transform: scale(0.95);
 }
+.user-buttons-wrap .icon-button.sim {
+	background-image: url("../img/sim.svg");
+}
+.user-buttons-wrap .icon-button.sim:hover {
+	background-color: #ffe503;
+	box-shadow: 0px 0px 0px 0.3rem #ffe503, #ffe503 0px 5px 50px 0px;
+	transform: scale(0.95);
+}
+.user-buttons-wrap .icon-button.chat {
+	background-image: url("../img/chat.svg");
+}
+.user-buttons-wrap .icon-button.chat:hover {
+	background-color: #3db2e7;
+	box-shadow: 0px 0px 0px 0.3rem #3db2e7, #3db2e7 0px 5px 50px 0px;
+	transform: scale(0.95);
+}
+.user-buttons-wrap .icon-button.settings {
+	background-image: url("../img/settings.svg");
+}
+.user-buttons-wrap .icon-button.settings:hover {
+	background-color: #aaa;
+	box-shadow: 0px 0px 0px 0.3rem #aaa, #aaa 0px 5px 50px 0px;
+	transform: scale(0.95);
+}
+.user-buttons-wrap .icon-button.logout {
+	background-image: url("../img/logout.svg");
+}
+.user-buttons-wrap .user-button.logout:hover {
+	background-color: #e73c3c;
+	color: #fff;
+	box-shadow: 0px 0px 0px 0.3rem #e73c3c, #e73c3c 0px 5px 50px 0px;
+	transform: scale(0.95);
+}
+
+.user-buttons-wrap .icon-button:hover {
+	/* filter: invert(1); */
+}
+
 .hint-wrap {
 	padding: 1.75rem;
 	position: absolute;
@@ -744,7 +821,13 @@ footer {
 	opacity: 0.25;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1400px) {
+
+}
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 992px) {
 
 }
 @media (max-width: 768px) {
@@ -755,13 +838,8 @@ footer {
 	.block { margin-left: 0; margin-right: 0; display: block; min-width: initial !important; }
 	.block:last-child { border-radius: 25px 25px 0 0; margin-bottom: -1rem; padding-bottom: 4rem; }
 	.column { margin-bottom: -2rem; }
+	.user-buttons-wrap .icon-button { margin: 0 0.5rem; }
 }
-@media (max-width: 992px) {
-
-}
-@media (max-width: 1200px) {
-
-}
-@media (max-width: 1400px) {
-
+@media (max-width: 333px) {
+	.user-buttons-wrap .icon-button { margin: 0 0.1rem; }
 }
