@@ -18,7 +18,95 @@ permalink: /404.html
 	</div>
 </body>
 <style>
-	#page_404 {
+@font-face {
+	font-family: Roboto;
+	src: url("./fonts/Roboto/Roboto-Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Roboto;
+	src: url("./fonts/Roboto/Roboto-Bold.ttf");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Roboto;
+	src: url("./fonts/Roboto/Roboto-Black.ttf");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Calibre Bold;
+	src: url("./fonts/calibre-Bold.otf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Intro";
+	src: url("./fonts/Intro/Intro.eot?#iefix") format("embedded-opentype"), 
+	     url("./fonts/Intro/Intro.woff") format("woff"), 
+	     url("./fonts/Intro/Intro.ttf")  format("truetype"),
+	     url("./fonts/Intro/Intro.svg#Intro") format("svg");
+}
+
+
+/* HTML, BODY, ETC.
+---------------------------------------------------------------------------------------------------------------------------*/
+html {
+	-webkit-text-size-adjust: 100%;
+	font-size: 14px;
+}
+
+body {
+	/*background-image: url("img/texture.png");*/
+	background-position: center;
+	background-attachment: fixed;
+	background-color: #111111;
+	color: #f0f0f0;
+	font-family: Roboto;
+	margin: 0;
+	overflow-x: hidden;
+	/*animation: move 3s linear infinite;*/
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling: touch;
+}
+
+body * {
+	outline: none;
+}
+
+body *::-moz-selection {
+	color: #000;
+	background: #fff;
+}
+
+body *::selection {
+	color: #000;
+	background: #fff;
+}
+
+h1 {
+	font-size: 3.5rem;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	transition: opacity 0.2s;
+}
+
+a:hover {
+	opacity: 0.75;
+}	
+
+	
+#page_404 {
 	height: 100vh;
 	text-transform: uppercase;
     font-weight: bold;
