@@ -122,6 +122,9 @@ a:hover {
 	/*margin: 0 1rem 1rem;*/
 	position: relative;
 }
+.page {
+	overflow: hidden;
+}
 /* .content::before {
 	position: absolute;
 	z-index: -1;
@@ -220,7 +223,7 @@ a:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 50px 0px;
 }
 .push-icon {
-	background: url("../img/app-icon.jpg") no-repeat;
+	background: url("../img/push-icon.png") no-repeat;
 	background-size: 100% 100%;
 	padding: 0.9rem;
 	display: inline-block;
@@ -747,6 +750,7 @@ a:hover {
     top: 50%;
 	padding: 1rem;
     transform: translate(0, -50%);
+	background-repeat: no-repeat;
 }
 .block.settings-list #setting-cards .item-icon {
 	background-image: url("../img/credit-card.svg");
