@@ -655,11 +655,13 @@ a:hover {
 .chat-history .message.income .avatar {
 	margin-right: 0.5rem;
 	background: #f6f6f6;
+	background-image: url("../img/support.svg");
 }
 .chat-history .message.outcome .avatar {
 	float: right;
 	margin-left: 0.5rem;
-	background: #4f5fb0;
+	/* background: #4f5fb0; */
+	background-image: url("../img/user.svg");
 }
 .block.chat-body .chat-input {
 	position: absolute;
