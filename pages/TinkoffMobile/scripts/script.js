@@ -208,6 +208,6 @@ function initApp() {
     for (var i = 0; i < hintButtons.length; i++) {
         hintButtons[i].onclick = function() { showHint(this); };
     }
-    logIn();
+    // logIn();
 }
 initApp();
