@@ -121,8 +121,18 @@ a:hover {
 	display: inline-block;
 	/*margin: 0 1rem 1rem;*/
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+.wrapper-main .content {
+	align-items: center;
 }
 .page {
+	/* overflow: hidden; */
+	flex: 1;
+}
+.page .anim-fixer {
 	overflow: hidden;
 }
 /* .content::before {
@@ -249,9 +259,6 @@ a:hover {
 	font-size: 1.1rem;
 }
 .wrapper-main {
-	text-align: center;
-}
-.wrapper-main {
 	background: -webkit-linear-gradient(-45deg, rgba(67,80,148,1) 0%, rgba(46,51,89,1) 100%);
 	/* background: linear-gradient(to right, rgb(46, 51, 89) 0px, rgb(46, 51, 89) 100%); */
 	position: relative;
@@ -263,6 +270,8 @@ a:hover {
 	box-sizing: border-box;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
+	display: flex;
+	flex-direction: column;
 }
 .wrapper-main::after {
 	content: "";
@@ -344,6 +353,7 @@ a:hover {
 	position: absolute;
 	width: 24rem;
 	z-index: 100;
+	margin: 0 -28.5rem 0;
 }
 #sim {
 	/* position: absolute; */
@@ -605,9 +615,20 @@ a:hover {
 .load-more-button:active {
 	transform: scale(0.97);
 }
+#chat {
+	display: flex;
+	flex: 1;
+}
+#chat .column:last-child {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
 .block.chat-body {
 	width: 52.5rem;
 	position: relative;
+	display: flex;
+	flex-direction: column;
 }
 .block.chat-body .block-title {
 	position: relative;
@@ -618,11 +639,12 @@ a:hover {
 	position: relative;
 }
 .block.chat-body .chat-history {
-	height: 28rem;
+	/* height: 28rem; */
     overflow-y: scroll;
     padding: 2rem 0 5rem;
     box-sizing: border-box;
 	border-radius: 0 0 1.5rem 1.5rem;
+	flex: 1;
 }
 .chat-history .message {
 	margin: 0rem 0 0;
@@ -916,6 +938,9 @@ a:hover {
 	box-shadow: 0px 0px 0px 0.3rem #3ce73c, #3ce73c 0px 5px 50px 0px;
 	transform: scale(0.95);
 }
+.user-buttons-wrap .user-button.refill.active {
+	background-color: #3ce73c;
+}
 .user-buttons-wrap .icon-button.sim {
 	background-image: url("../img/sim.svg");
 }
@@ -923,6 +948,9 @@ a:hover {
 	background-color: #ffe503;
 	box-shadow: 0px 0px 0px 0.3rem #ffe503, #ffe503 0px 5px 50px 0px;
 	transform: scale(0.95);
+}
+.user-buttons-wrap .icon-button.sim.active {
+	background-color: #ffe503;
 }
 .user-buttons-wrap .icon-button.chat {
 	background-image: url("../img/chat.svg");
@@ -932,6 +960,9 @@ a:hover {
 	box-shadow: 0px 0px 0px 0.3rem #3db2e7, #3db2e7 0px 5px 50px 0px;
 	transform: scale(0.95);
 }
+.user-buttons-wrap .icon-button.chat.active {
+	background-color: #3db2e7;
+}
 .user-buttons-wrap .icon-button.settings {
 	background-image: url("../img/settings.svg");
 }
@@ -939,6 +970,9 @@ a:hover {
 	background-color: #aaa;
 	box-shadow: 0px 0px 0px 0.3rem #aaa, #aaa 0px 5px 50px 0px;
 	transform: scale(0.95);
+}
+.user-buttons-wrap .icon-button.settings.active {
+	background-color: #aaa;
 }
 .user-buttons-wrap .icon-button.logout {
 	background-image: url("../img/logout.svg");

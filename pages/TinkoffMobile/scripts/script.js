@@ -160,7 +160,19 @@ function showHint( target ) {
     }
 }
 
-function logOut() {
+function toggleButtons(button) {
+    var buttons = button.parentNode.getElementsByTagName("button");
+    for (var i = 0; i < buttons.length; i++) {
+        if ( buttons[i] != button ) {
+            buttons[i].classList.remove("active");
+        } else {
+            buttons[i].classList.add("active");
+        }
+    }
+}
+
+function logOut(btn) {
+    toggleButtons(btn);
     PushShow ( "Тинькофф Мобайл", "До встречи, " + login + ".", 1500 );
     setTimeout( function() {
         document.getElementById("control-panel").style.display = "none";
@@ -169,7 +181,8 @@ function logOut() {
     }, 1000 );
 }
 
-function showHome() {
+function showHome(btn) {
+    toggleButtons(btn);
     // PushShow ( "Тинькофф Мобайл", "До встречи, " + login + ".", 1500 );
     document.getElementById("sim").style.display = "";
     document.getElementById("chat").style.display = "none";
@@ -177,7 +190,8 @@ function showHome() {
     document.title = "Мобайл | Главная";
 }
 
-function showChat() {
+function showChat(btn) {
+    toggleButtons(btn);
     // PushShow ( "Тинькофф Мобайл", "До встречи, " + login + ".", 1500 );
     document.getElementById("sim").style.display = "none";
     document.getElementById("chat").style.display = "";
@@ -187,7 +201,8 @@ function showChat() {
     document.title = "Мобайл | Чат";
 }
 
-function showSettings() {
+function showSettings(btn) {
+    toggleButtons(btn);
     // PushShow ( "Тинькофф Мобайл", "До встречи, " + login + ".", 1500 );
     document.getElementById("sim").style.display = "none";
     document.getElementById("chat").style.display = "none";
