@@ -80,8 +80,8 @@ a:hover {
     color: #333 !important;
 }
 .wrap {
-	background: -webkit-linear-gradient(-45deg, rgba(67,80,148,1) 0%, rgba(46,51,89,1) 100%);
-	/* background: linear-gradient(to right, rgb(46, 51, 89) 0px, rgb(46, 51, 89) 100%); */
+	/* background: -webkit-linear-gradient(-45deg, rgba(67,80,148,1) 0%, rgba(46,51,89,1) 100%); */
+	background: linear-gradient(to right, rgb(46, 51, 89) 0px, rgb(46, 51, 89) 100%);
 	position: relative;
 	top: 0;
 	left: 0;
@@ -259,8 +259,8 @@ a:hover {
 	font-size: 1.1rem;
 }
 .wrapper-main {
-	background: -webkit-linear-gradient(-45deg, rgba(67,80,148,1) 0%, rgba(46,51,89,1) 100%);
-	/* background: linear-gradient(to right, rgb(46, 51, 89) 0px, rgb(46, 51, 89) 100%); */
+	/* background: -webkit-linear-gradient(-45deg, rgba(67,80,148,1) 0%, rgba(46,51,89,1) 100%); */
+	background: linear-gradient(to right, rgb(46, 51, 89) 0px, rgb(46, 51, 89) 100%);
 	position: relative;
 	z-index: 1;
 	left: 0;
