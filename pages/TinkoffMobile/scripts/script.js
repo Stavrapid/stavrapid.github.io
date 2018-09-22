@@ -107,7 +107,6 @@ for (var i = 0; i < document.getElementsByClassName("addon").length; i++) {
 }
 
 var hints = {};
-hints.user = "<h2>Абонентский номер</h2>Общая информация";
 hints.calls = "<h1>Звонки и SMS</h1>Входящие — 0 ₽ В минуту.<br><br>Пакет действует 30 дней, продлевается автоматически.<br>Расходуется на любые номера по России, условия не меняются в поездках по России.<br><br>Звонки в Тинькофф Мобайл безлимитный и не расходуют пакет.<h2>Если не хватило денег на пакет</h2>Исходящие звонки по России — 2,9 ₽ в минуту.<br><br>Исходящие SMS по России — 2,9 ₽ за штуку.<h2>Если закончилилсь минуты в пакете</h2>Выбирите вариант:<br>— докупите 100 минут за 99 ₽ (до обновления основного пакета;<br>— перейдите на другой пакет, доплатив разницу;<br>— пользуйтесь поминутно.<h2>Международные звонки и SMS</h2>Исходящие звонки:<br>— в США, Китай, Великобританию, Канаду, Сингапур, Финляндию и Южную Корею — 2,9 ₽ в минуту;<br>— в другие страны — 29 ₽ в минуту.<br><br>Исходящие SMS — 5,9 ₽ за штуку.<h2>В поездках в Крым и г. Севастополь</h2>Входящие звонки — 0 ₽ в минуту.<br><br>Исходящие звонки:<br>— по России — 2,9 ₽ за минуту;<br>— в любую другую страну — 49 ₽ в минуту.<br><br>SMS — 2,9 ₽ за штуку.";
 hints.internet = "<h1>Интернет</h1>Пакет действует 30 дней и продлевается автоматически. В поехдках по России условия не меняются.<br>Приложени Tinkoff Mobile не расходует трафик и работает, даже если пакет не подключен.<h2>Если не хватило денег на пакет</h2>Инетернет недоступен (кроме приложения Tinkoff Mobile).<h2>Если закончились гигабайты в пакете</h2>Выбирите вариант:<br>— докупить 1 ГБ за 99 ₽ (до обновления основного пакета;<br>— перейти на другой пакет, доплатив разницу.<h2>В поездках в Крым и г. Севастополь</h2>1,9 ₽ за МБ<br><br><h1>Безлимитные сервисы</h1><h2>Мессенджеры</h2>WkatsApp, Viber, Facebook Messenger, iMessage, ТамТам, imo.im<h2>Социальные сети</h2>ВКонтакте, Facebook, Одноклассники, Instagram, IGTV, Snapchat, Twitter, Tinder<h2>Музыка</h2>Apple Music, Яндекс.Музыка, Яндекс.Радио, Google Play Музыка, Soundcloud, BOOM, Deezer Music, Shazam, Spotify<h2>Видео</h2>YouTube, Twitch, iTunes Видео, Google Play Фильмы, Youtube Детям, Rutube, Vimeo";
 hints.history = "<h2>История</h2>Детализация за прошедший месяц";
@@ -168,20 +167,47 @@ function logOut() {
     }, 1000 );
 }
 
+function showHome() {
+    // PushShow ( "Тинькофф Мобайл", "До встречи, " + login + ".", 1500 );
+    document.getElementById("sim").style.display = "";
+    document.getElementById("chat").style.display = "none";
+    document.getElementById("settings").style.display = "none";
+}
+
+function showChat() {
+    // PushShow ( "Тинькофф Мобайл", "До встречи, " + login + ".", 1500 );
+    document.getElementById("sim").style.display = "none";
+    document.getElementById("chat").style.display = "";
+    document.getElementById("settings").style.display = "none";
+    var chatHistory = document.getElementById("chat").getElementsByClassName("chat-history")[0];
+    chatHistory.scrollTop = chatHistory.scrollHeight;
+}
+
+function showSettings() {
+    // PushShow ( "Тинькофф Мобайл", "До встречи, " + login + ".", 1500 );
+    document.getElementById("sim").style.display = "none";
+    document.getElementById("chat").style.display = "none";
+    document.getElementById("settings").style.display = "";
+}
+
 function initApp() {
-    var columns = document.getElementsByClassName("column");
+    var wrapper = document.getElementsByClassName("page");
+
     // for (var i = 0; i < columns.length; i++) {
     // 	// columns[i].style.display = "none";
     // }
-    for (var i = 0; i < columns.length; i++) {
-        console.log(columns[i]);
-        columns[i].style.animation = "column-popup .5s 1 both ease";
-        columns[i].style.animationDelay = "." + ( 0 + i ) + "s";
+    for (var j = 0; j < wrapper.length; j++) {
+        var columns = wrapper[j].getElementsByClassName("column");
+        for (var i = 0; i < columns.length; i++) {
+            // console.log(columns[i].scrollHeight);
+            columns[i].style.animation = "column-popup .5s 1 both ease";
+            columns[i].style.animationDelay = "." + ( 0 + i ) + "s";
+        }
     }
     var hintButtons = document.getElementsByClassName("info-button")
     for (var i = 0; i < hintButtons.length; i++) {
         hintButtons[i].onclick = function() { showHint(this); };
     }
-    // logIn();
+    logIn();
 }
 initApp();
