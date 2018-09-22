@@ -59,6 +59,7 @@ function logIn () {
     setTimeout( function() {
         document.getElementById("login-page").style.display = "none";
         document.getElementById("control-panel").style.display = "";
+        showHome();
     }, 1000 );
 }
 
@@ -164,6 +165,7 @@ function logOut() {
     setTimeout( function() {
         document.getElementById("control-panel").style.display = "none";
         document.getElementById("login-page").style.display = "";
+        document.title = "Мобайл | Вход";
     }, 1000 );
 }
 
@@ -172,6 +174,7 @@ function showHome() {
     document.getElementById("sim").style.display = "";
     document.getElementById("chat").style.display = "none";
     document.getElementById("settings").style.display = "none";
+    document.title = "Мобайл | Главная";
 }
 
 function showChat() {
@@ -181,6 +184,7 @@ function showChat() {
     document.getElementById("settings").style.display = "none";
     var chatHistory = document.getElementById("chat").getElementsByClassName("chat-history")[0];
     chatHistory.scrollTop = chatHistory.scrollHeight;
+    document.title = "Мобайл | Чат";
 }
 
 function showSettings() {
@@ -188,6 +192,7 @@ function showSettings() {
     document.getElementById("sim").style.display = "none";
     document.getElementById("chat").style.display = "none";
     document.getElementById("settings").style.display = "";
+    document.title = "Мобайл | Настройки";
 }
 
 function initApp() {
