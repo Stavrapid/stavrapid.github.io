@@ -524,10 +524,16 @@ a:hover {
 	opacity: 0.1;
 }
 .balance-bar {
-	background: linear-gradient(-90deg, #77c8ee 0%, #3db2e7 100%);
+	background: #f8f8f8;
 	height: 0.8rem;
 	border-radius: 0.4rem;
 	margin: 0.4rem 0 0.6rem;
+}
+.balance-bar .remaining {
+	background: linear-gradient(-90deg, #77c8ee 0%, #3db2e7 100%);
+	box-shadow: 0 0 0 0.4rem #fff;
+	border-radius: 0.4rem;
+	height: 100%;
 }
 .balance-description {
 	opacity: 0.5;
