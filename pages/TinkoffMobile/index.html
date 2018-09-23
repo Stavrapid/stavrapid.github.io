@@ -81,7 +81,7 @@
 				<div class="header">
 					<div class="header-title"><b>Тинькофф</b><span>Мобайл</span></div>
 					<div class="header-logo"><img src="./img/tinkoff.svg"></div>
-					<div class="header-balance"><b>550,34</b> ₽</div>
+					<div class="header-balance"><div class="plus-button"></div><b>550,34</b> ₽</div>
 					<!-- <button class="button-exit">Выход</button> -->
 				</div>
 				<div class="content">
@@ -458,29 +458,35 @@
 							<div class="block-title">В чате с оператором <b>Екатерина</b></div>
 							<div class="block-description">22 сентября</div>
 							<div class="chat-history">
-								<div class="message income">
-									<div class="avatar">
-										<img src="" alt="">
-									</div>
-									<div class="bubble">Здравствуйте!</div>
-								</div>
 								<div class="message outcome">
 									<div class="avatar">
 										<img src="" alt="">
 									</div>
 									<div class="bubble">Здравствуйте!</div>
 								</div>
+								<div class="message income">
+									<div class="avatar">
+										<img src="" alt="">
+									</div>
+									<div class="bubble">Ну здравствуйте!</div>
+								</div>
 								<div class="message outcome">
 									<div class="avatar">
 										<img src="" alt="">
 									</div>
-									<div class="bubble">Типа мой вопрос.</div>
+									<div class="bubble">У меня типа вопросец есть.</div>
+								</div>
+								<div class="message outcome">
+									<div class="avatar">
+										<img src="" alt="">
+									</div>
+									<div class="bubble">Почему во всех дизайнах и мокапах используют текст-рыбу "Lorem ipsum"?</div>
 								</div>
 								<div class="message income">
 									<div class="avatar">
 										<img src="" alt="">
 									</div>
-									<div class="bubble">Сейчас уточню.</div>
+									<div class="bubble">Сейчас Вам обосную что по чём. И расложу всё как есть. </div>
 								</div>
 								<div class="message income">
 									<div class="avatar">
@@ -499,7 +505,7 @@
 									<div class="avatar">
 										<img src="" alt="">
 									</div>
-									<div class="bubble">Рад был помочь. Хорошего Вам дня!</div>
+									<div class="bubble">Рада был помочь. Хорошего Вам дня!</div>
 								</div>
 							</div>
 							<div class="chat-input">
@@ -550,10 +556,58 @@
 						<div class="column">
 
 							<div class="block settings-body">
-								<div class="block-title">Банковские карты</div>
-								<div class="block-description">настроечки</div>
+								<div class="block-title">Виртуальная карта</div>
+								<!-- <div class="block-description">настроечки</div> -->
 								<div class="settings-content">
 
+									<div class="mobile-card__wrapper">
+										<div class="mobile-card-image">
+											<div class="img_wrap">
+												<img src="img/card-mobile-2.png" alt="">
+											</div>
+										</div>
+										<div class="mobile-card-balance__wrapper">
+											<div class="card-balance__title">Баланс</div>
+											<div class="card-balance"><b>150,34</b> ₽</div>
+										</div>
+										<div class="mobile-card-balance__wrapper">
+											<div class="card-balance__title">Лимит переводов</div>
+											<div class="card-balance"><b>100</b> ₽</div>
+										</div>
+										<div class="card-balance__description">В мобильном банке отображается баланс в рублях <br>без учета бонусных баллов</div>
+									</div>
+									<button class="mobile-card__bank-button" type="button" name="button">Открыть Тинькофф Банк</button>
+									<p>Получайте доход от SIM-карты каждый месяц. Начисляем процент на остаток и возвращаем часть денег с покупок по виртуальной карте</p>
+									<ul class="card-advantages__list">
+										<li class="card-advantages__listItem">
+											<div class="card-advantage-icon__wrapper">
+												<img src="img/cashback.svg" alt="">
+											</div>
+											<div class="card-advantage__text">
+												<div class="card-advantage__title">Кэшбэк — до 30%</div>
+												<div class="card-advantage__description">Возвращаем 1% со всех покупок <br>и до 30% за покупки <br>по предложениям партнеров</div>
+											</div>
+										</li>
+										<li class="card-advantages__listItem">
+											<div class="card-advantage-icon__wrapper">
+												<img src="img/percent.svg" alt="">
+											</div>
+											<div class="card-advantage__text">
+												<div class="card-advantage__title">Процент на остаток — 6%</div>
+												<div class="card-advantage__description">Начисляем % на остаток каждый месяц, если на <br>счете больше 1000 ₽</div>
+											</div>
+										</li>
+										<li class="card-advantages__listItem">
+											<div class="card-advantage-icon__wrapper">
+												<img src="img/cost.svg" alt="">
+											</div>
+											<div class="card-advantage__text">
+												<div class="card-advantage__title">Бесплатное обслуживание</div>
+												<div class="card-advantage__description">Не берем дополнительную плату за то, чтобы вы <br>могли оплачивать покупки со счета телефона</div>
+											</div>
+										</li>
+									</ul>
+									<!-- <button class="mobile-card__bank-button" type="button" name="button">Открыть Тинькофф Банк</button> -->
 								</div>
 							</div>
 
@@ -566,17 +620,6 @@
 
 				<div id="servises-page" style = "display: none;">
 
-					<div class="wrapper-main">
-						<div class="header">
-							<div class="header-title"><b>Тинькофф</b><span>Мобайл</span></div>
-							<div class="header-logo"><img src="./img/tinkoff.svg"></div>
-							<div class="header-balance"><b>550,34</b> ₽</div>
-							<!-- <button class="button-exit">Выход</button> -->
-						</div>
-						<div class="content">
-
-						</div>
-					</div>
 				</div>
 				<footer>
 					© 2018 Stavrapid - Tinkoff Mobile Control Panel

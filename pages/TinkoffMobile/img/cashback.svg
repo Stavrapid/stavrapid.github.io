@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" data-svg-id="9de2e0a4e5fdaa2e948b4a8636c3eeb6" viewBox="0 0 100 100" class="ui-icon__svg-wrapper" data-qa-file="UIIcon">
+	<circle style="fill:#ffdd2d;" cx="50" cy="50" r="48"></circle>
+	<g style="stroke:#3e4757;fill:transparent;stroke-width: 2.27272727px;" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M74.798 68.35H26.9c-1.686 0-3.05-1.379-3.05-3.078V33.728c0-1.699 1.364-3.077 3.05-3.077h41.948l9.001 10.555v24.066c0 1.699-1.367 3.077-3.05 3.077z"></path>
+		<path d="M43.35 50.96h3.481V37.282h4.688c1.875 0 3.482.664 4.821 1.992 1.34 1.24 2.01 2.835 2.01 4.782s-.67 3.54-2.01 4.78c-1.34 1.417-2.946 2.126-4.821 2.126H46.83v4.914h8.438"></path>
+		<path d="M46.831 61.586v-5.711H43.35"></path>
+	</g>
+</svg>
