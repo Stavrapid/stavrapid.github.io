@@ -1,594 +1,265 @@
+<!--
+===============================================================================================================================
+--------------------------------------------------- METEO EQUESTRIA LANDING ---------------------------------------------------
+===============================================================================================================================
+-->
 <!DOCTYPE html>
 <html>
-	<!-- HEAD BEGIN -->
-	<head>
-		<meta charset="utf-8"/>
+<!--
+======== HEAD =================================================================================================================
+-->
+<head>
+    <meta charset="utf-8">
+    <title>Meteo Equestria</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="./style/style.css" rel="stylesheet" type="text/css" >
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-120x120.png">
 
-		<title>Мобайл | Добро пожаловать</title>
-		<!-- Viewport -->
-		<meta name="HandheldFriendly" content="True">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
-		<!-- Telephone format detection -->
-		<meta name="format-detection" content="telephone=no">
-
-		<!-- iPhone 4/4S SPLASHSCREEN -->
-        <link href="./startupimages/640x960.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-		<!-- iPhone 5/5S/SE SPLASHSCREEN -->
-		<link href="./startupimages/640x1136.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-		<!-- iPhone 6/6S/7/8 SPLASHSCREEN -->
-        <link href="./startupimages/750x1334.png" media="(device-width: 375px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-        <!-- iPhone 6/6S/7/8 Plus SPLASHSCREEN -->
-        <link href="./startupimages/1242x2208.png" media="(device-width: 414px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image">
-        <!-- iPhone X SPLASHSCREEN -->
-        <link href="./startupimages/1125x2436.png" media="(device-width: 375px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image">
-		<!-- iPhone SPLASHSCREEN-->
-        <!-- <link href="./startupimages/320x460.png" media="(device-width: 320px)" rel="apple-touch-startup-image"> -->
-        <!-- iPhone 4/4S (Retina) SPLASHSCREEN-->
-        <!-- <link href="./startupimages/640x920.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"> -->
-        <!-- iPad (portrait) SPLASHSCREEN-->
-        <!-- <link href="./startupimages/768x1004.png" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image"> -->
-        <!-- iPad (landscape) SPLASHSCREEN-->
-        <!-- <link href="./startupimages/748x1024.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image"> -->
-        <!-- iPad (Retina, portrait) SPLASHSCREEN-->
-        <!-- <link href="./startupimages/1536x2008.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"> -->
-        <!-- iPad (Retina, landscape) SPLASHSCREEN-->
-        <!-- <link href="./startupimages/2048x1496.png" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"> -->
-
-		<!-- iOS app icons -->
-		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="./icons/76.png"><!-- iPad 2, iPad mini -->
-		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="./icons/120.png"><!-- iPhone 6s, iPhone 6, iPhone 5 -->
-		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="./icons/152.png"><!-- iPad, iPad mini -->
-		<link rel="apple-touch-icon-precomposed" sizes="167x167" href="./icons/167.png"><!-- iPad Pro -->
-		<link rel="apple-touch-icon-precomposed" sizes="180x180" href="./icons/180.png"><!-- iPhone 6s Plus, iPhone 6 Plus -->
-		<link rel="apple-touch-icon-precomposed" sizes="1024x1024" href="./icons/1024.png">
-
-		<link rel="icon" sizes="16x16" href="./favicon-16x16.png">
-		<link rel="icon" sizes="16x16" href="./favicon-32x32.png">
-
-		<!-- Path to library CSS -->
-		<link href="./style/style.css" rel="stylesheet">
-	</head>
-	<!-- HEAD END -->
-
-	<body>
-
-		<div id="login-page">
-
-			<div class="wrap">
-				<div class="content-wrap">
-					<div class="content">
-						<div class="logo"></div>
-						<!-- <div class="title">Тинькофф Мобайл</div> -->
-						<div class="button-wrap">
-							<div class="inputs">
-								<input class="field" type="text" placeholder="Логин" onkeypress="checkField(event)" value="Tinkoff"></input>
-								<div class="inputs-divider"></div>
-								<input class="field" type="password" placeholder="Пароль" onkeypress="checkField(event)" value="mobile"></input>
-							</div>
-							<button class="button-login" onclick="auth()">Войти</button>
-							<a href="#">У меня нет аккаунта</a>
-						</div>
-					</div>
+    <meta property="og:url" content="http://stavrapid.ru/pages/MeteoLanding" />
+    <meta property="og:title" content="Meteo Equestria" />
+    <meta property="og:site_name" content="Meteo Equestria" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/Stavrapid/stavrapid.github.io/master/pages/MeteoLanding/logo_social-media.png">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Stavrapid/stavrapid.github.io/master/pages/MeteoLanding/android-icon-192x192.png">
+</head>
+<!--
+======== BODY ==================================================================================================================
+-->
+<body class="white">
+	<div class="page-main-card">
+		<div class="clip-wrap">
+			<!-- <img src="./background-clip.svg"> -->
+		</div>
+	</div>
+	<!-- <div class="logo-fixed"></div> -->
+	<a class="stavrapid-fixed" href="http://stavrapid.ru" target="_blank"><div></div></a>
+	<div class="button-fixed" onclick="switchTheme();"></div>
+	<div class="page-layout">
+		<div class="grid">
+			<div class="device">
+				<div class="iphone"></div>
+				<div class="screens">
+					<img class="screenshot" src="./screens/screenshot-01-white.png">
+					<img class="screenshot" src="./screens/screenshot-01-white-colored.png">
+					<img class="screenshot" src="./screens/screenshot-02-white.png">
+					<img class="screenshot" src="./screens/screenshot-03-white.png">
+					<img class="screenshot" src="./screens/screenshot-04-white.png">
 				</div>
 			</div>
-
-		</div>
-
-		<div id="control-panel" style = "display: none;">
-
-			<div class="wrapper-main">
-				<div class="header">
-					<div class="header-title"><b>Тинькофф</b><span>Мобайл</span></div>
-					<div class="header-logo"><img src="./img/tinkoff.svg"></div>
-					<div class="header-balance"><b>550,34</b> ₽</div>
-					<!-- <button class="button-exit">Выход</button> -->
+			<!-- <div class="logo">
+				<img src="logo-white.png">
+				<div>Meteo Equestria</div>
+			</div> -->
+			<div class="call-to-action">
+				<img class="app-icon" src="./img/icon-white.png">
+				<h1>Meteo Equestria</h1>
+				<p><span class="app-price">$0.99</span> – download and enjoy beautiful and a one-of-a-kind application for keeping track of the current weather in the whole expanse of Equestria and beyound. Predict the unpredictable. Celestia approves!<span class="emoji"></span></p>
+				<div class="header-buttons">
+					<a href="http://stavrapid.ru/apps/MeteoEquestria"><span class="apple-icon"></span>Apple Store</a>
+					<a href="http://stavrapid.ru/apps/MeteoEquestria"><span class="google-icon"></span>Google Store</a>
 				</div>
-				<div class="content">
-					<div class="block user-info">
-						<div class="block-title">+7 (995) 500-00-01</div>
-						<div class="block-description">Общая сумма на 30 дней – 425 ₽</div>
-						<div class="user-buttons-wrap">
-							<button class="user-button icon-button refill"></button>
-							<button class="user-button icon-button sim active" onclick="showHome(this)"></button>
-							<button class="user-button icon-button chat" onclick="showChat(this)"></button>
-							<!-- <div class="user-button refill">Пополнить</div> -->
-							<button class="user-button icon-button settings" onclick="showSettings(this)"></button>
-							<!-- <div class="user-button settings">Настройки</div> -->
-							<button class="user-button icon-button logout" onclick="logOut(this)"></button>
-							<!-- <div class="user-button logout" onclick="logOut()">Выход</div> -->
-						</div>
-					</div>
-
-					<div id="sim" class="page">
-						<div class="anim-fixer">
-
-							<div class="column">
-
-								<div class="block minutes">
-									<div class="block-title">Звонки и SMS</div>
-									<div class="info-button" hint="calls"></div>
-									<div class="block-description">Списание 25 июля – 159 ₽</div>
-									<div class="block-content">
-										<div class="options" id="minutesOptions">
-											<div class="tumbler" id="minutesTumbler"></div>
-
-										    <input type="radio" id="minutesChoice1"
-										     name="minutes" value="0" onchange="tumblerSwitch(this)">
-										    <label for="minutesChoice1">0</label>
-
-										    <input type="radio" id="minutesChoice2"
-										     name="minutes" value="100" onchange="tumblerSwitch(this)">
-										    <label for="minutesChoice2">200</label>
-
-										    <input type="radio" id="minutesChoice3"
-										     name="minutes" value="200" onchange="tumblerSwitch(this)" checked>
-										    <label for="minutesChoice3">400</label>
-
-										    <input type="radio" id="minutesChoice4"
-										     name="minutes" value="600" onchange="tumblerSwitch(this)">
-										    <label for="minutesChoice4">600</label>
-
-										    <input type="radio" id="minutesChoice5"
-										     name="minutes" value="1200" onchange="tumblerSwitch(this)">
-										    <label for="minutesChoice5">1200</label>
-
-										    <input type="radio" id="minutesChoice6"
-										     name="minutes" value="∞" onchange="tumblerSwitch(this)">
-										    <label for="minutesChoice6">∞</label>
-										</div>
-										<div class="balance-description">Осталось</div>
-										<div class="remain"><span>400</span> из 400 минут</div>
-										<div class="balance-bar"></div>
-										<div class="minutes-description">Если пакета не хватит, можно подключить <br>дополнительные минуты.</div>
-										<div class="addons">
-											<div class="addons-list">
-												<div class="addon">
-													<div class="addon-title">Безлимитные SMS <b>за 49 ₽</b></div>
-													<div class="addon-description">Отправка коротких сообщений</div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )" checked>
-														<span></span>
-													</label>
-												</div>
-											</div>
-											<div class="addons-title">Дополнительные услуги</div>
-											<div class="addons-list">
-
-												<div class="addon">
-													<div class="addon-title">Супер АОН <b>за 9,9 ₽</b></div>
-													<div class="addon-description">Скрытый номер при исходящих звонках</div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )">
-														<span></span>
-													</label>
-												</div>
-
-												<div class="addon">
-													<div class="addon-title">Анти АОН <b>за 99 ₽</b></div>
-													<div class="addon-description">Определяет номер звонящего абонента, <br>даже если он был скрыт</div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )">
-														<span></span>
-													</label>
-												</div>
-
-												<div class="addon">
-													<div class="addon-title">Виртуальный номер <b>за 49 ₽</b></div>
-													<div class="addon-description">Второй номер на SIM-карте <br>для входящих и исходящих звонков</div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )">
-														<span></span>
-													</label>
-												</div>
-
-												<div class="addon">
-													<div class="addon-title">Я снова в сети <b>за 0 ₽</b></div>
-													<div class="addon-description">Оповещение абонентов <br>о возвращении вашего номера в сеть</div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )" checked>
-														<span></span>
-													</label>
-												</div>
-
-												<div class="addon">
-													<div class="addon-title">Вам звонили <b>за 0 ₽</b></div>
-													<div class="addon-description">Оповещение о пропущенных вызовах <br>после возвращении в сеть</div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )" checked>
-														<span></span>
-													</label>
-												</div>
-
-												<div class="addon">
-													<div class="addon-title">Конференц-связь <b>за 0 ₽</b></div>
-													<div class="addon-description">Обеспечивает возможность <br>одновременного телефонного общения <br>трех и более абонентов</div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )" checked>
-														<span></span>
-													</label>
-												</div>
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="column">
-
-								<div class="block internet">
-									<div class="block-title">Интернет</div>
-									<div class="info-button" hint="internet"></div>
-									<div class="block-description">Списание 25 июля – 99 ₽</div>
-									<div class="block-content">
-										<div class="options" id="internetOptions">
-											<div class="tumbler" id="internetTumbler"></div>
-
-										    <input type="radio" id="internetChoice1"
-										     name="internet" value="0" onchange="tumblerSwitch(this)">
-										    <label for="internetChoice1">0</label>
-
-										    <input type="radio" id="internetChoice2"
-										     name="internet" value="100" onchange="tumblerSwitch(this)" checked>
-										    <label for="internetChoice2">2</label>
-
-										    <input type="radio" id="internetChoice3"
-										     name="internet" value="200" onchange="tumblerSwitch(this)">
-										    <label for="internetChoice3">4</label>
-
-										    <input type="radio" id="internetChoice4"
-										     name="internet" value="600" onchange="tumblerSwitch(this)">
-										    <label for="internetChoice4">8</label>
-
-										    <input type="radio" id="internetChoice5"
-										     name="internet" value="1200" onchange="tumblerSwitch(this)">
-										    <label for="internetChoice5">16</label>
-
-										    <input type="radio" id="internetChoice6"
-										     name="internet" value="∞" onchange="tumblerSwitch(this)">
-										    <label for="internetChoice6">∞</label>
-										</div>
-										<div class="balance-description">Осталось</div>
-										<div class="remain"><span>2</span> из 2 ГБ</div>
-										<div class="balance-bar"></div>
-										<div class="internet-description">Если пакета не хватит, можно подключить <br>дополнительные гигабайты.</div>
-										<div class="addons">
-											<div class="addons-title">Безлимитные сервисы</div>
-											<div class="addons-list">
-												<div class="addon">
-													<div class="addon-title">Мессенджеры <b>за 59 ₽</b></div>
-													<div class="addon-description">Будьте всегда на связи</div>
-													<div class="addon-services">
-														<span><img src="./services/whatsapp.jpg"></span>
-														<span><img src="./services/viber.jpg"></span>
-														<span><img src="./services/facebookmessenger.jpg"></span>
-														<span><img src="./services/imessage.jpg"></span>
-														<span><img src="./services/tamtam.jpg"></span>
-														<span><img src="./services/imoim.jpg"></span>
-													</div>
-													<div class="question-button"></div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )" checked>
-														<span></span>
-													</label>
-												</div>
-												<div class="addon">
-													<div class="addon-title">Социальные сети <b>за 59 ₽</b></div>
-													<div class="addon-description">Общайтесь без ограничений</div>
-													<div class="addon-services">
-														<span><img src="./services/vk.jpg"></span>
-														<span><img src="./services/facebook.jpg"></span>
-														<span><img src="./services/ok.jpg"></span>
-														<span><img src="./services/instagram.jpg"></span>
-														<span><img src="./services/igtv.png"></span>
-														<span><img src="./services/snapchat.jpg"></span>
-														<span><img src="./services/twitter.jpg"></span>
-														<span><img src="./services/tinder.jpg"></span>
-													</div>
-													<div class="question-button"></div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )">
-														<span></span>
-													</label>
-												</div>
-												<div class="addon">
-													<div class="addon-title">Музыка <b>за 59 ₽</b></div>
-													<div class="addon-description">Слушайте любимые треки</div>
-													<div class="addon-services">
-														<span><img src="./services/yandexmusic.jpg"></span>
-														<span><img src="./services/applemusic.jpg"></span>
-														<span><img src="./services/googleplaymusic.jpg"></span>
-														<span><img src="./services/soundcloud.jpg"></span>
-														<span><img src="./services/zvooq.jpg"></span>
-														<span><img src="./services/boom.jpg"></span>
-														<span><img src="./services/shazam.jpg"></span>
-														<span><img src="./services/spotify.jpg"></span>
-														<span><img src="./services/deezer.jpg"></span>
-														<span><img src="./services/yandexradio.jpg"></span>
-													</div>
-													<div class="question-button"></div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )" checked>
-														<span></span>
-													</label>
-												</div>
-												<div class="addon">
-													<div class="addon-title">Видео <b>за 159 ₽</b></div>
-													<div class="addon-description">Видео без остановки</div>
-													<div class="addon-services">
-														<span><img src="./services/youtube.jpg"></span>
-														<span><img src="./services/youtubechildren.jpg"></span>
-														<span><img src="./services/googleplaymovie.jpg"></span>
-														<span><img src="./services/itunesvideo.jpg"></span>
-														<span><img src="./services/twitch.jpg"></span>
-														<span><img src="./services/rutube.jpg"></span>
-														<span><img src="./services/vimeo.jpg"></span>
-													</div>
-													<div class="question-button"></div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )">
-														<span></span>
-													</label>
-												</div>
-											</div>
-											<div class="addons-title">Дополнительные услуги</div>
-											<div class="addons-list">
-												<div class="addon">
-													<div class="addon-title">Режим модема <b>за 0 ₽</b></div>
-													<div class="addon-description">Раздача интернет-трафика по Wi-Fi, <br>а также использование SIM-карты <br>в модеме или роутере</div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )" checked>
-														<span></span>
-													</label>
-												</div>
-
-												<div class="addon">
-													<div class="addon-title">Запрет фоновых обновлений</div>
-													<div class="addon-description">Запрещающает обновление приложений <br>смартфона при нахождении в роуминге</div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )">
-														<span></span>
-													</label>
-												</div>
-
-												<div class="addon">
-													<div class="addon-title">Запрет синхронизации данных</div>
-													<div class="addon-description">Запрещающает синхронизацию iCloud, <br>Google Drive, Dropbox <br>при нахождении в роуминге</div>
-													<label class="ios7-switch">
-														<input type="checkbox" onchange="addonsSwitch( this )">
-														<span></span>
-													</label>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="column">
-
-								<div class="block history">
-									<div class="block-title">История</div>
-									<div class="info-button" hint="history"></div>
-									<div class="block-description">Период 25 июня – 25 июля</div>
-
-									<div class="action outcoming-call">
-										<div class="action-title">63 мин</div>
-										<div class="action-details">+7 (995) 500-05-50</div>
-										<div class="action-price"><b>0</b> ₽</div>
-									</div>
-									<div class="action inbox">
-										<div class="action-title">29 КБ</div>
-										<div class="action-details">Мобильный интернет</div>
-										<div class="action-price"><b>0</b> ₽</div>
-									</div>
-									<div class="action incoming-call">
-										<div class="action-title">30 мин</div>
-										<div class="action-details">8 (800) 555-35-35</div>
-										<div class="action-price"><b>0</b> ₽</div>
-									</div>
-									<div class="action income-sms">
-										<div class="action-title">54 символа</div>
-										<div class="action-details">8 (800) 555-35-35</div>
-										<div class="action-price"><b>0</b> ₽</div>
-									</div>
-									<div class="action incoming-call">
-										<div class="action-title">30 мин</div>
-										<div class="action-details">8 (800) 555-35-35</div>
-										<div class="action-price"><b>0</b> ₽</div>
-									</div>
-									<div class="action inbox">
-										<div class="action-title">751 МБ</div>
-										<div class="action-details">Мобильный интернет</div>
-										<div class="action-price"><b>0</b> ₽</div>
-									</div>
-									<div class="action outcoming-call">
-										<div class="action-title">30 мин</div>
-										<div class="action-details">8 (800) 555-35-35</div>
-										<div class="action-price"><b>0</b> ₽</div>
-									</div>
-									<div class="action inbox">
-										<div class="action-title">95 КБ</div>
-										<div class="action-details">Мобильный интернет</div>
-										<div class="action-price"><b>0</b> ₽</div>
-									</div>
-									<div class="action outbox">
-										<div class="action-title">13 МБ</div>
-										<div class="action-details">Мобильный интернет</div>
-										<div class="action-price"><b>0</b> ₽</div>
-									</div>
-									<div class="action outcoming-call">
-										<div class="action-title">46 мин</div>
-										<div class="action-details">8 (800) 555-35-35</div>
-										<div class="action-price"><b>0</b> ₽</div>
-									</div>
-									<div class="action redirect-call">
-										<div class="action-title">45 мин</div>
-										<div class="action-details">8 (800) 555-35-35</div>
-										<div class="action-price"><b>0</b> ₽</div>
-									</div>
-									<div class="action income-sms">
-										<div class="action-title">153 символа</div>
-										<div class="action-details">8 (800) 555-35-35</div>
-										<div class="action-price"><b>0</b> ₽</div>
-									</div>
-									<div class="action outcome-sms">
-										<div class="action-title">21 символ</div>
-										<div class="action-details">8 (800) 555-35-35</div>
-										<div class="action-price"><b>0</b> ₽</div>
-									</div>
-									<div class="load-more-button-wrap">
-										<button class="load-more-button">Загрузить еще</button>
-									</div>
-								</div>
-
-							</div>
-
-						</div>
-					</div>
-
-
-				<div id="chat" class="page" style = "display: none;">
-
-					<div class="column"></div>
-					<div class="column">
-						<div class="block chat-body">
-							<div class="block-title">В чате с оператором <b>Екатерина</b></div>
-							<div class="block-description">22 сентября</div>
-							<div class="chat-history">
-								<div class="message income">
-									<div class="avatar">
-										<img src="" alt="">
-									</div>
-									<div class="bubble">Здравствуйте!</div>
-								</div>
-								<div class="message outcome">
-									<div class="avatar">
-										<img src="" alt="">
-									</div>
-									<div class="bubble">Здравствуйте!</div>
-								</div>
-								<div class="message outcome">
-									<div class="avatar">
-										<img src="" alt="">
-									</div>
-									<div class="bubble">Типа мой вопрос.</div>
-								</div>
-								<div class="message income">
-									<div class="avatar">
-										<img src="" alt="">
-									</div>
-									<div class="bubble">Сейчас уточню.</div>
-								</div>
-								<div class="message income">
-									<div class="avatar">
-										<img src="" alt="">
-									</div>
-									<div class="bubble">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).
-									</div>
-								</div>
-								<div class="message outcome">
-									<div class="avatar">
-										<img src="" alt="">
-									</div>
-									<div class="bubble">Спасибо большое!</div>
-								</div>
-								<div class="message income">
-									<div class="avatar">
-										<img src="" alt="">
-									</div>
-									<div class="bubble">Рад был помочь. Хорошего Вам дня!</div>
-								</div>
-							</div>
-							<div class="chat-input">
-								<div class="button-attach"></div>
-								<input type="text" placeholder="Введите Ваше сообщение..." class="text-field"></input>
-								<div class="button-send"></div>
-							</div>
-
-						</div>
-					</div>
-
-				</div>
-
-
-				<div id="settings" class="page" style = "display: none;">
-
-					<div class="anim-fixer">
-
-						<div class="column">
-
-							<div class="block settings-list">
-								<div class="block-title">Настройки</div>
-								<div class="block-description">Настроечки</div>
-								<div id="setting-cards" class="settings-list-item">
-									<div class="item-icon"></div>
-									<div class="item-title">Банковские карты</div>
-									<div class="item-details">Ваши карты для оплаты связи</div>
-								</div>
-								<div id="setting-autopay" class="settings-list-item">
-									<div class="item-icon"></div>
-									<div class="item-title">Автоплатеж</div>
-									<div class="item-details">Автопополнение баланса телефона</div>
-								</div>
-								<div id="setting-virtual_card" class="settings-list-item">
-									<div class="item-icon"></div>
-									<div class="item-title">Виртуальная карта</div>
-									<div class="item-details">Ваша балансовая карта</div>
-								</div>
-								<div id="setting-about" class="settings-list-item">
-									<div class="item-icon"></div>
-									<div class="item-title">О приложении</div>
-									<div class="item-details">Полная информация об этом ПО</div>
-								</div>
-							</div>
-
-						</div>
-
-						<div class="column">
-
-							<div class="block settings-body">
-								<div class="block-title">Банковские карты</div>
-								<div class="block-description">настроечки</div>
-								<div class="settings-content">
-
-								</div>
-							</div>
-
-						</div>
-
-					</div>
-
-				</div>
-
-
-				<div id="servises-page" style = "display: none;">
-
-					<div class="wrapper-main">
-						<div class="header">
-							<div class="header-title"><b>Тинькофф</b><span>Мобайл</span></div>
-							<div class="header-logo"><img src="./img/tinkoff.svg"></div>
-							<div class="header-balance"><b>550,34</b> ₽</div>
-							<!-- <button class="button-exit">Выход</button> -->
-						</div>
-						<div class="content">
-
-						</div>
-					</div>
-				</div>
-				<footer>
-					© 2018 Stavrapid - Tinkoff Mobile Control Panel
-				</footer>
 			</div>
+		</div>
+		<!-- <div class="card">
+			Kek
+		</div> -->
+		<div class="app-intro">
+			<img class="icon" src="./img/icon-white.png"><br>
+			<div class="intro-title">Meet The Meteo Equestria</div>
+			<p>The one-of-a-kind application for keeping track of the current weather in the whole expanse of Equestria and beyound. A huge number of available locations are truly impressive</p>
+			<img src="./img/forest.svg">
+			<img src="./img/spruce.svg">
+			<img src="./img/mountains.svg">
+			<img src="./img/waterfall.svg">
+			<img src="./img/river.svg">
+			<img src="./img/fields.svg">
+			<!-- <img src="./img/hills.svg"> -->
+			<img src="./img/trees.svg">
+		</div>
+		<div class="divider"></div>
+		<div class="app-advantages">
+			<div class="advantage">
+				<div class="icon weather"></div>
+				<h2>Actual weather</h2>
+				<p>Always actual weather forecasts straight from the Cloudsdale weather Patrol</p>
+			</div>
+			<div class="advantage">
+				<div class="icon customization"></div>
+				<h2>Rich visual customization</h2>
+				<p>Choose between two color themes, bluriness and weather display style</p>
+			</div>
+			<div class="advantage">
+				<div class="icon design"></div>
+				<h2>Unique design</h2>
+				<p>Modern, unique and gorgeous app design developed by our designers</p>
+			</div>
+			<div class="advantage">
+				<div class="icon support"></div>
+				<h2>Continuous Updates</h2>
+				<p>Pay once and receive all app updates at no extra cost, using our cloud platform</p>
+			</div>
+		</div>
+		<div class="divider"></div>
 
+		<div class="carousel-section">
+			<div class="carousel">
+				<div class="carousel__button --prev" onclick="slidePrev()"></div>
+				<div class="carousel__button --next" onclick="slideNext()"></div>
+				<div class="slides">
+					<img class="slide" src="./carousel/slide-1.png">
+					<img class="slide" src="./carousel/slide-2.png">
+					<img class="slide" src="./carousel/slide-3.png">
+					<img class="slide" src="./carousel/slide-4.png">
+					<img class="slide" src="./carousel/slide-5.png">
+					<img class="slide" src="./carousel/slide-6.png">
+					<img class="slide" src="./carousel/slide-7.png">
+					<img class="slide" src="./carousel/slide-8.png">
+					<img class="slide" src="./carousel/slide-9.png">
+				</div>
+			</div>
+			<div class="carousel__paginator">
+				<div class="page" onclick="toSlide(0)"></div>
+				<div class="page" onclick="toSlide(0)"></div>
+				<div class="page" onclick="toSlide(0)"></div>
+				<div class="page" onclick="toSlide(0)"></div>
+				<div class="page" onclick="toSlide(0)"></div>
+				<div class="page" onclick="toSlide(0)"></div>
+				<div class="page" onclick="toSlide(0)"></div>
+				<div class="page" onclick="toSlide(0)"></div>
+				<div class="page" onclick="toSlide(0)"></div>
+			</div>
 		</div>
 
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<h1>Cloudsdale Weather Patrol</h1>
+					<p>Cloudsdale Weather Patrol is always there keeping your skies clear, your clouds fluffy, or providing the soft, gentle pitter patter of sleep inducing rain.
+						<br>Weather ranges from storms to clear skies to cloud-animals to high winds to snow to anything else you can think of!</p>
+					<a href="#" class="learn-more button">Learn more</a>
+				</div>
+			</div>
 		</div>
+		<!-- <div class="divider"></div> -->
+		<div class="social-block">
+			<a class="social-icon vk" href="https://vk.com/meteoequestria" target="_blank"><div></div></a>
+			<a class="social-icon facebook" href="#" target="_blank"><div></div></a>
+			<a class="social-icon twitter" href="https://twitter.com/MeteoEquestria" target="_blank"><div></div></a>
+			<a class="social-icon instagram" href="#" target="_blank"><div></div></a>
+			<a class="social-icon deviantart" href="#" target="_blank"><div></div></a>
+			<a class="social-icon soundcloud" href="#" target="_blank"><div></div></a>
+			<a class="social-icon dribbble" href="#" target="_blank"><div></div></a>
+			<a class="social-icon behance" href="#" target="_blank"><div></div></a>
+			<a class="social-icon email" href="#" target="_blank"><div></div></a>
+		</div>
+	</div>
+	<footer>
+		<p>© 2018 Stavrapid - Meteo Equestria</p>
+	</footer>
+	<script>
+	window.addEventListener("scroll", function(e){
+		document.querySelector(".page-main-card").style.height = (40 - window.pageYOffset * 0.03) + "rem";
+		// document.querySelector(".page-main-card").style.backgroundSize = (100 + window.pageYOffset * 0.1) + "%";
+		// document.querySelector(".call-to-action").style.opacity = (1 - window.pageYOffset * 0.004);
+		if ( window.pageYOffset > 800 ) {
+			document.querySelector(".button-fixed").style.filter = "invert(1)";
+		} else {
+			document.querySelector(".button-fixed").style.filter = "none";
+		}
+		if ( window.pageYOffset > 730 ) {
+			document.querySelector(".stavrapid-fixed div").style.filter = "invert(1)";
+		} else {
+			document.querySelector(".stavrapid-fixed div").style.filter = "none";
+		}
+	});
 
+	var screenIndex;
 
-	</body>
-	<!-- Path to library JS -->
-	<script src="./scripts/script.js" type="text/javascript"></script>
+	function switchTheme() {
+		var imgs = document.getElementsByTagName("img");
+		if ( document.body.className == "white" ) {
+			document.body.classList.remove("white");
+			document.body.classList.add("dark");
+			for (var i = 0; i < imgs.length; i++) {
+				var str = imgs[i].getAttribute("src");
+				console.log(str);
+				imgs[i].setAttribute("src", str.replace("white", "dark"));
+			}
+			return;
+		}
+		if ( document.body.className == "dark" ) {
+			document.body.classList.remove("dark");
+			document.body.classList.add("white");
+			for (var i = 0; i < imgs.length; i++) {
+				var str = imgs[i].getAttribute("src");
+				console.log(str);
+				imgs[i].setAttribute("src", str.replace("dark", "white"));
+			}
+			return;
+		}
+	}
+
+	function getIndex( arr, index ) {
+		if ( index < 0 ) { return(arr.length - 1); }
+		if ( index > (arr.length - 1) ) { return(0); }
+		return(index);
+	}
+
+	function slideshow( screenIndex ) {
+		var screens = document.querySelector(".screens").getElementsByClassName("screenshot");
+			screens[ getIndex( screens, screenIndex - 1 ) ].setAttribute("style", "-webkit-transform: translate3d(100%, 0, 0) translateZ(0); -moz-transform: translate3d(100%, 0, 0); z-index: 3;");
+			screens[ getIndex( screens, screenIndex ) ].setAttribute("style", "-webkit-transform: translate3d(0, 0, 0) translateZ(0); -moz-transform: translate3d(0, 0, 0); z-index: 2;");
+			screens[ getIndex( screens, screenIndex + 1 ) ].setAttribute("style", "-webkit-transform: translate3d(-100%, 0, 0) translateZ(0); -moz-transform: translate3d(-100%, 0, 0); z-index: 1;");
+			screenIndex = screenIndex + 1;
+		if ( screenIndex >= screens.length ) {
+			screenIndex = 0;
+		}
+		setTimeout( function() {
+			slideshow( screenIndex );
+		}, 10000);
+	}
+
+	slideshow( 0 );
+
+	var slideIndex;
+	window.onload = function() {
+		slideIndex = -1;
+		slideNext();
+	}
+
+	function slideNext() {
+		var slides = document.querySelector(".slides").getElementsByClassName("slide");
+		var pages = document.querySelector(".carousel__paginator").getElementsByClassName("page");
+		slideIndex = slideIndex + 1;
+		if ( slideIndex >= slides.length ) {
+			slideIndex = 0;
+		}
+		slides[ getIndex( slides, slideIndex - 1 ) ].setAttribute("style", "-webkit-transform: translate3d(-150%, -50%, 0) translateZ(0); -moz-transform: translate3d(-150%, -50%, 0); z-index: 3; opacity: 0;");
+		slides[ getIndex( slides, slideIndex ) ].setAttribute("style", "-webkit-transform: translate3d(-50, -50%, 0) translateZ(0); -moz-transform: translate3d(-50, -50%, 0); z-index: 2; opacity: 1;");
+		slides[ getIndex( slides, slideIndex + 1 ) ].setAttribute("style", "-webkit-transform: translate3d(50%, -50%, 0) translateZ(0); -moz-transform: translate3d(50%, -50%, 0); z-index: 1; opacity: 0;");
+
+		pages[ getIndex( pages, slideIndex - 1 ) ].classList.remove("--active");
+		pages[ getIndex( pages, slideIndex ) ].classList.add("--active");
+		pages[ getIndex( pages, slideIndex + 1 ) ].classList.remove("--active");
+	}
+
+	function slidePrev() {
+		var slides = document.querySelector(".slides").getElementsByClassName("slide");
+		var pages = document.querySelector(".carousel__paginator").getElementsByClassName("page");
+		slideIndex = slideIndex - 1;
+		if ( slideIndex < 0 ) {
+			slideIndex = slides.length - 1;
+		}
+		slides[ getIndex( slides, slideIndex - 1 ) ].setAttribute("style", "-webkit-transform: translate3d(-150%, -50%, 0) translateZ(0); -moz-transform: translate3d(-150%, -50%, 0); z-index: 3; opacity: 0;");
+		slides[ getIndex( slides, slideIndex ) ].setAttribute("style", "-webkit-transform: translate3d(-50, -50%, 0) translateZ(0); -moz-transform: translate3d(-50, -50%, 0); z-index: 2; opacity: 1;");
+		slides[ getIndex( slides, slideIndex + 1 ) ].setAttribute("style", "-webkit-transform: translate3d(50%, -50%, 0) translateZ(0); -moz-transform: translate3d(50%, -50%, 0); z-index: 1; opacity: 0;");
+
+		pages[ getIndex( pages, slideIndex - 1 ) ].classList.remove("--active");
+		pages[ getIndex( pages, slideIndex ) ].classList.add("--active");
+		pages[ getIndex( pages, slideIndex + 1 ) ].classList.remove("--active");
+	}
+
+</script>
+</body>
+
 </html>
