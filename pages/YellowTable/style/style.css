@@ -29,6 +29,25 @@ body {
     background: linear-gradient(-45deg, rgba(255,230,102,1) 0%, rgba(255,220,45,1) 25%, rgba(255,232,117,1) 50%, rgba(255,205,51,1) 100%) fixed;
 }
 
+.icons {
+    /* display: inline-block; */
+    padding: 1rem;
+    position: fixed;
+    z-index: 10000;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    opacity: 0.75;
+    pointer-events: none;
+}
+
+.icons.--left {
+    background: url("../img/icons1.png") no-repeat left / auto 100%;
+}
+.icons.--right {
+    background: url("../img/icons2.png") no-repeat right / auto 100%;
+}
+
 .header__banner {
 
     text-align: center;
