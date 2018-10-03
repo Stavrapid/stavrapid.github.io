@@ -323,9 +323,14 @@ body {
 }
 
 .description--wrapper {
-    margin: 2rem 0;
-    padding-left: 2rem;
+    margin: 4rem 0;
+    padding: 0 2rem 0 0;
     box-sizing: border-box;
+}
+
+.popup__animation div:nth-child(even) .description--wrapper {
+    float: left;
+    text-align: right;
 }
 
 .description--wrapper h2 {
