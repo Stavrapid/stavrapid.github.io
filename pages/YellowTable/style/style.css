@@ -8,6 +8,11 @@
     height: 0px !important;
 }
 
+@keyframes content-popup {
+	from { opacity: 0; transform: translate( 0, 2rem ); }
+	to { opacity: 1; transform: translate( 0, 0 ); }
+}
+
 html {
     font-size: 18px;
     font-family: "Tinkoff";
@@ -209,6 +214,10 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat; */
     background-color: #fff;
+}
+
+.popup__animation {
+    animation: content-popup .5s 1 forwards ease;
 }
 
 .paginator__title {
