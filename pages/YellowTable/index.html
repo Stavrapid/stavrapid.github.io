@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<!-- HEAD BEGIN -->
+	<head>
+		<meta charset="utf-8"/>
+		<title>Желтая Таблица</title>
+		<!-- Path to library CSS -->
+		<link href="./style/style.css" rel="stylesheet">
+        <!-- Path to library JS -->
+        <script src="./script/ajax.js" type="text/javascript"></script>
+        <script src="./script/responseHTML.js" type="text/javascript"></script>
+        <script src="./script/menu_hide.js" type="text/javascript"></script>
+        <script src="./script/script.js" type="text/javascript"></script>
+	</head>
+	<!-- HEAD END -->
+
+    <!-- BODY BEGIN -->
+	<body>
+        <div class="header__banner">
+            <div class="header__banner--logo"></div>
+            <div class="header__banner--title">Жёлтая  Таблица</div>
+            <div class="header__banner--tagline">Дальше действовать будем мы!</div>
+        </div>
+        <div class="header">
+            <ul>
+                <li class="header__item active">
+                    <div class="header__item--tab"></div>
+                    <span onclick="loadWholePage('main.html'); toggleButtons(this);">Главная</span>
+                </li>
+                <li class="header__item">
+                    <div class="header__item--tab"></div>
+                    <span onclick="loadWholePage('tethering.html'); toggleButtons(this);">Режим Модема</span>
+                </li>
+                <li class="header__item">
+                    <div class="header__item--tab"></div>
+                    <span onclick="loadWholePage('apn-settings.html'); toggleButtons(this);">настройка APN</span>
+                </li>
+                <li class="header__item">
+                    <div class="header__item--tab"></div>
+                    <span onclick="loadWholePage('fine-settings.html'); toggleButtons(this);">Точная настройка</span>
+                </li>
+                <li class="header__item">
+                    <div class="header__item--tab"></div>
+                    <span onclick="loadWholePage('info.html'); toggleButtons(this);">Полезное</span>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="storage" style="display:none;"></div>
+            <div id="displayed"></div>
+        </div>
+    </body>
+    <!-- BODY END -->
+</htm>
