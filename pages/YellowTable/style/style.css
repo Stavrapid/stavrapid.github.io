@@ -2,11 +2,11 @@
 	font-family: "Tinkoff";
 	src: url("../font/tinkoff.woff2");
 }
-/*
+
 ::-webkit-scrollbar {
     width: 0px !important;
     height: 0px !important;
-} */
+}
 
 html {
     font-size: 18px;
