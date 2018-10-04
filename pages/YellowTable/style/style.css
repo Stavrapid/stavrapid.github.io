@@ -281,7 +281,7 @@ body {
 }
 
 .section {
-    background: linear-gradient( rgba(255,255,255,0) 0%, rgba(252,252,252,1) 100%);
+    background: linear-gradient( #ffffff 0%, #f8f8f8 100%);
 }
 
 .section:last-child .section--container {
