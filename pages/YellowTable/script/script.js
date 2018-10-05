@@ -8,3 +8,7 @@ function toggleButtons(activeButton) {
     }
     activeButton.classList.add("active");
 }
+
+function hideLoader() {
+    alert("Loaded!");
+}
