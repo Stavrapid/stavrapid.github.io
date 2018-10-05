@@ -47,7 +47,7 @@ function loadHTML(url, fun, storage, param)
 			{
 				storage.innerHTML = getBody(xhr.responseText);
 				fun(storage, param);
-                storage.onload = console.log("Loaded!");
+                // storage.onload = console.log("Loaded!");
 			}
 		}
 	};
@@ -66,6 +66,7 @@ function loadHTML(url, fun, storage, param)
 	function processHTML(temp, target)
 	{
 		target.innerHTML = temp.innerHTML;
+        target.onload = target.style.display = "";
 	}
 
 	function loadWholePage(url)
