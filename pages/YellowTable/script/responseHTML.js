@@ -47,7 +47,7 @@ function loadHTML(url, fun, storage, param)
 			{
 				storage.innerHTML = getBody(xhr.responseText);
 				fun(storage, param);
-                storage.onload = alert("Loaded!");
+                storage.onload = console.log("Loaded!");
 			}
 		}
 	};
