@@ -66,7 +66,7 @@ function loadHTML(url, fun, storage, param)
 	function processHTML(temp, target)
 	{
 		target.innerHTML = temp.innerHTML;
-        target.onload = target.style.display = "";
+        window.onload = function() {target.style.display = ""; console.log("LOOOOD");};
 	}
 
 	function loadWholePage(url)
