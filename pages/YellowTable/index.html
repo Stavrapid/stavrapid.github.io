@@ -33,9 +33,45 @@
                     <div class="header__item--tab"></div>
                     <span onclick="loadWholePage('tethering.html'); toggleButtons(this);">Режим Модема</span>
                 </li>
-                <li class="header__item active">
+                <li class="header__item sub active">
                     <div class="header__item--tab"></div>
                     <span onclick="loadWholePage('apn-settings.html'); toggleButtons(this);">настройка APN</span>
+					<ul class="header__item--submenu sub">
+						<li>
+							<span>iOS</span>
+							<ul class="header__item--subsubmenu">
+								<li><span>7.1</span></li>
+								<li><span>11</span></li>
+								<li><span>12</span></li>
+							</ul>
+						</li>
+						<li>
+							<span>Android</span>
+							<ul id="outer" class="header__item--subsubmenu">
+								<li><span>«Подключение»</span></li>
+								<li><span>«Другие сети»</span></li>
+								<li><span>«Еще»</span></li>
+								<li><span>«Дополнительно»</span></li>
+								<li><span>«Дополнительные настройки»</span></li>
+								<li><span>«SIM-карты и мобильные сети»</span></li>
+								<li><span>«Беспроводные сети»</span></li>
+							</ul>
+							<script type="text/javascript">
+								document.getElementById('outer').addEventListener('mousewheel', function(e) {
+									this.scrollLeft -= (e.wheelDelta/2);
+									e.preventDefault();
+								}, false);
+							</script>
+						</li>
+						<li>
+							<span>Windows Phone</span>
+							<ul class="header__item--subsubmenu">
+								<li><span>7</span></li>
+								<li><span>8</span></li>
+								<li><span>10</span></li>
+							</ul>
+						</li>
+					</ul>
                 </li>
                 <li class="header__item">
                     <div class="header__item--tab"></div>
@@ -45,13 +81,23 @@
                     <div class="header__item--tab"></div>
                     <span onclick="loadWholePage('info.html'); toggleButtons(this);">Полезное</span>
                 </li>
-                <div class="shadow"></div>
             </ul>
+			<!-- <div class="control__panel">
+				<div class="os__version">
 
+				</div>
+				<div class="os__tumbler apple">
+
+				</div>
+				<div class="os__type">
+
+				</div>
+			</div> -->
+			<div class="shadow"></div>
         </div>
         <div class="content">
             <div id="storage" style="display:none;"></div>
-            <div id="displayed" style="display:none;"></div>
+            <div id="displayed"></div>
         </div>
     </body>
     <script type="text/javascript">

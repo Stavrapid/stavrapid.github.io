@@ -12,3 +12,12 @@ function toggleButtons(activeButton) {
 function hideLoader() {
     alert("Loaded!");
 }
+
+function toggleSub(elem) {
+    var elem = elem.parentNode;
+    if (elem.classList.contains("active")) {
+        elem.classList.remove("active");
+    } else {
+        elem.classList.add("active");
+    }
+}
