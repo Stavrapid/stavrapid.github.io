@@ -381,28 +381,26 @@ body {
 }
 
 .section:last-child .section--container {
-    padding-bottom: 4rem;
+    padding-bottom: 6rem;
 }
 .section--container {
-    margin: 4rem 0 0;
+	padding: 5rem 0;
 }
 
 .step--wrapper {
-    max-width: 55rem;
+    max-width: 53rem;
     margin: 0 auto;
     font-size: 0;
 }
 
-.image--wrapper, .description--wrapper {
-    display: inline-block;
-    max-width: 49%;
-    vertical-align: top;
-}
-
 .image--wrapper {
+	display: inline-block;
+	vertical-align: top;
+	max-width: 45%;
     position: relative;
     pointer-events: none;
     user-select: none;
+	margin: 0 5rem;
 }
 
 .image--wrapper .device {
@@ -412,15 +410,14 @@ body {
 
 .image--wrapper .screenshot {
     position: absolute;
-    top: 41px;
-    left: 51px;
     z-index: 0;
-    width: 280px;
 }
 
 .description--wrapper {
-    margin: 4rem 0;
-    padding: 0 2rem 0 0;
+	display: inline-block;
+	vertical-align: top;
+	width: 45%;
+    margin: 2rem 0;
     box-sizing: border-box;
 }
 
