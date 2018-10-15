@@ -3,6 +3,62 @@
 	src: url("../font/tinkoff.woff2");
 }
 
+/* PF Highway Sans Pro */
+@font-face {
+    font-family: 'pfhighway';
+    src:
+        url('../font/pfhighway/PFHighwaySansPro-ExtraThin.woff2') format('woff2'),
+        url('../font/pfhighway/PFHighwaySansPro-ExtraThin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pfhighway';
+    src:
+        url('../font/pfhighway/PFHighwaySansPro-Thin.woff2') format('woff2'),
+        url('../font/pfhighway/PFHighwaySansPro-Thin.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pfhighway';
+    src:
+        url('../font/pfhighway/PFHighwaySansPro-Light.woff2') format('woff2'),
+        url('../font/pfhighway/PFHighwaySansPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pfhighway';
+    src:
+        url('../font/pfhighway/PFHighwaySansPro-Regular.woff2') format('woff2'),
+        url('../font/pfhighway/PFHighwaySansPro-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pfhighway';
+    src:
+        url('../font/pfhighway/PFHighwaySansPro-Medium.woff2') format('woff2'),
+        url('../font/pfhighway/PFHighwaySansPro-Medium.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pfhighway';
+    src:
+        url('../font/pfhighway/PFHighwaySansPro-Bold.woff2') format('woff2'),
+        url('../font/pfhighway/PFHighwaySansPro-Bold.woff') format('woff');
+    font-weight: 800;
+    font-weight: bold;
+    font-style: normal;
+}
+
 ::-webkit-scrollbar {
     width: 0px !important;
     height: 0px !important;
@@ -15,7 +71,7 @@
 
 html {
     font-size: 16px;
-    font-family: "Tinkoff";
+    font-family: "pfhighway";
     color: #333;
 }
 
@@ -31,21 +87,21 @@ body {
 
 .icons {
     /* display: inline-block; */
-    padding: 1rem;
+    padding: 0.65rem;
     position: fixed;
     z-index: 10000;
     top: 1rem;
     left: 1rem;
     right: 1rem;
-    opacity: 0.75;
+    opacity: 0.8;
     pointer-events: none;
 }
 
 .icons.--left {
-    background: url("../img/icons1.png") no-repeat left / auto 100%;
+    background: url("../img/icons1.svg") no-repeat left / auto 100%;
 }
 .icons.--right {
-    background: url("../img/icons2.png") no-repeat right / auto 100%;
+    background: url("../img/icons2.svg") no-repeat right / auto 100%;
 }
 
 .header__banner {
@@ -65,7 +121,7 @@ body {
 .header__banner--title {
     color: #333;
     font-size: 4.5rem;
-    font-weight: bold;
+    font-weight: 600;
     margin: 1.5rem 0 0.25rem;
     /* text-transform: uppercase; */
 }
@@ -73,7 +129,7 @@ body {
 .header__banner--tagline {
     color: #fff;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 600;
     /* text-transform: uppercase; */
 }
 
@@ -215,7 +271,7 @@ body {
 .header ul > li.header__item.active > span {
     opacity: 1;
     color: #000;
-    font-weight: bold;
+    /* font-weight: 600; */
 }
 
 .header ul > li.header__item:hover span {
@@ -226,8 +282,9 @@ body {
     display: block;
     padding: 1.25rem 1.5rem 0.75rem;
     text-decoration: none;
+	font-weight: 600;
     color: inherit;
-    color: #333;
+    color: #666;
     opacity: 0.75;
     position: relative;
     z-index: 1;
@@ -257,6 +314,9 @@ body {
 	opacity: 0;
 	box-shadow: 0 0 2rem 0 rgba(200,200,200,0.25);
 	user-select: none;
+}
+.header .header__item--submenu span {
+	font-weight: 500 !important;
 }
 
 .header .header__item--submenu > li {
@@ -309,14 +369,14 @@ body {
 	visibility: hidden;
 	opacity: 0;
 	top: 0;
-	left: 100%;
+	left: 90%;
 	transition: 0.2s ease-out;
 	background: #fff;
 	border-radius: 1rem;
 	box-shadow: 0 0 2rem 0 rgba(200,200,200,0.5);
 	max-width: 50vw;
 	overflow-x: scroll;
-	z-index: -1;
+	z-index: 10;
 	transform: translate(-1rem, 0);
 	transition: 0.2s ease-out;
 }
@@ -429,11 +489,12 @@ body {
 .description--wrapper h2 {
     font-size: 1.3rem;
     margin: 0;
+	font-weight: 600;
 }
 
 .description--wrapper h3 {
-    letter-spacing: -.005em;
-    /* font-weight: bold; */
+    letter-spacing: -.05em;
+    font-weight: 600;
     font-size: 3rem;
     line-height: 1.05;
     margin: 1.2rem 0;
@@ -443,6 +504,10 @@ body {
     font-size: 1.1rem;
     line-height: 1.3;
     margin: 1rem 0;
+}
+
+.description--wrapper b {
+    font-weight: 600;
 }
 
 
