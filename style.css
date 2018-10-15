@@ -92,7 +92,7 @@ body {
 	/*background-image: url("img/texture.png");*/
 	background-position: center;
 	background-attachment: fixed;
-	background-color: #111111;
+	background-color: #111;
 	color: #f0f0f0;
 	font-family: Roboto;
 	margin: 0;
@@ -197,7 +197,7 @@ a {
 .project_card.--large { width: 51rem; }
 .project_card.--large .project_card-title { height: 28.5rem; }
 .project_card:hover .project_card-title h2 {
-    background: #fff;
+    background: #f0f0f0;
     color: #111;
 }
 .project_card-title {
@@ -216,13 +216,17 @@ a {
     font-size: 1.5rem;
     text-transform: uppercase;
     border-radius: 2rem;
-    border: 2px solid #fff;
+    border: 2px solid #f0f0f0;
     padding: 0.5rem 2.15rem 0.5rem 1rem;
     background: url("./img/arrow-white.svg") no-repeat right 0.5rem center / 1.2rem;
 }
 .project_card-title-wrapper > div .button--open:hover {
-    background: #fff url("./img/arrow-dark.svg") no-repeat right 0.5rem center / 1.2rem;
+    background: #f0f0f0 url("./img/arrow-dark.svg") no-repeat right 0.5rem center / 1.2rem;
     color: #333;
+}
+.project_card-title-wrapper > div .button--open.disabled {
+    pointer-events: none;
+    opacity: 0.25;
 }
 .project_card-title-wrapper > div {
     padding: 1.5rem 2rem 1rem;
@@ -242,6 +246,12 @@ a {
 }
 .project_card-title-wrapper > div.center_aligned {
     text-align: center;
+}
+.project_card-title-wrapper > div.center_aligned .button--open {
+    position: relative;
+    display: inline-block;
+    margin: 0.5rem;
+    transform: none;
 }
 .project_card-title-wrapper h2 {
     display: inline-block;
