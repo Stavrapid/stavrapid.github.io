@@ -162,7 +162,7 @@ a {
 
 #main_page {
     display: none;
-    animation: fade-in 1s cubic-bezier(.42,.17,.28,1);
+    /* animation: fade-in 1s cubic-bezier(.42,.17,.28,1); */
 }
 
 .main_logo {
@@ -462,6 +462,6 @@ a {
 }
 
 @keyframes fade-out {
-    from { opacity: 1; }
-	to { opacity: 0; }
+    from { opacity: 1; filter: blur(0); }
+	to { opacity: 0; filter: blur(10px); }
 }
