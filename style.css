@@ -126,17 +126,6 @@ a {
 	color: inherit;
 }
 
-
-#stavrapid_logo {
-    height: 100vh;
-    background: #55f;
-    display: flex;
-    position: relative;
-    background: linear-gradient(45deg, #000, #333);
-    background-size: 200% 200%;
-    animation: animateGlow 10s ease infinite;
-}
-
 @keyframes animateGlow {
   0%  { background-position: 50% 100% }
   50% { background-position: 50% 0% }
@@ -149,6 +138,17 @@ a {
   100% { opacity: 0.25 }
 }
 
+#stavrapid_logo {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: #55f;
+    display: flex;
+    background: linear-gradient(45deg, #000, #333);
+    background-size: 200% 200%;
+    animation: animateGlow 10s ease infinite;
+}
+
 #stavrapid_logo .logo_main,
 #stavrapid_logo .logo_bg {
     position: absolute;
@@ -159,6 +159,11 @@ a {
 }
 #stavrapid_logo .logo_main { background: url("./img/stavrapid-main.svg") no-repeat center / 100%; }
 #stavrapid_logo .logo_bg { background: url("./img/stavrapid-bg.svg") no-repeat center / 100%; animation: stavrapid_bgGlow 2s ease-in-out infinite; }
+
+#main_page {
+    display: none;
+    animation: fade-in 1s cubic-bezier(.42,.17,.28,1);
+}
 
 .main_logo {
     text-align: center;
@@ -454,4 +459,9 @@ a {
 @keyframes fade-in {
     from { opacity: 0; transform: translate( 0, 10rem ); }
 	to { opacity: 1; transform: translate( 0, 0 ); }
+}
+
+@keyframes fade-out {
+    from { opacity: 1; }
+	to { opacity: 0; }
 }
