@@ -146,7 +146,7 @@ a {
     display: flex;
     background: linear-gradient(45deg, #000, #333);
     background-size: 200% 200%;
-    animation: animateGlow 10s ease infinite;
+    animation: animateGlow 5s ease infinite;
 }
 
 #stavrapid_logo .logo_main,
