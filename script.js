@@ -170,22 +170,9 @@ var animateHTML = function() {
 
 animateHTML().init();
 
-window.onload = function () {
-	switch (document.readyState) {
-		case "loading":
-			// The document is still loading.
-			break;
-		case "interactive":
-			// The document has finished loading. We can now access the DOM elements.
-			// But sub-resources such as images, stylesheets and frames are still loading.
-			break;
-		case "complete":
-			// The page is fully loaded.
-			// console.log("The first CSS rule is: " + document.styleSheets[0].cssRules[0].cssText);
-			setTimeout(function () {
-				document.getElementById("stavrapid_logo").style.animation = "fade-out 1s both cubic-bezier(.42,.17,.28,1)";
-				document.getElementById("main_page").style.display = "block";
-			}, 1000);
-			break;
-	}
-}
+document.fonts.onloadingdone = function (fontFaceSetEvent) {
+	setTimeout(function () {
+ 	   document.getElementById("stavrapid_logo").style.animation = "fade-out 1s both cubic-bezier(.42,.17,.28,1)";
+ 	   document.getElementById("main_page").style.display = "block";
+    }, 1000);
+};
