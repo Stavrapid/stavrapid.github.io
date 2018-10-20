@@ -47,14 +47,22 @@
                 <h1>STVPD</h1>
             </div>
 
-            <div class="subtitle">
-                <aside> </aside>
-                <h2>projects</h2>
-                <aside> </aside>
+            <div id="main_nav" class="--1_3--active">
+                <aside id="as_1"> </aside>
+                <h2 id="h_1" onclick="toggleMainNav(1);">projects</h2>
+                <aside id="as_2"> </aside>
+                <h2 id="h_2" onclick="toggleMainNav(2);">photo</h2>
+                <aside id="as_3"> </aside>
+                <h2 id="h_3" onclick="toggleMainNav(3);">news</h2>
+                <aside id="as_4"> </aside>
             </div>
 
             <div class="section_wrapper">
-                <div class="section" id="web_projects">
+                <table style="width: 300vw;">
+                    <tbody>
+                <tr id="shit" style="transition: 0.5s cubic-bezier(.42,.17,.28,1); transform: translateX(-100vw;)">
+                    <td style="width: 100vw; vertical-align: top;">
+                <div class="section" id="web_projects_section">
                     <a href="http://stavrapid.ru/pages/MeteoLanding" class="project_card --large rubber">
                         <div class="project_card-title" style="background-image: url('./projects/project1.png');">
 
@@ -140,6 +148,42 @@
                         </div>
                     </a>
                 </div>
+</td>
+<td style="width: 100vw; vertical-align: top;">
+                <div class="section" id="photo_section">
+                    <a href="https://userstyles.org/styles/132742/vk-mod-2017" class="project_card --medium">
+                        <div class="project_card-title" style="background-image: url('./projects/project5.png');">
+
+                        </div>
+                        <div class="project_card-title-wrapper">
+                            <div class="center_aligned">
+                                <h2>VK MOD 2017</h2>
+                                <h3>Пользовательский стиль для расширения Stylish,<br>реализующий разносторонние диалоги для ВК</h3>
+                                <div class="button--open">Open</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </td>
+            <td style="width: 100vw; vertical-align: top;">
+                <div class="section" id="news_section">
+                    <a href="https://userstyles.org/styles/132742/vk-mod-2017" class="project_card --medium">
+                        <div class="project_card-title" style="background-image: url('./projects/project5.png');">
+
+                        </div>
+                        <div class="project_card-title-wrapper">
+                            <div class="center_aligned">
+                                <h2>VK MOD 2017</h2>
+                                <h3>Пользовательский стиль для расширения Stylish,<br>реализующий разносторонние диалоги для ВК</h3>
+                                <div class="button--open">Open</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+</td>
+            </tr>
+        </tbody>
+        </table>
             </div>
 
             <!-- <div class="subtitle">

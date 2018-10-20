@@ -56,26 +56,6 @@ html {
 
 /* ANIMATIONS
 ---------------------------------------------------------------------------------------------------------------------------*/
-@keyframes right_aside_appear {
-  0% {
-      opacity: 0;
-      margin: auto 1rem auto 3rem;
-  }
-  100% {
-      margin: auto 1rem auto 1rem;
-      opacity: 1;
-  }
-}
-@keyframes left_aside_appear {
-  0% {
-      opacity: 0;
-      margin: auto 3rem auto 1rem;
-  }
-  100% {
-      margin: auto 1rem auto 1rem;
-      opacity: 1;
-  }
-}
 @keyframes section_popup {
 	from { opacity: 0; transform: translate( 0, 10rem ); }
 	to { opacity: 1; transform: translate( 0, 0 ); }
@@ -139,7 +119,7 @@ a {
 }
 
 #stavrapid_logo {
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100vw;
     background: #55f;
@@ -178,35 +158,58 @@ a {
     margin: 0;
     width: 100%;
 }
-.subtitle {
+#main_nav {
     display: flex;
     flex-flow: row wrap;
     text-transform: uppercase;
     text-align: center;
+    padding: 0 1rem;
 }
-.subtitle h2 {
+#main_nav h2 {
     font-family: Roboto;
-    margin: 0;
+    margin: 0 1rem;
     font-size: 2rem;
     letter-spacing: 0.1em;
     display: inline-block;
     position: relative;
     max-width: 65%;
+    user-select: none;
+    cursor: pointer;
+    transition: opacity 0.5s cubic-bezier(.42,.17,.28,1);
 }
-.subtitle aside {
-    width: auto;
+#main_nav aside {
+    /* width: auto; */
     background: #666;
-    flex: 3;
+    /* flex: 3; */
     height: 0.21rem;
     border-radius: 0.1rem;
-    margin: auto 1rem;
+    margin: auto;
+    transition: 0.5s cubic-bezier(.42,.17,.28,1);
 }
-.subtitle aside:first-of-type {
-    animation: left_aside_appear 0.5s ease-out;
-}
-.subtitle aside:last-of-type {
-    animation: right_aside_appear 0.5s ease-out;
-}
+
+#main_nav.--1_3--active #h_1 { opacity: 1 }
+#main_nav.--1_3--active #h_2 { opacity: 0.5 }
+#main_nav.--1_3--active #h_3 { opacity: 0.25 }
+#main_nav.--1_3--active #as_1 { flex: 3 0 18rem; transition-duration: 1.3s; opacity: 1 }
+#main_nav.--1_3--active #as_2 { flex: 1 0 0rem; transition-duration: 1.2s; opacity: 0.75 }
+#main_nav.--1_3--active #as_3 { flex: 1 0 0rem; transition-duration: 1.0s; opacity: 0.5 }
+#main_nav.--1_3--active #as_4 { flex: 1 0 0rem; transition-duration: 0.5s; opacity: 0.25 }
+
+#main_nav.--2_3--active #h_1 { opacity: 0.5 }
+#main_nav.--2_3--active #h_2 { opacity: 1 }
+#main_nav.--2_3--active #h_3 { opacity: 0.5 }
+#main_nav.--2_3--active #as_1 { flex: 1 0 0rem; transition-duration: 1s; opacity: 0.5 }
+#main_nav.--2_3--active #as_2 { flex: 1 0 0rem; transition-duration: 1s; opacity: 0.75 }
+#main_nav.--2_3--active #as_3 { flex: 1 0 5rem; transition-duration: 1s; opacity: 0.75 }
+#main_nav.--2_3--active #as_4 { flex: 1 0 0rem; transition-duration: 1s; opacity: 0.5 }
+
+#main_nav.--3_3--active #h_1 { opacity: 0.25 }
+#main_nav.--3_3--active #h_2 { opacity: 0.5 }
+#main_nav.--3_3--active #h_3 { opacity: 1 }
+#main_nav.--3_3--active #as_1 { flex: 1 0 0rem; transition-duration: 0.5s; opacity: 0.25 }
+#main_nav.--3_3--active #as_2 { flex: 1 0 0rem; transition-duration: 1.0s; opacity: 0.5 }
+#main_nav.--3_3--active #as_3 { flex: 1 0 0rem; transition-duration: 1.2s; opacity: 0.75 }
+#main_nav.--3_3--active #as_4 { flex: 3 0 23rem; transition-duration: 1.3s;opacity: 1 }
 
 .section_wrapper {
     text-align: center;
@@ -220,7 +223,9 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     max-width: 76rem;
+    width: 100%;
 }
+
 .project_card {
     background: #333;
     position: relative;
@@ -481,4 +486,17 @@ a {
 
 @media only screen and (max-device-width: 768px) {
 /* Styles */
+}
+
+
+#photo_section {
+    min-height: 100rem;
+    /* background: #afa; */
+    /* position: absolute; */
+}
+
+#news_section {
+    min-height: 100rem;
+    /* background: #faa; */
+    /* position: absolute; */
 }
