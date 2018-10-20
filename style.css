@@ -92,7 +92,7 @@ body {
 	/*background-image: url("img/texture.png");*/
 	background-position: center;
 	background-attachment: fixed;
-	background-color: #111;
+	background-color: #222;
 	color: #f0f0f0;
 	font-family: Roboto;
 	margin: 0;
@@ -126,6 +126,39 @@ a {
 	color: inherit;
 }
 
+
+#stavrapid_logo {
+    height: 100vh;
+    background: #55f;
+    display: flex;
+    position: relative;
+    background: linear-gradient(45deg, #000, #333);
+    background-size: 200% 200%;
+    animation: animateGlow 10s ease infinite;
+}
+
+@keyframes animateGlow {
+  0%  { background-position: 50% 100% }
+  50% { background-position: 50% 0% }
+  100% { background-position: 50% 100% }
+}
+
+@keyframes stavrapid_bgGlow {
+  0%  { opacity: 0.25 }
+  50% { opacity: 0.75 }
+  100% { opacity: 0.25 }
+}
+
+#stavrapid_logo .logo_main,
+#stavrapid_logo .logo_bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5rem;
+}
+#stavrapid_logo .logo_main { background: url("./img/stavrapid-main.svg") no-repeat center / 100%; }
+#stavrapid_logo .logo_bg { background: url("./img/stavrapid-bg.svg") no-repeat center / 100%; animation: stavrapid_bgGlow 2s ease-in-out infinite; }
 
 .main_logo {
     text-align: center;
@@ -169,18 +202,18 @@ a {
     animation: right_aside_appear 0.5s ease-out;
 }
 
-.section {
+.section_wrapper {
     text-align: center;
     margin: 4rem 0.5rem;
-    animation: section_popup  .5s 1 both ease-out;
+    animation: section_popup 1s cubic-bezier(.42,.17,.28,1);
 }
 
-.web_projects {
+.section {
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     max-width: 76rem;
-    margin: 0 auto;
 }
 .project_card {
     background: #333;
@@ -294,7 +327,7 @@ a {
 	background-size: cover;
 	background-attachment: fixed;
     padding: 3rem 0 0;
-	/*background-color: rgba(0, 0, 0, 0.75);*/
+	background-color: #111;
 }
 
 #footer_wrap {
@@ -406,4 +439,19 @@ a {
 	/* background: -moz-radial-gradient(left bottom, ellipse cover, rgba(249,237,50,1) -10%, rgba(238,42,123,1) 60%, rgba(0,42,255,1) 120%); */
 	border-color: #bc2a8d;
 	color: #fff;
+}
+
+
+
+.hidden {
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fade-in 1.4s cubic-bezier(.42,.17,.28,1);
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translate( 0, 10rem ); }
+	to { opacity: 1; transform: translate( 0, 0 ); }
 }
