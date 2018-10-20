@@ -476,7 +476,7 @@ a {
     .project_card-title-wrapper > div h2 { margin: 0 !important; }
     .project_card-title-wrapper > div h3 { margin: 0 !important; }
     .project_card-title-wrapper > div .button--open { display: none !important; }
-    html { font-size: 10px; }
+    html { font-size: 12px; }
 }
 
 @media only screen and (max-device-width: 768px) {
