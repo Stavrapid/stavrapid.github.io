@@ -175,6 +175,7 @@ function toggleMainNav(page) {
 	console.log(page);
 	document.getElementById("main_nav").setAttribute ("class", "--" + page + "_3--active");
 	document.getElementById("shit").setAttribute("style", "transition: 1s cubic-bezier(.42,.17,.28,1); transform: translateX(-" + (page - 1) * 100 + "vw)");
+	document.body.setAttribute ("class", "--" + page + "_3--active");
 }
 
 
