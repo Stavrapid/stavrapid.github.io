@@ -173,8 +173,8 @@ animateHTML().init();
 
 function toggleMainNav(page) {
 	console.log(page);
-	document.getElementById("main_page").setAttribute ("class", "--" + page + "_3--active");
-	document.getElementById("main_page--mobile").setAttribute ("class", "--" + page + "_3--active");
+	document.getElementById("main_nav").setAttribute ("class", "--" + page + "_3--active");
+	document.getElementById("main_nav--mobile").setAttribute ("class", "--" + page + "_3--active");
 	document.getElementById("shit").setAttribute("style", "transition: 1s cubic-bezier(.42,.17,.28,1); transform: translateX(-" + (page - 1) * 100 + "vw)");
 	document.body.setAttribute ("class", "--" + page + "_3--active");
 }
@@ -183,11 +183,9 @@ function toggleMainNav(page) {
 
 
 
-// window.onload = function (fontFaceSetEvent) {
-	toggleMainNav(2);
-	setTimeout(function () {
- 	   document.getElementById("stavrapid_logo").style.animation = "fade-out 1s both cubic-bezier(.42,.17,.28,1)";
-	   document.getElementById("stavrapid_logo").style.pointerEvents = "none";
- 	   document.getElementById("main_page").style.display = "block";
-	}, 2000);
-// };
+// toggleMainNav(2);
+setTimeout(function () {
+	   document.getElementById("stavrapid_logo").style.animation = "fade-out 1s both cubic-bezier(.42,.17,.28,1)";
+   document.getElementById("stavrapid_logo").style.pointerEvents = "none";
+	   document.getElementById("main_page").style.display = "block";
+}, 2000);
