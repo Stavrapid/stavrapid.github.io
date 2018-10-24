@@ -14,8 +14,8 @@ html {
 }
 
 ::-webkit-scrollbar {
-	width: 12px !important;
-	height: 12px !important;
+	width: 10px !important;
+	height: 10px !important;
 }
 ::-webkit-scrollbar-thumb {
 	background-color: #666 !important;
@@ -116,15 +116,15 @@ body.--1_3--active { background-color: #222; }
 body.--2_3--active { background-color: #111; }
 
 body.--1_3--active #page_1 { position: relative; }
-body.--1_3--active #page_2 { position: relative; display: flex; max-height: 200vh; overflow: hidden; }
-body.--1_3--active #page_3 { position: relative; display: flex; max-height: 200vh; overflow: hidden; }
+body.--1_3--active #page_2 { position: relative; display: flex; max-height: 200vh; overflow: hidden; opacity: 0; transition: opacity 0.75s cubic-bezier(.42,.17,.28,1); }
+body.--1_3--active #page_3 { position: relative; display: flex; max-height: 200vh; overflow: hidden; opacity: 0; transition: opacity 0.75s cubic-bezier(.42,.17,.28,1); }
 
-body.--2_3--active #page_1 { position: relative; display: flex; max-height: 200vh; overflow: hidden; }
+body.--2_3--active #page_1 { position: relative; display: flex; max-height: 200vh; overflow: hidden; opacity: 0; transition: opacity 0.75s cubic-bezier(.42,.17,.28,1); }
 body.--2_3--active #page_2 { position: relative; }
-body.--2_3--active #page_3 { position: relative; display: flex; max-height: 200vh; overflow: hidden; }
+body.--2_3--active #page_3 { position: relative; display: flex; max-height: 200vh; overflow: hidden; opacity: 0; transition: opacity 0.75s cubic-bezier(.42,.17,.28,1); }
 
-body.--3_3--active #page_1 { position: relative; display: flex; max-height: 200vh; overflow: hidden; }
-body.--3_3--active #page_2 { position: relative; display: flex; max-height: 200vh; overflow: hidden; }
+body.--3_3--active #page_1 { position: relative; display: flex; max-height: 200vh; overflow: hidden; opacity: 0; transition: opacity 0.75s cubic-bezier(.42,.17,.28,1); }
+body.--3_3--active #page_2 { position: relative; display: flex; max-height: 200vh; overflow: hidden; opacity: 0; transition: opacity 0.75s cubic-bezier(.42,.17,.28,1); }
 body.--3_3--active #page_3 { position: relative; }
 
 body * {
@@ -678,7 +678,7 @@ a {
 }
 .date_tag aside {
     /* width: auto; */
-    background: #666;
+    background: rgba(255,255,255,0.25);
     flex: 1 0 auto;
     height: 0.22rem;
     border-radius: 0.1rem;
@@ -686,7 +686,7 @@ a {
     transition: 0.5s cubic-bezier(.42,.17,.28,1);
 }
 
-body.--3_3--active { background-color: #fafafa; }
+body.--3_3--active { background-color: #f6f6f6; }
 body.--3_3--active .main_logo { color: #fc3258; }
 body.--3_3--active #main_nav,
 body.--3_3--active #main_nav--mobile { color: #fc3258; }
