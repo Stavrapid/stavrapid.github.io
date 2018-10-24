@@ -184,6 +184,7 @@ function toggleMainNav(page) {
 
 
 window.onload = function (fontFaceSetEvent) {
+	toggleMainNav(2);
 	setTimeout(function () {
  	   document.getElementById("stavrapid_logo").style.animation = "fade-out 1s both cubic-bezier(.42,.17,.28,1)";
 	   document.getElementById("stavrapid_logo").style.pointerEvents = "none";

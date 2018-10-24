@@ -115,6 +115,18 @@ body {
 body.--1_3--active { background-color: #222; }
 body.--2_3--active { background-color: #111; }
 
+body.--1_3--active #page_1 { position: relative; }
+body.--1_3--active #page_2 { position: absolute; left: 50%; transform: translateX(-50%); }
+body.--1_3--active #page_3 { position: absolute; right: 0; }
+
+body.--2_3--active #page_1 { position: absolute; left: 0; }
+body.--2_3--active #page_2 { position: relative; }
+body.--2_3--active #page_3 { position: absolute; right: 0; }
+
+body.--3_3--active #page_1 { position: absolute; left: 0; }
+body.--3_3--active #page_2 { position: absolute; left: 50%; transform: translateX(-50%); }
+body.--3_3--active #page_3 { position: relative; }
+
 body * {
 	outline: none;
 }
@@ -278,7 +290,7 @@ a {
 
 .table_bound {
     width: 100vw;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .section_wrapper {
@@ -563,16 +575,16 @@ a {
 
 @media only screen and (max-device-width: 768px) {
     #photo_section { max-width: 32rem !important; }
-    .photo_card { margin: 0.25rem !important; width: 9rem !important; max-height: 9rem !important; }
+    .photo_card { margin: 0.25rem !important; width: 8.25rem !important; max-height: 8.25rem !important; background: none !important; }
     .photo_card .img_wrapper { border-radius: 0 !important; }
 
-    .photo_card.--small { height: 9rem !important; width: 9rem !important; }
-    .photo_card.--half { width: 13.75rem !important; }
-    .photo_card.--half_sqr { max-height: 13.75rem !important; width: 13.75rem !important; }
-    .photo_card.--medium { width: 18.5rem !important; }
-    .photo_card.--wide { max-height: 18rem !important; width: 28rem !important; }
-    .photo_card.--large { max-height: unset !important; height: auto !important; width: 28rem !important; }
-    .photo_card.--tall { max-height: 18rem !important; width: 13.75rem !important; }
+    .photo_card.--small { height: 8.25rem !important; width: 8.25rem !important; }
+    .photo_card.--half { width: 12.6rem !important; }
+    .photo_card.--half_sqr { max-height: 12.6rem !important; width: 12.6rem !important; }
+    .photo_card.--medium { width: 17rem !important; }
+    .photo_card.--wide { max-height: 17rem !important; width: 25.75rem !important; }
+    .photo_card.--large { max-height: unset !important; height: auto !important; width: 25.75rem !important; }
+    .photo_card.--tall { max-height: 16rem !important; width: 12.6rem !important; }
 }
 
 @media only screen and (max-device-width: 815px) {
