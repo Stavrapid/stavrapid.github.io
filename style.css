@@ -293,6 +293,10 @@ a {
     overflow: hidden;
 }
 
+#shit {
+    position: relative;
+}
+
 .section_wrapper {
     text-align: center;
     margin: 4rem 0;
