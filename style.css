@@ -585,7 +585,7 @@ a {
 
 @media only screen and (max-device-width: 768px) {
     #photo_section { max-width: 32rem !important; }
-    .photo_card { margin: 0.25rem !important; width: 8.25rem !important; max-height: 8.25rem !important; background: none !important; }
+    .photo_card { margin: 0.25rem !important; width: 8.25rem !important; max-height: 8.25rem !important; border-radius: 0 !important; }
     .photo_card .img_wrapper { border-radius: 0 !important; }
 
     .photo_card.--small { height: 8.25rem !important; width: 8.25rem !important; }
