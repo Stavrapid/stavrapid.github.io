@@ -105,7 +105,7 @@ body {
 	color: #f0f0f0;
 	font-family: Roboto;
 	margin: 0;
-	overflow: visible;
+	overflow-x: hidden;
 	/*animation: move 3s linear infinite;*/
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -116,15 +116,15 @@ body.--1_3--active { background-color: #222; }
 body.--2_3--active { background-color: #111; }
 
 body.--1_3--active #page_1 { position: relative; }
-body.--1_3--active #page_2 { position: absolute; left: 100vw; }
-body.--1_3--active #page_3 { position: absolute; left: 200vw; }
+body.--1_3--active #page_2 { position: relative; display: flex; max-height: 200vh; overflow: hidden; }
+body.--1_3--active #page_3 { position: relative; display: flex; max-height: 200vh; overflow: hidden; }
 
-body.--2_3--active #page_1 { position: absolute; left: 0; }
+body.--2_3--active #page_1 { position: relative; display: flex; max-height: 200vh; overflow: hidden; }
 body.--2_3--active #page_2 { position: relative; }
-body.--2_3--active #page_3 { position: absolute; left: 200vw; }
+body.--2_3--active #page_3 { position: relative; display: flex; max-height: 200vh; overflow: hidden; }
 
-body.--3_3--active #page_1 { position: absolute; left: 0; }
-body.--3_3--active #page_2 { position: absolute; left: 100vw; }
+body.--3_3--active #page_1 { position: relative; display: flex; max-height: 200vh; overflow: hidden; }
+body.--3_3--active #page_2 { position: relative; display: flex; max-height: 200vh; overflow: hidden; }
 body.--3_3--active #page_3 { position: relative; }
 
 body * {
@@ -186,7 +186,10 @@ a {
 
 #main_page {
     display: none;
-    height: 100vh;
+    /* height: 100vh; */
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: visible;
     /* animation: fade-in 1s cubic-bezier(.42,.17,.28,1); */
 }
 
@@ -295,6 +298,8 @@ a {
 
 #shit {
     position: relative;
+    overflow: hidden;
+    display: flex;
 }
 
 .section_wrapper {
