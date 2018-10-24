@@ -117,7 +117,7 @@ body.--2_3--active { background-color: #111; }
 
 body.--1_3--active #page_1 { position: relative; }
 body.--1_3--active #page_2 { position: absolute; left: 100vw; }
-body.--1_3--active #page_3 { position: absolute; right: 0; }
+body.--1_3--active #page_3 { position: absolute; left: 200vw; }
 
 body.--2_3--active #page_1 { position: absolute; left: 0; }
 body.--2_3--active #page_2 { position: relative; }
