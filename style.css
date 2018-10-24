@@ -179,10 +179,16 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 5rem;
+    /* padding: 5rem; */
 }
-#stavrapid_logo .logo_main { background: url("./img/stavrapid-main.svg") no-repeat center / 100%; }
-#stavrapid_logo .logo_bg { background: url("./img/stavrapid-bg.svg") no-repeat center / 100%; animation: stavrapid_bgGlow 2s ease-in-out infinite; }
+/* #stavrapid_logo .logo_main { background: url("./img/stavrapid-main.svg") no-repeat center / 100%; } */
+#stavrapid_logo .logo_bg { animation: stavrapid_bgGlow 2s ease-in-out infinite; }
+
+#stavrapid_logo .logo_main svg,
+#stavrapid_logo .logo_bg svg {
+    height: 10rem;
+    width: 10rem;
+}
 
 #main_page {
     display: none;
@@ -595,6 +601,9 @@ a {
     .photo_card.--wide { max-height: 17rem !important; width: 25.75rem !important; }
     .photo_card.--large { max-height: unset !important; height: auto !important; width: 25.75rem !important; }
     .photo_card.--tall { max-height: 16rem !important; width: 12.6rem !important; }
+
+    #stavrapid_logo .logo_main,
+    #stavrapid_logo .logo_bg { top: 35%; }
 }
 
 @media only screen and (max-device-width: 815px) {
