@@ -303,6 +303,7 @@ a {
     width: 300vw;
     animation: section_popup 1s cubic-bezier(.42,.17,.28,1);
     border-collapse: collapse;
+    overflow: hidden;
 }
 
 .section_wrapper td {
