@@ -289,8 +289,8 @@ a {
 #main_nav--mobile.--3_3--active #h_3-m { opacity: 1 }
 
 .table_bound {
-    width: 100vw;
-    overflow: hidden;
+    /* width: 100vw;
+    overflow: hidden; */
 }
 
 #shit {
