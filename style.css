@@ -105,7 +105,7 @@ body {
 	color: #f0f0f0;
 	font-family: Roboto;
 	margin: 0;
-	overflow-x: hidden;
+	overflow: visible;
 	/*animation: move 3s linear infinite;*/
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -289,8 +289,8 @@ a {
 #main_nav--mobile.--3_3--active #h_3-m { opacity: 1 }
 
 .table_bound {
-    /* width: 100vw;
-    overflow: hidden; */
+    width: 100vw;
+    overflow: hidden;
 }
 
 #shit {
