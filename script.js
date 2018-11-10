@@ -180,14 +180,26 @@ function toggleMainNav(page) {
 }
 
 
+function logIn() {
+	document.getElementById("stavrapid_logo").style.animation = "fade-out 1s both cubic-bezier(.42,.17,.28,1)";
+	document.getElementById("stavrapid_logo").style.pointerEvents = "none";
+	document.getElementById("main_page").style.display = "block";
+}
 
+var password = "52375";
+var input = "";
 
+function numButtonClicked( num ) {
+	input += num.toString();
+	if ( input == password ) {
+		logIn();
+	}
+}
 
 window.onload = function (fontFaceSetEvent) {
 	toggleMainNav(2);
+	document.getElementById("stavrapid_logo").className = "loaded";
 	setTimeout(function () {
- 	   document.getElementById("stavrapid_logo").style.animation = "fade-out 1s both cubic-bezier(.42,.17,.28,1)";
-	   document.getElementById("stavrapid_logo").style.pointerEvents = "none";
- 	   document.getElementById("main_page").style.display = "block";
+		// logIn();
 	}, 2000);
 };
