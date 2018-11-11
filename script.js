@@ -189,11 +189,33 @@ function logIn() {
 var password = "52375";
 var input = "";
 
+function setInput( x ) {
+	var dots = document.getElementsByClassName("numpad_input_dot");
+	if ( x == 0 ) {
+		document.getElementsByClassName("numpad_input_wrapper")[0].classList.add("invalid");
+		for (var i = 0; i < dots.length; i++) {
+			dots[i].classList.remove("filled");
+		}
+
+	} else {
+		dots[x-1].classList.add("filled");
+	}
+}
+
 function numButtonClicked( num ) {
 	input += num.toString();
-	if ( input == password ) {
-		logIn();
+	if ( input.length == 5 ) {
+		if ( input == password ) {
+			logIn();
+		} else {
+			document.getElementsByClassName("numpad_input_wrapper")[0].classList.remove("invalid");
+			setTimeout(function () {
+				input = "";
+				setInput( input.length );
+			}, 500);
+		}
 	}
+	setInput( input.length );
 }
 
 window.onload = function (fontFaceSetEvent) {
