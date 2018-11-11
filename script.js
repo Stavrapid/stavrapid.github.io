@@ -206,7 +206,10 @@ function numButtonClicked( num ) {
 	input += num.toString();
 	if ( input.length == 5 ) {
 		if ( input == password ) {
-			logIn();
+			document.getElementById("stavrapid_logo").classList.remove("loaded");
+			setTimeout(function () {
+				logIn();
+			}, 1500);
 		} else {
 			document.getElementsByClassName("numpad_input_wrapper")[0].classList.remove("invalid");
 			setTimeout(function () {
@@ -220,7 +223,7 @@ function numButtonClicked( num ) {
 
 window.onload = function (fontFaceSetEvent) {
 	toggleMainNav(2);
-	document.getElementById("stavrapid_logo").className = "loaded";
+	document.getElementById("stavrapid_logo").classList.add("loaded");
 	setTimeout(function () {
 		// logIn();
 	}, 2000);

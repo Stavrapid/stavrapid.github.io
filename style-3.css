@@ -257,8 +257,8 @@ a {
 	margin: 0 auto;
 	align-content: baseline;
 	flex: 0 0 0rem;
-	overflow: hidden;
-	transition: flex 1s cubic-bezier(.42,.17,.28,1);
+	transition: 1s cubic-bezier(.42,.17,.28,1);
+	opacity: 0;
 }
 
 #stavrapid_logo .numpad_wrapper button[type = numbutton] {
@@ -292,6 +292,7 @@ a {
 }
 #stavrapid_logo.loaded .numpad_wrapper {
 	flex: 0 0 31rem;
+	opacity: 1;
 }
 #stavrapid_logo.loaded .numpad_wrapper button[type = numbutton] {
 	animation: numbutton_1_appear 0.5s cubic-bezier(.42,.17,.28,1);
@@ -324,13 +325,14 @@ a {
 	width: 1rem;
 	display: inline-block;
 	border-radius: 50%;
-	border: 1.5px solid #fff;
+	border: 1.5px solid #aaa;
 	opacity: 0.5;
     margin: 0 1.375rem;
 	transition: 0.5s;
 }
 #stavrapid_logo .numpad_wrapper .numpad_input_dot.filled {
 	background: #fff;
+	border: 1.5px solid #fff;
 	opacity: 1;
 }
 
