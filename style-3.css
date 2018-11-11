@@ -262,7 +262,7 @@ a {
 }
 
 #stavrapid_logo .numpad_wrapper button[type = numbutton] {
-	background: #222;
+	background: rgba(255,255,255,0.05);
     width: 6rem;
     height: 6rem;
     margin: 0.5rem 0.75rem;
@@ -277,10 +277,10 @@ a {
 	cursor: pointer;
 }
 #stavrapid_logo .numpad_wrapper button[type = numbutton]:hover {
-	background: #444;
+	background: rgba(255,255,255,0.15);
 }
 #stavrapid_logo .numpad_wrapper button[type = numbutton]:active {
-	background: #888;
+	background: rgba(255,255,255,0.25);
 	transition: background 0s;
 }
 
