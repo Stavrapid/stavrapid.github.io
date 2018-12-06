@@ -204,12 +204,141 @@ function setInput( x ) {
 	}
 }
 
+var keyDown = function (e) {
+	var key = e.which || e.keyCode;
+	console.log(key);
+	switch(key) {
+		case 96:
+		case 48:
+			var button = document.querySelector("button[name = numbutton_0]");
+			button.classList.add('active');
+			break;
+		case 97:
+		case 49:
+			var button = document.querySelector("button[name = numbutton_1]");
+			button.classList.add('active');
+			break;
+		case 98:
+		case 50:
+			var button = document.querySelector("button[name = numbutton_2]");
+			button.classList.add('active');
+			break;
+		case 99:
+		case 51:
+			var button = document.querySelector("button[name = numbutton_3]");
+			button.classList.add('active');
+			break;
+		case 100:
+		case 52:
+			var button = document.querySelector("button[name = numbutton_4]");
+			button.classList.add('active');
+			break;
+		case 101:
+		case 53:
+			var button = document.querySelector("button[name = numbutton_5]");
+			button.classList.add('active');
+			break;
+		case 102:
+		case 54:
+			var button = document.querySelector("button[name = numbutton_6]");
+			button.classList.add('active');
+			break;
+		case 103:
+		case 55:
+			var button = document.querySelector("button[name = numbutton_7]");
+			button.classList.add('active');
+			break;
+		case 104:
+		case 56:
+			var button = document.querySelector("button[name = numbutton_8]");
+			button.classList.add('active');
+			break;
+		case 105:
+		case 57:
+			var button = document.querySelector("button[name = numbutton_9]");
+			button.classList.add('active');
+			break;
+	}
+};
+
+var keyUp = function (e) {
+	var key = e.which || e.keyCode;
+	// console.log(key);
+	switch(key) {
+		case 96:
+		case 48:
+			var button = document.querySelector("button[name = numbutton_0]");
+			button.click();
+			button.classList.remove('active');
+			break;
+		case 97:
+		case 49:
+			var button = document.querySelector("button[name = numbutton_1]");
+			button.click();
+			button.classList.remove('active');
+			break;
+		case 98:
+		case 50:
+			var button = document.querySelector("button[name = numbutton_2]");
+			button.click();
+			button.classList.remove('active');
+			break;
+		case 99:
+		case 51:
+			var button = document.querySelector("button[name = numbutton_3]");
+			button.click();
+			button.classList.remove('active');
+			break;
+		case 100:
+		case 52:
+			var button = document.querySelector("button[name = numbutton_4]");
+			button.click();
+			button.classList.remove('active');
+			break;
+		case 101:
+		case 53:
+			var button = document.querySelector("button[name = numbutton_5]");
+			button.click();
+			button.classList.remove('active');
+			break;
+		case 102:
+		case 54:
+			var button = document.querySelector("button[name = numbutton_6]");
+			button.click();
+			button.classList.remove('active');
+			break;
+		case 103:
+		case 55:
+			var button = document.querySelector("button[name = numbutton_7]");
+			button.click();
+			button.classList.remove('active');
+			break;
+		case 104:
+		case 56:
+			var button = document.querySelector("button[name = numbutton_8]");
+			button.click();
+			button.classList.remove('active');
+			break;
+		case 105:
+		case 57:
+			var button = document.querySelector("button[name = numbutton_9]");
+			button.click();
+			button.classList.remove('active');
+			break;
+	}
+};
+
+window.addEventListener("keydown", keyDown);
+window.addEventListener("keyup", keyUp);
+
 function numButtonClicked( num ) {
 	input += num.toString();
 	if ( input.length == 5 ) {
 		if ( input == password ) {
 			document.getElementById("stavrapid_logo").classList.remove("loaded");
 			setTimeout(function () {
+				window.removeEventListener("keydown", keyDown);
+				window.removeEventListener("keyup", keyUp);
 				logIn();
 			}, 1500);
 		} else {

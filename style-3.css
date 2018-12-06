@@ -279,7 +279,8 @@ a {
 #stavrapid_logo .numpad_wrapper button[type = numbutton]:hover {
 	background: rgba(255,255,255,0.15);
 }
-#stavrapid_logo .numpad_wrapper button[type = numbutton]:active {
+#stavrapid_logo .numpad_wrapper button[type = numbutton]:active,
+#stavrapid_logo .numpad_wrapper button[type = numbutton].active {
 	background: rgba(255,255,255,0.25);
 	transition: background 0s;
 }
