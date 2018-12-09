@@ -35,6 +35,132 @@
         <meta property="og:site_name" content="STAVRAPID'S LAIR" />
         <meta property="og:image" content="https://raw.githubusercontent.com/Stavrapid/stavrapid.github.io/master/logo_social-media.png">
         <meta property="og:image" content="https://raw.githubusercontent.com/Stavrapid/stavrapid.github.io/master/android-icon-192x192.png">
+
+        <style>
+            .blurbox_container {
+                z-index: -1;
+                /* filter: blur(100px); */
+            }
+            .blurbox {
+                position: absolute;
+                /* width: .001vmin;
+                height: .001vmin; */
+                width: 2px;
+                height: 2px;
+                /* width: 200vmax;
+                height: 200vmax; */
+                border-radius: 50%;
+                opacity: .25;
+            }
+
+            .blurbox:nth-child(1) {
+                -webkit-box-shadow: 0 0 45vmax 45vmax #90AFC5;
+                box-shadow: 0 0 45vmax 45vmax #90AFC5;
+                background: #90AFC5;
+                -webkit-animation: hue 10s 0s linear infinite, move1 42s 0s linear infinite;
+                animation: hue 10s 0s linear infinite, move1 42s 0s linear infinite;
+                /* width: 200vmax;
+                height: 200vmax; */
+                /* opacity: .2; */
+            }
+
+            .blurbox:nth-child(2) {
+                -webkit-box-shadow: 0 0 45vmax 45vmax #336B87;
+                box-shadow: 0 0 45vmax 45vmax #336B87;
+                background: #336B87;
+                -webkit-animation: hue 15s 0s linear infinite, move2 36s 0s linear infinite;
+                animation: hue 15s 0s linear infinite, move2 36s 0s linear infinite;
+                /* width: 150vmax;
+                height: 150vmax; */
+                /* opacity: .2; */
+            }
+
+            .blurbox:nth-child(3) {
+                -webkit-box-shadow: 0 0 45vmax 45vmax #763626;
+                box-shadow: 0 0 45vmax 45vmax #763626;
+                background: #763626;
+                -webkit-animation: hue 20s 0s linear infinite, move3 30s 0s linear infinite;
+                animation: hue 20s 0s linear infinite, move3 30s 0s linear infinite;
+                /* width: 175vmax;
+                height: 175vmax; */
+                /* opacity: .5; */
+            }
+            @-webkit-keyframes hue {
+                0% { -webkit-filter: hue-rotate(0deg); filter: hue-rotate(0deg); }
+                100% { -webkit-filter: hue-rotate(360deg); filter: hue-rotate(360deg); }
+            }
+            @keyframes hue {
+                0% { -webkit-filter: hue-rotate(0deg); filter: hue-rotate(0deg); }
+                100% { -webkit-filter: hue-rotate(360deg); filter: hue-rotate(360deg); }
+            }
+            @-webkit-keyframes move1 {
+                0% { top: 0vh; left: 50vw; }
+                25% { left: 0vw; }
+                50% { top: 100vh; }
+                75% { left: 100vw; }
+                100% { top: 0vh; left: 50vw; }
+            }
+            @keyframes move1 {
+                0% {top: 0vh; left: 50vw; }
+                25% { left: 0vw; }
+                50% { top: 100vh; }
+                75% { left: 100vw; }
+                100% { top: 0vh; left: 50vw; }
+            }
+            @-webkit-keyframes move2 {
+                0% { top: 50vh; left: 100vw; }
+                25% { top: 100vh; }
+                50% { left: 0vw; }
+                75% { top: 0vh; }
+                100% { top: 50vh; left: 100vw; }
+            }
+            @keyframes move2 {
+                0% { top: 50vh; left: 100vw; }
+                25% { top: 100vh; }
+                50% { left: 0vw; }
+                75% { top: 0vh; }
+                100% { top: 50vh; left: 100vw; }
+            }
+            @-webkit-keyframes move3 {
+                0% { top: 100vh; left: 50vw; }
+                25% { left: 100vw; }
+                50% { top: 0vh; }
+                75% { left: 0vw; }
+                100% { top: 100vh; left: 50vw; }
+            }
+            @keyframes move3 {
+                0% { top: 100vh; left: 50vw; }
+                25% { left: 100vw; }
+                50% { top: 0vh; }
+                75% { left: 0vw; }
+                100% { top: 100vh; left: 50vw; }
+            }
+            #stavrapid_logo .logo_bg {
+                -webkit-animation: stavrapid_bgGlow 2s ease-in-out infinite;
+                animation: stavrapid_bgGlow 2s ease-in-out infinite;
+            }
+            @-webkit-keyframes animateGlow {
+              0%  { background-color: #2A3132; }
+              50% { background-color: #27233A; }
+              100% { background-color: #2A3132; }
+            }
+            @keyframes animateGlow {
+              0%  { background-color: #2A3132; }
+              50% { background-color: #27233A; }
+              100% { background-color: #2A3132; }
+            }
+            @-webkit-keyframes stavrapid_bgGlow {
+              0%  { opacity: 0.25; }
+              50% { opacity: 0.75; }
+              100% { opacity: 0.25; }
+            }
+            @keyframes stavrapid_bgGlow {
+              0%  { opacity: 0.25; }
+              50% { opacity: 0.75; }
+              100% { opacity: 0.25; }
+            }
+        </style>
+
     </head>
     <body>
         <div id="stavrapid_logo">
@@ -78,16 +204,21 @@
                     <span class="numpad_input_dot"></span>
                     <span class="numpad_input_dot"></span>
                 </div>
-                <button type="numbutton" name="numbutton_1" onclick="numButtonClicked(1);">1</button>
-                <button type="numbutton" name="numbutton_2" onclick="numButtonClicked(2);">2</button>
-                <button type="numbutton" name="numbutton_3" onclick="numButtonClicked(3);">3</button>
-                <button type="numbutton" name="numbutton_4" onclick="numButtonClicked(4);">4</button>
-                <button type="numbutton" name="numbutton_5" onclick="numButtonClicked(5);">5</button>
-                <button type="numbutton" name="numbutton_6" onclick="numButtonClicked(6);">6</button>
-                <button type="numbutton" name="numbutton_7" onclick="numButtonClicked(7);">7</button>
-                <button type="numbutton" name="numbutton_8" onclick="numButtonClicked(8);">8</button>
-                <button type="numbutton" name="numbutton_9" onclick="numButtonClicked(9);">9</button>
+                <button type="numbutton" name="numbutton_1" onclick="numButtonClicked(1);">1<div>F U C K</div><div>Y O U</div></button>
+                <button type="numbutton" name="numbutton_2" onclick="numButtonClicked(2);">2<div>А Б В Г</div><div>A B C</div></button>
+                <button type="numbutton" name="numbutton_3" onclick="numButtonClicked(3);">3<div>Д Е Ж З</div><div>D E F</div></button>
+                <button type="numbutton" name="numbutton_4" onclick="numButtonClicked(4);">4<div>И Й К Л</div><div>G H I</div></button>
+                <button type="numbutton" name="numbutton_5" onclick="numButtonClicked(5);">5<div>М Н О П</div><div>J K L</div></button>
+                <button type="numbutton" name="numbutton_6" onclick="numButtonClicked(6);">6<div>Р С Т У</div><div>M N O</div></button>
+                <button type="numbutton" name="numbutton_7" onclick="numButtonClicked(7);">7<div>Ф Х Ц Ч</div><div>P Q R S</div></button>
+                <button type="numbutton" name="numbutton_8" onclick="numButtonClicked(8);">8<div>Ш Щ Ъ Ы</div><div>T U V</div></button>
+                <button type="numbutton" name="numbutton_9" onclick="numButtonClicked(9);">9<div>Ь Э Ю Я</div><div>W X Y Z</div></button>
                 <button type="numbutton" name="numbutton_0" onclick="numButtonClicked(0);">0</button>
+            </div>
+            <div class="blurbox_container">
+                <div class="blurbox"></div>
+                <div class="blurbox"></div>
+                <div class="blurbox"></div>
             </div>
         </div>
         <!-- <div id="main_page" ss-container> -->

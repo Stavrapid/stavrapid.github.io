@@ -170,18 +170,6 @@ a {
 	color: inherit;
 }
 
-@keyframes animateGlow {
-  0%  { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes stavrapid_bgGlow {
-  0%  { opacity: 0.25; }
-  50% { opacity: 0.75; }
-  100% { opacity: 0.25; }
-}
-
 @keyframes numbutton_1_appear {
 	0%  { transform: scale(0); opacity: 0; }
 	50% { opacity: 0; }
@@ -207,11 +195,10 @@ a {
     position: fixed;
     height: 100vh;
     width: 100vw;
-    background: #55f;
-    display: flex;
-    background: linear-gradient(45deg, #000, #333);
+    background-color: #000;
     background-size: 400% 400%;
-    animation: animateGlow 15s ease infinite;
+	-webkit-animation: animateGlow 24s linear infinite;
+    animation: animateGlow 24s linear infinite;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -237,10 +224,11 @@ a {
     position: absolute;
     height: 100%;
 	width: 100%;
+	z-index: 100;
     /* padding: 5rem; */
 }
 /* #stavrapid_logo .logo_main { background: url("./img/stavrapid-main.svg") no-repeat center / 100%; } */
-#stavrapid_logo .logo_bg { animation: stavrapid_bgGlow 2s ease-in-out infinite; }
+/* #stavrapid_logo .logo_bg { animation: stavrapid_bgGlow 2s ease-in-out infinite; } */
 
 #stavrapid_logo .logo_main svg {
 	height: 100%;
@@ -252,6 +240,8 @@ a {
 #stavrapid_logo .logo_bg svg {
     height: 100%;
     width: 100%;
+	position: absolute;
+    left: 0;
 }
 
 #stavrapid_logo .numpad_wrapper {
@@ -281,6 +271,13 @@ a {
 	transition: background 0.5s;
 	cursor: pointer;
 }
+#stavrapid_logo .numpad_wrapper button[type = numbutton] > div {
+	font-family: Roboto;
+	font-size: 0.8rem;
+	/* font-weight: 600; */
+	margin: -0.1rem 0 0.2rem;
+	display: none;
+}
 #stavrapid_logo .numpad_wrapper button[type = numbutton]:hover {
 	background: rgba(255,255,255,0.15);
 }
@@ -303,6 +300,9 @@ a {
 #stavrapid_logo.loaded .numpad_wrapper button[type = numbutton] {
 	animation: numbutton_1_appear 0.5s cubic-bezier(.42,.17,.28,1);
 	animation-fill-mode: both;
+}
+#stavrapid_logo.loaded .blurbox {
+	animation-play-state: paused;
 }
 
 #stavrapid_logo.loaded .numpad_wrapper button[name = numbutton_1] { animation-delay: 0.1s; }
@@ -769,7 +769,7 @@ a {
     .project_card-title-wrapper > div h3 { margin: 0 !important; }
     .project_card-title-wrapper > div .button--open { display: none !important; }
     html { font-size: 12px; }
-	#stavrapid_logo { animation: none; justify-content: flex-start !important; }
+	#stavrapid_logo { justify-content: flex-start !important; }
 	#stavrapid_logo.loaded .logo_wrapper { flex: 0 10 0; opacity: 0; transition: flex 1s cubic-bezier(.42,.17,.28,1), opacity 0.5s cubic-bezier(.42,.17,.28,1) 0s, margin 1s cubic-bezier(.42,.17,.28,1); }
 	#main_page { margin-bottom: 18rem; }
 	#stavrapid_logo:not(.loaded) .logo_wrapper { margin: 8rem; }
