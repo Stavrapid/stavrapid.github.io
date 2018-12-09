@@ -349,6 +349,8 @@ a {
     overflow-x: hidden;
     overflow-y: visible;
     /* animation: fade-in 1s cubic-bezier(.42,.17,.28,1); */
+	position: relative;
+	z-index: 1;
 }
 
 .main_logo {
