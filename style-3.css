@@ -129,8 +129,8 @@ body {
     margin-top: 11rem;
 } */
 
-body.--1_3--active { background-color: #222; }
-body.--2_3--active { background-color: #111; }
+body.--1_3--active, body.--1_3--active .table_bound { background-color: #222; }
+body.--2_3--active, body.--2_3--active .table_bound { background-color: #111; }
 
 body.--1_3--active #page_1 { position: relative; }
 body.--1_3--active #page_2 { position: relative; display: flex; max-height: 200vh; overflow: hidden; opacity: 0; }
@@ -168,15 +168,15 @@ a {
 }
 
 @keyframes animateGlow {
-  0%  { background-position: 50% 100% }
-  50% { background-position: 50% 0% }
-  100% { background-position: 50% 100% }
+  0%  { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes stavrapid_bgGlow {
-  0%  { opacity: 0.25 }
-  50% { opacity: 0.75 }
-  100% { opacity: 0.25 }
+  0%  { opacity: 0.25; }
+  50% { opacity: 0.75; }
+  100% { opacity: 0.25; }
 }
 
 @keyframes numbutton_1_appear {
@@ -207,12 +207,12 @@ a {
     background: #55f;
     display: flex;
     background: linear-gradient(45deg, #000, #333);
-    background-size: 200% 200%;
-    animation: animateGlow 5s ease infinite;
+    background-size: 400% 400%;
+    animation: animateGlow 15s ease infinite;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	z-index: 1;
+	z-index: 10;
 }
 #stavrapid_logo .logo_wrapper {
 	position: relative;
@@ -221,7 +221,8 @@ a {
 	justify-content: center;
     align-items: center;
 	margin: 2rem;
-	transition: flex 1s cubic-bezier(.42,.17,.28,1);
+	opacity: 1;
+	transition: flex 1s cubic-bezier(.42,.17,.28,1), opacity 0.5s cubic-bezier(.42,.17,.28,1) 0.25s;
 }
 
 #stavrapid_logo .logo_main {
@@ -470,7 +471,7 @@ a {
 #main_nav.--3_3--active #as_1 { flex: 1 0 0rem; transition-duration: 0.5s; opacity: 0.25 }
 #main_nav.--3_3--active #as_2 { flex: 1 0 0rem; transition-duration: 0.7s; opacity: 0.5 }
 #main_nav.--3_3--active #as_3 { flex: 1 0 0rem; transition-duration: 0.9s; opacity: 0.75 }
-#main_nav.--3_3--active #as_4 { flex: 3 0 23rem; transition-duration: 1s;opacity: 1 }
+#main_nav.--3_3--active #as_4 { flex: 3 0 23rem; transition-duration: 1s; opacity: 1 }
 #main_nav--mobile.--3_3--active #h_1-m { opacity: 0.25 }
 #main_nav--mobile.--3_3--active #h_2-m { opacity: 0.5 }
 #main_nav--mobile.--3_3--active #h_3-m { opacity: 1 }
@@ -479,6 +480,10 @@ a {
 .table_bound {
     width: 100vw;
     overflow: hidden;
+	margin-bottom: 15rem;
+	position: relative;
+	z-index: 1;
+	transition: background-color 0.5s cubic-bezier(.42,.17,.28,1);
 }
 
 #shit {
@@ -617,6 +622,11 @@ a {
     padding: 3rem 0 0;
 	background-color: #111;
     width: 100vw;
+	position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
 }
 
 #footer_wrap {
@@ -757,7 +767,7 @@ a {
     .project_card-title-wrapper > div .button--open { display: none !important; }
     html { font-size: 12px; }
 	#stavrapid_logo { animation: none; }
-	#stavrapid_logo.loaded .logo_wrapper { flex: 0 10 6rem; }
+	#stavrapid_logo.loaded .logo_wrapper { flex: 0 10 0; opacity: 0; transition: flex 1s cubic-bezier(.42,.17,.28,1), opacity 0.5s cubic-bezier(.42,.17,.28,1) 0s; }
 }
 
 @media only screen and (max-device-width: 768px) {
@@ -857,7 +867,7 @@ a {
     transition: 0.5s cubic-bezier(.42,.17,.28,1);
 }
 
-body.--3_3--active { background-color: #f6f6f6; }
+body.--3_3--active, body.--3_3--active .table_bound { background-color: #f6f6f6; }
 body.--3_3--active .main_logo { color: #fc3258; }
 body.--3_3--active #main_nav,
 body.--3_3--active #main_nav--mobile { color: #fc3258; }
