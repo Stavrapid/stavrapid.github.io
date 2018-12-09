@@ -222,7 +222,7 @@ a {
     align-items: center;
 	margin: 2rem;
 	opacity: 1;
-	transition: flex 1s cubic-bezier(.42,.17,.28,1), opacity 0.5s cubic-bezier(.42,.17,.28,1) 0.25s;
+	transition: flex 1s cubic-bezier(.42,.17,.28,1), opacity 0.5s cubic-bezier(.42,.17,.28,1) 0.25s, margin 1s cubic-bezier(.42,.17,.28,1);
 }
 
 #stavrapid_logo .logo_main {
@@ -767,8 +767,9 @@ a {
     .project_card-title-wrapper > div .button--open { display: none !important; }
     html { font-size: 12px; }
 	#stavrapid_logo { animation: none; justify-content: flex-start !important; }
-	#stavrapid_logo.loaded .logo_wrapper { flex: 0 10 0; opacity: 0; transition: flex 1s cubic-bezier(.42,.17,.28,1), opacity 0.5s cubic-bezier(.42,.17,.28,1) 0s; }
+	#stavrapid_logo.loaded .logo_wrapper { flex: 0 10 0; opacity: 0; transition: flex 1s cubic-bezier(.42,.17,.28,1), opacity 0.5s cubic-bezier(.42,.17,.28,1) 0s, margin 1s cubic-bezier(.42,.17,.28,1); }
 	.table_bound { margin-bottom: 18rem; }
+	#stavrapid_logo:not(.loaded) .logo_wrapper { margin: 8rem; }
 }
 
 @media only screen and (max-device-width: 768px) {
