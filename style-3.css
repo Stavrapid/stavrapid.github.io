@@ -766,8 +766,9 @@ a {
     .project_card-title-wrapper > div h3 { margin: 0 !important; }
     .project_card-title-wrapper > div .button--open { display: none !important; }
     html { font-size: 12px; }
-	#stavrapid_logo { animation: none; }
+	#stavrapid_logo { animation: none; justify-content: flex-start !important; }
 	#stavrapid_logo.loaded .logo_wrapper { flex: 0 10 0; opacity: 0; transition: flex 1s cubic-bezier(.42,.17,.28,1), opacity 0.5s cubic-bezier(.42,.17,.28,1) 0s; }
+	.table_bound { margin-bottom: 18rem; }
 }
 
 @media only screen and (max-device-width: 768px) {
