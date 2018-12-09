@@ -348,6 +348,7 @@ a {
     width: 100vw;
     overflow-x: hidden;
     overflow-y: visible;
+	margin-bottom: 15rem;
     /* animation: fade-in 1s cubic-bezier(.42,.17,.28,1); */
 	position: relative;
 	z-index: 1;
@@ -485,9 +486,6 @@ a {
 .table_bound {
     width: 100vw;
     overflow: hidden;
-	margin-bottom: 15rem;
-	position: relative;
-	z-index: 1;
 	transition: background-color 0.5s cubic-bezier(.42,.17,.28,1);
 }
 
@@ -773,7 +771,7 @@ a {
     html { font-size: 12px; }
 	#stavrapid_logo { animation: none; justify-content: flex-start !important; }
 	#stavrapid_logo.loaded .logo_wrapper { flex: 0 10 0; opacity: 0; transition: flex 1s cubic-bezier(.42,.17,.28,1), opacity 0.5s cubic-bezier(.42,.17,.28,1) 0s, margin 1s cubic-bezier(.42,.17,.28,1); }
-	.table_bound { margin-bottom: 18rem; }
+	#main_page { margin-bottom: 18rem; }
 	#stavrapid_logo:not(.loaded) .logo_wrapper { margin: 8rem; }
 }
 
