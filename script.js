@@ -181,11 +181,15 @@ function toggleMainNav(page) {
 
 
 function logIn() {
-	document.getElementById("stavrapid_logo").style.pointerEvents = "none";
+	var loginPage = document.getElementById("stavrapid_logo");
+	loginPage.style.pointerEvents = "none";
 	document.getElementById("main_page").style.display = "block";
 	setTimeout(function () {
 		document.getElementById("stavrapid_logo").style.animation = "fade-out 1s both cubic-bezier(.42,.17,.28,1)";
 	}, 100);
+	setTimeout(function () {
+		loginPage.parentNode.removeChild(loginPage);
+	}, 1000);
 }
 
 var password = "52375";
@@ -352,10 +356,318 @@ function numButtonClicked( num ) {
 	setInput( input.length );
 }
 
+var UID = {
+	_current: 0,
+	getNew: function(){
+		this._current++;
+		return this._current;
+	}
+};
+
+HTMLElement.prototype.pseudoStyle = function(element,prop,value){
+	var _this = this;
+	var _sheetId = "pseudoStyles";
+	var _head = document.head || document.getElementsByTagName('head')[0];
+	var _sheet = document.getElementById(_sheetId) || document.createElement('style');
+	_sheet.id = _sheetId;
+	var className = "pseudoStyle" + UID.getNew();
+
+	_this.className +=  " "+className;
+
+	_sheet.innerHTML += "\n."+className+":"+element+"{"+prop+":"+value+"}";
+	_head.appendChild(_sheet);
+	return this;
+};
+
+function DragnZoom( dragItem ) {
+	// var dragItem = document.querySelector("#item");
+    // var container = document.querySelector("#container");
+	var container = dragItem.parentNode;
+
+    var active = false;
+    var currentX = 0;
+    var currentY = 0;
+    var initialX = 0;
+    var initialY = 0;
+    var xOffset = 0;
+    var yOffset = 0;
+
+	var touchX;
+	var touchY;
+
+	var currentZoom = 1;
+	var initialZoom = 1;
+
+    container.addEventListener("touchstart", tapHandler);
+    container.addEventListener("touchend", dragEnd, false);
+    container.addEventListener("touchmove", drag, false);
+
+    container.addEventListener("mousedown", dragStart, false);
+    container.addEventListener("mouseup", dragEnd, false);
+    container.addEventListener("mousemove", drag, false);
+
+	container.addEventListener("dblclick", quickZoom, false);
+
+	container.addEventListener("wheel", zoom, false);
+
+	function resetZoomnDrag() {
+		currentX = 0;
+		currentY = 0;
+		initialX = 0;
+		initialY = 0;
+		xOffset = 0;
+		yOffset = 0;
+		currentZoom = 1;
+		dragItem.style.transition = '0.3s';
+		document.getElementById("shadow").style.transition = '0.3s';
+		document.getElementById("shadow").style.opacity = '1';
+		setTranslate(currentZoom, currentX, currentY, dragItem);
+	}
+
+	function resetDrag() {
+		dragItem.style.transition = '0.3s';
+		document.getElementById("shadow").style.transition = '0.3s';
+		document.getElementById("shadow").style.opacity = '1';
+		setTranslate(currentZoom, currentX, currentY, dragItem);
+	}
+
+	function checkReset() {
+		if ( currentY > ( ( dragItem.offsetHeight * currentZoom - container.offsetHeight ) / 2 ) + ( container.offsetHeight * 0.5 ) ) {
+			currentY = container.offsetHeight * currentZoom;
+			initialY = container.offsetHeight * currentZoom;
+			yOffset = container.offsetHeight * currentZoom;
+			resetDrag();
+			killModalWin();
+		} else {
+			if ( currentZoom <= 1 ) {
+			    resetZoomnDrag();
+			} else {
+				var overflowAnchor_Right = ( dragItem.offsetWidth * currentZoom - container.offsetWidth ) / -2;
+				var overflowAnchor_Left = ( dragItem.offsetWidth * currentZoom - container.offsetWidth ) / 2;
+				var overflowAnchor_Top = ( dragItem.offsetHeight * currentZoom - container.offsetHeight ) / -2;
+				var overflowAnchor_Bottom = ( dragItem.offsetHeight * currentZoom - container.offsetHeight ) / 2;
+				if ( dragItem.offsetWidth * currentZoom > container.offsetWidth ) {
+					if ( currentX < overflowAnchor_Right ) {
+						currentX = overflowAnchor_Right;
+						initialX = overflowAnchor_Right;
+						xOffset = overflowAnchor_Right;
+						resetDrag();
+					}
+					if ( currentX > overflowAnchor_Left ) {
+						currentX = overflowAnchor_Left;
+						initialX = overflowAnchor_Left;
+						xOffset = overflowAnchor_Left;
+						resetDrag();
+					}
+				} else {
+					currentX = 0;
+					initialX = 0;
+					xOffset = 0;
+					resetDrag();
+				}
+				if ( dragItem.offsetHeight * currentZoom > container.offsetHeight ) {
+					if ( currentY < overflowAnchor_Top ) {
+						currentY = overflowAnchor_Top;
+						initialY = overflowAnchor_Top;
+						yOffset = overflowAnchor_Top;
+						resetDrag();
+					}
+					if ( currentY > overflowAnchor_Bottom ) {
+						currentY = overflowAnchor_Bottom;
+						initialY = overflowAnchor_Bottom;
+						yOffset = overflowAnchor_Bottom;
+						resetDrag();
+					}
+				} else {
+					currentY = 0;
+					initialY = 0;
+					yOffset = 0;
+					resetDrag();
+				}
+			}
+		}
+
+	}
+
+	var tapedTwice = false;
+
+	function tapHandler(event) {
+		if(!tapedTwice) {
+		    tapedTwice = true;
+		    setTimeout( function() { tapedTwice = false; }, 300 );
+			dragStart( event );
+			return false;
+		}
+		event.preventDefault();
+		//action on double tap goes below
+		console.log('You tapped me Twice !!!');
+		quickZoom();
+	}
+
+    function dragStart(e) {
+		if (e.type === "touchstart") {
+			initialX = e.touches[0].clientX - xOffset;
+			initialY = e.touches[0].clientY - yOffset;
+		} else {
+			initialX = e.clientX - xOffset;
+			initialY = e.clientY - yOffset;
+		}
+
+		// if (e.target === dragItem) {
+			active = true;
+		// }
+
+		dragItem.style.transition = '';
+		document.getElementById("shadow").style.opacity = '1';
+		document.getElementById("shadow").style.transition = '';
+
+		return false;
+    }
+
+	function dragEnd(e) {
+
+		active = false;
+
+		// if ( currentX >= dragItem.offsetWidth * zoom -  ) {
+		// 	initialX = currentX;
+		// 	initialY = currentY;
+		// }
+		checkReset();
+
+	}
+
+    function drag(e) {
+		if (e.type === "touchstart") {
+			touchX = e.touches[0].clientX;
+			touchY = e.touches[0].clientY;
+		} else {
+			touchX = e.clientX;
+			touchY = e.clientY;
+		}
+      if (active) {
+
+        e.preventDefault();
+
+        if (e.type === "touchmove") {
+          currentX = e.touches[0].clientX - initialX;
+          currentY = e.touches[0].clientY - initialY;
+        } else {
+          currentX = e.clientX - initialX;
+          currentY = e.clientY - initialY;
+        }
+
+        xOffset = currentX;
+        yOffset = currentY;
+
+		initialZoom = currentZoom;
+
+		if ( currentY > ( ( dragItem.offsetHeight * currentZoom - container.offsetHeight ) / 2 ) + ( container.offsetHeight * 0.33 ) ) {
+			document.getElementById("shadow").style.opacity = ( ( ( dragItem.offsetHeight * currentZoom - container.offsetHeight ) / 2 ) + ( container.offsetHeight * 0.33 ) ) / currentY ;
+			initialZoom = 1 * currentZoom + ( ( ( dragItem.offsetHeight * currentZoom - container.offsetHeight ) / 2 ) + ( container.offsetHeight * 0.33 ) - currentY ) * 0.001;
+		}
+
+        setTranslate(initialZoom, currentX, currentY, dragItem);
+		console.log( 'currentZoom = ' + initialZoom + ' currentX = ' + currentX + ' currentY = ' + currentY );
+      }
+    }
+
+	function quickZoom(e) {
+		switch ( currentZoom ) {
+			case 1:
+				currentZoom = 3;
+				setTranslate(currentZoom, currentX, currentY, dragItem);
+				break;
+			default:
+				resetZoomnDrag();
+				break;
+		}
+	}
+
+	function zoom(e) {
+		var delta = e.deltaY || e.detail || e.wheelDelta;
+		if ( ( currentZoom + delta * -0.0008 ) >= 1 && ( currentZoom + delta * -0.0008 ) <= 3 ) {
+			currentZoom += delta * -0.0008;
+		}
+		checkReset();
+		// console.log( 'X ' + touchX + ' Y ' + touchY + '' );
+		// dragItem.style.transformOrigin = touchX + 'px ' + touchY +'px';
+		setTranslate(currentZoom, currentX, currentY, dragItem);
+	}
+
+    function setTranslate(zoom, xPos, yPos, el) {
+      el.style.transform = "scale3d(" + zoom + ", " + zoom + ", 1) translate3d(" + xPos / zoom + "px, " + yPos / zoom + "px, 0)";
+    }
+}
+
+function killModalWin() {
+	document.getElementsByClassName( 'modal-window' )[ 0 ].style.animationName = 'modal-popup-kill';
+	document.getElementById( 'shadow' ).style.opacity = '0';
+	//document.getElementsByClassName( 'modal-window' )[ 0 ].style.animationIterationCount = 'infinite';
+	setTimeout( function() {
+		var victim = document.getElementById( 'modal' );
+		victim.parentNode.removeChild( victim ); // удаляем затемнение
+		document.body.style.overflow = ''; // возвращаем скролл сайта
+	}, 150 )
+	imgZOOM = 1;
+}
+
+function showModalWin( evt, a ) {
+
+	evt.preventDefault();
+	var picPath = a.getAttribute( 'href' );
+	console.log( picPath );
+
+	var modal = document.createElement( 'div' );
+	modal.id = 'modal';
+	modal.className = 'modal';
+	modal.setAttribute( 'tabindex', '-1' );
+	document.body.appendChild( modal ); // включаем затемнение
+
+	var modalWrap = document.createElement( 'div' );
+	modalWrap.id = 'modal_wrap';
+	modalWrap.className = 'modal-wrap';
+	modal.appendChild( modalWrap ); // включаем затемнение
+
+	var darkLayer = document.createElement( 'div' ); // слой затемнения
+	darkLayer.id = 'shadow'; // id чтобы подхватить стиль
+	document.body.style.overflow = 'hidden'; // блокируем скролл сайта
+
+	darkLayer.onclick = function () {  // при клике на слой затемнения все исчезнет
+		killModalWin();
+	};
+
+	modal.focus();
+
+	modal.onkeydown = function( evt ) {
+		evt = evt || window.event;
+		if ( evt.keyCode == 27 ) {
+			killModalWin();
+		}
+	};
+
+	// var description = picPath;
+	var description = '';
+
+	modalWrap.innerHTML = '<div class="modal-window"><div class="modal-win-img-wrapper"><img id="modalWin_Img" src="' + picPath + '"/></div><div class="modal-win-img-description">' + description + '</div></div>';
+	modalWrap.appendChild( darkLayer );
+
+	imgZOOM = 1;
+	DragnZoom( document.getElementById( "modalWin_Img" ) );
+
+	return false;
+
+}
+
 window.onload = function (fontFaceSetEvent) {
 	toggleMainNav(2);
 	document.getElementById("stavrapid_logo").classList.add("loaded");
 	setTimeout(function () {
 		// logIn();
 	}, 2000);
+
+	var photoCards = document.getElementsByClassName("photo_card");
+
+	for (var i = 0; i < photoCards.length; i++) {
+		photoCards[i].setAttribute("onclick", "showModalWin( event, this );");
+	}
 };
