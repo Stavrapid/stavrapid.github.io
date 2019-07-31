@@ -495,6 +495,24 @@ h2 {
 	opacity: 0.5;
 	pointer-events: none;
 }
+.ios-li > div {
+	overflow: hidden;
+	max-height: 75px;
+	transition: max-height 0.25s ease-in-out, padding-top 0.25s ease-in-out, padding-bottom 0.25s ease-in-out, opacity 0.25s ease-in-out;
+}
+.ios-li.hidden > div {
+	max-height: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	opacity: 0;
+	pointer-events: none;
+}
+.ios-li {
+	transition: opacity 0.25s ease-in-out;
+}
+.ios-li.hidden {
+	opacity: 0;
+}
 
 .disabled {
 	opacity: 0.5;
@@ -734,188 +752,65 @@ sup {
     box-sizing: border-box;
 }
 
-/*	White theme style
--------------------------------------------------------------------
-*/
-body.white #settings-screen,
-body.white #search-screen,
-body.white #favorite-screen {
-	background-color: #fff;
-}
-
-body.white #settings-screen-content,
-body.white #main-screen-content,
-body.white #search-screen-content,
-body.white #favorite-screen-content {
-	color: #000;
-}
-
-body.white #settings-screen-content a {
-	color: #0095f5;
-}
-
-body.white #main-screen-content #today-tab {
-	color: #fff;
-}
-
-body.white .blank img {
-	filter: invert(1);
-}
-
-body.white .ios-ul {
-	background-color: #fff;
-	box-shadow: 0px 5px 50px 0px rgba(177,177,177,0.25);
-}
-
-body.white .ios-li + .ios-li {
-    border-top-color: rgba(0,0,0,0.08);
-}
-
-body.white .ios-li .button-favorise input + span { background-image: url('../img/unfavorise-black.svg'); }
-body.white .ios-li .button-favorise input:checked + span { background-image: url('../img/favorise-black.svg'); }
-
-body.white #settings-screen .head,
-body.white #search-screen .head,
-body.white #favorite-screen .head {
-	/*background-color: #0095f5;*/
-	background-color: #fff;
-	box-shadow: 0px 5px 50px 0px rgba(177,177,177,0.25);
-}
-
-body.white .head .title {
-	color: #000;
-}
-
-body.white .head .button-right,
-body.white .head .button-left {
-	color: #0095f5;
-}
-
-body.white .status-bar {
-	background-color: #0095f5;
-}
-
-body.white .nav-bar {
-	background-color: #fff;
-	box-shadow: 0px -5px 50px 0px rgba(177,177,177,0.25);
-}
-
-body.white .nav-bar img {
-	filter: invert(1);
-}
-
-body.white .tab {
-	box-shadow: 0px -5px 50px 0px rgba(177,177,177,0.25);
-}
-
-body.white #tabs.colored .tab {
-	color: #fff;
-	box-shadow: 0px -5px 50px 0px rgba(0,0,0,0.25);
-}
-
-body.white .ios-li.glyphIcon.reload > div { background-image: url(../img/reload-black.svg); }
-body.white .ios-li.glyphIcon.reset > div { background-image: url(../img/reset-black.svg); }
-
-body.white .ios-li.glyphIcon.gmail > div { background-image: url(../img/gmail-black.svg); }
-body.white .ios-li.glyphIcon.star > div { background-image: url(../img/star-black.svg); }
-body.white .ios-li.glyphIcon.site > div { background-image: url(../img/stavrapid-logo-black.svg); }
-body.white .ios-li.glyphIcon.vk > div { background-image: url(../img/vk-black.svg); }
-body.white .ios-li.glyphIcon.twitter > div { background-image: url(../img/twitter-black.svg); }
-body.white .ios-li.glyphIcon.facebook > div { background-image: url(../img/facebook-black.svg); }
-body.white .ios-li.glyphIcon.instagram > div { background-image: url(../img/instagram-black.svg); }
-body.white .ios-li.glyphIcon.youtube > div { background-image: url(../img/youtube-black.svg); }
-body.white .ios-li.glyphIcon.soundcloud > div { background-image: url(../img/soundcloud-black.svg); }
-body.white .ios-li.glyphIcon.telegram > div { background-image: url(../img/telegram-black.svg); }
-
-body.white .tab[num = "1"] { background-color: #ffffff; }
-body.white .tab[num = "2"] { background-color: #ffffff; }
-body.white .tab[num = "3"] { background-color: #ffffff; }
-body.white .tab[num = "4"] { background-color: #ffffff; }
-body.white .tab[num = "5"] { background-color: #ffffff; }
-body.white .tab[num = "6"] { background-color: #ffffff; }
-body.white .tab[num = "7"] { background-color: #ffffff; }
-
-body.white #bg-overlay {
-	background: #fff;
-	opacity: 0;
-}
-
-body.white .blank .logo {
-	background-image: url('../logo-colored.png');
-}
-
-body.white .ios7-switch input + span {
-	background-color: #f8f8f8;
-}
-
 /*	Dark theme style
 -------------------------------------------------------------------
 */
 body.dark #settings-screen,
 body.dark #search-screen,
 body.dark #favorite-screen {
-	background-color: #313233;
+	background-color: #1c1c1c;
 }
-
 body.dark #settings-screen-content,
 body.dark #main-screen-content,
 body.dark #search-screen-content,
 body.dark #favorite-screen-content {
-	color: #fff;
+	color: #fefefe;
 }
-
 body.dark #settings-screen-content a {
-	color: #0095f5;
+	color: #3b82f6;
 }
-
 body.dark #main-screen-content #today-tab {
-	color: #fff;
+	color: #fefefe;
 }
-
 body.dark .blank img {
 	filter: invert(1);
 }
-
 body.dark .ios-ul {
-	background-color: #3b3c3d;
-	box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.25);
+	background-color: #2c2c2c;
+	box-shadow: none;
 }
-
 body.dark .ios-li + .ios-li {
-    border-top-color: rgba(0,0,0,0.2);
+		border-top-color: rgba(255,255,255,0.15);
 }
-
 body.dark .ios-li .button-favorise input + span { background-image: url('../img/unfavorise.svg'); }
 body.dark .ios-li .button-favorise input:checked + span { background-image: url('../img/favorise.svg'); }
 
 body.dark #settings-screen .head,
 body.dark #search-screen .head,
 body.dark #favorite-screen .head {
-	background-color: #313233;
-	box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.25);
+	background-color: #303030 ;
+	box-shadow: none ;
 }
-
 body.dark .head .title {
-	color: #fff;
+	color: #fefefe;
+	opacity: 1;
 }
-
 body.dark .head .button-right,
 body.dark .head .button-left {
-	color: #0095f5;
+	color: #3b82f6;
 }
-
 body.dark .nav-bar {
-	background-color: #313233;
-	box-shadow: 0px -5px 50px 0px rgba(0,0,0,0.25);
+	background-color: #121212;
+	box-shadow: none;
 }
-
+body.dark .nav-bar img {
+	opacity: 0.45;
+}
 body.dark .tab {
 	box-shadow: 0px -5px 50px 0px rgba(0,0,0,0.25);
 }
-
 body.dark .ios-li.glyphIcon.reload > div { background-image: url(../img/reload.svg); }
 body.dark .ios-li.glyphIcon.reset > div { background-image: url(../img/reset.svg); }
-
 body.dark .ios-li.glyphIcon.gmail > div { background-image: url(../img/gmail.svg); }
 body.dark .ios-li.glyphIcon.star > div { background-image: url(../img/star.svg); }
 body.dark .ios-li.glyphIcon.site > div { background-image: url(../img/stavrapid-logo.svg); }
@@ -926,128 +821,229 @@ body.dark .ios-li.glyphIcon.instagram > div { background-image: url(../img/insta
 body.dark .ios-li.glyphIcon.youtube > div { background-image: url(../img/youtube.svg); }
 body.dark .ios-li.glyphIcon.soundcloud > div { background-image: url(../img/soundcloud.svg); }
 body.dark .ios-li.glyphIcon.telegram > div { background-image: url(../img/telegram.svg); }
-
-body.dark .tab[num = "1"] { background-color: #313233; }
-body.dark .tab[num = "2"] { background-color: #313233; }
-body.dark .tab[num = "3"] { background-color: #313233; }
-body.dark .tab[num = "4"] { background-color: #313233; }
-body.dark .tab[num = "5"] { background-color: #313233; }
-body.dark .tab[num = "6"] { background-color: #313233; }
-body.dark .tab[num = "7"] { background-color: #313233; }
-
+body.dark .tab[num = "1"] { background-color: #1c1c1c; }
+body.dark .tab[num = "2"] { background-color: #1c1c1c; }
+body.dark .tab[num = "3"] { background-color: #1c1c1c; }
+body.dark .tab[num = "4"] { background-color: #1c1c1c; }
+body.dark .tab[num = "5"] { background-color: #1c1c1c; }
+body.dark .tab[num = "6"] { background-color: #1c1c1c; }
+body.dark .tab[num = "7"] { background-color: #1c1c1c; }
 body.dark #bg-overlay {
-	background: #313233;
+	background: #1c1c1c;
 	opacity: 0;
 }
-
 body.dark .blank .logo {
 	background-image: url('../logo-colored.png');
 }
-
 body.dark .ios7-switch input + span {
-	background-color: #3b3c3d;
+	background-color: #3f3f3f;
 }
-
+body.dark .ios7-switch input:checked + span {
+	-webkit-animation: switch-check-dark 0.25s 1 forwards ease-out;
+	-moz-animation: switch-check-dark 0.25s 1 forwards ease-out;
+}
+body.dark .ios7-switch input:not(:checked) + span {
+	-webkit-animation: switch-uncheck-dark 0.25s 1 forwards ease-out;
+	-moz-animation: switch-uncheck-dark 0.25s 1 forwards ease-out;
+}
 body.dark .ios7-switch input + span:after {
-    background: #313233;
+		background: #fefefe;
 }
-
 body.dark .search-field {
-	background: #3b3c3d;
+	background: #3a3a3a;
 	color: #fff;
 }
-
-
-
-
 /* Apple Brand Blur Feature
 -----------------------------------------------------------------------------
 */
 /* WHITE BLUR */
-body.white.blur .nav-bar {
-	background-color: rgba(255,255,255,0.8);
+/* body.iOS13DarkMode.blur .nav-bar {
+	background-color: rgba(248,248,248,0.8);
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
-}
+		backdrop-filter: saturate(180%) blur(20px);
+} */
 body.white.blur #tabs_wrapper {
 	border-radius: 11px;
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
+		backdrop-filter: saturate(180%) blur(20px);
 }
-body.white.blur #tabs {
-	opacity: 0.8;
-	-webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
-}
+/* body.iOS13DarkMode.blur #tabs {
+	opacity: 0.5;
+} */
 body.white.blur #search-screen,
 body.white.blur #favorite-screen,
 body.white.blur #settings-screen {
-	background-color: rgba(255,255,255,0.8);
+	background-color: rgba(242,242,242,0.9);
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
+		backdrop-filter: saturate(180%) blur(20px);
 }
 body.white.blur #search-screen .head,
 body.white.blur #favorite-screen .head,
 body.white.blur #settings-screen .head {
-	background-color: transparent;
+	background-color: rgba(255,255,255,0.55);
 }
 body.white.blur #search-screen .search-field,
 body.white.blur #favorite-screen .search-field,
 body.white.blur #settings-screen .search-field {
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(0,0,0,0.05);
 }
 body.white.blur #search-screen .ios-ul,
 body.white.blur #favorite-screen .ios-ul,
 body.white.blur #settings-screen .ios-ul {
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(255,255,255,0.5);
 }
 body.white.blur #search-screen .ios-ul .ios7-switch input + span,
 body.white.blur #favorite-screen .ios-ul .ios7-switch input + span,
 body.white.blur #settings-screen .ios-ul .ios7-switch input + span {
-	background-color: rgba(255,255,255,0.1);
+	background-color: rgba(255,255,255,0.5);
 }
-
 /* DARK BLUR */
-body.dark.blur .nav-bar {
-	background-color: rgba(49,50,51,0.8);
-	-webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
-}
+/* body.dark.blur .nav-bar {
+background-color: rgba(18,18,18,0.8);
+-webkit-backdrop-filter: saturate(180%) blur(20px);
+	backdrop-filter: saturate(180%) blur(20px);
+} */
 body.dark.blur #tabs_wrapper {
 	border-radius: 11px;
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
+	backdrop-filter: saturate(180%) blur(20px);
 }
-	body.dark.blur #tabs {
-	opacity: 0.8;
-}
+/* body.dark.blur #tabs {
+opacity: 0.5;
+} */
 body.dark.blur #search-screen,
 body.dark.blur #favorite-screen,
 body.dark.blur #settings-screen {
-	background-color: rgba(49,50,51,0.8);
+	background-color: rgba(28,28,28,0.9);
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
+	backdrop-filter: saturate(180%) blur(20px);
 }
 body.dark.blur #search-screen .head,
 body.dark.blur #favorite-screen .head,
 body.dark.blur #settings-screen .head {
-	background-color: transparent;
+	background-color: rgba(255,255,255,0.09);
 }
 body.dark.blur #search-screen .search-field,
 body.dark.blur #favorite-screen .search-field,
 body.dark.blur #settings-screen .search-field {
-	background-color: rgba(255,255,255,0.1);
+	background-color: rgba(255,255,255,0.05);
 }
 body.dark.blur #search-screen .ios-ul,
 body.dark.blur #favorite-screen .ios-ul,
 body.dark.blur #settings-screen .ios-ul {
-	background-color: rgba(59,60,61,0.1);
+	background-color: rgba(255,255,255,0.07);
 }
 body.dark.blur #search-screen .ios-ul .ios7-switch input + span,
 body.dark.blur #favorite-screen .ios-ul .ios7-switch input + span,
 body.dark.blur #settings-screen .ios-ul .ios7-switch input + span {
-	background-color: rgba(59,60,61,0.1);
+	background-color: rgba(255,255,255,0.07);
 }
+/*	White theme style
+-------------------------------------------------------------------
+*/
+body.white #settings-screen,
+body.white #search-screen,
+body.white #favorite-screen {
+	background-color: #f2f2f2;
+}
+body.white #settings-screen-content,
+body.white #main-screen-content,
+body.white #search-screen-content,
+body.white #favorite-screen-content {
+	color: #000;
+}
+body.white #settings-screen-content a {
+	color: #3478f6;
+}
+body.white #main-screen-content #today-tab {
+	color: #fefefe;
+}
+body.white .blank img {
+	filter: invert(1);
+}
+body.white .ios-ul {
+	background-color: #fefefe;
+	box-shadow: none;
+}
+body.white .ios-li + .ios-li {
+		border-top-color: rgba(0,0,0,0.22);
+}
+body.white .ios-li .button-favorise input + span { background-image: url('../img/unfavorise-black.svg'); }
+body.white .ios-li .button-favorise input:checked + span { background-image: url('../img/favorise-black.svg'); }
+
+body.white #settings-screen .head,
+body.white #search-screen .head,
+body.white #favorite-screen .head {
+	background-color: #f9f9f9;
+	box-shadow: none;
+}
+body.white .head .title {
+	color: #000;
+	opacity: 1;
+}
+body.white .head .button-right,
+body.white .head .button-left {
+	color: #3478f6;
+}
+body.white .nav-bar {
+	background-color: #f8f8f8;
+	box-shadow: none;
+}
+body.white .nav-bar img {
+	filter: invert(1);
+}
+body.white .nav-bar img {
+	/* opacity: 0.45; */
+}
+body.white .tab {
+	box-shadow: 0px -5px 50px 0px rgba(177,177,177,0.25);
+}
+body.white .ios-li.glyphIcon.reload > div { background-image: url(../img/reload-black.svg); }
+body.white .ios-li.glyphIcon.reset > div { background-image: url(../img/reset-black.svg); }
+body.white .ios-li.glyphIcon.gmail > div { background-image: url(../img/gmail-black.svg); }
+body.white .ios-li.glyphIcon.star > div { background-image: url(../img/star-black.svg); }
+body.white .ios-li.glyphIcon.site > div { background-image: url(../img/stavrapid-logo-black.svg); }
+body.white .ios-li.glyphIcon.vk > div { background-image: url(../img/vk-black.svg); }
+body.white .ios-li.glyphIcon.twitter > div { background-image: url(../img/twitter-black.svg); }
+body.white .ios-li.glyphIcon.facebook > div { background-image: url(../img/facebook-black.svg); }
+body.white .ios-li.glyphIcon.instagram > div { background-image: url(../img/instagram-black.svg); }
+body.white .ios-li.glyphIcon.youtube > div { background-image: url(../img/youtube-black.svg); }
+body.white .ios-li.glyphIcon.soundcloud > div { background-image: url(../img/soundcloud-black.svg); }
+body.white .ios-li.glyphIcon.telegram > div { background-image: url(../img/telegram-black.svg); }
+body.white .tab[num = "1"] { background-color: #fefefe; }
+body.white .tab[num = "2"] { background-color: #fefefe; }
+body.white .tab[num = "3"] { background-color: #fefefe; }
+body.white .tab[num = "4"] { background-color: #fefefe; }
+body.white .tab[num = "5"] { background-color: #fefefe; }
+body.white .tab[num = "6"] { background-color: #fefefe; }
+body.white .tab[num = "7"] { background-color: #fefefe; }
+body.white #bg-overlay {
+	background: #fefefe;
+	opacity: 0;
+}
+body.white .blank .logo {
+	background-image: url('../logo-colored.png');
+}
+body.white .ios7-switch input + span {
+	background-color: #e9e9e9;
+}
+body.white .ios7-switch input:checked + span {
+	-webkit-animation: switch-check-light 0.25s 1 forwards ease-out;
+	-moz-animation: switch-check-light 0.25s 1 forwards ease-out;
+}
+body.white .ios7-switch input:not(:checked) + span {
+	-webkit-animation: switch-uncheck-light 0.25s 1 forwards ease-out;
+	-moz-animation: switch-uncheck-light 0.25s 1 forwards ease-out;
+}
+body.white .ios7-switch input + span:after {
+		background: #fefefe;
+}
+body.white .search-field {
+	background: #ededed;
+	color: #000;
+}
+
+
 
 /* Apple iOS 13 Auto Dark mode (DARK)
 -----------------------------------------------------------------------------

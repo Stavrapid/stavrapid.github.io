@@ -249,15 +249,6 @@
 							</label>
 						</div>
 					</li>
-					<li class="ios-li" id="whiteTheme-switch-li">
-						<div onclick="toggle(this.querySelector('input')); checkSettings()">
-							White theme
-							<label id="whiteTheme-switch" class="ios7-switch">
-								<input type="checkbox">
-								<span></span>
-							</label>
-						</div>
-					</li>
 					<li class="ios-li glyphIcon blur">
 						<div onclick="toggle(this.querySelector('input')); checkSettings()">
 							iOS7 blur
@@ -272,6 +263,15 @@
 						<div onclick="toggle(this.querySelector('input')); checkSettings()">
 							Auto darkmode
 							<label id="iOS13DarkMode-switch" class="ios7-switch">
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</div>
+					</li>
+					<li class="ios-li" id="whiteTheme-switch-li">
+						<div onclick="toggle(this.querySelector('input')); checkSettings()">
+							White theme
+							<label id="whiteTheme-switch" class="ios7-switch">
 								<input type="checkbox">
 								<span></span>
 							</label>
@@ -1111,12 +1111,12 @@
 					document.body.classList.add('dark');
 				}
 				if ( localStorage.setting_iOS13DarkMode == "true" ) {
-					document.getElementById("whiteTheme-switch-li").classList.add('disabled');
+					document.getElementById("whiteTheme-switch-li").classList.add('hidden');
 					document.body.classList.remove('white');
 					document.body.classList.remove('dark');
 					document.body.classList.add('iOS13DarkMode');
 				} else {
-					document.getElementById("whiteTheme-switch-li").classList.remove('disabled');
+					document.getElementById("whiteTheme-switch-li").classList.remove('hidden');
 					document.body.classList.remove('iOS13DarkMode');
 					// document.body.classList.add('white');
 				}
