@@ -614,7 +614,7 @@ ul {
 
 #tabs li:not(:last-child) {
 	padding-bottom: 2.5rem;
-	margin-bottom: -1.5rem;
+	margin-bottom: -0.5rem;
 }
 
 #tabs li:last-child {
@@ -995,7 +995,7 @@ body.dark.blur #tabs_wrapper {
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
 }
-body.dark.blur #tabs {
+	body.dark.blur #tabs {
 	opacity: 0.8;
 }
 body.dark.blur #search-screen,
