@@ -1104,8 +1104,8 @@ body.dark.blur #settings-screen .ios-ul .ios7-switch input + span {
 	body.iOS13DarkMode .tab[num = "6"] { background-color: #1c1c1c !important; }
 	body.iOS13DarkMode .tab[num = "7"] { background-color: #1c1c1c !important; }
 	body.iOS13DarkMode #bg-overlay {
-		background: #313233 !important;
-		opacity: 0 !important;
+		background: #1c1c1c;
+		opacity: 0;
 	}
 	body.iOS13DarkMode .blank .logo {
 		background-image: url('../logo-colored.png') !important;
@@ -1180,7 +1180,7 @@ body.dark.blur #settings-screen .ios-ul .ios7-switch input + span {
 	}
 	body.iOS13DarkMode .nav-bar {
 		background-color: #f8f8f8 !important;
-		box-shadow: 0px -5px 50px 0px rgba(0,0,0,0.25) !important;
+		box-shadow: 0px -5px 50px 0px rgba(177,177,177,0.25) !important;
 	}
 	body.iOS13DarkMode .nav-bar img {
 		filter: invert(1) !important;
@@ -1211,8 +1211,8 @@ body.dark.blur #settings-screen .ios-ul .ios7-switch input + span {
 	body.iOS13DarkMode .tab[num = "6"] { background-color: #fefefe !important; }
 	body.iOS13DarkMode .tab[num = "7"] { background-color: #fefefe !important; }
 	body.iOS13DarkMode #bg-overlay {
-		background: #313233 !important;
-		opacity: 0 !important;
+		background: #fefefe;
+		opacity: 0;
 	}
 	body.iOS13DarkMode .blank .logo {
 		background-image: url('../logo-colored.png') !important;
