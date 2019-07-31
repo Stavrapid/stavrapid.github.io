@@ -118,7 +118,7 @@ a:active {
 	background-color: #734456;
 	-webkit-transform: translate3d(0, 0, 0);
 	-webkit-transition: -webkit-transform 0.5s cubic-bezier(.1, 1, .5, 1) 0s; /* animation transition */
-	border-radius: 10px 10px 0 0;
+	border-radius: 11px 11px 0 0;
 	overflow: hidden;
 }
 
@@ -205,13 +205,13 @@ a:active {
 	z-index: 200;
 	width: 100%;
 	padding-top: 3 0px;
-	padding: 24px 0 14px;
+	padding: 20px 0 18px;
 	background-color: #73414a;
 	/*background-color: #F7F7F8;*/
 	/*color: #000;*/
 	color: #fff;
 	top: 0;
-	border-radius: 10px 10px 0 0;
+	border-radius: 11px 11px 0 0;
 	-webkit-transform: translateZ(0);
 }
 
@@ -235,7 +235,7 @@ a:active {
 	position: absolute;
 	left: 0;
 	top: 0;
-	padding: 24px 14px 0.8em;
+	padding: 20px 1.25rem 0.8em;
 	line-height: 1.5rem;
 }
 
@@ -244,7 +244,7 @@ a:active {
 	position: absolute;
 	right: 0;
 	top: 0;
-	padding: 24px 14px 0.8em;
+	padding: 20px 1.25rem 0.8em;
 	line-height: 1.6rem;
 }
 
@@ -281,23 +281,23 @@ h2 {
 
 .ios-ul {
 	background: #a15f6d;
-	margin-left: 0.5rem;
-	margin-right: 0.5rem;
+	margin-left: 1.25rem;
+	margin-right: 1.25rem;
 	border: none;
-	border-radius: 10px;
+	border-radius: 11px;
 	margin-bottom: 2em;
 }
 
 .ios-ul-title {
-	padding: 0 0.8em;
-	margin: 2em 0 0.3em;
+	padding: 0 1.25em;
+	margin: 2em 0 0.5em;
 	text-transform: uppercase;
 	opacity: 0.5;
 }
 
 .ios-li {
 	font-size: 1.1em;
-	margin-left: 0.8em;
+	margin-left: 0.9em;
 	padding: 0;
 	position: relative;
 }
@@ -317,8 +317,8 @@ h2 {
 }
 
 .ios-li > div {
-	margin-left: -0.8em;
-	padding: 0.8em 0.8em;
+	margin-left: -0.9em;
+	padding: 0.9em 0.9em;
 }
 
 .ios-li > div.touch {
@@ -400,7 +400,7 @@ h2 {
 
 .hint {
 	font-size: 0.85em;
-	padding: 0.8em 1em;
+	padding: 0.8em 1.5em;
 	margin: -2.4em 0 2.4em;
 	opacity: 0.5;
 }
@@ -425,6 +425,40 @@ h2 {
 @-moz-keyframes switch-uncheck {
 	from {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
 	to {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #0095f5}
+}
+
+@-webkit-keyframes switch-check-dark {
+	from {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #3f3f3f;}
+	to {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+}
+@-webkit-keyframes switch-uncheck-dark {
+	from {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+	to {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #3f3f3f}
+}
+@-moz-keyframes switch-check-dark {
+	from {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #3f3f3f;}
+	to {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+}
+@-moz-keyframes switch-uncheck-dark {
+	from {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+	to {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #3f3f3f}
+}
+
+@-webkit-keyframes switch-check-light {
+	from {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #e9e9ea;}
+	to {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+}
+@-webkit-keyframes switch-uncheck-light {
+	from {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+	to {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #e9e9ea}
+}
+@-moz-keyframes switch-check-light {
+	from {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #e9e9ea;}
+	to {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+}
+@-moz-keyframes switch-uncheck-light {
+	from {box-shadow: inset 0 0 0 0.73em /*#e9e9e9;*/ #0095f5}
+	to {box-shadow: inset 0 0 0 0.0625em /*#e9e9e9;*/ #e9e9ea}
 }
 
 .ios7-switch {
@@ -519,13 +553,13 @@ body {
 #today-tab {
 	font-size: 1em;
 	text-align: right;
-	padding: 1rem 1rem 1.4rem 1rem;
+	padding: 1.5rem 1.5rem 1.4rem 1.5rem;
 	background-image: url('');
 	background-attachment: scroll;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center 0;
-	border-radius: 10px 10px 0 0;
+	border-radius: 11px 11px 0 0;
 	margin-bottom: -10px;
 	box-shadow: inset 0 0 250px 0 rgba(0,0,0,0.5);
 	/*transition: -webkit-transform 0.01s;*/
@@ -563,28 +597,28 @@ ul {
 #tabs {
 	font-size: 2em;
 	/*box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.3);*/
-	border-radius: 10px 10px 0 0;
+	border-radius: 11px 11px 0 0;
 	position: relative;
-	padding-bottom: 1rem;
-	margin-bottom: -1rem;
-	border-radius: 10px;
+	padding-bottom: 1.5rem;
+	margin-bottom: -1.5rem;
+	border-radius: 11px;
 }
 
 #tabs li {
-	padding: 1rem 1rem 1rem 0.6rem;
+	padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 }
 
 #tabs li:first-of-type {
-	border-radius: 10px 10px 0 0;
+	border-radius: 11px 11px 0 0;
 }
 
 #tabs li:not(:last-child) {
-	padding-bottom: 2rem;
-	margin-bottom: -1rem;
+	padding-bottom: 2.5rem;
+	margin-bottom: -1.5rem;
 }
 
 #tabs li:last-child {
-	border-radius: 10px;
+	border-radius: 11px;
 }
 
 .tab[num = "1"] { background-color: #c57180; }
@@ -602,7 +636,7 @@ ul {
 }
 
 .tab + .tab {
-	border-radius: 10px 10px 0 0;
+	border-radius: 11px 11px 0 0;
 }
 
 sup {
@@ -636,7 +670,7 @@ sup {
 
 .head .search-field-container {
 	position: relative;
-	margin: 0.8rem 0.8rem 0;
+	margin: 0.8rem 1.25rem 0;
 }
 
 .head .search-field-container .reset-button {
@@ -670,7 +704,7 @@ sup {
     display: block;
     border: none;
     background-color: #f4f4f4;
-    border-radius: 10px;
+    border-radius: 11px;
     font-size: 1.1rem;
     padding: 0.5rem 2rem;
     width: 100%;
@@ -913,7 +947,7 @@ body.white.blur .nav-bar {
     backdrop-filter: saturate(180%) blur(20px);
 }
 body.white.blur #tabs_wrapper {
-	border-radius: 10px;
+	border-radius: 11px;
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
 }
@@ -957,7 +991,7 @@ body.dark.blur .nav-bar {
     backdrop-filter: saturate(180%) blur(20px);
 }
 body.dark.blur #tabs_wrapper {
-	border-radius: 10px;
+	border-radius: 11px;
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
 }
@@ -990,4 +1024,215 @@ body.dark.blur #search-screen .ios-ul .ios7-switch input + span,
 body.dark.blur #favorite-screen .ios-ul .ios7-switch input + span,
 body.dark.blur #settings-screen .ios-ul .ios7-switch input + span {
 	background-color: rgba(59,60,61,0.1);
+}
+
+/* Apple iOS 13 Auto Dark mode (DARK)
+-----------------------------------------------------------------------------
+*/
+@media (prefers-color-scheme: dark) {
+	body.iOS13DarkMode #settings-screen,
+	body.iOS13DarkMode #search-screen,
+	body.iOS13DarkMode #favorite-screen {
+		background-color: #1c1c1c !important;
+	}
+	body.iOS13DarkMode #settings-screen-content,
+	body.iOS13DarkMode #main-screen-content,
+	body.iOS13DarkMode #search-screen-content,
+	body.iOS13DarkMode #favorite-screen-content {
+		color: #fefefe !important;
+	}
+	body.iOS13DarkMode #settings-screen-content a {
+		color: #3b82f6 !important;
+	}
+	body.iOS13DarkMode #main-screen-content #today-tab {
+		color: #fefefe !important;
+	}
+	body.iOS13DarkMode .blank img {
+		filter: invert(1) !important;
+	}
+	body.iOS13DarkMode .ios-ul {
+		background-color: #2c2c2c !important;
+		box-shadow: 0px 5px 50px 0px rgba(0,0,0,0) !important;
+	}
+	body.iOS13DarkMode .ios-li + .ios-li {
+	    border-top-color: rgba(255,255,255,0.15) !important;
+	}
+	body.iOS13DarkMode .ios-li .button-favorise input + span { background-image: url('../img/unfavorise.svg') !important; }
+	body.iOS13DarkMode .ios-li .button-favorise input:checked + span { background-image: url('../img/favorise.svg') !important; }
+
+	body.iOS13DarkMode #settings-screen .head,
+	body.iOS13DarkMode #search-screen .head,
+	body.iOS13DarkMode #favorite-screen .head {
+		background-color: #303030 !important;
+		box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.25) !important;
+	}
+	body.iOS13DarkMode .head .title {
+		color: #fefefe !important;
+		opacity: 1;
+	}
+	body.iOS13DarkMode .head .button-right,
+	body.iOS13DarkMode .head .button-left {
+		color: #3b82f6 !important;
+	}
+	body.iOS13DarkMode .nav-bar {
+		background-color: #121212 !important;
+		box-shadow: 0px -5px 50px 0px rgba(0,0,0,0.25) !important;
+	}
+	body.iOS13DarkMode .nav-bar img {
+		opacity: 0.45;
+	}
+	body.iOS13DarkMode .tab {
+		box-shadow: 0px -5px 50px 0px rgba(0,0,0,0.25) !important;
+	}
+	body.iOS13DarkMode .ios-li.glyphIcon.reload > div { background-image: url(../img/reload.svg) !important; }
+	body.iOS13DarkMode .ios-li.glyphIcon.reset > div { background-image: url(../img/reset.svg) !important; }
+	body.iOS13DarkMode .ios-li.glyphIcon.gmail > div { background-image: url(../img/gmail.svg) !important; }
+	body.iOS13DarkMode .ios-li.glyphIcon.star > div { background-image: url(../img/star.svg) !important; }
+	body.iOS13DarkMode .ios-li.glyphIcon.site > div { background-image: url(../img/stavrapid-logo.svg) !important; }
+	body.iOS13DarkMode .ios-li.glyphIcon.vk > div { background-image: url(../img/vk.svg) !important; }
+	body.iOS13DarkMode .ios-li.glyphIcon.twitter > div { background-image: url(../img/twitter.svg) !important; }
+	body.iOS13DarkMode .ios-li.glyphIcon.facebook > div { background-image: url(../img/facebook.svg) !important; }
+	body.iOS13DarkMode .ios-li.glyphIcon.instagram > div { background-image: url(../img/instagram.svg) !important; }
+	body.iOS13DarkMode .ios-li.glyphIcon.youtube > div { background-image: url(../img/youtube.svg) !important; }
+	body.iOS13DarkMode .ios-li.glyphIcon.soundcloud > div { background-image: url(../img/soundcloud.svg) !important; }
+	body.iOS13DarkMode .ios-li.glyphIcon.telegram > div { background-image: url(../img/telegram.svg) !important; }
+	body.iOS13DarkMode .tab[num = "1"] { background-color: #1c1c1c !important; }
+	body.iOS13DarkMode .tab[num = "2"] { background-color: #1c1c1c !important; }
+	body.iOS13DarkMode .tab[num = "3"] { background-color: #1c1c1c !important; }
+	body.iOS13DarkMode .tab[num = "4"] { background-color: #1c1c1c !important; }
+	body.iOS13DarkMode .tab[num = "5"] { background-color: #1c1c1c !important; }
+	body.iOS13DarkMode .tab[num = "6"] { background-color: #1c1c1c !important; }
+	body.iOS13DarkMode .tab[num = "7"] { background-color: #1c1c1c !important; }
+	body.iOS13DarkMode #bg-overlay {
+		background: #313233 !important;
+		opacity: 0 !important;
+	}
+	body.iOS13DarkMode .blank .logo {
+		background-image: url('../logo-colored.png') !important;
+	}
+	body.iOS13DarkMode .ios7-switch input + span {
+		background-color: #3f3f3f !important;
+	}
+	body.iOS13DarkMode .ios7-switch input:checked + span {
+		-webkit-animation: switch-check-dark 0.25s 1 forwards ease-out !important;
+		-moz-animation: switch-check-dark 0.25s 1 forwards ease-out !important;
+	}
+	body.iOS13DarkMode .ios7-switch input:not(:checked) + span {
+		-webkit-animation: switch-uncheck-dark 0.25s 1 forwards ease-out !important;
+		-moz-animation: switch-uncheck-dark 0.25s 1 forwards ease-out !important;
+	}
+	body.iOS13DarkMode .ios7-switch input + span:after {
+	    background: #fefefe !important;
+	}
+	body.iOS13DarkMode .search-field {
+		background: #3a3a3a !important;
+		color: #fff !important;
+	}
+}
+
+/*	Apple iOS 13 Auto Dark mode (LIGHT)
+-------------------------------------------------------------------
+*/
+@media (prefers-color-scheme: light) {
+	body.iOS13DarkMode #settings-screen,
+	body.iOS13DarkMode #search-screen,
+	body.iOS13DarkMode #favorite-screen {
+		background-color: #f2f2f2 !important;
+	}
+	body.iOS13DarkMode #settings-screen-content,
+	body.iOS13DarkMode #main-screen-content,
+	body.iOS13DarkMode #search-screen-content,
+	body.iOS13DarkMode #favorite-screen-content {
+		color: #000 !important;
+	}
+	body.iOS13DarkMode #settings-screen-content a {
+		color: #3478f6 !important;
+	}
+	body.iOS13DarkMode #main-screen-content #today-tab {
+		color: #fefefe !important;
+	}
+	body.iOS13DarkMode .blank img {
+		filter: invert(1) !important;
+	}
+	body.iOS13DarkMode .ios-ul {
+		background-color: #fefefe !important;
+		box-shadow: 0px 5px 50px 0px rgba(0,0,0,0) !important;
+	}
+	body.iOS13DarkMode .ios-li + .ios-li {
+	    border-top-color: rgba(0,0,0,0.22) !important;
+	}
+	body.iOS13DarkMode .ios-li .button-favorise input + span { background-image: url('../img/unfavorise-black.svg') !important; }
+	body.iOS13DarkMode .ios-li .button-favorise input:checked + span { background-image: url('../img/favorise-black.svg') !important; }
+
+	body.iOS13DarkMode #settings-screen .head,
+	body.iOS13DarkMode #search-screen .head,
+	body.iOS13DarkMode #favorite-screen .head {
+		background-color: #f9f9f9 !important;
+		box-shadow: 0px 5px 50px 0px rgba(0,0,0,0) !important;
+	}
+	body.iOS13DarkMode .head .title {
+		color: #000 !important;
+		opacity: 1;
+	}
+	body.iOS13DarkMode .head .button-right,
+	body.iOS13DarkMode .head .button-left {
+		color: #3478f6 !important;
+	}
+	body.iOS13DarkMode .nav-bar {
+		background-color: #f8f8f8 !important;
+		box-shadow: 0px -5px 50px 0px rgba(0,0,0,0.25) !important;
+	}
+	body.iOS13DarkMode .nav-bar img {
+		filter: invert(1) !important;
+	}
+	body.iOS13DarkMode .nav-bar img {
+		/* opacity: 0.45 !important; */
+	}
+	body.iOS13DarkMode .tab {
+		box-shadow: 0px -5px 50px 0px rgba(177,177,177,0.25) !important;
+	}
+	body.iOS13DarkMode .ios-li.glyphIcon.reload > div { background-image: url(../img/reload-black.svg); }
+	body.iOS13DarkMode .ios-li.glyphIcon.reset > div { background-image: url(../img/reset-black.svg); }
+	body.iOS13DarkMode .ios-li.glyphIcon.gmail > div { background-image: url(../img/gmail-black.svg); }
+	body.iOS13DarkMode .ios-li.glyphIcon.star > div { background-image: url(../img/star-black.svg); }
+	body.iOS13DarkMode .ios-li.glyphIcon.site > div { background-image: url(../img/stavrapid-logo-black.svg); }
+	body.iOS13DarkMode .ios-li.glyphIcon.vk > div { background-image: url(../img/vk-black.svg); }
+	body.iOS13DarkMode .ios-li.glyphIcon.twitter > div { background-image: url(../img/twitter-black.svg); }
+	body.iOS13DarkMode .ios-li.glyphIcon.facebook > div { background-image: url(../img/facebook-black.svg); }
+	body.iOS13DarkMode .ios-li.glyphIcon.instagram > div { background-image: url(../img/instagram-black.svg); }
+	body.iOS13DarkMode .ios-li.glyphIcon.youtube > div { background-image: url(../img/youtube-black.svg); }
+	body.iOS13DarkMode .ios-li.glyphIcon.soundcloud > div { background-image: url(../img/soundcloud-black.svg); }
+	body.iOS13DarkMode .ios-li.glyphIcon.telegram > div { background-image: url(../img/telegram-black.svg); }
+	body.iOS13DarkMode .tab[num = "1"] { background-color: #fefefe !important; }
+	body.iOS13DarkMode .tab[num = "2"] { background-color: #fefefe !important; }
+	body.iOS13DarkMode .tab[num = "3"] { background-color: #fefefe !important; }
+	body.iOS13DarkMode .tab[num = "4"] { background-color: #fefefe !important; }
+	body.iOS13DarkMode .tab[num = "5"] { background-color: #fefefe !important; }
+	body.iOS13DarkMode .tab[num = "6"] { background-color: #fefefe !important; }
+	body.iOS13DarkMode .tab[num = "7"] { background-color: #fefefe !important; }
+	body.iOS13DarkMode #bg-overlay {
+		background: #313233 !important;
+		opacity: 0 !important;
+	}
+	body.iOS13DarkMode .blank .logo {
+		background-image: url('../logo-colored.png') !important;
+	}
+	body.iOS13DarkMode .ios7-switch input + span {
+		background-color: #e9e9e9 !important;
+	}
+	body.iOS13DarkMode .ios7-switch input:checked + span {
+		-webkit-animation: switch-check-light 0.25s 1 forwards ease-out !important;
+		-moz-animation: switch-check-light 0.25s 1 forwards ease-out !important;
+	}
+	body.iOS13DarkMode .ios7-switch input:not(:checked) + span {
+		-webkit-animation: switch-uncheck-light 0.25s 1 forwards ease-out !important;
+		-moz-animation: switch-uncheck-light 0.25s 1 forwards ease-out !important;
+	}
+	body.iOS13DarkMode .ios7-switch input + span:after {
+	    background: #fefefe !important;
+	}
+	body.iOS13DarkMode .search-field {
+		background: #ededed !important;
+		color: #000 !important;
+	}
 }
