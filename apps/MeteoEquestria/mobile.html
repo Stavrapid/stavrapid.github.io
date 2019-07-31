@@ -88,9 +88,8 @@
 				<div class="scrollfix-content">
 					<div id="today-tab">
 						<div class="today-location"><span class="city">Ponyville</span>, <span class="country">Equestria</span></div>
-						<div><span class="today-day">Monday</span> <span class="today-date">XX</span></div>
+						<div><div class="today-icon"></div><span class="today-day">Monday</span> <span class="today-date">XX</span></div>
 						<div><span class="today-temperature">±XX</span></div>
-						<div class="today-icon"></div>
 					</div>
 					<div id="tabs_wrapper">
 					<ul id="tabs">
@@ -191,7 +190,7 @@
 					version 0.5 beta 3
 				</div>
 				<ul class="ios-ul">
-					<li class="ios-li glyphIcon reload">
+					<li class="ios-li action reload">
 						<div onclick="initiate(); hideScreen('settings', true);">Refresh weather data</div>
 					</li>
 				</ul>
@@ -241,11 +240,10 @@
 				<div class="hint">This setting turning on/off the weather tabs color highlighting depending to the temperature</div>
 				<div class="ios-ul-title">Appearance</div>
 				<ul class="ios-ul">
-					<!-- iOS 13 Dark Mode Switch -->
-					<li class="ios-li glyphIcon iOS13DarkMode">
+					<li class="ios-li glyphIcon font">
 						<div onclick="toggle(this.querySelector('input')); checkSettings()">
-							Darkmode Auto (iOS 13 only)
-							<label id="iOS13DarkMode-switch" class="ios7-switch">
+							Use "Bliss Pro" font
+							<label id="font-switch" class="ios7-switch">
 								<input type="checkbox">
 								<span></span>
 							</label>
@@ -269,18 +267,20 @@
 							</label>
 						</div>
 					</li>
-					<li class="ios-li glyphIcon font">
+					<!-- iOS 13 Dark Mode Switch -->
+					<li class="ios-li glyphIcon iOS13DarkMode">
 						<div onclick="toggle(this.querySelector('input')); checkSettings()">
-							"Bliss Pro" font
-							<label id="font-switch" class="ios7-switch">
+							Auto darkmode
+							<label id="iOS13DarkMode-switch" class="ios7-switch">
 								<input type="checkbox">
 								<span></span>
 							</label>
 						</div>
 					</li>
 				</ul>
+				<div class="hint">Switch betwen light and dark modes depending on system theme. Will only work on iOS 13 or above</div>
 				<ul class="ios-ul">
-					<li class="ios-li glyphIcon reset">
+					<li class="ios-li action reset">
 						<div onclick="resetSettings()">Reset all settings to default</div>
 					</li>
 				</ul>
