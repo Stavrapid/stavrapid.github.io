@@ -26,7 +26,7 @@
 				<RELWET max="" min=""/>
 				<HEAT min="" max=""/>
 			</FORECAST>
-			<FORECAST day="1" month="08" year="2019" hour="09" tod="1" predict="0" weekday="3">
+			<FORECAST day="01" month="08" year="2019" hour="09" tod="1" predict="0" weekday="3">
 				<PHENOMENA cloudiness="2" precipitation="1" ppower="0"/>
 				<PRESSURE max="" min=""/>
 				<TEMPERATURE max="8" min="2"/>
@@ -34,7 +34,7 @@
 				<RELWET max="" min=""/>
 				<HEAT min="" max=""/>
 			</FORECAST>
-			<FORECAST day="2" month="08" year="2019" hour="09" tod="1" predict="0" weekday="4">
+			<FORECAST day="02" month="08" year="2019" hour="09" tod="1" predict="0" weekday="4">
 				<PHENOMENA cloudiness="1" precipitation="0" ppower="0"/>
 				<PRESSURE max="" min=""/>
 				<TEMPERATURE max="9" min="0"/>
@@ -42,7 +42,7 @@
 				<RELWET max="" min=""/>
 				<HEAT min="" max=""/>
 			</FORECAST>
-			<FORECAST day="3" month="08" year="2019" hour="09" tod="1" predict="0" weekday="5">
+			<FORECAST day="03" month="08" year="2019" hour="09" tod="1" predict="0" weekday="5">
 				<PHENOMENA cloudiness="1" precipitation="0" ppower="0"/>
 				<PRESSURE max="" min=""/>
 				<TEMPERATURE max="10" min="2"/>
@@ -50,7 +50,7 @@
 				<RELWET max="" min=""/>
 				<HEAT min="" max=""/>
 			</FORECAST>
-			<FORECAST day="4" month="08" year="2019" hour="09" tod="1" predict="0" weekday="6">
+			<FORECAST day="04" month="08" year="2019" hour="09" tod="1" predict="0" weekday="6">
 				<PHENOMENA cloudiness="2" precipitation="0" ppower="0"/>
 				<PRESSURE max="" min=""/>
 				<TEMPERATURE max="13" min="3"/>
