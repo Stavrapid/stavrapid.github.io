@@ -1,0 +1,88 @@
+
+
+#WT,
+#WT .page {
+	background: #f9f9f9;
+	color: #000;
+}
+
+#WT *::-moz-selection {
+	color: #f7f7f7;
+	background: #212121;
+}
+
+#WT .page_title,
+#WT #page_title_fixed {
+	background: #fff;
+	color: #ff1c2c;
+}
+
+#WT #page_title_fixed {
+	box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
+	transition: 0;
+}
+
+#WT .photo_page {
+	background: -moz-radial-gradient(left bottom, ellipse cover, rgba(249,237,50,1) -10%, rgba(238,42,123,1) 60%, rgba(0,42,255,1) 120%);
+}
+
+#WT .photo_page .page_wrap {
+	background: rgba(255,255,255,0.5);
+}
+
+#WT .art_page {
+	background: #000 url(http://www.da-files.com/artnetwork/new-da/boldy-facing-the-future/bg-pattern_5_mobile.png) 0 0 repeat fixed;
+}
+
+#WT .art_page .page_wrap {
+	background: rgba(0,0,0,0.5);
+}
+
+#WT .art_page .page_more_link {
+	color: #05cc47;
+}
+
+#WT .thumb,
+#WT .art_big {
+	box-shadow: none;
+	background: #fff;
+}
+
+#WT .page_more_link {
+	color: rgba(0, 0, 0, 0.80);
+	text-shadow: none;
+}
+
+#WT .post_container .post {
+	box-shadow: none;
+	color: #212121;
+	/*box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);*/
+	box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+}
+
+#WT .post_header {
+	background: #fafafa;
+	color: #000;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+#WT .post_content {
+	background: #fff;
+}
+
+#WT .social_button:not(:hover) {
+	color: rgba(0, 0, 0, 0.70);
+	text-shadow: none;
+}
+
+#WT #footer_wrap {
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.25) 100%);
+}
+
+
+
+
+
+
+
+
