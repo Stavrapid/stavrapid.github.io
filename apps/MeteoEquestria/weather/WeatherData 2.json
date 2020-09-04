@@ -1,0 +1,15 @@
+[
+    {
+        "date": "04-09-2020",
+        "icon": "02",
+        "t_average": "23",
+        "t_max": "28",
+        "t_min": "15",
+        "precipitation": "0"
+        "cloudiness": "0",
+        "wind": {
+            "force": "6",
+            "direction": "north"
+        }
+    }
+]
