@@ -11,5 +11,135 @@
             "force": "6",
             "direction": "north"
         }
+    },
+    {
+        "date": "05-09-2020",
+        "icon": "02",
+        "t_average": "23",
+        "t_max": "28",
+        "t_min": "15",
+        "precipitation": "0"
+        "cloudiness": "0",
+        "wind": {
+            "force": "6",
+            "direction": "north"
+        }
+    },
+    {
+        "date": "06-09-2020",
+        "icon": "02",
+        "t_average": "23",
+        "t_max": "28",
+        "t_min": "15",
+        "precipitation": "0"
+        "cloudiness": "0",
+        "wind": {
+            "force": "6",
+            "direction": "north"
+        }
+    },
+    {
+        "date": "07-09-2020",
+        "icon": "02",
+        "t_average": "23",
+        "t_max": "28",
+        "t_min": "15",
+        "precipitation": "0"
+        "cloudiness": "0",
+        "wind": {
+            "force": "6",
+            "direction": "north"
+        }
+    },
+    {
+        "date": "08-09-2020",
+        "icon": "02",
+        "t_average": "23",
+        "t_max": "28",
+        "t_min": "15",
+        "precipitation": "0"
+        "cloudiness": "0",
+        "wind": {
+            "force": "6",
+            "direction": "north"
+        }
+    },
+    {
+        "date": "09-09-2020",
+        "icon": "02",
+        "t_average": "23",
+        "t_max": "28",
+        "t_min": "15",
+        "precipitation": "0"
+        "cloudiness": "0",
+        "wind": {
+            "force": "6",
+            "direction": "north"
+        }
+    },
+    {
+        "date": "10-09-2020",
+        "icon": "02",
+        "t_average": "23",
+        "t_max": "28",
+        "t_min": "15",
+        "precipitation": "0"
+        "cloudiness": "0",
+        "wind": {
+            "force": "6",
+            "direction": "north"
+        }
+    },
+    {
+        "date": "11-09-2020",
+        "icon": "02",
+        "t_average": "23",
+        "t_max": "28",
+        "t_min": "15",
+        "precipitation": "0"
+        "cloudiness": "0",
+        "wind": {
+            "force": "6",
+            "direction": "north"
+        }
+    },
+    {
+        "date": "12-09-2020",
+        "icon": "02",
+        "t_average": "23",
+        "t_max": "28",
+        "t_min": "15",
+        "precipitation": "0"
+        "cloudiness": "0",
+        "wind": {
+            "force": "6",
+            "direction": "north"
+        }
+    },
+    {
+        "date": "13-09-2020",
+        "icon": "02",
+        "t_average": "23",
+        "t_max": "28",
+        "t_min": "15",
+        "precipitation": "0"
+        "cloudiness": "0",
+        "wind": {
+            "force": "6",
+            "direction": "north"
+        }
+    },
+    {
+        "date": "14-09-2020",
+        "icon": "02",
+        "t_average": "23",
+        "t_max": "28",
+        "t_min": "15",
+        "precipitation": "0"
+        "cloudiness": "0",
+        "wind": {
+            "force": "6",
+            "direction": "north"
+        }
     }
 ]
