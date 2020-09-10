@@ -1,107 +1,58 @@
 [
     {
         "name": "Monday",
-        "icon": "07",
-        "city": "Cloudsdale",
-        "state": "Equestria",
+        "icon": "05",
         "id": 1001,
         "temperature": "10",
         "tMax": "15",
-        "tMin": "5",
-        "coordinates": {
-            "longitude": -116.166868,
-            "latitude": 34.011286
-        },
-        "imageName": "Cloudsdale"
+        "tMin": "5"
     },
     {
         "name": "Tuesday",
-        "icon": "04",
-        "city": "Cloudsdale",
-        "state": "Equestria",
+        "icon": "03",
         "id": 1002,
         "temperature": "11",
         "tMax": "15",
-        "tMin": "9",
-        "coordinates": {
-            "longitude": -152.665167,
-            "latitude": 59.980167
-        },
-        "imageName": "Cloudsdale"
+        "tMin": "9"
     },
     {
         "name": "Wednesday",
-        "icon": "02",
-        "city": "Cloudsdale",
-        "state": "Equestria",
+        "icon": "05",
         "id": 1003,
         "temperature": "9",
         "tMax": "14",
-        "tMin": "6",
-        "coordinates": {
-            "longitude": -135.334571,
-            "latitude": 59.560551
-        },
-        "imageName": "Cloudsdale"
+        "tMin": "6"
     },
     {
         "name": "Thursday",
-        "icon": "02",
-        "city": "Cloudsdale",
-        "state": "Equestria",
+        "icon": "03",
         "id": 1004,
         "temperature": "15",
         "tMax": "17",
-        "tMin": "10",
-        "coordinates": {
-            "longitude": -113.536248,
-            "latitude": 48.69423
-        },
-        "imageName": "Cloudsdale"
+        "tMin": "10"
     },
     {
         "name": "Friday",
         "icon": "03",
-        "city": "Cloudsdale",
-        "state": "Equestria",
         "id": 1005,
         "temperature": "16",
         "tMax": "18",
-        "tMin": "10",
-        "coordinates": {
-            "longitude": -153.849883,
-            "latitude": 60.641684
-        },
-        "imageName": "Cloudsdale"
+        "tMin": "10"
     },
     {
         "name": "Saturday",
         "icon": "02",
-        "city": "Cloudsdale",
-        "state": "Equestria",
         "id": 1006,
         "temperature": "17",
         "tMax": "20",
-        "tMin": "11",
-        "coordinates": {
-            "longitude": -113.934831,
-            "latitude": 48.56002
-        },
-        "imageName": "Cloudsdale"
+        "tMin": "11"
     },
     {
         "name": "Sunday",
-        "icon": "02",
-        "city": "Cloudsdale",
-        "state": "Equestria",
+        "icon": "03",
         "id": 1007,
         "temperature": "12",
         "tMax": "18",
-        "tMin": "4",
-        "coordinates": {
-            "longitude": -143.122586,
-            "latitude": 65.350021
-        },
-        "imageName": "Cloudsdale"
+        "tMin": "4"
     }
 ]
