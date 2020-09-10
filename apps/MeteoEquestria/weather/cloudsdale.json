@@ -5,9 +5,9 @@
         "city": "Cloudsdale",
         "state": "Equestria",
         "id": 1001,
-        "temperature": "24",
-        "tMax": "28",
-        "tMin": "10",
+        "temperature": "10",
+        "tMax": "15",
+        "tMin": "5",
         "coordinates": {
             "longitude": -116.166868,
             "latitude": 34.011286
@@ -20,9 +20,9 @@
         "city": "Cloudsdale",
         "state": "Equestria",
         "id": 1002,
-        "temperature": "22",
-        "tMax": "28",
-        "tMin": "15",
+        "temperature": "11",
+        "tMax": "15",
+        "tMin": "9",
         "coordinates": {
             "longitude": -152.665167,
             "latitude": 59.980167
@@ -35,9 +35,9 @@
         "city": "Cloudsdale",
         "state": "Equestria",
         "id": 1003,
-        "temperature": "24",
-        "tMax": "28",
-        "tMin": "15",
+        "temperature": "9",
+        "tMax": "14",
+        "tMin": "6",
         "coordinates": {
             "longitude": -135.334571,
             "latitude": 59.560551
@@ -50,9 +50,9 @@
         "city": "Cloudsdale",
         "state": "Equestria",
         "id": 1004,
-        "temperature": "18",
-        "tMax": "25",
-        "tMin": "15",
+        "temperature": "15",
+        "tMax": "17",
+        "tMin": "10",
         "coordinates": {
             "longitude": -113.536248,
             "latitude": 48.69423
@@ -65,9 +65,9 @@
         "city": "Cloudsdale",
         "state": "Equestria",
         "id": 1005,
-        "temperature": "21",
-        "tMax": "26",
-        "tMin": "14",
+        "temperature": "16",
+        "tMax": "18",
+        "tMin": "10",
         "coordinates": {
             "longitude": -153.849883,
             "latitude": 60.641684
@@ -80,8 +80,8 @@
         "city": "Cloudsdale",
         "state": "Equestria",
         "id": 1006,
-        "temperature": "24",
-        "tMax": "28",
+        "temperature": "17",
+        "tMax": "20",
         "tMin": "11",
         "coordinates": {
             "longitude": -113.934831,
@@ -95,9 +95,9 @@
         "city": "Cloudsdale",
         "state": "Equestria",
         "id": 1007,
-        "temperature": "22",
-        "tMax": "30",
-        "tMin": "12",
+        "temperature": "12",
+        "tMax": "18",
+        "tMin": "4",
         "coordinates": {
             "longitude": -143.122586,
             "latitude": 65.350021
