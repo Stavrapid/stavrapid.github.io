@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Monday",
+        "icon": "14",
+        "id": 1001,
+        "temperature": "15",
+        "tMax": "17",
+        "tMin": "10"
+    },
+    {
+        "name": "Tuesday",
+        "icon": "14",
+        "id": 1002,
+        "temperature": "16",
+        "tMax": "17",
+        "tMin": "10"
+    },
+    {
+        "name": "Wednesday",
+        "icon": "14",
+        "id": 1003,
+        "temperature": "12",
+        "tMax": "17",
+        "tMin": "10"
+    },
+    {
+        "name": "Thursday",
+        "icon": "05",
+        "id": 1004,
+        "temperature": "13",
+        "tMax": "17",
+        "tMin": "10"
+    },
+    {
+        "name": "Friday",
+        "icon": "14",
+        "id": 1005,
+        "temperature": "11",
+        "tMax": "17",
+        "tMin": "10"
+    },
+    {
+        "name": "Saturday",
+        "icon": "05",
+        "id": 1006,
+        "temperature": "17",
+        "tMax": "17",
+        "tMin": "10"
+    },
+    {
+        "name": "Sunday",
+        "icon": "14",
+        "id": 1007,
+        "temperature": "15",
+        "tMax": "17",
+        "tMin": "10"
+    }
+]
