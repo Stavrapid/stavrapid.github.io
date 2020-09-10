@@ -14,8 +14,6 @@
     {
         "name": "Tuesday",
         "icon": "00",
-        "city": "Cloudsdale",
-        "state": "Equestria",
         "id": 1002,
         "temperature": "N/A",
         "tMax": "-",
@@ -29,8 +27,6 @@
     {
         "name": "Wednesday",
         "icon": "00",
-        "city": "Cloudsdale",
-        "state": "Equestria",
         "id": 1003,
         "temperature": "N/A",
         "tMax": "-",
@@ -44,8 +40,6 @@
     {
         "name": "Thursday",
         "icon": "00",
-        "city": "Cloudsdale",
-        "state": "Equestria",
         "id": 1004,
         "temperature": "N/A",
         "tMax": "-",
@@ -59,8 +53,6 @@
     {
         "name": "Friday",
         "icon": "00",
-        "city": "Cloudsdale",
-        "state": "Equestria",
         "id": 1005,
         "temperature": "N/A",
         "tMax": "-",
@@ -74,8 +66,6 @@
     {
         "name": "Saturday",
         "icon": "00",
-        "city": "Cloudsdale",
-        "state": "Equestria",
         "id": 1006,
         "temperature": "N/A",
         "tMax": "-",
@@ -89,8 +79,6 @@
     {
         "name": "Sunday",
         "icon": "00",
-        "city": "Cloudsdale",
-        "state": "Equestria",
         "id": 1007,
         "temperature": "N/A",
         "tMax": "-",
