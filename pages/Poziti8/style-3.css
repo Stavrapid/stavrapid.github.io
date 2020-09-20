@@ -1094,9 +1094,11 @@ body.--1_3--active #main_nav #h_3::after {
 }
 
 .post_card article > .post_card-article_column > .divider {
-    /* background: #999; */
-		background: #ef5857;
-    height: 1px;
+    height: 0;
+		border: 0;
+		border-bottom: 1px;
+		border-color: #ef5857;
+		border-style: solid;
 }
 
 .post_card article > .post_card-article_column > blockquote {
