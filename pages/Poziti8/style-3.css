@@ -1096,7 +1096,7 @@ body.--1_3--active #main_nav #h_3::after {
 .post_card article > .post_card-article_column > .divider {
     height: 0;
 		border: 0;
-		border-bottom: 1px;
+		border-bottom: 1pt;
 		border-color: #ef5857;
 		border-style: solid;
 }
