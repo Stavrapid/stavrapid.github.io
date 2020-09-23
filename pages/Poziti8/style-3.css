@@ -781,10 +781,10 @@ a {
     #stavrapid_logo .logo_bg { top: 35%; } */
 }
 
-@media only screen and (max-device-width: 815px) {
+@media only screen and (max-width: 815px) {
     #main_nav { display: none; }
 }
-@media only screen and (min-device-width: 815px) {
+@media only screen and (min-width: 815px) {
     #main_nav--mobile { display: none; }
 }
 
