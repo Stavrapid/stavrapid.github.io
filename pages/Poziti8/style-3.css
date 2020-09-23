@@ -8,12 +8,7 @@ html {
 	text-size-adjust: none
 }
 
-::-webkit-scrollbar {
-    /* width: 0px; */
-    /*background: transparent;   optional: just make scrollbar invisible */
-}
-
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
 	width: 10px !important;
 	height: 10px !important;
 }
@@ -38,7 +33,7 @@ html {
     background-clip: padding-box !important;
     border: solid 2px rgba(0,0,0,0) !important;
     border-radius: 5px !important;
-}
+} */
 /* background: #666;
 flex: 1 0 auto;
 height: 0.21rem;
@@ -1025,7 +1020,7 @@ body.--1_3--active #main_nav #h_3::after {
 
 .post_card article > .post_card-article_column {
     margin: 2rem;
-    text-align: justify;
+    /* text-align: justify; */
     font-size: 1em;
     line-height: 1.4em;
     flex: 1;
@@ -1043,11 +1038,13 @@ body.--1_3--active #main_nav #h_3::after {
     margin: 0;
     font-family: Georgia, serif;
     margin: 1.5em 0;
+		text-align: justify;
 }
 
 .post_card article > .post_card-article_column  b {
     color: #ef5857;
-		/* font-family: Roboto; */
+		font-family: Roboto;
+		font-weight: bold;
 }
 
 .post_card article > .post_card-article_column > p:first-of-type {
@@ -1057,9 +1054,9 @@ body.--1_3--active #main_nav #h_3::after {
     margin-bottom: 0;
 }
 
-.post_card article > .post_card-article_column > p::first-letter {
+.post_card article > .post_card-article_column > p:not(.regular)::first-letter {
     font-size: 4.7em;
-	font-family: Roboto;
+		font-family: Roboto;
     line-height: 0.75em;
     font-weight: 600;
     color: #ef5857;
@@ -1108,6 +1105,9 @@ body.--1_3--active #main_nav #h_3::after {
     margin-inline-end: 30px;
 		line-height: 1.4em;
 }
+.post_card article > .post_card-article_column > blockquote.--just {
+		text-align: justify;
+}
 .post_card article > .post_card-article_column > blockquote::before {
     position: absolute;
     display: block;
@@ -1143,8 +1143,11 @@ body.--1_3--active #main_nav #h_3::after {
 		opacity: .75;
 		font-weight: normal;
 }
-
+@media screen and (max-width: 375px) {
+	html { font-size: 12px; }
+}
 @media screen and (max-width: 320px) {
+	html { font-size: 12px; }
    .post_card {
       margin: 0;
 			border-radius: 0;
