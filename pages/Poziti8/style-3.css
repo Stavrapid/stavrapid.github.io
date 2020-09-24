@@ -1047,6 +1047,14 @@ body.--1_3--active #main_nav #h_3::after {
 		font-weight: bold;
 }
 
+.post_card article > .post_card-article_column  a {
+    color: #ef5857;
+		/* font-family: Roboto; */
+		/* font-weight: bold; */
+		text-decoration: underline;
+}
+
+
 .post_card article > .post_card-article_column > p:first-of-type {
     margin-top: 0;
 }
