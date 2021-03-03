@@ -245,6 +245,7 @@ a {
 }
 
 #stavrapid_logo .numpad_wrapper {
+	display: none !important;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
