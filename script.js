@@ -662,7 +662,8 @@ window.onload = function (fontFaceSetEvent) {
 	toggleMainNav(2);
 	document.getElementById("stavrapid_logo").classList.add("loaded");
 	setTimeout(function () {
-		// logIn();
+		// Comment LogIn to set password fake protection
+		logIn();
 	}, 2000);
 
 	var photoCards = document.getElementsByClassName("photo_card");
