@@ -277,21 +277,22 @@ body * {
 }
 
 .device .iphone {
-	height: 40rem;
+	height: 42rem;
     width: 20.65rem;
-    background-image: url(../img/iphone-white.svg);
+    background-image: url(../img/iphone-white.png);
     background-repeat: no-repeat;
     background-size: 20.65rem;
 }
 
 .device .screens {
-    position: absolute;
-    top: 5.3rem;
-    right: 2.1rem;
-    bottom: 5.5rem;
-    left: 2.1rem;
-    border-radius: 6px;
-    overflow: hidden;
+	position: absolute;
+	top: 1.4rem;
+	right: 1.4rem;
+	bottom: 1.4rem;
+	left: 1.4rem;
+	border-radius: 30px;
+	overflow: hidden;
+	z-index: -1;
 }
 
 .device .screenshot {
@@ -304,10 +305,10 @@ body * {
 
 .device::after {
 	position: absolute;
-	z-index: -1;
+	z-index: -2;
 	content: "";
 	border-radius: 50px;
-	background: #a3a6af;
+	background: #000;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 75px 0px;
 	top: 1rem;
 	bottom: 1rem;
@@ -333,7 +334,7 @@ footer {
 footer p {
 	font-size: 1.1rem;
     color: #2C2C2C;
-    opacity: 0.5;	
+    opacity: 0.5;
     text-align: center;
     width: 90%;
     margin: 0 auto;
@@ -345,6 +346,7 @@ footer p {
 	background: #fff;
     padding: 3rem 2rem;
     position: relative;
+		overflow-x: hidden;
 }
 
 .app-intro::before {
@@ -763,7 +765,7 @@ footer p {
 .social-icon.email::after {background: #006df0;}
 
 body.dark .device .iphone {
-	background-image: url("../img/iphone-black.svg");
+	background-image: url("../img/iphone-black.png");
 	-o-transition: all .3s ease;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
